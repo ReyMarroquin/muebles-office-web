@@ -1,19 +1,7 @@
-/* contacto.css - Diseño Profesional para Página de Contacto */
+/* contacto.css - Adaptado para usar variables del sistema */
 
-/* Variables específicas para contacto */
-:root {
-    --contact-primary: #2c5530;
-    --contact-secondary: #d4af37;
-    --contact-accent: #3a7042;
-    --contact-light: #f8f9fa;
-    --contact-dark: #1e3a23;
-    --contact-success: #28a745;
-    --contact-border: #e9ecef;
-}
-
-/* Hero Contacto */
 .contacto-hero {
-    background: linear-gradient(135deg, var(--contact-primary) 0%, var(--contact-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
     color: white;
     padding: 8rem 0 4rem;
     margin-top: 70px;
@@ -46,7 +34,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(44,85,48,0.9) 0%, rgba(30,58,35,0.95) 100%);
+    background: linear-gradient(45deg, rgba(30, 58, 138, 0.9) 0%, rgba(30, 64, 175, 0.95) 100%);
 }
 
 .contacto-hero-content {
@@ -88,7 +76,7 @@
 .stat-number {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--contact-secondary);
+    color: var(--gold-color);
     margin-bottom: 0.5rem;
 }
 
@@ -120,7 +108,7 @@
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    color: var(--contact-secondary);
+    color: var(--gold-color);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.2);
     animation: float 6s ease-in-out infinite;
@@ -152,7 +140,7 @@
 /* Tarjetas de Contacto */
 .contact-cards-section {
     padding: 4rem 0;
-    background: var(--contact-light);
+    background: var(--gray-light);
 }
 
 .contact-cards-grid {
@@ -167,9 +155,9 @@
     padding: 2.5rem;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-lg);
     transition: all 0.3s ease;
-    border: 1px solid var(--contact-border);
+    border: 1px solid var(--gray-border);
     position: relative;
     overflow: hidden;
 }
@@ -181,7 +169,7 @@
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, var(--contact-primary), var(--contact-secondary));
+    background: linear-gradient(90deg, var(--primary-blue), var(--gold-color));
 }
 
 .contact-card:hover {
@@ -192,7 +180,7 @@
 .card-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--contact-primary), var(--contact-accent));
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -203,13 +191,13 @@
 }
 
 .contact-card h3 {
-    color: var(--contact-primary);
+    color: var(--primary-blue);
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
 
 .contact-card p {
-    color: #666;
+    color: var(--text-light);
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }
@@ -222,17 +210,17 @@
     display: block;
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--contact-primary);
+    color: var(--primary-blue);
     margin-bottom: 0.5rem;
 }
 
 .contact-hours {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-light);
 }
 
 .btn-success {
-    background: var(--contact-success);
+    background: #28a745;
     border: none;
 }
 
@@ -252,12 +240,12 @@
     margin: 0 auto;
     background: white;
     border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-lg);
     overflow: hidden;
 }
 
 .form-header {
-    background: linear-gradient(135deg, var(--contact-primary), var(--contact-dark));
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
     color: white;
     padding: 3rem;
     text-align: center;
@@ -294,7 +282,7 @@
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: var(--contact-dark);
+    color: var(--text-dark);
 }
 
 .form-group input,
@@ -302,7 +290,7 @@
 .form-group textarea {
     width: 100%;
     padding: 1rem 1rem 1rem 3rem;
-    border: 2px solid var(--contact-border);
+    border: 2px solid var(--gray-border);
     border-radius: 10px;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -313,8 +301,8 @@
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--contact-primary);
-    box-shadow: 0 0 0 3px rgba(44,85,48,0.1);
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .input-icon {
@@ -322,7 +310,7 @@
     left: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--contact-primary);
+    color: var(--primary-blue);
     font-size: 1.1rem;
 }
 
@@ -342,7 +330,7 @@
     margin-bottom: 1rem;
     cursor: pointer;
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-light);
 }
 
 .checkbox-label input {
@@ -370,7 +358,7 @@
 /* Mapa y Ubicación */
 .map-section {
     padding: 4rem 0;
-    background: var(--contact-light);
+    background: var(--gray-light);
 }
 
 .section-header {
@@ -379,14 +367,14 @@
 }
 
 .section-header h2 {
-    color: var(--contact-primary);
+    color: var(--primary-blue);
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
 .section-header p {
     font-size: 1.1rem;
-    color: #666;
+    color: var(--text-light);
     max-width: 600px;
     margin: 0 auto;
 }
@@ -394,7 +382,7 @@
 .map-container {
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-lg);
 }
 
 .map-wrapper {
@@ -405,7 +393,7 @@
 .google-map {
     width: 100%;
     height: 100%;
-    background: #e9ecef;
+    background: var(--gray-border);
 }
 
 .map-overlay {
@@ -415,12 +403,12 @@
     background: white;
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: var(--shadow-lg);
     max-width: 300px;
 }
 
 .location-info h3 {
-    color: var(--contact-primary);
+    color: var(--primary-blue);
     margin-bottom: 1.5rem;
     font-size: 1.3rem;
 }
@@ -435,11 +423,11 @@
     gap: 1rem;
     margin-bottom: 1rem;
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-light);
 }
 
 .detail-item i {
-    color: var(--contact-primary);
+    color: var(--primary-blue);
     margin-top: 0.2rem;
 }
 
@@ -455,7 +443,7 @@
 }
 
 .faq-item {
-    border: 1px solid var(--contact-border);
+    border: 1px solid var(--gray-border);
     border-radius: 10px;
     margin-bottom: 1rem;
     overflow: hidden;
@@ -463,7 +451,7 @@
 
 .faq-question {
     padding: 1.5rem;
-    background: var(--contact-light);
+    background: var(--gray-light);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -472,17 +460,17 @@
 }
 
 .faq-question:hover {
-    background: #e9ecef;
+    background: var(--light-blue);
 }
 
 .faq-question h4 {
-    color: var(--contact-primary);
+    color: var(--primary-blue);
     margin: 0;
     font-size: 1.1rem;
 }
 
 .faq-question i {
-    color: var(--contact-primary);
+    color: var(--primary-blue);
     transition: transform 0.3s ease;
 }
 
@@ -505,7 +493,7 @@
 /* CTA Final */
 .cta-contact {
     padding: 4rem 0;
-    background: linear-gradient(135deg, var(--contact-primary) 0%, var(--contact-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
     color: white;
     text-align: center;
 }
@@ -527,6 +515,226 @@
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+/* Hero Contacto con imagen de fondo - Similar al catálogo */
+.contacto-hero {
+    position: relative;
+    color: var(--white);
+    padding: 10rem 0 8rem;
+    margin-top: 70px;
+    overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Overlay más oscuro para mejor contraste */
+    z-index: 2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        rgba(30, 58, 138, 0.8) 0%, 
+        rgba(1, 13, 38, 0.7) 50%, 
+        rgba(59, 130, 246, 0.6) 100%);
+    z-index: 3;
+    backdrop-filter: blur(2px); /* Efecto blur sutil */
+}
+
+.contacto-hero-content {
+    position: relative;
+    z-index: 4;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.contacto-hero-text {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+.contacto-hero-text .hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    line-height: 1.1;
+    text-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.7),
+        0 8px 30px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 30%, #bae6fd 70%, #7dd3fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    animation: titleReveal 1.5s ease-out;
+}
+
+.contacto-hero-text .hero-subtitle {
+    font-size: 1.4rem;
+    opacity: 0.95;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+    animation: subtitleReveal 1.8s ease-out 0.3s both;
+}
+
+/* Animaciones para el texto */
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subtitleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mantener los elementos flotantes pero ajustar su posición */
+.contacto-hero-visual {
+    position: relative;
+    height: 300px;
+    margin-top: 3rem;
+}
+
+.floating-elements {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.floating-element {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--gold-color);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.element-1 {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.element-2 {
+    top: 40%;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.element-3 {
+    top: 70%;
+    left: 30%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+    33% { transform: translateY(-15px) rotate(3deg) scale(1.05); }
+    66% { transform: translateY(10px) rotate(-2deg) scale(0.95); }
+}
+
+/* Responsive para el hero de contacto */
+@media (max-width: 768px) {
+    .contacto-hero {
+        padding: 8rem 0 4rem;
+        min-height: 60vh;
+    }
+    
+    .contacto-hero-text .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .contacto-hero-text .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .contacto-hero-visual {
+        height: 200px;
+        margin-top: 2rem;
+    }
+    
+    .floating-element {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacto-hero {
+        padding: 6rem 0 3rem;
+    }
+    
+    .contacto-hero-text .hero-title {
+        font-size: 2rem;
+    }
+    
+    .contacto-hero-text .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .floating-element {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
 }
 
 /* Responsive */
@@ -583,4 +791,193 @@
         height: 60px;
         font-size: 1.5rem;
     }
+}
+
+/* ===== MODO OSCURO PARA CONTACTO ===== */
+body.dark-mode .contacto-hero {
+    background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') !important;
+}
+
+body.dark-mode .hero-overlay {
+    background: linear-gradient(45deg, 
+        rgba(15, 23, 42, 0.9) 0%, 
+        rgba(30, 41, 59, 0.8) 50%, 
+        rgba(51, 65, 85, 0.7) 100%);
+    backdrop-filter: blur(3px);
+}
+
+body.dark-mode .contact-cards-section {
+    background: #1e293b;
+}
+
+body.dark-mode .contact-card {
+    background: #334155;
+    border-color: #475569;
+    color: #e2e8f0;
+}
+
+body.dark-mode .contact-card h3 {
+    color: #60a5fa;
+}
+
+body.dark-mode .contact-card p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .contact-number,
+body.dark-mode .contact-email {
+    color: #60a5fa;
+}
+
+body.dark-mode .contact-hours {
+    color: #94a3b8;
+}
+
+body.dark-mode .contact-form-section {
+    background: #1e293b;
+}
+
+body.dark-mode .form-container {
+    background: #334155;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .form-header {
+    background: linear-gradient(135deg, #1e40af, #3730a3);
+}
+
+body.dark-mode .contact-form {
+    background: #334155;
+}
+
+body.dark-mode .form-group label {
+    color: #e2e8f0;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea {
+    background: #475569;
+    border-color: #64748b;
+    color: #e2e8f0;
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group select:focus,
+body.dark-mode .form-group textarea:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+body.dark-mode .input-icon {
+    color: #60a5fa;
+}
+
+body.dark-mode .checkbox-label {
+    color: #cbd5e1;
+}
+
+body.dark-mode .map-section {
+    background: #1e293b;
+}
+
+body.dark-mode .section-header h2 {
+    color: #60a5fa;
+}
+
+body.dark-mode .section-header p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .google-map {
+    background: #475569;
+}
+
+body.dark-mode .map-overlay {
+    background: #334155;
+    color: #e2e8f0;
+}
+
+body.dark-mode .location-info h3 {
+    color: #60a5fa;
+}
+
+body.dark-mode .detail-item {
+    color: #cbd5e1;
+}
+
+body.dark-mode .detail-item i {
+    color: #60a5fa;
+}
+
+body.dark-mode .faq-section {
+    background: #1e293b;
+}
+
+body.dark-mode .faq-item {
+    border-color: #475569;
+    background: #334155;
+}
+
+body.dark-mode .faq-question {
+    background: #475569;
+    color: #e2e8f0;
+}
+
+body.dark-mode .faq-question:hover {
+    background: #4b5563;
+}
+
+body.dark-mode .faq-question h4 {
+    color: #60a5fa;
+}
+
+body.dark-mode .faq-answer {
+    color: #cbd5e1;
+}
+
+body.dark-mode .cta-contact {
+    background: linear-gradient(135deg, #1e40af, #3730a3);
+}
+
+/* Asegurar que los textos en modo oscuro sean legibles */
+body.dark-mode .es-lang,
+body.dark-mode .en-lang {
+    color: inherit;
+}
+
+/* Botones en modo oscuro */
+body.dark-mode .btn-secondary {
+    background: transparent;
+    color: #e2e8f0;
+    border-color: #e2e8f0;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+/* Efectos hover en modo oscuro */
+body.dark-mode .contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    border-color: #60a5fa;
+}
+
+/* Placeholders en modo oscuro */
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+/* Select en modo oscuro */
+body.dark-mode .form-group select {
+    color: #e2e8f0;
+    background: #475569 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2360a5fa' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e") no-repeat right 0.75rem center/16px 12px;
+}
+
+body.dark-mode .form-group select option {
+    background: #475569;
+    color: #e2e8f0;
 }
