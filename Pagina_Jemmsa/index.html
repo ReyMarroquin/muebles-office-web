@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ley Silla - Calidad y Confianza</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
+
+        <!-- HEADER CORREGIDO - SOLO UN BOTÓN -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <!-- SOLO ESTE BOTÓN FUNCIONAL -->
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <img src="leySilla.png" alt="Ley Silla Logo">
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active es-lang">Inicio</a>
+                        <a href="index.html" class="active en-lang">Home</a></li>
+                    <li><a href="Blog Ley Silla.html" class="es-lang">Blog Ley Silla</a>
+                        <a href="Blog Ley Silla.html" class="en-lang">Chair Law Blog</a></li>
+                    <li><a href="Nosotros.html" class="es-lang">Nosotros</a>
+                        <a href="Nosotros.html" class="en-lang">us</a></li>
+                    <li><a href="catalogo.html" class="es-lang">Catálogo</a>
+                        <a href="catalogo.html" class="en-lang">Catalog</a></li>
+                    <li><a href="contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="index.html" class="active">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalogo.html">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="Blog Ley Silla.html">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Nosotros.html">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#empresas-obligadas">
+                                <i class="fas fa-building"></i>
+                                <span class="es-lang">Empresas Obligadas</span>
+                                <span class="en-lang">Required Companies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#beneficios">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="es-lang">Beneficios</span>
+                                <span class="en-lang">Benefits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#multas">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="es-lang">Multas y Sanciones</span>
+                                <span class="en-lang">Fines and Penalties</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- HERO SECTION -->
+            <section class="hero-ley-silla">
+                <div class="hero-ley-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title es-lang">Ley Silla</h1>
+                        <h1 class="hero-title en-lang">Chair Law</h1>
+                        <p class="hero-subtitle es-lang">
+                            Calidad y confianza en cada asiento. Descubre nuestra exclusiva colección de sillas diseñadas para tu comodidad y estilo.
+                        </p>
+                        <p class="hero-subtitle en-lang">
+                            Quality and trust in every seat. Discover our exclusive collection of chairs designed for your comfort and style.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="catalogo.html" class="btn btn-primary btn-large es-lang">Ver Catálogo</a>
+                            <a href="catalogo.html" class="btn btn-primary btn-large en-lang">View Catalog</a>
+                            <a href="ley-silla.html" class="btn btn-secondary btn-large es-lang">Saber sobre Ley Silla</a>
+                            <a href="ley-silla.html" class="btn btn-secondary btn-large en-lang">About Chair Law</a>
+                        </div>
+                    </div>
+
+                    <div class="hero-image">
+                        <div class="law-badge">
+                            <i class="fas fa-chair"></i>
+                            <span class="es-lang">Comodidad Garantizada</span>
+                            <span class="en-lang">Comfort Guaranteed</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EMPRESAS OBLIGADAS -->
+            <section class="section-padding" id="empresas-obligadas">
+                <div class="container-sm">
+
+                    <div class="encabezado-cumplimiento">
+                        <div class="badge-legal-profesional">
+                            <i class="fas fa-balance-scale"></i>
+                            <span class="es-lang">CUMPLIMIENTO LEGAL</span>
+                            <span class="en-lang">LEGAL COMPLIANCE</span>
+                        </div>
+                        
+                        <h2 class="titulo-cumplimiento es-lang">¿Tu empresa debe cumplir?</h2>
+                        <h2 class="titulo-cumplimiento en-lang">Does your company need to comply?</h2>
+                        
+                        <div class="contenido-cumplimiento">
+                            <div class="texto-principal-cumplimiento">
+                                <p class="lead-text es-lang">Si tu empresa forma parte del sector servicios, comercio o centros de trabajo</p>
+                                <p class="lead-text en-lang">If your company is part of the service sector, commerce, or workplaces</p>
+                                
+                                <div class="separador"><span class="es-lang">O</span><span class="en-lang">OR</span></div>
+                                
+                                <div class="texto-secundario">
+                                    <p class="subtext es-lang">si la naturaleza de tus operaciones implica que los trabajadores</p>
+                                    <p class="subtext en-lang">if the nature of your operations implies that workers</p>
+                                    <p class="highlight-text es-lang">pasen largos periodos de pie, esta ley aplica para ti, como por ejemplo:</p>
+                                    <p class="highlight-text en-lang">spend long periods standing, this law applies to you, for example:</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="empresas-grid">
+
+                        <div class="empresa-card">
+                            <div class="empresa-icon"><i class="fas fa-shopping-cart"></i></div>
+                            <h3 class="es-lang">Tiendas departamentales o de autoservicio</h3>
+                            <h3 class="en-lang">Department stores or self-service stores</h3>
+                            <p class="es-lang">Supermercados, centros comerciales y tiendas de retail</p>
+                            <p class="en-lang">Supermarkets, shopping centers and retail stores</p>
+                        </div>
+
+                        <div class="empresa-card">
+                            <div class="empresa-icon"><i class="fas fa-university"></i></div>
+                            <h3 class="es-lang">Bancos y casas de cambio</h3>
+                            <h3 class="en-lang">Banks and exchange houses</h3>
+                            <p class="es-lang">Instituciones financieras y servicios bancarios</p>
+                            <p class="en-lang">Financial institutions and banking services</p>
+                        </div>
+
+                        <div class="empresa-card">
+                            <div class="empresa-icon"><i class="fas fa-store"></i></div>
+                            <h3 class="es-lang">Supermercados y tiendas de conveniencia</h3>
+                            <h3 class="en-lang">Supermarkets and convenience stores</h3>
+                            <p class="es-lang">Establecimientos de venta de alimentos y productos</p>
+                            <p class="en-lang">Food and product retail establishments</p>
+                        </div>
+
+                        <div class="empresa-card">
+                            <div class="empresa-icon"><i class="fas fa-plane-departure"></i></div>
+                            <h3 class="es-lang">Estaciones de transporte o aeropuertos</h3>
+                            <h3 class="en-lang">Transport stations or airports</h3>
+                            <p class="es-lang">Terminales y centros de transporte público</p>
+                            <p class="en-lang">Terminals and public transport centers</p>
+                        </div>
+
+                        <div class="empresa-card">
+                            <div class="empresa-icon"><i class="fas fa-utensils"></i></div>
+                            <h3 class="es-lang">Restaurantes, cafeterías y bares</h3>
+                            <h3 class="en-lang">Restaurants, cafeterias and bars</h3>
+                            <p class="es-lang">Establecimientos de comida y bebida</p>
+                            <p class="en-lang">Food and beverage establishments</p>
+                        </div>
+
+                        <div class="empresa-card">
+                            <div class="empresa-icon"><i class="fas fa-briefcase-medical"></i></div>
+                            <h3 class="es-lang">Recepción en oficinas, hospitales o centros médicos</h3>
+                            <h3 class="en-lang">Reception in offices, hospitals or medical centers</h3>
+                            <p class="es-lang">Áreas de atención al público en servicios de salud</p>
+                            <p class="en-lang">Public service areas in health services</p>
+                        </div>
+
+                    </div>
+
+                    <div class="cta-empresas">
+                        <h3 class="es-lang">¿Tu empresa está en esta lista?</h3>
+                        <h3 class="en-lang">Is your company on this list?</h3>
+                        <p class="es-lang">No esperes a las multas, cumple con la ley y protege a tus empleados</p>
+                        <p class="en-lang">Don't wait for fines, comply with the law and protect your employees</p>
+                        <a href="contactanos.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-search"></i> 
+                            <span class="es-lang">Verificar Obligación</span>
+                            <span class="en-lang">Verify Obligation</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BENEFICIOS Y RIESGOS -->
+            <section class="beneficios-riesgos">
+                <div class="container-sm">
+                    <div class="br-grid">
+
+                        <!-- BENEFICIOS -->
+                        <div class="beneficios-card">
+                            <div class="br-header">
+                                <i class="fas fa-check-circle"></i>
+                                <h2 class="es-lang">BENEFICIOS DE CUMPLIR</h2>
+                                <h2 class="en-lang">BENEFITS OF COMPLYING</h2>
+                            </div>
+                            <div class="br-content">
+                                <div class="beneficio-item">
+                                    <i class="fas fa-heart"></i>
+                                    <div>
+                                        <h4 class="es-lang">Mejorar la salud de los trabajadores</h4>
+                                        <h4 class="en-lang">Improve worker health</h4>
+                                        <p class="es-lang">Reduce problemas de espalda, circulación y fatiga</p>
+                                        <p class="en-lang">Reduces back problems, circulation issues and fatigue</p>
+                                    </div>
+                                </div>
+
+                                <div class="beneficio-item">
+                                    <i class="fas fa-chart-line"></i>
+                                    <div>
+                                        <h4 class="es-lang">Aumento de productividad</h4>
+                                        <h4 class="en-lang">Increased productivity</h4>
+                                        <p class="es-lang">Empleados más cómodos = mayor eficiencia</p>
+                                        <p class="en-lang">More comfortable employees = greater efficiency</p>
+                                    </div>
+                                </div>
+
+                                <div class="beneficio-item">
+                                    <i class="fas fa-receipt"></i>
+                                    <div>
+                                        <h4 class="es-lang">Deducción Fiscal</h4>
+                                        <h4 class="en-lang">Tax Deduction</h4>
+                                        <p class="es-lang">Inversión deducible de impuestos</p>
+                                        <p class="en-lang">Tax-deductible investment</p>
+                                    </div>
+                                </div>
+
+                                <div class="beneficio-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <div>
+                                        <h4 class="es-lang">Protección legal</h4>
+                                        <h4 class="en-lang">Legal protection</h4>
+                                        <p class="es-lang">Evita demandas y conflictos laborales</p>
+                                        <p class="en-lang">Avoids lawsuits and labor conflicts</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RIESGOS -->
+                        <div class="riesgos-card">
+                            <div class="br-header">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <h2 class="es-lang">¿QUÉ PASA SI NO CUMPLES?</h2>
+                                <h2 class="en-lang">WHAT HAPPENS IF YOU DON'T COMPLY?</h2>
+                            </div>
+                            <div class="br-content">
+
+                                <div class="riesgo-item">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    <div>
+                                        <h4 class="es-lang">Multas económicas</h4>
+                                        <h4 class="en-lang">Economic fines</h4>
+                                        <p class="es-lang">De 250 a 2,500 UMAs ($27,000 hasta $275,000 MXN)</p>
+                                        <p class="en-lang">From 250 to 2,500 UMAs ($27,000 to $275,000 MXN)</p>
+                                    </div>
+                                </div>
+
+                                <div class="riesgo-item">
+                                    <i class="fas fa-ban"></i>
+                                    <div>
+                                        <h4 class="es-lang">Suspensión temporal</h4>
+                                        <h4 class="en-lang">Temporary suspension</h4>
+                                        <p class="es-lang">Posible cierre temporal de operaciones</p>
+                                        <p class="en-lang">Possible temporary closure of operations</p>
+                                    </div>
+                                </div>
+
+                                <div class="riesgo-item">
+                                    <i class="fas fa-gavel"></i>
+                                    <div>
+                                        <h4 class="es-lang">Litigios laborales</h4>
+                                        <h4 class="en-lang">Labor litigation</h4>
+                                        <p class="es-lang">Riesgo de quejas formales y demandas</p>
+                                        <p class="en-lang">Risk of formal complaints and lawsuits</p>
+                                    </div>
+                                </div>
+
+                                <div class="riesgo-item">
+                                    <i class="fas fa-building"></i>
+                                    <div>
+                                        <h4 class="es-lang">Daño reputacional</h4>
+                                        <h4 class="en-lang">Reputational damage</h4>
+                                        <p class="es-lang">Impacto negativo ante empleados, clientes e inversionistas</p>
+                                        <p class="en-lang">Negative impact on employees, customers and investors</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
+                        <li><a href="Blog Ley Silla.html" class="es-lang">Blog Ley Silla</a><a href="Blog Ley Silla.html" class="en-lang">Chair Law Blog</a></li>
+                        <li><a href="Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="catalogo.html" class="es-lang">Catálogo</a><a href="catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="contactanos.html" class="es-lang">Contáctanos</a><a href="contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </div> <!-- END WRAPPER -->
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <!-- Botón flotante del chatbot -->
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <!-- Ventana del Chatbot -->
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Mensajes aparecerán aquí -->
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                    <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                    <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                    <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/sidebar.js"></script>
+
+    <script>
+        // JavaScript mejorado para la barra lateral
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            
+            function toggleSidebar() {
+                sidebar.classList.toggle('active');
+                sidebarOverlay.classList.toggle('active');
+                
+                if (sidebar.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            }
+            
+            if (sidebarToggle) {
+                sidebarToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleSidebar();
+                });
+            }
+            
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', function() {
+                    toggleSidebar();
+                });
+            }
+            
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 1024) {
+                        toggleSidebar();
+                    }
+                });
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                    toggleSidebar();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
