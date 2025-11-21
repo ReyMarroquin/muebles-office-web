@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Blog - Ley Silla</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="blog-page">
+
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <!-- Botón para abrir sidebar -->
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <img src="Imagenes/leySilla.png" alt="Ley Silla Logo">
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="es-lang">Inicio</a>
+                        <a href="index.html" class="en-lang">Home</a></li>
+                    <li><a href="Blog.html" class="active es-lang">Blog</a>
+                        <a href="Blog.html" class="active en-lang">Blog</a></li>
+                    <li><a href="Nosotros.html" class="es-lang">Nosotros</a>
+                        <a href="Nosotros.html" class="en-lang">Us</a></li>
+                    <li><a href="catalogo.html" class="es-lang">Catálogo</a>
+                        <a href="catalogo.html" class="en-lang">Catalog</a></li>
+                    <li><a href="contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="index.html">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalogo.html">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ley-silla.html">
+                                <i class="fas fa-gavel"></i>
+                                <span class="es-lang">Ley Silla</span>
+                                <span class="en-lang">Chair Law</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Blog.html" class="active">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Nosotros.html">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#empresas-obligadas">
+                                <i class="fas fa-building"></i>
+                                <span class="es-lang">Empresas Obligadas</span>
+                                <span class="en-lang">Required Companies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#beneficios">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="es-lang">Beneficios</span>
+                                <span class="en-lang">Benefits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#multas">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="es-lang">Multas y Sanciones</span>
+                                <span class="en-lang">Fines and Penalties</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- HERO BLOG -->
+            <section class="blog-hero">
+                <div class="hero-background">
+                    <div class="hero-pattern"></div>
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="container-sm">
+                    <div class="blog-hero-content">
+                        <div class="blog-hero-text">
+                            <h1 class="hero-title es-lang">Blog Ley Silla</h1>
+                            <h1 class="hero-title en-lang">Chair Law Blog</h1>
+                            <p class="hero-subtitle es-lang">
+                                Información actualizada sobre la Ley Silla, normativas laborales y ergonomía en el trabajo
+                            </p>
+                            <p class="hero-subtitle en-lang">
+                                Updated information about Chair Law, labor regulations and workplace ergonomics
+                            </p>
+                            <div class="blog-hero-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">50+</span>
+                                    <span class="stat-label es-lang">Artículos</span>
+                                    <span class="stat-label en-lang">Articles</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">5K+</span>
+                                    <span class="stat-label es-lang">Lectores</span>
+                                    <span class="stat-label en-lang">Readers</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">100%</span>
+                                    <span class="stat-label es-lang">Información Verificada</span>
+                                    <span class="stat-label en-lang">Verified Information</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-hero-visual">
+                            <div class="floating-elements">
+                                <div class="floating-element element-1">
+                                    <i class="fas fa-newspaper"></i>
+                                </div>
+                                <div class="floating-element element-2">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="floating-element element-3">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN DE BÚSQUEDA Y FILTROS -->
+            <section class="blog-search-section">
+                <div class="container-sm">
+                    <div class="search-filter-container">
+                        <div class="search-box">
+                            <input type="text" id="blogSearch" placeholder="Buscar artículos..." class="es-lang">
+                            <input type="text" id="blogSearch" placeholder="Search articles..." class="en-lang">
+                            <button class="search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <div class="filter-options">
+                            <select id="categoryFilter" class="filter-select">
+                                <option value="" class="es-lang">Todas las categorías</option>
+                                <option value="" class="en-lang">All categories</option>
+                                <option value="ley-silla" class="es-lang">Ley Silla</option>
+                                <option value="ley-silla" class="en-lang">Chair Law</option>
+                                <option value="ergonomia" class="es-lang">Ergonomía</option>
+                                <option value="ergonomia" class="en-lang">Ergonomics</option>
+                                <option value="normativas" class="es-lang">Normativas</option>
+                                <option value="normativas" class="en-lang">Regulations</option>
+                                <option value="multas" class="es-lang">Multas y Sanciones</option>
+                                <option value="multas" class="en-lang">Fines and Penalties</option>
+                                <option value="implementacion" class="es-lang">Implementación</option>
+                                <option value="implementacion" class="en-lang">Implementation</option>
+                            </select>
+                            <select id="dateFilter" class="filter-select">
+                                <option value="" class="es-lang">Más recientes</option>
+                                <option value="" class="en-lang">Most recent</option>
+                                <option value="oldest" class="es-lang">Más antiguos</option>
+                                <option value="oldest" class="en-lang">Oldest</option>
+                                <option value="popular" class="es-lang">Más populares</option>
+                                <option value="popular" class="en-lang">Most popular</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ARTÍCULOS DESTACADOS -->
+            <section class="featured-posts-section">
+                <div class="container-sm">
+                    <div class="section-header">
+                        <h2 class="es-lang">Artículos Destacados</h2>
+                        <h2 class="en-lang">Featured Articles</h2>
+                        <p class="es-lang">Los contenidos más relevantes sobre la Ley Silla y ergonomía laboral</p>
+                        <p class="en-lang">The most relevant content about Chair Law and workplace ergonomics</p>
+                    </div>
+
+                    <div class="featured-posts-grid">
+                        <article class="featured-post-card">
+                            <div class="post-image">
+                                <img src="Imagenes/ley-silla-implementacion.jpg" alt="Implementación Ley Silla">
+                                <div class="post-category category-ley-silla">
+                                    <span class="es-lang">Ley Silla</span>
+                                    <span class="en-lang">Chair Law</span>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date">15 Mar, 2025</span>
+                                    <span class="post-reading-time es-lang">5 min lectura</span>
+                                    <span class="post-reading-time en-lang">5 min read</span>
+                                </div>
+                                <h3 class="post-title es-lang">Guía Completa para Implementar la Ley Silla en tu Empresa</h3>
+                                <h3 class="post-title en-lang">Complete Guide to Implement Chair Law in Your Company</h3>
+                                <p class="post-excerpt es-lang">
+                                    Descubre los pasos esenciales para cumplir con la Ley Silla y crear un entorno laboral más saludable para tus empleados.
+                                </p>
+                                <p class="post-excerpt en-lang">
+                                    Discover the essential steps to comply with Chair Law and create a healthier work environment for your employees.
+                                </p>
+                                <div class="post-footer">
+                                    <div class="post-author">
+                                        <div class="author-avatar">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <div class="author-info">
+                                            <span class="author-name">Lic. Ana Martínez</span>
+                                            <span class="author-role es-lang">Especialista en Derecho Laboral</span>
+                                            <span class="author-role en-lang">Labor Law Specialist</span>
+                                        </div>
+                                    </div>
+                                    <a href="articulo-guia-implementacion.html" class="read-more-btn">
+                                        <span class="es-lang">Leer más</span>
+                                        <span class="en-lang">Read more</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="featured-post-card">
+                            <div class="post-image">
+                                <img src="Imagenes/multas-sanciones.jpg" alt="Multas y Sanciones">
+                                <div class="post-category category-multas">
+                                    <span class="es-lang">Multas</span>
+                                    <span class="en-lang">Fines</span>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date">10 Mar, 2025</span>
+                                    <span class="post-reading-time es-lang">4 min lectura</span>
+                                    <span class="post-reading-time en-lang">4 min read</span>
+                                </div>
+                                <h3 class="post-title es-lang">Actualización 2025: Multas por Incumplimiento de la Ley Silla</h3>
+                                <h3 class="post-title en-lang">2025 Update: Fines for Non-Compliance with Chair Law</h3>
+                                <p class="post-excerpt es-lang">
+                                    Conoce las nuevas sanciones económicas y administrativas para empresas que no cumplan con la normativa de sillas ergonómicas.
+                                </p>
+                                <p class="post-excerpt en-lang">
+                                    Learn about the new economic and administrative penalties for companies that do not comply with ergonomic chair regulations.
+                                </p>
+                                <div class="post-footer">
+                                    <div class="post-author">
+                                        <div class="author-avatar">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <div class="author-info">
+                                            <span class="author-name">Dr. Carlos Rodríguez</span>
+                                            <span class="author-role es-lang">Consultor en Seguridad Laboral</span>
+                                            <span class="author-role en-lang">Workplace Safety Consultant</span>
+                                        </div>
+                                    </div>
+                                    <a href="articulo-multas-2025.html" class="read-more-btn">
+                                        <span class="es-lang">Leer más</span>
+                                        <span class="en-lang">Read more</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LISTA DE ARTÍCULOS -->
+            <section class="blog-posts-section">
+                <div class="container-sm">
+                    <div class="section-header">
+                        <h2 class="es-lang">Todos los Artículos</h2>
+                        <h2 class="en-lang">All Articles</h2>
+                        <p class="es-lang">Explora nuestra colección completa de artículos sobre la Ley Silla</p>
+                        <p class="en-lang">Explore our complete collection of articles about Chair Law</p>
+                    </div>
+
+                    <div class="blog-posts-grid">
+                        <!-- Artículo 1 -->
+                        <article class="blog-post-card">
+                            <div class="post-image">
+                                <img src="Imagenes/ergonomia-beneficios.jpg" alt="Beneficios Ergonomía">
+                                <div class="post-category category-ergonomia">
+                                    <span class="es-lang">Ergonomía</span>
+                                    <span class="en-lang">Ergonomics</span>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date">5 Mar, 2025</span>
+                                    <span class="post-reading-time es-lang">3 min lectura</span>
+                                    <span class="post-reading-time en-lang">3 min read</span>
+                                </div>
+                                <h3 class="post-title es-lang">5 Beneficios de la Ergonomía Laboral que No Conocías</h3>
+                                <h3 class="post-title en-lang">5 Workplace Ergonomics Benefits You Didn't Know</h3>
+                                <p class="post-excerpt es-lang">
+                                    Más allá del cumplimiento legal, la ergonomía mejora la productividad y reduce el ausentismo laboral.
+                                </p>
+                                <p class="post-excerpt en-lang">
+                                    Beyond legal compliance, ergonomics improves productivity and reduces workplace absenteeism.
+                                </p>
+                                <div class="post-footer">
+                                    <div class="post-stats">
+                                        <span class="post-views">
+                                            <i class="fas fa-eye"></i> 1.2K
+                                        </span>
+                                        <span class="post-likes">
+                                            <i class="fas fa-heart"></i> 45
+                                        </span>
+                                    </div>
+                                    <a href="articulo-beneficios-ergonomia.html" class="read-more-btn">
+                                        <span class="es-lang">Leer</span>
+                                        <span class="en-lang">Read</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Artículo 2 -->
+                        <article class="blog-post-card">
+                            <div class="post-image">
+                                <img src="Imagenes/empresas-obligadas.jpg" alt="Empresas Obligadas">
+                                <div class="post-category category-ley-silla">
+                                    <span class="es-lang">Ley Silla</span>
+                                    <span class="en-lang">Chair Law</span>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date">28 Feb, 2025</span>
+                                    <span class="post-reading-time es-lang">6 min lectura</span>
+                                    <span class="post-reading-time en-lang">6 min read</span>
+                                </div>
+                                <h3 class="post-title es-lang">¿Tu Empresa Está Obligada a Cumplir la Ley Silla? Descúbrelo Aquí</h3>
+                                <h3 class="post-title en-lang">Is Your Company Required to Comply with Chair Law? Find Out Here</h3>
+                                <p class="post-excerpt es-lang">
+                                    Análisis detallado de los tipos de empresas y sectores que deben implementar la Ley Silla según la normativa vigente.
+                                </p>
+                                <p class="post-excerpt en-lang">
+                                    Detailed analysis of the types of companies and sectors that must implement Chair Law according to current regulations.
+                                </p>
+                                <div class="post-footer">
+                                    <div class="post-stats">
+                                        <span class="post-views">
+                                            <i class="fas fa-eye"></i> 2.1K
+                                        </span>
+                                        <span class="post-likes">
+                                            <i class="fas fa-heart"></i> 89
+                                        </span>
+                                    </div>
+                                    <a href="articulo-empresas-obligadas.html" class="read-more-btn">
+                                        <span class="es-lang">Leer</span>
+                                        <span class="en-lang">Read</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Artículo 3 -->
+                        <article class="blog-post-card">
+                            <div class="post-image">
+                                <img src="Imagenes/sillas-ergonomicas.jpg" alt="Sillas Ergonómicas">
+                                <div class="post-category category-implementacion">
+                                    <span class="es-lang">Implementación</span>
+                                    <span class="en-lang">Implementation</span>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date">20 Feb, 2025</span>
+                                    <span class="post-reading-time es-lang">4 min lectura</span>
+                                    <span class="post-reading-time en-lang">4 min read</span>
+                                </div>
+                                <h3 class="post-title es-lang">Cómo Elegir las Sillas Ergonómicas Correctas para tu Empresa</h3>
+                                <h3 class="post-title en-lang">How to Choose the Right Ergonomic Chairs for Your Company</h3>
+                                <p class="post-excerpt es-lang">
+                                    Guía práctica para seleccionar sillas que cumplan con la normativa y se adapten a las necesidades específicas de tus trabajadores.
+                                </p>
+                                <p class="post-excerpt en-lang">
+                                    Practical guide to select chairs that comply with regulations and adapt to the specific needs of your workers.
+                                </p>
+                                <div class="post-footer">
+                                    <div class="post-stats">
+                                        <span class="post-views">
+                                            <i class="fas fa-eye"></i> 1.8K
+                                        </span>
+                                        <span class="post-likes">
+                                            <i class="fas fa-heart"></i> 67
+                                        </span>
+                                    </div>
+                                    <a href="articulo-elegir-sillas.html" class="read-more-btn">
+                                        <span class="es-lang">Leer</span>
+                                        <span class="en-lang">Read</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Artículo 4 -->
+                        <article class="blog-post-card">
+                            <div class="post-image">
+                                <img src="Imagenes/casos-exito.jpg" alt="Casos de Éxito">
+                                <div class="post-category category-implementacion">
+                                    <span class="es-lang">Implementación</span>
+                                    <span class="en-lang">Implementation</span>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date">15 Feb, 2025</span>
+                                    <span class="post-reading-time es-lang">5 min lectura</span>
+                                    <span class="post-reading-time en-lang">5 min read</span>
+                                </div>
+                                <h3 class="post-title es-lang">Casos de Éxito: Empresas que Han Implementado la Ley Silla</h3>
+                                <h3 class="post-title en-lang">Success Stories: Companies That Have Implemented Chair Law</h3>
+                                <p class="post-excerpt es-lang">
+                                    Conoce experiencias reales de empresas que han mejorado su ambiente laboral y productividad mediante la implementación de la Ley Silla.
+                                </p>
+                                <p class="post-excerpt en-lang">
+                                    Learn real experiences from companies that have improved their work environment and productivity through Chair Law implementation.
+                                </p>
+                                <div class="post-footer">
+                                    <div class="post-stats">
+                                        <span class="post-views">
+                                            <i class="fas fa-eye"></i> 2.5K
+                                        </span>
+                                        <span class="post-likes">
+                                            <i class="fas fa-heart"></i> 112
+                                        </span>
+                                    </div>
+                                    <a href="articulo-casos-exito.html" class="read-more-btn">
+                                        <span class="es-lang">Leer</span>
+                                        <span class="en-lang">Read</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Artículo 5 -->
+                        <article class="blog-post-card">
+                            <div class="post-image">
+                                <img src="Imagenes/normativas-actualizadas.jpg" alt="Normativas Actualizadas">
+                                <div class="post-category category-normativas">
+                                    <span class="es-lang">Normativas</span>
+                                    <span class="en-lang">Regulations</span>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date">10 Feb, 2025</span>
+                                    <span class="post-reading-time es-lang">7 min lectura</span>
+                                    <span class="post-reading-time en-lang">7 min read</span>
+                                </div>
+                                <h3 class="post-title es-lang">Cambios en la Normativa: Lo que Debes Saber para 2025</h3>
+                                <h3 class="post-title en-lang">Regulatory Changes: What You Need to Know for 2025</h3>
+                                <p class="post-excerpt es-lang">
+                                    Resumen de las modificaciones más importantes en la legislación sobre ergonomía laboral y derechos de los trabajadores.
+                                </p>
+                                <p class="post-excerpt en-lang">
+                                    Summary of the most important changes in legislation on workplace ergonomics and workers' rights.
+                                </p>
+                                <div class="post-footer">
+                                    <div class="post-stats">
+                                        <span class="post-views">
+                                            <i class="fas fa-eye"></i> 3.2K
+                                        </span>
+                                        <span class="post-likes">
+                                            <i class="fas fa-heart"></i> 156
+                                        </span>
+                                    </div>
+                                    <a href="articulo-normativas-2025.html" class="read-more-btn">
+                                        <span class="es-lang">Leer</span>
+                                        <span class="en-lang">Read</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Artículo 6 -->
+                        <article class="blog-post-card">
+                            <div class="post-image">
+                                <img src="Imagenes/inspecciones-stps.jpg" alt="Inspecciones STPS">
+                                <div class="post-category category-multas">
+                                    <span class="es-lang">Multas</span>
+                                    <span class="en-lang">Fines</span>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date">5 Feb, 2025</span>
+                                    <span class="post-reading-time es-lang">4 min lectura</span>
+                                    <span class="post-reading-time en-lang">4 min read</span>
+                                </div>
+                                <h3 class="post-title es-lang">Preparándose para una Inspección de la STPS: Guía Práctica</h3>
+                                <h3 class="post-title en-lang">Preparing for a STPS Inspection: Practical Guide</h3>
+                                <p class="post-excerpt es-lang">
+                                    Consejos y checklist para estar preparado cuando la Secretaría del Trabajo realice una inspección sobre cumplimiento de la Ley Silla.
+                                </p>
+                                <p class="post-excerpt en-lang">
+                                    Tips and checklist to be prepared when the Labor Department conducts an inspection on Chair Law compliance.
+                                </p>
+                                <div class="post-footer">
+                                    <div class="post-stats">
+                                        <span class="post-views">
+                                            <i class="fas fa-eye"></i> 2.8K
+                                        </span>
+                                        <span class="post-likes">
+                                            <i class="fas fa-heart"></i> 98
+                                        </span>
+                                    </div>
+                                    <a href="articulo-inspecciones-stps.html" class="read-more-btn">
+                                        <span class="es-lang">Leer</span>
+                                        <span class="en-lang">Read</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- PAGINACIÓN -->
+                    <div class="pagination-container">
+                        <nav class="pagination">
+                            <button class="pagination-btn active">1</button>
+                            <button class="pagination-btn">2</button>
+                            <button class="pagination-btn">3</button>
+                            <button class="pagination-btn pagination-next">
+                                <span class="es-lang">Siguiente</span>
+                                <span class="en-lang">Next</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NEWSLETTER -->
+            <section class="newsletter-section">
+                <div class="container-sm">
+                    <div class="newsletter-container">
+                        <div class="newsletter-content">
+                            <h2 class="es-lang">Mantente Informado</h2>
+                            <h2 class="en-lang">Stay Informed</h2>
+                            <p class="es-lang">Suscríbete a nuestro newsletter y recibe las últimas actualizaciones sobre la Ley Silla directamente en tu correo</p>
+                            <p class="en-lang">Subscribe to our newsletter and receive the latest updates about Chair Law directly in your email</p>
+                        </div>
+                        <div class="newsletter-form">
+                            <form class="subscribe-form" id="newsletterForm">
+                                <div class="form-group">
+                                    <input type="email" id="newsletterEmail" placeholder="Tu correo electrónico" class="es-lang" required>
+                                    <input type="email" id="newsletterEmail" placeholder="Your email address" class="en-lang" required>
+                                    <button type="submit" class="btn btn-primary">
+                                        <span class="es-lang">Suscribirse</span>
+                                        <span class="en-lang">Subscribe</span>
+                                    </button>
+                                </div>
+                                <div class="form-options">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="privacy" required>
+                                        <span class="checkmark"></span>
+                                        <span class="es-lang">Acepto la política de privacidad</span>
+                                        <span class="en-lang">I accept the privacy policy</span>
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
+                        <li><a href="Blog.html" class="es-lang">Blog</a><a href="Blog.html" class="en-lang">Chair Law Blog</a></li>
+                         <li><a href="Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="catalogo.html" class="es-lang">Catálogo</a><a href="catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="contactanos.html" class="es-lang">Contáctanos</a><a href="contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </div> <!-- END WRAPPER -->
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <!-- Botón flotante del chatbot -->
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <!-- Ventana del Chatbot -->
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Mensajes aparecerán aquí -->
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                    <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                    <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                    <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/blog.js"></script>
+
+    <script>
+        // JavaScript para la barra lateral
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            
+            function toggleSidebar() {
+                sidebar.classList.toggle('active');
+                sidebarOverlay.classList.toggle('active');
+                
+                if (sidebar.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            }
+            
+            if (sidebarToggle) {
+                sidebarToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleSidebar();
+                });
+            }
+            
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', function() {
+                    toggleSidebar();
+                });
+            }
+            
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 1024) {
+                        toggleSidebar();
+                    }
+                });
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                    toggleSidebar();
+                }
+            });
+
+            // JavaScript para funcionalidades del blog
+            const searchBox = document.getElementById('blogSearch');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const dateFilter = document.getElementById('dateFilter');
+            const blogPosts = document.querySelectorAll('.blog-post-card');
+            const featuredPosts = document.querySelectorAll('.featured-post-card');
+            
+            // Función para filtrar artículos
+            function filterPosts() {
+                const searchTerm = searchBox.value.toLowerCase();
+                const categoryValue = categoryFilter.value;
+                const dateValue = dateFilter.value;
+                
+                // Combinar todos los posts para filtrar
+                const allPosts = [...blogPosts, ...featuredPosts];
+                
+                allPosts.forEach(post => {
+                    const title = post.querySelector('.post-title').textContent.toLowerCase();
+                    const excerpt = post.querySelector('.post-excerpt').textContent.toLowerCase();
+                    const category = post.querySelector('.post-category span').textContent.toLowerCase();
+                    
+                    let matchesSearch = title.includes(searchTerm) || excerpt.includes(searchTerm);
+                    let matchesCategory = !categoryValue || category.includes(categoryValue);
+                    
+                    // Mostrar u ocultar según los filtros
+                    if (matchesSearch && matchesCategory) {
+                        post.style.display = 'block';
+                    } else {
+                        post.style.display = 'none';
+                    }
+                });
+            }
+            
+            // Event listeners para filtros
+            if (searchBox) {
+                searchBox.addEventListener('input', filterPosts);
+            }
+            
+            if (categoryFilter) {
+                categoryFilter.addEventListener('change', filterPosts);
+            }
+            
+            if (dateFilter) {
+                dateFilter.addEventListener('change', filterPosts);
+            }
+        });
+    </script>
+</body>
+</html>
