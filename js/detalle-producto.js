@@ -1,140 +1,130 @@
-// JavaScript para la página de detalles del producto
+// JavaScript para el carrusel automático
 document.addEventListener('DOMContentLoaded', function() {
-    // Datos de los productos
-    const productos = {
-        'ohi-46': {
-            nombre: 'OHI-46 INDUSTRIAL',
-            descripcion: 'Silla industrial pesada con estructura de acero reforzado y base cromada. Ideal para entornos de trabajo exigentes.',
-            precio: '$4,500',
-            imagen: 'https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-            caracteristicas: ['Acero Reforzado', 'Base Cromada', '140 kg Capacidad']
-        },
-        'ohi-46-aro-cromado': {
-            nombre: 'OHI-46-ARO-CROMADO',
-            descripcion: 'Versión premium con aro cromado de alta resistencia. Diseño ergonómico para jornadas prolongadas.',
-            precio: '$5,200',
-            imagen: 'https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-            caracteristicas: ['Aro Cromado', 'Ergonómico', '140 kg Capacidad', 'Mejor Soporte Lumbar']
-        },
-        'ohi-48': {
-            nombre: 'OHI-48 INDUSTRIAL',
-            descripcion: 'Modelo actualizado con mejoras en soporte lumbar y materiales de mayor durabilidad. Capacidad 150kg.',
-            precio: '$4,800',
-            imagen: 'https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-            caracteristicas: ['Soporte Lumbar', '150kg Capacidad', 'Materiales Mejorados']
+    // Elementos del carrusel
+    const carruselSlides = document.getElementById('carruselSlides');
+    const slides = document.querySelectorAll('.carrusel-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevBtn = document.getElementById('carruselPrev');
+    const nextBtn = document.getElementById('carruselNext');
+    
+    let currentSlide = 0;
+    let autoSlideInterval;
+    
+    // Función para mostrar slide específico
+    function showSlide(index) {
+        // Asegurar que el índice esté dentro del rango
+        if (index < 0) {
+            currentSlide = slides.length - 1;
+        } else if (index >= slides.length) {
+            currentSlide = 0;
+        } else {
+            currentSlide = index;
         }
-    };
-
-    // Obtener parámetros de la URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const productoParam = urlParams.get('producto') || 'ohi-46';
+        
+        // Mover el carrusel
+        carruselSlides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Actualizar indicadores
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === currentSlide);
+        });
+        
+        // Actualizar items de galería
+        const galeriaItems = document.querySelectorAll('.galeria-item');
+        galeriaItems.forEach((item, i) => {
+            item.classList.toggle('active', i === currentSlide);
+        });
+    }
     
-    // Cargar datos del producto
-    cargarProducto(productoParam);
-
-    // Galería de imágenes
+    // Función para siguiente slide
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+    
+    // Función para slide anterior
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+    
+    // Iniciar carrusel automático
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 4000); // Cambia cada 4 segundos
+    }
+    
+    // Detener carrusel automático
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+    
+    // Event listeners
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+            stopAutoSlide();
+            nextSlide();
+            startAutoSlide();
+        });
+    }
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+            stopAutoSlide();
+            prevSlide();
+            startAutoSlide();
+        });
+    }
+    
+    // Event listeners para indicadores
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', function() {
+            stopAutoSlide();
+            showSlide(index);
+            startAutoSlide();
+        });
+    });
+    
+    // Event listeners para items de galería
     const galeriaItems = document.querySelectorAll('.galeria-item');
-    const imagenPrincipal = document.getElementById('productoImagen');
+    galeriaItems.forEach((item, index) => {
+        item.addEventListener('click', function() {
+            stopAutoSlide();
+            showSlide(index);
+            startAutoSlide();
+        });
+    });
     
-    galeriaItems.forEach(item => {
+    // Pausar carrusel al hacer hover
+    const carruselContainer = document.querySelector('.carrusel-container');
+    if (carruselContainer) {
+        carruselContainer.addEventListener('mouseenter', stopAutoSlide);
+        carruselContainer.addEventListener('mouseleave', startAutoSlide);
+    }
+    
+    // Iniciar carrusel automático
+    startAutoSlide();
+    
+    // JavaScript para la galería de imágenes
+    const galeriaItemsStatic = document.querySelectorAll('.galeria-item');
+    
+    galeriaItemsStatic.forEach(item => {
         item.addEventListener('click', function() {
             const nuevaImagen = this.getAttribute('data-image');
             
             // Remover clase active de todos los items
-            galeriaItems.forEach(i => i.classList.remove('active'));
+            galeriaItemsStatic.forEach(i => i.classList.remove('active'));
             
             // Agregar clase active al item clickeado
             this.classList.add('active');
-            
-            // Cambiar imagen principal con efecto de transición
-            imagenPrincipal.style.opacity = '0';
-            setTimeout(() => {
-                imagenPrincipal.src = nuevaImagen;
-                imagenPrincipal.style.opacity = '1';
-            }, 300);
         });
     });
 
-    // Botones de ver detalles en comparativa
+    // JavaScript para cambiar entre productos
     const verDetalleBtns = document.querySelectorAll('.ver-detalle-btn');
     
     verDetalleBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const producto = this.getAttribute('data-producto');
-            cargarProducto(producto);
-            
-            // Scroll suave al inicio
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            // Aquí puedes agregar lógica para cambiar entre productos
+            console.log('Cambiar a producto:', producto);
         });
-    });
-
-    // Función para cargar datos del producto
-    function cargarProducto(productoId) {
-        const producto = productos[productoId];
-        
-        if (producto) {
-            // Actualizar elementos de la página
-            document.getElementById('productoNombre').textContent = producto.nombre.split(' ')[0];
-            document.getElementById('productoTitulo').textContent = producto.nombre;
-            document.getElementById('productoDescripcion').textContent = producto.descripcion;
-            document.getElementById('productoPrecio').textContent = producto.precio;
-            document.getElementById('productoImagen').src = producto.imagen;
-            
-            // Actualizar breadcrumb
-            document.title = `${producto.nombre} - Ley Silla`;
-            
-            // Actualizar URL sin recargar la página
-            const nuevaURL = `${window.location.pathname}?producto=${productoId}`;
-            window.history.replaceState({}, '', nuevaURL);
-            
-            // Actualizar botones activos en comparativa
-            verDetalleBtns.forEach(btn => {
-                if (btn.getAttribute('data-producto') === productoId) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-        }
-    }
-
-    // Efectos de hover para cards
-    const cards = document.querySelectorAll('.espec-card, .caracteristica-card, .modelo-card');
-    
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
-
-    // Animación de entrada para elementos
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observar elementos para animación
-    const animatedElements = document.querySelectorAll('.espec-card, .caracteristica-card, .modelo-card');
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
     });
 });
