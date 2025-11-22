@@ -1,6 +1,119 @@
-// JavaScript para la página de detalle SENSILLA OHV-97
+// JavaScript para la página de detalles del producto
 document.addEventListener('DOMContentLoaded', function() {
+    // Datos de los productos
+    const productos = {
+        'ohi-46': {
+            nombre: 'OHI-46 INDUSTRIAL',
+            descripcion: 'Silla industrial pesada con estructura de acero reforzado y base cromada. Ideal para entornos de trabajo exigentes.',
+            precio: '$4,500',
+            imagen: 'https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+            caracteristicas: ['Acero Reforzado', 'Base Cromada', '140 kg Capacidad']
+        },
+        'ohi-46-aro-cromado': {
+            nombre: 'OHI-46-ARO-CROMADO',
+            descripcion: 'Versión premium con aro cromado de alta resistencia. Diseño ergonómico para jornadas prolongadas.',
+            precio: '$5,200',
+            imagen: 'https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+            caracteristicas: ['Aro Cromado', 'Ergonómico', '140 kg Capacidad', 'Mejor Soporte Lumbar']
+        },
+        'ohi-48': {
+            nombre: 'OHI-48 INDUSTRIAL',
+            descripcion: 'Modelo actualizado con mejoras en soporte lumbar y materiales de mayor durabilidad. Capacidad 150kg.',
+            precio: '$4,800',
+            imagen: 'https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+            caracteristicas: ['Soporte Lumbar', '150kg Capacidad', 'Materiales Mejorados']
+        }
+    };
+
+    // Obtener parámetros de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productoParam = urlParams.get('producto') || 'ohi-46';
     
+    // Cargar datos del producto
+    cargarProducto(productoParam);
+
+    // Galería de imágenes
+    const galeriaItems = document.querySelectorAll('.galeria-item');
+    const imagenPrincipal = document.getElementById('productoImagen');
+    
+    galeriaItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const nuevaImagen = this.getAttribute('data-image');
+            
+            // Remover clase active de todos los items
+            galeriaItems.forEach(i => i.classList.remove('active'));
+            
+            // Agregar clase active al item clickeado
+            this.classList.add('active');
+            
+            // Cambiar imagen principal con efecto de transición
+            imagenPrincipal.style.opacity = '0';
+            setTimeout(() => {
+                imagenPrincipal.src = nuevaImagen;
+                imagenPrincipal.style.opacity = '1';
+            }, 300);
+        });
+    });
+
+    // Botones de ver detalles en comparativa
+    const verDetalleBtns = document.querySelectorAll('.ver-detalle-btn');
+    
+    verDetalleBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const producto = this.getAttribute('data-producto');
+            cargarProducto(producto);
+            
+            // Scroll suave al inicio
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Función para cargar datos del producto
+    function cargarProducto(productoId) {
+        const producto = productos[productoId];
+        
+        if (producto) {
+            // Actualizar elementos de la página
+            document.getElementById('productoNombre').textContent = producto.nombre.split(' ')[0];
+            document.getElementById('productoTitulo').textContent = producto.nombre;
+            document.getElementById('productoDescripcion').textContent = producto.descripcion;
+            document.getElementById('productoPrecio').textContent = producto.precio;
+            document.getElementById('productoImagen').src = producto.imagen;
+            
+            // Actualizar breadcrumb
+            document.title = `${producto.nombre} - Ley Silla`;
+            
+            // Actualizar URL sin recargar la página
+            const nuevaURL = `${window.location.pathname}?producto=${productoId}`;
+            window.history.replaceState({}, '', nuevaURL);
+            
+            // Actualizar botones activos en comparativa
+            verDetalleBtns.forEach(btn => {
+                if (btn.getAttribute('data-producto') === productoId) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+    }
+
+    // Efectos de hover para cards
+    const cards = document.querySelectorAll('.espec-card, .caracteristica-card, .modelo-card');
+    
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+
     // Animación de entrada para elementos
     const observerOptions = {
         threshold: 0.1,
@@ -16,185 +129,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Aplicar animaciones a los elementos
-    const animatedElements = document.querySelectorAll('.espec-card-lujo, .beneficio-card, .color-item');
+    // Observar elementos para animación
+    const animatedElements = document.querySelectorAll('.espec-card, .caracteristica-card, .modelo-card');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
+        el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
-
-    // Efecto de contador para la capacidad
-    function animateCounter(element, target, duration) {
-        let start = 0;
-        const increment = target / (duration / 16);
-        const timer = setInterval(() => {
-            start += increment;
-            if (start >= target) {
-                element.textContent = target;
-                clearInterval(timer);
-            } else {
-                element.textContent = Math.floor(start);
-            }
-        }, 16);
-    }
-
-    // Animar el contador de capacidad cuando sea visible
-    const capacityObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const capacityElement = document.querySelector('.capacidad-numero');
-                if (capacityElement) {
-                    animateCounter(capacityElement, 130, 2000);
-                }
-                capacityObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    const capacitySection = document.querySelector('.espec-card-lujo.destacada');
-    if (capacitySection) {
-        capacityObserver.observe(capacitySection);
-    }
-
-    // Interactividad para los colores
-    document.querySelectorAll('.color-item').forEach(item => {
-        item.addEventListener('click', function() {
-            // Remover selección anterior
-            document.querySelectorAll('.color-item').forEach(i => {
-                i.classList.remove('selected');
-            });
-            
-            // Agregar selección actual
-            this.classList.add('selected');
-            
-            // Mostrar notificación
-            const colorName = this.querySelector('.color-nombre').textContent;
-            showNotification(`Color ${colorName} seleccionado`, 'success');
-        });
-    });
-
-    // Efecto de parallax en la imagen principal
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const heroImage = document.querySelector('.producto-imagen-container');
-        if (heroImage) {
-            const rate = scrolled * -0.3;
-            heroImage.style.transform = `perspective(1000px) rotateY(-5deg) rotateX(5deg) translateY(${rate}px)`;
-        }
-    });
-
-    // Sistema de notificaciones elegante
-    function showNotification(message, type = 'info') {
-        const notification = document.createElement('div');
-        notification.className = `notification notification-${type}`;
-        notification.innerHTML = `
-            <div class="notification-content">
-                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-triangle' : 'info-circle'}"></i>
-                <span>${message}</span>
-            </div>
-        `;
-        
-        notification.style.cssText = `
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#0ea5e9'};
-            color: white;
-            padding: 1.5rem 2rem;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            z-index: 1000;
-            animation: slideInRight 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            max-width: 400px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        `;
-        
-        document.body.appendChild(notification);
-        
-        setTimeout(() => {
-            notification.style.animation = 'slideOutRight 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-            setTimeout(() => {
-                if (notification.parentNode) {
-                    document.body.removeChild(notification);
-                }
-            }, 400);
-        }, 4000);
-    }
-
-    // Botones de acción
-    document.querySelectorAll('.btn-lujo').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const isPrimary = this.classList.contains('btn-primary');
-            const message = isPrimary ? 
-                '¡Muestras de color solicitadas! Te contactaremos pronto.' : 
-                '¡Cotización solicitada! Nuestro equipo se pondrá en contacto contigo.';
-            
-            showNotification(message, 'success');
-            
-            // Efecto de pulso en el botón
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
-        });
-    });
-
-    // Efecto de hover mejorado para las cards
-    document.querySelectorAll('.espec-card-lujo, .beneficio-card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-15px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(-10px) scale(1)';
-        });
-    });
-
-    console.log('Página de detalle SENSILLA OHV-97 cargada correctamente');
 });
-
-// Animaciones CSS adicionales
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideInRight {
-        from {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-    
-    @keyframes slideOutRight {
-        from {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        to {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-    }
-    
-    .color-item.selected .color-muestra {
-        border-color: #0ea5e9 !important;
-        box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3) !important;
-        transform: scale(1.15);
-    }
-    
-    .notification-content {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-    }
-    
-    .espec-card-lujo, .beneficio-card, .color-item {
-        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-`;
-document.head.appendChild(style);

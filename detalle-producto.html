@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>SENSILLA OHV-97 - Ley Silla</title>
+    <title>OHI-46 Industrial - Ley Silla</title>
 
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/header.css">
@@ -11,12 +11,11 @@
     <link rel="stylesheet" href="css/chatbot.css">
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/detalle-producto.css">
-    <link rel="stylesheet" href="css/galeria-sensilla.css">
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="detalle-page sensilla-page">
+<body class="detalle-producto-page">
 
     <!-- Overlay sidebar móvil -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
@@ -75,7 +74,7 @@
                 </button>
 
                 <div class="header-logo">
-                    <img src="leySilla.png" alt="Ley Silla Logo">
+                    <img src="Imagenes/leySilla.png" alt="Ley Silla Logo">
                 </div>
             </div>
 
@@ -83,10 +82,10 @@
                 <ul class="nav-links">
                     <li><a href="index.html" class="es-lang">Inicio</a>
                         <a href="index.html" class="en-lang">Home</a></li>
-                    <li><a href="Blog Ley Silla.html" class="es-lang">Blog Ley Silla</a>
-                        <a href="Blog Ley Silla.html" class="en-lang">Chair Law Blog</a></li>
+                    <li><a href="Blog.html" class="es-lang">Blog</a>
+                        <a href="Blog.html" class="en-lang">Blog</a></li>
                     <li><a href="Nosotros.html" class="es-lang">Nosotros</a>
-                        <a href="Nosotros.html" class="en-lang">us</a></li>
+                        <a href="Nosotros.html" class="en-lang">Us</a></li>
                     <li><a href="catalogo.html" class="active es-lang">Catálogo</a>
                         <a href="catalogo.html" class="active en-lang">Catalog</a></li>
                     <li><a href="contactanos.html" class="es-lang">Contáctanos</a>
@@ -126,9 +125,15 @@
                                 <span class="en-lang">Chair Catalog</span>
                             </a>
                         </li>
-                        
                         <li>
-                            <a href="Blog Ley Silla.html">
+                            <a href="ley-silla.html">
+                                <i class="fas fa-gavel"></i>
+                                <span class="es-lang">Ley Silla</span>
+                                <span class="en-lang">Chair Law</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Blog.html">
                                 <i class="fas fa-blog"></i>
                                 <span class="es-lang">Blog</span>
                                 <span class="en-lang">Blog</span>
@@ -146,6 +151,27 @@
                                 <i class="fas fa-envelope"></i>
                                 <span class="es-lang">Contacto</span>
                                 <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#empresas-obligadas">
+                                <i class="fas fa-building"></i>
+                                <span class="es-lang">Empresas Obligadas</span>
+                                <span class="en-lang">Required Companies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#beneficios">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="es-lang">Beneficios</span>
+                                <span class="en-lang">Benefits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#multas">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="es-lang">Multas y Sanciones</span>
+                                <span class="en-lang">Fines and Penalties</span>
                             </a>
                         </li>
                     </ul>
@@ -185,9 +211,9 @@
         <!-- CONTENIDO PRINCIPAL -->
         <main class="main-content-with-sidebar">
 
-            <!-- BREADCRUMB ELEGANTE -->
-            <nav class="breadcrumb-modern">
-                <div class="container-sm">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb-industrial">
+                <div class="container">
                     <div class="breadcrumb-content">
                         <a href="index.html" class="breadcrumb-link">
                             <i class="fas fa-home"></i>
@@ -200,232 +226,84 @@
                             <span class="en-lang">Catalog</span>
                         </a>
                         <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
-                        <a href="catalogo.html?categoria=exterior" class="breadcrumb-link">
-                            <span class="es-lang">Visitante Exterior</span>
-                            <span class="en-lang">Outdoor Visitor</span>
+                        <a href="catalogo.html?categoria=industrial" class="breadcrumb-link">
+                            <span class="es-lang">Industrial</span>
+                            <span class="en-lang">Industrial</span>
                         </a>
                         <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
-                        <span class="breadcrumb-current">OHV-97</span>
+                        <span class="breadcrumb-current" id="productoNombre">OHI-46</span>
                     </div>
                 </div>
             </nav>
 
-            <!-- HERO DEL PRODUCTO -->
-            <section class="hero-sensilla">
-                <div class="container-sm">
-                    <div class="hero-sensilla-content">
-                        <div class="hero-sensilla-text">
-                            <div class="producto-meta">
-                                <span class="producto-codigo">OHV-97</span>
-                                <span class="producto-categoria">VISITANTE EXTERIOR</span>
+            <!-- Hero del Producto -->
+            <section class="producto-hero-industrial">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="producto-info">
+                            <div class="producto-badge industrial-badge">
+                                <i class="fas fa-industry"></i>
+                                <span>HEAVY-DUTY</span>
                             </div>
-                            <h1 class="producto-titulo-sensilla">
-                                <span class="titulo-linea-1">SENSILLA</span>
-                                <span class="titulo-linea-2">OHV-97</span>
-                            </h1>
-                            <p class="producto-descripcion-sensilla">
-                                Silla de exterior de alta resistencia fabricada en polipropileno de una sola pieza, diseñada para soportar las condiciones más exigentes del ambiente exterior.
+                            
+                            <h1 class="producto-titulo" id="productoTitulo">OHI-46 INDUSTRIAL</h1>
+                            
+                            <p class="producto-descripcion" id="productoDescripcion">
+                                Silla industrial pesada con estructura de acero reforzado y base cromada. Ideal para entornos de trabajo exigentes.
                             </p>
+                            
+                            <div class="producto-precio">
+                                <span class="precio" id="productoPrecio">$4,500</span>
+                                <span class="precio-nota es-lang">Precio por unidad</span>
+                                <span class="precio-nota en-lang">Price per unit</span>
+                            </div>
                             
                             <div class="producto-highlights">
                                 <div class="highlight-item">
-                                    <i class="fas fa-sun"></i>
-                                    <span>Resistente UV</span>
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span class="es-lang">Acero Reforzado</span>
+                                    <span class="en-lang">Reinforced Steel</span>
                                 </div>
                                 <div class="highlight-item">
-                                    <i class="fas fa-wind"></i>
-                                    <span>Para Intemperie</span>
+                                    <i class="fas fa-star"></i>
+                                    <span class="es-lang">Base Cromada</span>
+                                    <span class="en-lang">Chrome Base</span>
                                 </div>
                                 <div class="highlight-item">
                                     <i class="fas fa-weight"></i>
-                                    <span>130 kgs Capacidad</span>
+                                    <span class="es-lang">140 kg Capacidad</span>
+                                    <span class="en-lang">140 kg Capacity</span>
                                 </div>
+                            </div>
+                            
+                            <div class="producto-actions">
+                                <button class="btn btn-primary btn-large">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span class="es-lang">Solicitar Cotización</span>
+                                    <span class="en-lang">Request Quote</span>
+                                </button>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span class="es-lang">Descargar Ficha Técnica</span>
+                                    <span class="en-lang">Download Specs</span>
+                                </button>
                             </div>
                         </div>
                         
-                        <div class="hero-sensilla-visual">
-                            <div class="producto-imagen-container">
-                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                                     alt="Silla SENSILLA OHV-97" class="producto-imagen-principal">
-                                <div class="imagen-overlay"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- GALERÍA DE IMÁGENES INTERACTIVA -->
-            <section class="galeria-sensilla">
-                <div class="container-sm">
-                    <div class="galeria-header">
-                        <div class="section-badge">
-                            <i class="fas fa-images"></i>
-                            <span>GALERÍA VISUAL</span>
-                        </div>
-                        <h2>Descubre la SENSILLA OHV-97 en Detalle</h2>
-                        <p>Explora nuestra silla desde todos los ángulos y en diferentes colores</p>
-                    </div>
-
-                    <div class="galeria-container">
-                        <!-- VISUALIZADOR PRINCIPAL -->
-                        <div class="galeria-principal">
+                        <div class="producto-visual">
                             <div class="imagen-principal-container">
-                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                                     alt="Silla SENSILLA OHV-97 - Vista frontal" 
-                                     class="imagen-principal" 
-                                     id="imagenPrincipal">
-                                <div class="imagen-overlay-galeria">
-                                    <div class="zoom-controls">
-                                        <button class="zoom-btn" id="zoomIn" aria-label="Acercar">
-                                            <i class="fas fa-search-plus"></i>
-                                        </button>
-                                        <button class="zoom-btn" id="zoomOut" aria-label="Alejar">
-                                            <i class="fas fa-search-minus"></i>
-                                        </button>
-                                        <button class="zoom-btn" id="resetZoom" aria-label="Restablecer zoom">
-                                            <i class="fas fa-sync-alt"></i>
-                                        </button>
-                                    </div>
-                                    <div class="imagen-info">
-                                        <span class="imagen-titulo" id="imagenTitulo">Vista Frontal - Color Blanco</span>
-                                        <span class="imagen-indice" id="imagenIndice">1/8</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- CONTROLES DE NAVEGACIÓN -->
-                            <div class="galeria-controls">
-                                <button class="control-btn prev-btn" id="prevBtn" aria-label="Imagen anterior">
-                                    <i class="fas fa-chevron-left"></i>
-                                </button>
-                                <button class="control-btn next-btn" id="nextBtn" aria-label="Siguiente imagen">
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                            </div>
-
-                            <!-- MINIATURAS -->
-                            <div class="galeria-miniaturas">
-                                <div class="miniatura-container">
-                                    <div class="miniatura active" data-index="0" data-src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" data-title="Vista Frontal - Color Blanco">
-                                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Vista frontal">
-                                        <div class="miniatura-overlay">
-                                            <i class="fas fa-eye"></i>
-                                        </div>
-                                    </div>
-                                    <div class="miniatura" data-index="1" data-src="https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" data-title="Vista Lateral - Color Gris">
-                                        <img src="https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Vista lateral">
-                                        <div class="miniatura-overlay">
-                                            <i class="fas fa-eye"></i>
-                                        </div>
-                                    </div>
-                                    <div class="miniatura" data-index="2" data-src="https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" data-title="Vista Posterior - Color Azul">
-                                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Vista posterior">
-                                        <div class="miniatura-overlay">
-                                            <i class="fas fa-eye"></i>
-                                        </div>
-                                    </div>
-                                    <div class="miniatura" data-index="3" data-src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" data-title="Vista Superior - Color Verde">
-                                        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Vista superior">
-                                        <div class="miniatura-overlay">
-                                            <i class="fas fa-eye"></i>
-                                        </div>
-                                    </div>
-                                    <div class="miniatura" data-index="4" data-src="https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" data-title="Detalle del Asiento - Color Rojo">
-                                        <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Detalle asiento">
-                                        <div class="miniatura-overlay">
-                                            <i class="fas fa-eye"></i>
-                                        </div>
-                                    </div>
-                                    <div class="miniatura" data-index="5" data-src="https://images.unsplash.com/photo-1580480055273-228ff5388ef8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" data-title="Estructura de Patas - Color Naranja">
-                                        <img src="https://images.unsplash.com/photo-1580480055273-228ff5388ef8?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Estructura patas">
-                                        <div class="miniatura-overlay">
-                                            <i class="fas fa-eye"></i>
-                                        </div>
-                                    </div>
-                                    <div class="miniatura" data-index="6" data-src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" data-title="En Uso - Ambiente Exterior">
-                                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="En uso">
-                                        <div class="miniatura-overlay">
-                                            <i class="fas fa-eye"></i>
-                                        </div>
-                                    </div>
-                                    <div class="miniatura" data-index="7" data-src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" data-title="Conjunto de Sillas - Varios Colores">
-                                        <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Conjunto sillas">
-                                        <div class="miniatura-overlay">
-                                            <i class="fas fa-eye"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- CONTROLES ADICIONALES -->
-                        <div class="galeria-acciones">
-                            <button class="accion-btn fullscreen-btn" id="fullscreenBtn" aria-label="Pantalla completa">
-                                <i class="fas fa-expand"></i>
-                                <span>Pantalla Completa</span>
-                            </button>
-                            <button class="accion-btn descargar-btn" id="descargarBtn" aria-label="Descargar imagen">
-                                <i class="fas fa-download"></i>
-                                <span>Descargar</span>
-                            </button>
-                            <button class="accion-btn compartir-btn" id="compartirBtn" aria-label="Compartir imagen">
-                                <i class="fas fa-share-alt"></i>
-                                <span>Compartir</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ESPECIFICACIONES DE LUJO -->
-            <section class="especificaciones-lujo">
-                <div class="container-sm">
-                    <div class="especificaciones-header-lujo">
-                        <div class="section-badge">
-                            <i class="fas fa-star"></i>
-                            <span>ESPECIFICACIONES PREMIUM</span>
-                        </div>
-                        <h2>Excelencia en Diseño y Durabilidad</h2>
-                        <p>Fabricada con los más altos estándares de calidad para uso exterior</p>
-                    </div>
-
-                    <div class="especificaciones-grid-lujo">
-                        <!-- CONSTRUCCIÓN -->
-                        <div class="espec-card-lujo">
-                            <div class="espec-icon-lujo">
-                                <i class="fas fa-cube"></i>
-                            </div>
-                            <div class="espec-content-lujo">
-                                <h3>CONSTRUCCIÓN INTEGRAL</h3>
-                                <div class="espec-descripcion">
-                                    <p><strong>Respaldo, asiento y patas:</strong> De una sola pieza en polipropileno de alta resistencia y duración para intemperie.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- RESISTENCIA -->
-                        <div class="espec-card-lujo">
-                            <div class="espec-icon-lujo">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="espec-content-lujo">
-                                <h3>RESISTENCIA SUPERIOR</h3>
-                                <div class="espec-descripcion">
-                                    <p>Resistente a los rayos ultravioleta (UV) y al ambiente salino. Ideal para uso en exteriores y zonas costeras.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- CAPACIDAD -->
-                        <div class="espec-card-lujo destacada">
-                            <div class="espec-icon-lujo">
-                                <i class="fas fa-weight-hanging"></i>
-                            </div>
-                            <div class="espec-content-lujo">
-                                <h3>CAPACIDAD MÁXIMA</h3>
-                                <div class="capacidad-destacada">
-                                    <span class="capacidad-numero">130</span>
-                                    <span class="capacidad-texto">kilos de resistencia</span>
+                                <!-- AGREGAR IMAGEN PRINCIPAL AQUÍ -->
+                                <img src="Imagenes/Productos/OHI-46/principal.jpg" 
+                                     alt="OHI-46 Industrial" 
+                                     class="imagen-principal"
+                                     id="productoImagen">
+                                <div class="imagen-overlay-industrial"></div>
+                                <div class="producto-estado">
+                                    <span class="estado-badge disponible">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span class="es-lang">Disponible</span>
+                                        <span class="en-lang">Available</span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -433,115 +311,319 @@
                 </div>
             </section>
 
-            <!-- PALETA DE COLORES -->
-            <section class="colores-section">
-                <div class="container-sm">
-                    <div class="colores-header">
-                        <h2>Paleta de Colores Disponibles</h2>
-                        <p>Elige el color que mejor se adapte a tu espacio exterior</p>
+            <!-- Galería de Imágenes -->
+            <section class="galeria-industrial">
+                <div class="container">
+                    <div class="galeria-header">
+                        <h2 class="es-lang">Galería del Producto</h2>
+                        <h2 class="en-lang">Product Gallery</h2>
+                        <p class="es-lang">Explora cada detalle de nuestra silla industrial</p>
+                        <p class="en-lang">Explore every detail of our industrial chair</p>
                     </div>
                     
-                    <div class="colores-grid">
-                        <div class="color-item">
-                            <div class="color-muestra" style="background-color: #FFFFFF; border: 2px solid #e2e8f0;"></div>
-                            <span class="color-nombre">Blanco (W9)</span>
+                    <div class="galeria-grid">
+                        <!-- IMAGEN 1 - VISTA FRONTAL -->
+                        <div class="galeria-item active" data-image="Imagenes/Productos/OHI-46/frontal.jpg">
+                            <img src="Imagenes/Productos/OHI-46/frontal.jpg" alt="OHI-46 Vista frontal">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
                         </div>
-                        <div class="color-item">
-                            <div class="color-muestra" style="background-color: #94a3b8;"></div>
-                            <span class="color-nombre">Gris (G6)</span>
+                        
+                        <!-- IMAGEN 2 - VISTA LATERAL -->
+                        <div class="galeria-item" data-image="Imagenes/Productos/OHI-46/lateral.jpg">
+                            <img src="Imagenes/Productos/OHI-46/lateral.jpg" alt="OHI-46 Vista lateral">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
                         </div>
-                        <div class="color-item">
-                            <div class="color-muestra" style="background-color: #475569;"></div>
-                            <span class="color-nombre">Gris Oscuro (G7)</span>
+                        
+                        <!-- IMAGEN 3 - VISTA POSTERIOR -->
+                        <div class="galeria-item" data-image="Imagenes/Productos/OHI-46/posterior.jpg">
+                            <img src="Imagenes/Productos/OHI-46/posterior.jpg" alt="OHI-46 Vista posterior">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
                         </div>
-                        <div class="color-item">
-                            <div class="color-muestra" style="background-color: #16a34a;"></div>
-                            <span class="color-nombre">Verde (V5)</span>
+                        
+                        <!-- IMAGEN 4 - DETALLE BASE -->
+                        <div class="galeria-item" data-image="Imagenes/Productos/OHI-46/base.jpg">
+                            <img src="Imagenes/Productos/OHI-46/base.jpg" alt="OHI-46 Detalle base">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
                         </div>
-                        <div class="color-item">
-                            <div class="color-muestra" style="background-color: #2563eb;"></div>
-                            <span class="color-nombre">Azul (B7)</span>
+                        
+                        <!-- IMAGEN 5 - DETALLE MECANISMO -->
+                        <div class="galeria-item" data-image="Imagenes/Productos/OHI-46/mecanismo.jpg">
+                            <img src="Imagenes/Productos/OHI-46/mecanismo.jpg" alt="OHI-46 Detalle mecanismo">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
                         </div>
-                        <div class="color-item">
-                            <div class="color-muestra" style="background-color: #60a5fa;"></div>
-                            <span class="color-nombre">Azul Niebla (B9)</span>
-                        </div>
-                        <div class="color-item">
-                            <div class="color-muestra" style="background-color: #06b6d4;"></div>
-                            <span class="color-nombre">Azul Turquesa (BF)</span>
-                        </div>
-                        <div class="color-item">
-                            <div class="color-muestra" style="background-color: #dc2626;"></div>
-                            <span class="color-nombre">Rojo (R4)</span>
-                        </div>
-                        <div class="color-item">
-                            <div class="color-muestra" style="background-color: #ec4899;"></div>
-                            <span class="color-nombre">Fucsia (R7)</span>
-                        </div>
-                        <div class="color-item">
-                            <div class="color-muestra" style="background-color: #f59e0b;"></div>
-                            <span class="color-nombre">Ambar (YF)</span>
-                        </div>
-                        <div class="color-item">
-                            <div class="color-muestra" style="background-color: #ea580c;"></div>
-                            <span class="color-nombre">Naranja (YB)</span>
+                        
+                        <!-- IMAGEN 6 - EN USO -->
+                        <div class="galeria-item" data-image="Imagenes/Productos/OHI-46/en-uso.jpg">
+                            <img src="Imagenes/Productos/OHI-46/en-uso.jpg" alt="OHI-46 En uso">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- BENEFICIOS PREMIUM -->
-            <section class="beneficios-premium">
-                <div class="container-sm">
-                    <div class="beneficios-grid">
-                        <div class="beneficio-card">
-                            <div class="beneficio-icon">
-                                <i class="fas fa-cloud-sun"></i>
+            <!-- Especificaciones Técnicas -->
+            <section class="especificaciones-industrial">
+                <div class="container">
+                    <div class="especificaciones-header">
+                        <h2 class="es-lang">Especificaciones Técnicas</h2>
+                        <h2 class="en-lang">Technical Specifications</h2>
+                        <p class="es-lang">Diseñada para el máximo rendimiento en entornos industriales</p>
+                        <p class="en-lang">Designed for maximum performance in industrial environments</p>
+                    </div>
+                    
+                    <div class="especificaciones-grid">
+                        <div class="espec-card">
+                            <div class="espec-icon">
+                                <i class="fas fa-cube"></i>
                             </div>
-                            <h4>Resistencia Climática</h4>
-                            <p>Diseñada para soportar todas las condiciones climáticas sin deteriorarse</p>
-                        </div>
-                        <div class="beneficio-card">
-                            <div class="beneficio-icon">
-                                <i class="fas fa-recycle"></i>
+                            <div class="espec-content">
+                                <h3>BASE</h3>
+                                <p class="es-lang">Estrella de 5 puntos en poliamida, rodajas tipo dual para máxima estabilidad</p>
+                                <p class="en-lang">5-point star base in polyamide, dual-type casters for maximum stability</p>
                             </div>
-                            <h4>Material Duradero</h4>
-                            <p>Polipropileno de alta calidad que mantiene su forma y color por años</p>
                         </div>
-                        <div class="beneficio-card">
-                            <div class="beneficio-icon">
-                                <i class="fas fa-broom"></i>
+                        
+                        <div class="espec-card">
+                            <div class="espec-icon">
+                                <i class="fas fa-arrows-alt-v"></i>
                             </div>
-                            <h4>Fácil Mantenimiento</h4>
-                            <p>Superficie lisa que permite una limpieza rápida y sencilla</p>
+                            <div class="espec-content">
+                                <h3 class="es-lang">ELEVACIÓN</h3>
+                                <h3 class="en-lang">HEIGHT ADJUSTMENT</h3>
+                                <p class="es-lang">Pistón neumático tipo cajero que permite ajustar la altura del asiento</p>
+                                <p class="en-lang">Pneumatic cylinder that allows seat height adjustment</p>
+                            </div>
                         </div>
-                        <div class="beneficio-card">
-                            <div class="beneficio-icon">
+                        
+                        <div class="espec-card">
+                            <div class="espec-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="espec-content">
+                                <h3 class="es-lang">PERILLAS DE AJUSTE</h3>
+                                <h3 class="en-lang">ADJUSTMENT KNOBS</h3>
+                                <p class="es-lang">Para ajustar altura del respaldo y profundidad del respaldo con el asiento</p>
+                                <p class="en-lang">To adjust backrest height and backrest depth with the seat</p>
+                            </div>
+                        </div>
+                        
+                        <div class="espec-card">
+                            <div class="espec-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <div class="espec-content">
+                                <h3 class="es-lang">MECANISMO</h3>
+                                <h3 class="en-lang">MECHANISM</h3>
+                                <p class="es-lang">Plato de acero reforzado de dos palancas con sistema de contacto permanente</p>
+                                <p class="en-lang">Reinforced steel plate with two levers and permanent contact system</p>
+                            </div>
+                        </div>
+                        
+                        <div class="espec-card">
+                            <div class="espec-icon">
                                 <i class="fas fa-chair"></i>
                             </div>
-                            <h4>Confort Exterior</h4>
-                            <p>Diseño ergonómico que proporciona comodidad en espacios abiertos</p>
+                            <div class="espec-content">
+                                <h3 class="es-lang">RESPALDO Y ASIENTO</h3>
+                                <h3 class="en-lang">BACKREST AND SEAT</h3>
+                                <p class="es-lang">Poliuretano compacto suave de uso industrial con interior en madera de aglomerado</p>
+                                <p class="en-lang">Soft compact polyurethane for industrial use with particle board interior</p>
+                            </div>
+                        </div>
+                        
+                        <div class="espec-card destacada">
+                            <div class="espec-icon">
+                                <i class="fas fa-weight-hanging"></i>
+                            </div>
+                            <div class="espec-content">
+                                <h3 class="es-lang">RESISTENCIA MÁXIMA</h3>
+                                <h3 class="en-lang">MAXIMUM CAPACITY</h3>
+                                <div class="capacidad-destacada">
+                                    <span class="capacidad-numero">140</span>
+                                    <span class="capacidad-texto es-lang">kilos</span>
+                                    <span class="capacidad-texto en-lang">kilograms</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- CTA ELEGANTE -->
-            <section class="cta-elegante">
-                <div class="container-sm">
-                    <div class="cta-elegante-content">
-                        <div class="cta-texto">
-                            <h2>¿Listo para Transformar tu Espacio Exterior?</h2>
-                            <p>La SENSILLA OHV-97 combina elegancia, durabilidad y funcionalidad para tus áreas exteriores</p>
+            <!-- Características Destacadas -->
+            <section class="caracteristicas-destacadas">
+                <div class="container">
+                    <div class="caracteristicas-header">
+                        <h2 class="es-lang">Características Premium</h2>
+                        <h2 class="en-lang">Premium Features</h2>
+                        <p class="es-lang">Excelencia en diseño y durabilidad industrial</p>
+                        <p class="en-lang">Excellence in design and industrial durability</p>
+                    </div>
+                    
+                    <div class="caracteristicas-grid">
+                        <div class="caracteristica-card">
+                            <div class="caracteristica-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h4 class="es-lang">Alta Durabilidad</h4>
+                            <h4 class="en-lang">High Durability</h4>
+                            <p class="es-lang">Estructura diseñada para soportar uso intensivo en entornos industriales</p>
+                            <p class="en-lang">Structure designed to withstand intensive use in industrial environments</p>
                         </div>
-                        <div class="cta-acciones">
-                            <button class="btn btn-lujo btn-primary">
-                                <i class="fas fa-palette"></i>
-                                <span>Solicitar Muestras de Color</span>
+                        
+                        <div class="caracteristica-card">
+                            <div class="caracteristica-icon">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <h4 class="es-lang">Ergonomía Avanzada</h4>
+                            <h4 class="en-lang">Advanced Ergonomics</h4>
+                            <p class="es-lang">Diseño que prioriza la comodidad durante jornadas laborales prolongadas</p>
+                            <p class="en-lang">Design that prioritizes comfort during long work shifts</p>
+                        </div>
+                        
+                        <div class="caracteristica-card">
+                            <div class="caracteristica-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h4 class="es-lang">Fácil Mantenimiento</h4>
+                            <h4 class="en-lang">Easy Maintenance</h4>
+                            <p class="es-lang">Materiales resistentes que requieren mínimo mantenimiento</p>
+                            <p class="en-lang">Resistant materials that require minimal maintenance</p>
+                        </div>
+                        
+                        <div class="caracteristica-card">
+                            <div class="caracteristica-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h4 class="es-lang">Calidad Garantizada</h4>
+                            <h4 class="en-lang">Guaranteed Quality</h4>
+                            <p class="es-lang">Fabricada con los más altos estándares de calidad industrial</p>
+                            <p class="en-lang">Manufactured with the highest industrial quality standards</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comparativa de Modelos -->
+            <section class="comparativa-modelos">
+                <div class="container">
+                    <div class="comparativa-header">
+                        <h2 class="es-lang">Comparativa de Modelos Industriales</h2>
+                        <h2 class="en-lang">Industrial Models Comparison</h2>
+                        <p class="es-lang">Encuentra la silla perfecta para tus necesidades</p>
+                        <p class="en-lang">Find the perfect chair for your needs</p>
+                    </div>
+                    
+                    <div class="modelos-grid">
+                        <div class="modelo-card" data-producto="ohi-46">
+                            <div class="modelo-imagen">
+                                <!-- IMAGEN MODELO OHI-46 -->
+                                <img src="Imagenes/Productos/OHI-46/thumb.jpg" alt="OHI-46">
+                            </div>
+                            <div class="modelo-header">
+                                <h3>OHI-46</h3>
+                                <span class="modelo-precio">$4,500</span>
+                            </div>
+                            <div class="modelo-descripcion">
+                                <p class="es-lang">Silla industrial básica con estructura de acero reforzado</p>
+                                <p class="en-lang">Basic industrial chair with reinforced steel structure</p>
+                            </div>
+                            <ul class="modelo-caracteristicas">
+                                <li><i class="fas fa-check"></i> <span class="es-lang">Base cromada</span><span class="en-lang">Chrome base</span></li>
+                                <li><i class="fas fa-check"></i> <span class="es-lang">Acero reforzado</span><span class="en-lang">Reinforced steel</span></li>
+                                <li><i class="fas fa-check"></i> <span class="es-lang">140 kg capacidad</span><span class="en-lang">140 kg capacity</span></li>
+                            </ul>
+                            <button class="btn btn-outline ver-detalle-btn" data-producto="ohi-46">
+                                <span class="es-lang">Ver Detalles</span>
+                                <span class="en-lang">View Details</span>
                             </button>
-                            <button class="btn btn-lujo btn-secondary">
-                                <i class="fas fa-file-invoice-dollar"></i>
-                                <span>Solicitar Cotización</span>
+                        </div>
+                        
+                        <div class="modelo-card destacado" data-producto="ohi-46-aro-cromado">
+                            <div class="modelo-badge es-lang">Más Vendido</div>
+                            <div class="modelo-badge en-lang">Best Seller</div>
+                            <div class="modelo-imagen">
+                                <!-- IMAGEN MODELO OHI-46 ARO CROMADO -->
+                                <img src="Imagenes/Productos/OHI-46-ARO-CROMADO/thumb.jpg" alt="OHI-46 Aro Cromado">
+                            </div>
+                            <div class="modelo-header">
+                                <h3>OHI-46 ARO CROMADO</h3>
+                                <span class="modelo-precio">$5,200</span>
+                            </div>
+                            <div class="modelo-descripcion">
+                                <p class="es-lang">Versión premium con aro cromado y mejoras ergonómicas</p>
+                                <p class="en-lang">Premium version with chrome ring and ergonomic improvements</p>
+                            </div>
+                            <ul class="modelo-caracteristicas">
+                                <li><i class="fas fa-check"></i> <span class="es-lang">Aro cromado premium</span><span class="en-lang">Premium chrome ring</span></li>
+                                <li><i class="fas fa-check"></i> <span class="es-lang">Diseño ergonómico</span><span class="en-lang">Ergonomic design</span></li>
+                                <li><i class="fas fa-check"></i> <span class="es-lang">140 kg capacidad</span><span class="en-lang">140 kg capacity</span></li>
+                                <li><i class="fas fa-check"></i> <span class="es-lang">Mejor soporte lumbar</span><span class="en-lang">Better lumbar support</span></li>
+                            </ul>
+                            <button class="btn btn-primary ver-detalle-btn" data-producto="ohi-46-aro-cromado">
+                                <span class="es-lang">Ver Detalles</span>
+                                <span class="en-lang">View Details</span>
+                            </button>
+                        </div>
+                        
+                        <div class="modelo-card" data-producto="ohi-48">
+                            <div class="modelo-imagen">
+                                <!-- IMAGEN MODELO OHI-48 -->
+                                <img src="Imagenes/Productos/OHI-48/thumb.jpg" alt="OHI-48">
+                            </div>
+                            <div class="modelo-header">
+                                <h3>OHI-48</h3>
+                                <span class="modelo-precio">$4,800</span>
+                            </div>
+                            <div class="modelo-descripcion">
+                                <p class="es-lang">Modelo actualizado con soporte lumbar mejorado</p>
+                                <p class="en-lang">Updated model with improved lumbar support</p>
+                            </div>
+                            <ul class="modelo-caracteristicas">
+                                <li><i class="fas fa-check"></i> <span class="es-lang">Soporte lumbar</span><span class="en-lang">Lumbar support</span></li>
+                                <li><i class="fas fa-check"></i> <span class="es-lang">150 kg capacidad</span><span class="en-lang">150 kg capacity</span></li>
+                                <li><i class="fas fa-check"></i> <span class="es-lang">Materiales mejorados</span><span class="en-lang">Improved materials</span></li>
+                            </ul>
+                            <button class="btn btn-outline ver-detalle-btn" data-producto="ohi-48">
+                                <span class="es-lang">Ver Detalles</span>
+                                <span class="en-lang">View Details</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Final -->
+            <section class="cta-industrial">
+                <div class="container">
+                    <div class="cta-content">
+                        <div class="cta-text">
+                            <h2 class="es-lang">¿Necesitas Asesoría Especializada?</h2>
+                            <h2 class="en-lang">Need Specialized Advice?</h2>
+                            <p class="es-lang">Nuestros expertos te ayudarán a elegir la silla industrial perfecta para tu empresa</p>
+                            <p class="en-lang">Our experts will help you choose the perfect industrial chair for your company</p>
+                        </div>
+                        <div class="cta-actions">
+                            <button class="btn btn-primary btn-large">
+                                <i class="fas fa-headset"></i>
+                                <span class="es-lang">Contactar Asesor</span>
+                                <span class="en-lang">Contact Advisor</span>
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-calculator"></i>
+                                <span class="es-lang">Solicitar Cotización</span>
+                                <span class="en-lang">Request Quote</span>
                             </button>
                         </div>
                     </div>
@@ -579,7 +661,7 @@
                     <h3 class="en-lang">Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
-                        <li><a href="Blog Ley Silla.html" class="es-lang">Blog Ley Silla</a><a href="Blog Ley Silla.html" class="en-lang">Chair Law Blog</a></li>
+                        <li><a href="Blog.html" class="es-lang">Blog</a><a href="Blog.html" class="en-lang">Blog</a></li>
                         <li><a href="Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
                         <li><a href="catalogo.html" class="es-lang">Catálogo</a><a href="catalogo.html" class="en-lang">Catalog</a></li>
                         <li><a href="contactanos.html" class="es-lang">Contáctanos</a><a href="contactanos.html" class="en-lang">Contact Us</a></li>
@@ -681,12 +763,93 @@
             </div>
         </div>
     </div>
-            
+
     <script src="js/main.js"></script>
     <script src="js/accessibility.js"></script>
     <script src="js/chatbot.js"></script>
     <script src="js/sidebar.js"></script>
-    <script src="js/detalle-sensilla.js"></script>
-    <script src="js/galeria-sensilla.js"></script>
+    <script src="js/detalle-producto.js"></script>
+
+    <script>
+        // JavaScript para la barra lateral
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            
+            function toggleSidebar() {
+                sidebar.classList.toggle('active');
+                sidebarOverlay.classList.toggle('active');
+                
+                if (sidebar.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            }
+            
+            if (sidebarToggle) {
+                sidebarToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleSidebar();
+                });
+            }
+            
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', function() {
+                    toggleSidebar();
+                });
+            }
+            
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 1024) {
+                        toggleSidebar();
+                    }
+                });
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                    toggleSidebar();
+                }
+            });
+
+            // JavaScript para la galería de imágenes
+            const galeriaItems = document.querySelectorAll('.galeria-item');
+            const imagenPrincipal = document.getElementById('productoImagen');
+            
+            galeriaItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const nuevaImagen = this.getAttribute('data-image');
+                    
+                    // Remover clase active de todos los items
+                    galeriaItems.forEach(i => i.classList.remove('active'));
+                    
+                    // Agregar clase active al item clickeado
+                    this.classList.add('active');
+                    
+                    // Cambiar imagen principal con efecto de transición
+                    imagenPrincipal.style.opacity = '0';
+                    setTimeout(() => {
+                        imagenPrincipal.src = nuevaImagen;
+                        imagenPrincipal.style.opacity = '1';
+                    }, 300);
+                });
+            });
+
+            // JavaScript para cambiar entre productos
+            const verDetalleBtns = document.querySelectorAll('.ver-detalle-btn');
+            
+            verDetalleBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const producto = this.getAttribute('data-producto');
+                    // Aquí puedes agregar lógica para cambiar entre productos
+                    console.log('Cambiar a producto:', producto);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
