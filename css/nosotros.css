@@ -1,0 +1,1071 @@
+/* nosotros.css - Adaptado para usar variables del sistema */
+
+.nosotros-hero {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+    color: white;
+    padding: 8rem 0 4rem;
+    margin-top: 70px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(30, 58, 138, 0.9) 0%, rgba(30, 64, 175, 0.95) 100%);
+}
+
+.nosotros-hero-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.nosotros-hero-text .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nosotros-hero-text .hero-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.nosotros-hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nosotros-hero-visual {
+    position: relative;
+    height: 300px;
+}
+
+.floating-elements {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.floating-element {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--gold-color);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    animation: float 6s ease-in-out infinite;
+}
+
+.element-1 {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.element-2 {
+    top: 50%;
+    left: 60%;
+    animation-delay: 2s;
+}
+
+.element-3 {
+    top: 70%;
+    left: 30%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Sección Historia */
+.historia-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.historia-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.section-header {
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 600px;
+}
+
+.historia-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.historia-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--primary-blue), var(--gold-color));
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.5rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    background: var(--primary-blue);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px var(--primary-blue);
+}
+
+.timeline-year {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+    color: var(--text-dark);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.historia-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.historia-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 2rem;
+    color: white;
+}
+
+.overlay-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.overlay-content p {
+    opacity: 0.9;
+}
+
+/* Misión, Visión y Valores */
+.mvv-section {
+    padding: 4rem 0;
+    background: var(--gray-light);
+}
+
+.mvv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.mvv-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+    border: 1px solid var(--gray-border);
+}
+
+.mvv-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.mvv-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.mvv-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.mvv-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.valores-list {
+    text-align: left;
+}
+
+.valor-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.valor-item i {
+    color: var(--primary-blue);
+    font-size: 0.9rem;
+}
+
+/* Equipo Directivo */
+.equipo-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.miembro-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+    border: 1px solid var(--gray-border);
+}
+
+.miembro-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.miembro-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.miembro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.miembro-card:hover .miembro-image img {
+    transform: scale(1.05);
+}
+
+.miembro-social {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.miembro-card:hover .miembro-social {
+    opacity: 1;
+}
+
+.miembro-social a {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.miembro-social a:hover {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.miembro-info {
+    padding: 2rem;
+}
+
+.miembro-nombre {
+    color: var(--text-dark);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.miembro-cargo {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.miembro-desc {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+/* Certificaciones */
+.certificaciones-section {
+    padding: 4rem 0;
+    background: var(--gray-light);
+}
+
+.certificaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.certificacion-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    border: 1px solid var(--gray-border);
+}
+
+.certificacion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.certificacion-logo {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.certificacion-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.certificacion-card p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Compromiso Social */
+.compromiso-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.compromiso-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.compromiso-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.compromiso-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.compromiso-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--light-blue);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    flex-shrink: 0;
+}
+
+.compromiso-info h4 {
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.compromiso-info p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.compromiso-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.compromiso-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.impacto-stats {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    backdrop-filter: blur(10px);
+}
+
+.impacto-stat {
+    text-align: center;
+}
+
+.impacto-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.impacto-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* CTA Final */
+.cta-nosotros {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--primary-blue);
+}
+
+/* Hero Nosotros con imagen de fondo */
+/* Hero Nosotros con imagen de fondo */
+.nosotros-hero {
+    position: relative;
+    color: var(--white);
+    padding: 10rem 0 8rem;
+    margin-top: 70px;
+    overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background-image: url('https://img.freepik.com/foto-gratis/grupo-personas-felices-oficina_53876-31368.jpg?t=st=1736250477~exp=1736254077~hmac=8a0d4f9b4d4c4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a&w=1380') !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        rgba(30, 58, 138, 0.8) 0%, 
+        rgba(1, 13, 38, 0.7) 50%, 
+        rgba(59, 130, 246, 0.6) 100%);
+    z-index: 3;
+    backdrop-filter: blur(2px);
+}
+
+.nosotros-hero-content {
+    position: relative;
+    z-index: 4;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nosotros-hero-text {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+.nosotros-hero-text .hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    line-height: 1.1;
+    text-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.7),
+        0 8px 30px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 30%, #bae6fd 70%, #7dd3fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    animation: titleReveal 1.5s ease-out;
+}
+
+.nosotros-hero-text .hero-subtitle {
+    font-size: 1.4rem;
+    opacity: 0.95;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+    animation: subtitleReveal 1.8s ease-out 0.3s both;
+}
+
+/* Animaciones para el texto */
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subtitleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mantener los elementos flotantes pero ajustar su posición */
+.nosotros-hero-visual {
+    position: relative;
+    height: 300px;
+    margin-top: 3rem;
+}
+
+.floating-elements {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.floating-element {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--gold-color);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.element-1 {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.element-2 {
+    top: 40%;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.element-3 {
+    top: 70%;
+    left: 30%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+    33% { transform: translateY(-15px) rotate(3deg) scale(1.05); }
+    66% { transform: translateY(10px) rotate(-2deg) scale(0.95); }
+}
+
+/* Responsive para el hero de nosotros */
+@media (max-width: 768px) {
+    .nosotros-hero {
+        padding: 8rem 0 4rem;
+        min-height: 60vh;
+    }
+    
+    .nosotros-hero-text .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .nosotros-hero-text .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .nosotros-hero-visual {
+        height: 200px;
+        margin-top: 2rem;
+    }
+    
+    .floating-element {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nosotros-hero {
+        padding: 6rem 0 3rem;
+    }
+    
+    .nosotros-hero-text .hero-title {
+        font-size: 2rem;
+    }
+    
+    .nosotros-hero-text .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .floating-element {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Responsive General */
+@media (max-width: 768px) {
+    .nosotros-hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .nosotros-hero-text .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .nosotros-hero-stats {
+        justify-content: center;
+    }
+    
+    .historia-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .section-header {
+        text-align: center;
+    }
+    
+    .mvv-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .equipo-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .compromiso-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .impacto-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nosotros-hero {
+        padding: 6rem 0 3rem;
+    }
+    
+    .nosotros-hero-text .hero-title {
+        font-size: 2rem;
+    }
+    
+    .mvv-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .floating-element {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .historia-timeline {
+        padding-left: 1rem;
+    }
+    
+    .timeline-item {
+        padding-left: 1rem;
+    }
+    
+    .timeline-item::before {
+        left: -1.5rem;
+    }
+}
+
+/* ===== MODO OSCURO PARA NOSOTROS ===== */
+body.dark-mode .nosotros-hero {
+    background-image: url('https://img.freepik.com/foto-gratis/grupo-personas-felizes-trabajando-oficina_23-2149018478.jpg?t=st=1736250477~exp=1736254077~hmac=8a0d4f9b4d4c4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a&w=1380') !important;
+}
+
+body.dark-mode .hero-overlay {
+    background: linear-gradient(45deg, 
+        rgba(15, 23, 42, 0.9) 0%, 
+        rgba(30, 41, 59, 0.8) 50%, 
+        rgba(51, 65, 85, 0.7) 100%);
+    backdrop-filter: blur(3px);
+}
+
+body.dark-mode .historia-section {
+    background: #1e293b;
+}
+
+body.dark-mode .section-header h2 {
+    color: #60a5fa;
+}
+
+body.dark-mode .section-header p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .timeline-content h3 {
+    color: #e2e8f0;
+}
+
+body.dark-mode .timeline-content p {
+    color: #94a3b8;
+}
+
+body.dark-mode .mvv-section {
+    background: #1e293b;
+}
+
+body.dark-mode .mvv-card {
+    background: #334155;
+    border-color: #475569;
+    color: #e2e8f0;
+}
+
+body.dark-mode .mvv-card h3 {
+    color: #60a5fa;
+}
+
+body.dark-mode .mvv-card p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .valor-item {
+    color: #cbd5e1;
+}
+
+body.dark-mode .equipo-section {
+    background: #1e293b;
+}
+
+body.dark-mode .miembro-card {
+    background: #334155;
+    border-color: #475569;
+}
+
+body.dark-mode .miembro-nombre {
+    color: #e2e8f0;
+}
+
+body.dark-mode .miembro-desc {
+    color: #cbd5e1;
+}
+
+body.dark-mode .certificaciones-section {
+    background: #1e293b;
+}
+
+body.dark-mode .certificacion-card {
+    background: #334155;
+    border-color: #475569;
+    color: #e2e8f0;
+}
+
+body.dark-mode .certificacion-card h3 {
+    color: #60a5fa;
+}
+
+body.dark-mode .certificacion-card p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .compromiso-section {
+    background: #1e293b;
+}
+
+body.dark-mode .compromiso-info h4 {
+    color: #e2e8f0;
+}
+
+body.dark-mode .compromiso-info p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .impacto-stats {
+    background: rgba(30, 41, 59, 0.95);
+}
+
+body.dark-mode .impacto-number {
+    color: #60a5fa;
+}
+
+body.dark-mode .impacto-label {
+    color: #94a3b8;
+}
+
+body.dark-mode .cta-nosotros {
+    background: linear-gradient(135deg, #1e40af, #3730a3);
+}
+
+/* Efectos hover en modo oscuro */
+body.dark-mode .mvv-card:hover,
+body.dark-mode .miembro-card:hover,
+body.dark-mode .certificacion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    border-color: #60a5fa;
+}
+
+/* Asegurar que los textos en modo oscuro sean legibles */
+body.dark-mode .es-lang,
+body.dark-mode .en-lang {
+    color: inherit;
+}
+
+/* Botones en modo oscuro */
+body.dark-mode .btn-outline {
+    border-color: #e2e8f0;
+    color: #e2e8f0;
+}
+
+body.dark-mode .btn-outline:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+/* Línea de tiempo en modo oscuro */
+body.dark-mode .historia-timeline::before {
+    background: linear-gradient(to bottom, #60a5fa, #fbbf24);
+}
+
+body.dark-mode .timeline-item::before {
+    background: #60a5fa;
+    border-color: #1e293b;
+    box-shadow: 0 0 0 3px #60a5fa;
+}
+
+/* Iconos en modo oscuro */
+body.dark-mode .compromiso-icon {
+    background: rgba(96, 165, 250, 0.2);
+    color: #60a5fa;
+}
+
+body.dark-mode .valor-item i {
+    color: #60a5fa;
+}

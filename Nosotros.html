@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Nosotros - Ley Silla</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="css/nosotros.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="nosotros-page">
+
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <!-- Botón para abrir sidebar -->
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <img src="Imagenes/leySilla.png" alt="Ley Silla Logo">
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="es-lang">Inicio</a>
+                        <a href="index.html" class="en-lang">Home</a></li>
+                    <li><a href="Blog.html" class="es-lang">Blog</a>
+                        <a href="Blog.html" class="en-lang">Blog</a></li>
+                    <li><a href="Nosotros.html" class="active es-lang">Nosotros</a>
+                        <a href="Nosotros.html" class="active en-lang">Us</a></li>
+                    <li><a href="catalogo.html" class="es-lang">Catálogo</a>
+                        <a href="catalogo.html" class="en-lang">Catalog</a></li>
+                    <li><a href="contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="index.html">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalogo.html">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ley-silla.html">
+                                <i class="fas fa-gavel"></i>
+                                <span class="es-lang">Ley Silla</span>
+                                <span class="en-lang">Chair Law</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Blog.html">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Nosotros.html" class="active">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#empresas-obligadas">
+                                <i class="fas fa-building"></i>
+                                <span class="es-lang">Empresas Obligadas</span>
+                                <span class="en-lang">Required Companies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#beneficios">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="es-lang">Beneficios</span>
+                                <span class="en-lang">Benefits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#multas">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="es-lang">Multas y Sanciones</span>
+                                <span class="en-lang">Fines and Penalties</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- HERO NOSOTROS -->
+            <section class="nosotros-hero">
+                <div class="hero-background">
+                    <div class="hero-pattern"></div>
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="container-sm">
+                    <div class="nosotros-hero-content">
+                        <div class="nosotros-hero-text">
+                            <h1 class="hero-title es-lang">Nuestra Historia</h1>
+                            <h1 class="hero-title en-lang">Our Story</h1>
+                            <p class="hero-subtitle es-lang">
+                                Más de 15 años protegiendo la salud laboral y ayudando a empresas a cumplir con la Ley Silla
+                            </p>
+                            <p class="hero-subtitle en-lang">
+                                Over 15 years protecting occupational health and helping companies comply with Chair Law
+                            </p>
+                            <div class="nosotros-hero-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">15+</span>
+                                    <span class="stat-label es-lang">Años de Experiencia</span>
+                                    <span class="stat-label en-lang">Years of Experience</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">500+</span>
+                                    <span class="stat-label es-lang">Empresas Atendidas</span>
+                                    <span class="stat-label en-lang">Companies Served</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">10K+</span>
+                                    <span class="stat-label es-lang">Sillas Instaladas</span>
+                                    <span class="stat-label en-lang">Chairs Installed</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nosotros-hero-visual">
+                            <div class="floating-elements">
+                                <div class="floating-element element-1">
+                                    <i class="fas fa-history"></i>
+                                </div>
+                                <div class="floating-element element-2">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div class="floating-element element-3">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NUESTRA HISTORIA -->
+            <section class="historia-section">
+                <div class="container-sm">
+                    <div class="historia-content">
+                        <div class="historia-text">
+                            <div class="section-header">
+                                <h2 class="es-lang">Nuestra Trayectoria</h2>
+                                <h2 class="en-lang">Our Journey</h2>
+                                <p class="es-lang">Desde nuestros inicios hasta convertirnos en referentes en ergonomía laboral</p>
+                                <p class="en-lang">From our beginnings to becoming references in workplace ergonomics</p>
+                            </div>
+
+                            <div class="historia-timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-year">2008</div>
+                                    <div class="timeline-content">
+                                        <h3 class="es-lang">Fundación de JEMMSA</h3>
+                                        <h3 class="en-lang">JEMMSA Foundation</h3>
+                                        <p class="es-lang">Iniciamos operaciones con el objetivo de mejorar las condiciones laborales en las empresas mexicanas</p>
+                                        <p class="en-lang">We started operations with the goal of improving working conditions in Mexican companies</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-year">2012</div>
+                                    <div class="timeline-content">
+                                        <h3 class="es-lang">Especialización en Ergonomía</h3>
+                                        <h3 class="en-lang">Specialization in Ergonomics</h3>
+                                        <p class="es-lang">Nos especializamos en soluciones ergonómicas para el sector industrial y de servicios</p>
+                                        <p class="en-lang">We specialized in ergonomic solutions for the industrial and service sectors</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-year">2019</div>
+                                    <div class="timeline-content">
+                                        <h3 class="es-lang">Implementación Ley Silla</h3>
+                                        <h3 class="en-lang">Chair Law Implementation</h3>
+                                        <p class="es-lang">Lideramos la implementación de la Ley Silla en empresas de Ciudad Juárez y región</p>
+                                        <p class="en-lang">We led the implementation of Chair Law in companies in Ciudad Juarez and region</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-year">2023</div>
+                                    <div class="timeline-content">
+                                        <h3 class="es-lang">Expansión Nacional</h3>
+                                        <h3 class="en-lang">National Expansion</h3>
+                                        <p class="es-lang">Ampliamos nuestros servicios a nivel nacional con consultoría especializada</p>
+                                        <p class="en-lang">We expanded our services nationwide with specialized consulting</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="historia-image">
+                            <img src="https://img.freepik.com/foto-gratis/grupo-personas-felices-oficina_53876-31368.jpg?t=st=1736250477~exp=1736254077~hmac=8a0d4f9b4d4c4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a&w=1380" alt="Equipo de trabajo feliz" class="historia-img">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3 class="es-lang">15 Años de Excelencia</h3>
+                                    <h3 class="en-lang">15 Years of Excellence</h3>
+                                    <p class="es-lang">Comprometidos con la salud laboral</p>
+                                    <p class="en-lang">Committed to occupational health</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MISIÓN, VISIÓN Y VALORES -->
+            <section class="mvv-section">
+                <div class="container-sm">
+                    <div class="mvv-grid">
+                        <div class="mvv-card">
+                            <div class="mvv-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3 class="es-lang">Misión</h3>
+                            <h3 class="en-lang">Mission</h3>
+                            <p class="es-lang">Proveer soluciones ergonómicas integrales que mejoren la calidad de vida laboral y garanticen el cumplimiento normativo de nuestras empresas clientes</p>
+                            <p class="en-lang">Provide comprehensive ergonomic solutions that improve work quality of life and ensure regulatory compliance for our client companies</p>
+                        </div>
+
+                        <div class="mvv-card">
+                            <div class="mvv-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3 class="es-lang">Visión</h3>
+                            <h3 class="en-lang">Vision</h3>
+                            <p class="es-lang">Ser la empresa líder en México en soluciones de ergonomía laboral, reconocida por nuestra innovación y compromiso con la salud ocupacional</p>
+                            <p class="en-lang">To be the leading company in Mexico in workplace ergonomics solutions, recognized for our innovation and commitment to occupational health</p>
+                        </div>
+
+                        <div class="mvv-card">
+                            <div class="mvv-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3 class="es-lang">Valores</h3>
+                            <h3 class="en-lang">Values</h3>
+                            <div class="valores-list">
+                                <div class="valor-item">
+                                    <i class="fas fa-check"></i>
+                                    <span class="es-lang">Compromiso con la salud</span>
+                                    <span class="en-lang">Health commitment</span>
+                                </div>
+                                <div class="valor-item">
+                                    <i class="fas fa-check"></i>
+                                    <span class="es-lang">Innovación constante</span>
+                                    <span class="en-lang">Constant innovation</span>
+                                </div>
+                                <div class="valor-item">
+                                    <i class="fas fa-check"></i>
+                                    <span class="es-lang">Calidad garantizada</span>
+                                    <span class="en-lang">Guaranteed quality</span>
+                                </div>
+                                <div class="valor-item">
+                                    <i class="fas fa-check"></i>
+                                    <span class="es-lang">Servicio personalizado</span>
+                                    <span class="en-lang">Personalized service</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EQUIPO DIRECTIVO -->
+            <section class="equipo-section">
+                <div class="container-sm">
+                    <div class="section-header">
+                        <h2 class="es-lang">Nuestro Equipo Directivo</h2>
+                        <h2 class="en-lang">Our Management Team</h2>
+                        <p class="es-lang">Profesionales comprometidos con la excelencia y la innovación en ergonomía laboral</p>
+                        <p class="en-lang">Professionals committed to excellence and innovation in workplace ergonomics</p>
+                    </div>
+
+                    <div class="equipo-grid">
+                        <div class="miembro-card">
+                            <div class="miembro-image">
+                                <img src="https://img.freepik.com/foto-gratis/retrato-empresario-profesional-exitoso_53876-133379.jpg?t=st=1736250477~exp=1736254077~hmac=8a0d4f9b4d4c4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a&w=1060" alt="Director General">
+                                <div class="miembro-social">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                            <div class="miembro-info">
+                                <h3 class="miembro-nombre">Ing. Roberto Martínez</h3>
+                                <p class="miembro-cargo es-lang">Director General</p>
+                                <p class="miembro-cargo en-lang">General Director</p>
+                                <p class="miembro-desc es-lang">Más de 20 años de experiencia en consultoría empresarial y desarrollo de soluciones ergonómicas</p>
+                                <p class="miembro-desc en-lang">Over 20 years of experience in business consulting and ergonomic solutions development</p>
+                            </div>
+                        </div>
+
+                        <div class="miembro-card">
+                            <div class="miembro-image">
+                                <img src="https://img.freepik.com/foto-gratis/mujer-profesional-trabajando-oficina_53876-101368.jpg?t=st=1736250477~exp=1736254077~hmac=8a0d4f9b4d4c4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a&w=1060" alt="Directora de Operaciones">
+                                <div class="miembro-social">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                            <div class="miembro-info">
+                                <h3 class="miembro-nombre">Lic. Ana García</h3>
+                                <p class="miembro-cargo es-lang">Directora de Operaciones</p>
+                                <p class="miembro-cargo en-lang">Operations Director</p>
+                                <p class="miembro-desc es-lang">Especialista en implementación de normativas laborales y procesos de calidad</p>
+                                <p class="miembro-desc en-lang">Specialist in labor regulations implementation and quality processes</p>
+                            </div>
+                        </div>
+
+                        <div class="miembro-card">
+                            <div class="miembro-image">
+                                <img src="https://img.freepik.com/foto-gratis/hombre-joven-feliz-oficina_23-2148193851.jpg?t=st=1736250477~exp=1736254077~hmac=8a0d4f9b4d4c4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a&w=1060" alt="Gerente de Ventas">
+                                <div class="miembro-social">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                            <div class="miembro-info">
+                                <h3 class="miembro-nombre">Mtro. Carlos Rodríguez</h3>
+                                <p class="miembro-cargo es-lang">Gerente Comercial</p>
+                                <p class="miembro-cargo en-lang">Commercial Manager</p>
+                                <p class="miembro-desc es-lang">Experto en desarrollo de negocio y relaciones con clientes del sector industrial</p>
+                                <p class="miembro-desc en-lang">Expert in business development and industrial sector client relationships</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CERTIFICACIONES Y RECONOCIMIENTOS -->
+            <section class="certificaciones-section">
+                <div class="container-sm">
+                    <div class="section-header">
+                        <h2 class="es-lang">Certificaciones y Reconocimientos</h2>
+                        <h2 class="en-lang">Certifications and Recognitions</h2>
+                        <p class="es-lang">Avalados por las principales instituciones y organismos reguladores</p>
+                        <p class="en-lang">Endorsed by main institutions and regulatory bodies</p>
+                    </div>
+
+                    <div class="certificaciones-grid">
+                        <div class="certificacion-card">
+                            <div class="certificacion-logo">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h3 class="es-lang">ISO 9001:2015</h3>
+                            <h3 class="en-lang">ISO 9001:2015</h3>
+                            <p class="es-lang">Certificación en Sistemas de Gestión de Calidad</p>
+                            <p class="en-lang">Quality Management Systems Certification</p>
+                        </div>
+
+                        <div class="certificacion-card">
+                            <div class="certificacion-logo">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="es-lang">NOM-036-STPS</h3>
+                            <h3 class="en-lang">NOM-036-STPS</h3>
+                            <p class="es-lang">Especialistas en implementación de ergonomía laboral</p>
+                            <p class="en-lang">Specialists in workplace ergonomics implementation</p>
+                        </div>
+
+                        <div class="certificacion-card">
+                            <div class="certificacion-logo">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h3 class="es-lang">Premio a la Excelencia</h3>
+                            <h3 class="en-lang">Excellence Award</h3>
+                            <p class="es-lang">Reconocimiento por contribución a la salud laboral 2023</p>
+                            <p class="en-lang">Recognition for contribution to occupational health 2023</p>
+                        </div>
+
+                        <div class="certificacion-card">
+                            <div class="certificacion-logo">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3 class="es-lang">Aliado Estratégico</h3>
+                            <h3 class="en-lang">Strategic Partner</h3>
+                            <p class="es-lang">Reconocido por la Cámara de la Industria de Transformación</p>
+                            <p class="en-lang">Recognized by the Manufacturing Industry Chamber</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COMPROMISO SOCIAL -->
+            <section class="compromiso-section">
+                <div class="container-sm">
+                    <div class="compromiso-content">
+                        <div class="compromiso-text">
+                            <div class="section-header">
+                                <h2 class="es-lang">Compromiso Social y Ambiental</h2>
+                                <h2 class="en-lang">Social and Environmental Commitment</h2>
+                                <p class="es-lang">Trabajamos por un futuro laboral más saludable y sostenible</p>
+                                <p class="en-lang">We work for a healthier and more sustainable work future</p>
+                            </div>
+
+                            <div class="compromiso-items">
+                                <div class="compromiso-item">
+                                    <div class="compromiso-icon">
+                                        <i class="fas fa-recycle"></i>
+                                    </div>
+                                    <div class="compromiso-info">
+                                        <h4 class="es-lang">Sostenibilidad Ambiental</h4>
+                                        <h4 class="en-lang">Environmental Sustainability</h4>
+                                        <p class="es-lang">Utilizamos materiales reciclables y procesos de manufactura eco-amigables</p>
+                                        <p class="en-lang">We use recyclable materials and eco-friendly manufacturing processes</p>
+                                    </div>
+                                </div>
+
+                                <div class="compromiso-item">
+                                    <div class="compromiso-icon">
+                                        <i class="fas fa-hands-helping"></i>
+                                    </div>
+                                    <div class="compromiso-info">
+                                        <h4 class="es-lang">Responsabilidad Social</h4>
+                                        <h4 class="en-lang">Social Responsibility</h4>
+                                        <p class="es-lang">Programas de capacitación para PYMEs y apoyo a comunidades vulnerables</p>
+                                        <p class="en-lang">Training programs for SMEs and support for vulnerable communities</p>
+                                    </div>
+                                </div>
+
+                                <div class="compromiso-item">
+                                    <div class="compromiso-icon">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="compromiso-info">
+                                        <h4 class="es-lang">Educación Continua</h4>
+                                        <h4 class="en-lang">Continuing Education</h4>
+                                        <p class="es-lang">Talleres y seminarios gratuitos sobre ergonomía y seguridad laboral</p>
+                                        <p class="en-lang">Free workshops and seminars on ergonomics and workplace safety</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="compromiso-image">
+                            <img src="https://img.freepik.com/foto-gratis/grupo-personas-felices-oficina_53876-31368.jpg?t=st=1736250477~exp=1736254077~hmac=8a0d4f9b4d4c4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a&w=1380" alt="Equipo comprometido con la sostenibilidad">
+                            <div class="impacto-stats">
+                                <div class="impacto-stat">
+                                    <span class="impacto-number">85%</span>
+                                    <span class="impacto-label es-lang">Materiales Reciclados</span>
+                                    <span class="impacto-label en-lang">Recycled Materials</span>
+                                </div>
+                                <div class="impacto-stat">
+                                    <span class="impacto-number">50+</span>
+                                    <span class="impacto-label es-lang">Talleres Impartidos</span>
+                                    <span class="impacto-label en-lang">Workshops Given</span>
+                                </div>
+                                <div class="impacto-stat">
+                                    <span class="impacto-number">100%</span>
+                                    <span class="impacto-label es-lang">Energía Limpia</span>
+                                    <span class="impacto-label en-lang">Clean Energy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA FINAL -->
+            <section class="cta-nosotros">
+                <div class="container-sm">
+                    <div class="cta-content">
+                        <div class="cta-text">
+                            <h2 class="es-lang">¿Listo para Trabajar Juntos?</h2>
+                            <h2 class="en-lang">Ready to Work Together?</h2>
+                            <p class="es-lang">Únete a las más de 500 empresas que ya han mejorado sus condiciones laborales con nosotros</p>
+                            <p class="en-lang">Join the more than 500 companies that have already improved their working conditions with us</p>
+                        </div>
+                        <div class="cta-actions">
+                            <a href="contactanos.html" class="btn btn-primary btn-large">
+                                <i class="fas fa-handshake"></i>
+                                <span class="es-lang">Solicitar Asesoría</span>
+                                <span class="en-lang">Request Consultation</span>
+                            </a>
+                            <a href="catalogo.html" class="btn btn-outline btn-large">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Ver Catálogo</span>
+                                <span class="en-lang">View Catalog</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
+                        <li><a href="Blog.html" class="es-lang">Blog</a><a href="Blog.html" class="en-lang">Chair Law Blog</a></li>
+                         <li><a href="Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="catalogo.html" class="es-lang">Catálogo</a><a href="catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="contactanos.html" class="es-lang">Contáctanos</a><a href="contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </div> <!-- END WRAPPER -->
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <!-- Botón flotante del chatbot -->
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <!-- Ventana del Chatbot -->
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Mensajes aparecerán aquí -->
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                    <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                    <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                    <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/nosotros.js"></script>
+
+    <script>
+        // JavaScript para la barra lateral
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            
+            function toggleSidebar() {
+                sidebar.classList.toggle('active');
+                sidebarOverlay.classList.toggle('active');
+                
+                if (sidebar.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            }
+            
+            if (sidebarToggle) {
+                sidebarToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleSidebar();
+                });
+            }
+            
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', function() {
+                    toggleSidebar();
+                });
+            }
+            
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 1024) {
+                        toggleSidebar();
+                    }
+                });
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                    toggleSidebar();
+                }
+            });
+
+            // JavaScript para animaciones de la página Nosotros
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            // Animación para elementos de la línea de tiempo
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            timelineItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'all 0.6s ease';
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
