@@ -1,130 +1,191 @@
-// JavaScript para el carrusel automático
+// JavaScript para la página de detalles del producto
 document.addEventListener('DOMContentLoaded', function() {
-    // Elementos del carrusel
-    const carruselSlides = document.getElementById('carruselSlides');
-    const slides = document.querySelectorAll('.carrusel-slide');
-    const indicators = document.querySelectorAll('.indicator');
-    const prevBtn = document.getElementById('carruselPrev');
-    const nextBtn = document.getElementById('carruselNext');
-    
-    let currentSlide = 0;
-    let autoSlideInterval;
-    
-    // Función para mostrar slide específico
-    function showSlide(index) {
-        // Asegurar que el índice esté dentro del rango
-        if (index < 0) {
-            currentSlide = slides.length - 1;
-        } else if (index >= slides.length) {
-            currentSlide = 0;
-        } else {
-            currentSlide = index;
-        }
-        
-        // Mover el carrusel
-        carruselSlides.style.transform = `translateX(-${currentSlide * 100}%)`;
-        
-        // Actualizar indicadores
-        indicators.forEach((indicator, i) => {
-            indicator.classList.toggle('active', i === currentSlide);
-        });
-        
-        // Actualizar items de galería
-        const galeriaItems = document.querySelectorAll('.galeria-item');
-        galeriaItems.forEach((item, i) => {
-            item.classList.toggle('active', i === currentSlide);
-        });
-    }
-    
-    // Función para siguiente slide
-    function nextSlide() {
-        showSlide(currentSlide + 1);
-    }
-    
-    // Función para slide anterior
-    function prevSlide() {
-        showSlide(currentSlide - 1);
-    }
-    
-    // Iniciar carrusel automático
-    function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 4000); // Cambia cada 4 segundos
-    }
-    
-    // Detener carrusel automático
-    function stopAutoSlide() {
-        clearInterval(autoSlideInterval);
-    }
-    
-    // Event listeners
-    if (nextBtn) {
-        nextBtn.addEventListener('click', function() {
-            stopAutoSlide();
-            nextSlide();
-            startAutoSlide();
-        });
-    }
-    
-    if (prevBtn) {
-        prevBtn.addEventListener('click', function() {
-            stopAutoSlide();
-            prevSlide();
-            startAutoSlide();
-        });
-    }
-    
-    // Event listeners para indicadores
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', function() {
-            stopAutoSlide();
-            showSlide(index);
-            startAutoSlide();
-        });
-    });
-    
-    // Event listeners para items de galería
+    // Galería de imágenes
     const galeriaItems = document.querySelectorAll('.galeria-item');
-    galeriaItems.forEach((item, index) => {
-        item.addEventListener('click', function() {
-            stopAutoSlide();
-            showSlide(index);
-            startAutoSlide();
-        });
-    });
+    const miniaturas = document.querySelectorAll('.miniatura');
+    const imagenPrincipal = document.getElementById('productoImagen');
     
-    // Pausar carrusel al hacer hover
-    const carruselContainer = document.querySelector('.carrusel-container');
-    if (carruselContainer) {
-        carruselContainer.addEventListener('mouseenter', stopAutoSlide);
-        carruselContainer.addEventListener('mouseleave', startAutoSlide);
+    function cambiarImagen(nuevaImagen, elemento) {
+        galeriaItems.forEach(i => i.classList.remove('active'));
+        miniaturas.forEach(m => m.classList.remove('active'));
+        
+        if (elemento) elemento.classList.add('active');
+        
+        if (imagenPrincipal && nuevaImagen) {
+            imagenPrincipal.style.opacity = '0';
+            setTimeout(() => {
+                imagenPrincipal.src = nuevaImagen;
+                imagenPrincipal.style.opacity = '1';
+            }, 300);
+        }
     }
     
-    // Iniciar carrusel automático
-    startAutoSlide();
-    
-    // JavaScript para la galería de imágenes
-    const galeriaItemsStatic = document.querySelectorAll('.galeria-item');
-    
-    galeriaItemsStatic.forEach(item => {
+    galeriaItems.forEach(item => {
         item.addEventListener('click', function() {
             const nuevaImagen = this.getAttribute('data-image');
+            cambiarImagen(nuevaImagen, this);
+        });
+    });
+    
+    miniaturas.forEach(miniatura => {
+        miniatura.addEventListener('click', function() {
+            const nuevaImagen = this.getAttribute('data-image');
+            cambiarImagen(nuevaImagen, this);
             
-            // Remover clase active de todos los items
-            galeriaItemsStatic.forEach(i => i.classList.remove('active'));
+            galeriaItems.forEach(item => {
+                if (item.getAttribute('data-image') === nuevaImagen) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    });
+    
+    // Botón de ficha técnica
+    const btnFichaTecnica = document.querySelector('.btn-secondary');
+    
+    if (btnFichaTecnica) {
+        btnFichaTecnica.addEventListener('click', function() {
+            // Simular descarga de ficha técnica
+            alert('Descargando ficha técnica en formato PDF...');
+        });
+    }
+    
+    // Efectos de hover mejorados
+    const especItems = document.querySelectorAll('.espec-item');
+    const accesorioCards = document.querySelectorAll('.accesorio-card');
+    
+    especItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(5px)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0)';
+        });
+    });
+    
+    accesorioCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // Animaciones de entrada
+    const elementosAnimados = document.querySelectorAll('.producto-info, .producto-visual, .espec-categoria, .accesorio-card');
+    
+    const observerAnimaciones = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+    
+    elementosAnimados.forEach(elemento => {
+        elemento.style.opacity = '0';
+        elemento.style.transform = 'translateY(30px)';
+        elemento.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observerAnimaciones.observe(elemento);
+    });
+    
+    // Preloader para imágenes
+    const imagenes = document.querySelectorAll('img');
+    imagenes.forEach(img => {
+        img.addEventListener('load', function() {
+            this.classList.add('cargada');
+        });
+        
+        // Fallback para imágenes que ya están cargadas
+        if (img.complete) {
+            img.classList.add('cargada');
+        }
+    });
+    
+    // Manejo de errores de imágenes
+    imagenPrincipal.addEventListener('error', function() {
+        this.src = 'Imagenes/placeholder-producto.jpg';
+        this.alt = 'Imagen no disponible';
+    });
+    
+    // Actualizar información del sistema en panel de accesibilidad
+    function actualizarInfoSistema() {
+        const browserInfo = document.getElementById('browserInfo');
+        const deviceInfo = document.getElementById('deviceInfo');
+        
+        if (browserInfo) {
+            browserInfo.textContent = navigator.userAgent.split(' ')[0];
+        }
+        
+        if (deviceInfo) {
+            const esMovil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            deviceInfo.textContent = esMovil ? 'Móvil' : 'Escritorio';
+        }
+    }
+    
+    actualizarInfoSistema();
+    
+    // Manejo de idioma
+    function cambiarIdioma(idioma) {
+        const elementosEs = document.querySelectorAll('.es-lang');
+        const elementosEn = document.querySelectorAll('.en-lang');
+        
+        if (idioma === 'es') {
+            elementosEs.forEach(el => el.style.display = 'block');
+            elementosEn.forEach(el => el.style.display = 'none');
+        } else {
+            elementosEs.forEach(el => el.style.display = 'none');
+            elementosEn.forEach(el => el.style.display = 'block');
+        }
+        
+        // Guardar preferencia
+        localStorage.setItem('idiomaPreferido', idioma);
+    }
+    
+    // Aplicar idioma guardado
+    const idiomaGuardado = localStorage.getItem('idiomaPreferido') || 'es';
+    cambiarIdioma(idiomaGuardado);
+    
+    // Botones de idioma en panel de accesibilidad
+    const botonesIdioma = document.querySelectorAll('.language-btn');
+    botonesIdioma.forEach(boton => {
+        boton.addEventListener('click', function() {
+            const idioma = this.getAttribute('data-lang');
+            cambiarIdioma(idioma);
             
-            // Agregar clase active al item clickeado
+            // Actualizar estado activo
+            botonesIdioma.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
         });
     });
-
-    // JavaScript para cambiar entre productos
-    const verDetalleBtns = document.querySelectorAll('.ver-detalle-btn');
-    
-    verDetalleBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const producto = this.getAttribute('data-producto');
-            // Aquí puedes agregar lógica para cambiar entre productos
-            console.log('Cambiar a producto:', producto);
-        });
-    });
 });
+
+// Funciones globales para reutilizar
+window.productoDetalle = {
+    cambiarImagen: function(nuevaImagen, elemento) {
+        const galeriaItems = document.querySelectorAll('.galeria-item');
+        const miniaturas = document.querySelectorAll('.miniatura');
+        const imagenPrincipal = document.getElementById('productoImagen');
+        
+        galeriaItems.forEach(i => i.classList.remove('active'));
+        miniaturas.forEach(m => m.classList.remove('active'));
+        
+        if (elemento) elemento.classList.add('active');
+        
+        if (imagenPrincipal && nuevaImagen) {
+            imagenPrincipal.style.opacity = '0';
+            setTimeout(() => {
+                imagenPrincipal.src = nuevaImagen;
+                imagenPrincipal.style.opacity = '1';
+            }, 300);
+        }
+    }
+    
+};
+
