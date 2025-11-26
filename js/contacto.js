@@ -14,45 +14,72 @@ document.addEventListener('DOMContentLoaded', function() {
     configurarAnimaciones();
 });
 
-function inicializarMapa() {
-    const mapElement = document.getElementById('map');
-    if (!mapElement) return;
+function initMap() {
+    const location = { lat: 31.6771103, lng: -106.3733022 }; // Coordenadas de JEMMSA
     
-    const ubicacion = { lat: 31.6904, lng: -106.4245 }; // Coordenadas de Juárez, Chihuahua
-    
-    const map = new google.maps.Map(mapElement, {
-        zoom: 15,
-        center: ubicacion,
+    const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: location,
         styles: [
             {
-                featureType: "all",
-                elementType: "geometry",
-                stylers: [{ color: "#f5f5f5" }]
+                "featureType": "all",
+                "elementType": "geometry.fill",
+                "stylers": [{ "weight": "2.00" }]
             },
             {
-                featureType: "poi",
-                elementType: "labels.text",
-                stylers: [{ visibility: "off" }]
+                "featureType": "all",
+                "elementType": "geometry.stroke",
+                "stylers": [{ "color": "#9c9c9c" }]
+            },
+            {
+                "featureType": "all",
+                "elementType": "labels.text",
+                "stylers": [{ "visibility": "on" }]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "all",
+                "stylers": [{ "color": "#f2f2f2" }]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "geometry.fill",
+                "stylers": [{ "color": "#ffffff" }]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "all",
+                "stylers": [{ "visibility": "off" }]
             }
         ]
     });
-    
+
+    // Marcador de ubicación
     new google.maps.Marker({
-        position: ubicacion,
+        position: location,
         map: map,
-        title: "Ley Silla Showroom",
-        icon: {
-            url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="20" cy="20" r="18" fill="#2c5530" stroke="white" stroke-width="2"/>
-                    <path d="M20 10L25 15L20 20L15 15L20 10Z" fill="white"/>
-                    <circle cx="20" cy="20" r="4" fill="#d4af37"/>
-                </svg>
-            `),
-            scaledSize: new google.maps.Size(40, 40)
-        }
+        title: 'Showroom Ley Silla'
     });
 }
+
+// Manejo de errores
+function gm_authFailure() {
+    console.error('Error de autenticación con Google Maps');
+    document.getElementById('map').innerHTML = `
+        <div style="height:100%; display:flex; align-items:center; justify-content:center; background:#f5f5f5;">
+            <div style="text-align:center;">
+                <i class="fas fa-map-marker-alt" style="font-size:48px; color:#ccc; margin-bottom:10px;"></i>
+                <p>Mapa no disponible temporalmente</p>
+                <a href="https://www.google.com/maps/place/JEMMSA/@31.6771011,-106.3734515,20z/data=!4m6!3m5!1s0x86e75d94b851cdb7:0x201492b5c0030859!8m2!3d31.6771103!4d-106.3733022!16s%2Fg%2F11fjtzw3zq?entry=ttu" 
+                   target="_blank" class="btn btn-outline">
+                    <i class="fas fa-external-link-alt"></i>
+                    Ver en Google Maps
+                </a>
+            </div>
+        </div>
+    `;
+}
+
 
 function configurarFormulario() {
     const formulario = document.getElementById('contactForm');

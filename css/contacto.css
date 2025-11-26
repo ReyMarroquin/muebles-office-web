@@ -308,7 +308,24 @@
 .input-icon {
     position: absolute;
     left: 1rem;
-    top: 50%;
+    top: 70%;
+    transform: translateY(-50%);
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+}
+.input-icono {
+    position: absolute;
+    left: 1rem;
+    top: 70%;
+    transform: translateY(-50%);
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+}
+
+.input-iconos {
+    position: absolute;
+    left: 1rem;
+    top: 30%;
     transform: translateY(-50%);
     color: var(--primary-blue);
     font-size: 1.1rem;
