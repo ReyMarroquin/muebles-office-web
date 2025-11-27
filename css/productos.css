@@ -1,0 +1,527 @@
+/* detalle-producto.css - Modo Oscuro SOLO para contenido principal */
+:root {
+  /* Colores base - Modo Claro (default) */
+  --primary-color: #2c5530;
+  --primary-dark: #1e3a23;
+  --primary-light: #3a7d44;
+  --secondary-color: #d4af37;
+  --accent-color: #8b4513;
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7fafc;
+  --bg-tertiary: #edf2f7;
+  --border-color: #e2e8f0;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Modo Oscuro - usando la clase .dark-mode del body */
+body.dark-mode .main-content-with-sidebar {
+  --text-primary: #f7fafc;
+  --text-secondary: #e2e8f0;
+  --text-muted: #a0aec0;
+  --bg-primary: #1a202c;
+  --bg-secondary: #2d3748;
+  --bg-tertiary: #4a5568;
+  --border-color: #4a5568;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== BREADCRUMB ===== */
+body.dark-mode .breadcrumb-industrial {
+  background: var(--bg-secondary);
+  border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .breadcrumb-link {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .breadcrumb-link:hover {
+  color: var(--primary-color);
+}
+
+body.dark-mode .breadcrumb-current {
+  color: var(--text-primary);
+}
+
+body.dark-mode .breadcrumb-divider {
+  color: var(--text-muted);
+}
+
+/* ===== HERO DEL PRODUCTO ===== */
+body.dark-mode .producto-hero-industrial {
+  background: var(--bg-primary);
+  border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .producto-titulo {
+  color: var(--text-primary);
+}
+
+body.dark-mode .producto-descripcion {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .producto-caracteristicas {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+}
+
+body.dark-mode .caracteristica-item {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .caracteristica-item strong {
+  color: var(--text-primary);
+}
+
+body.dark-mode .btn-secondary {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+body.dark-mode .btn-secondary:hover {
+  background: var(--border-color);
+}
+
+body.dark-mode .imagen-overlay-industrial {
+  background: linear-gradient(135deg, 
+    rgba(26, 32, 44, 0.1) 0%, 
+    rgba(45, 55, 72, 0.3) 100%);
+}
+
+/* ===== ESPECIFICACIONES TÉCNICAS ===== */
+body.dark-mode .descripcion-detallada {
+  background: var(--bg-primary);
+}
+
+body.dark-mode .descripcion-header {
+  background: var(--bg-secondary);
+}
+
+body.dark-mode .descripcion-header h2 {
+  color: var(--text-primary);
+}
+
+body.dark-mode .descripcion-header p {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .especificaciones-grid {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+body.dark-mode .espec-categoria {
+  border-bottom: 1px solid var(--border-color);
+}
+
+body.dark-mode .categoria-titulo {
+  color: var(--text-primary);
+}
+
+body.dark-mode .espec-item {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .espec-categoria-destacada {
+  background: var(--bg-tertiary);
+  border-left: 4px solid var(--secondary-color);
+}
+
+body.dark-mode .espec-categoria-destacada .categoria-titulo {
+  color: var(--secondary-color);
+}
+
+/* ===== GALERÍA ===== */
+body.dark-mode .galeria-industrial {
+  background: var(--bg-secondary);
+}
+
+body.dark-mode .galeria-header {
+  background: var(--bg-tertiary);
+}
+
+body.dark-mode .galeria-header h2 {
+  color: var(--text-primary);
+}
+
+body.dark-mode .galeria-header p {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .galeria-grid {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+}
+
+body.dark-mode .galeria-item {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+}
+
+body.dark-mode .galeria-overlay {
+  background: rgba(26, 32, 44, 0.8);
+  color: var(--text-primary);
+}
+
+body.dark-mode .galeria-item:hover .galeria-overlay {
+  background: rgba(56, 161, 105, 0.9);
+}
+
+/* ===== ACCESORIOS ===== */
+body.dark-mode .accesorios-section {
+  background: var(--bg-primary);
+}
+
+body.dark-mode .accesorios-header {
+  background: var(--bg-secondary);
+}
+
+body.dark-mode .accesorios-header h2 {
+  color: var(--text-primary);
+}
+
+body.dark-mode .accesorios-header p {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .accesorio-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+}
+
+body.dark-mode .accesorio-info h3 {
+  color: var(--text-primary);
+}
+
+body.dark-mode .accesorio-info p {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .accesorio-nota {
+  color: var(--text-muted);
+}
+
+/* ===== CTA PROFESIONAL ===== */
+body.dark-mode .cta-profesional-industrial {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  border: 1px solid var(--border-color);
+}
+
+body.dark-mode .cta-titulo {
+  color: var(--text-primary);
+}
+
+body.dark-mode .cta-descripcion {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .cta-descripcion strong {
+  color: var(--primary-color);
+}
+
+body.dark-mode .beneficio-item {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .cta-action-card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+}
+
+body.dark-mode .cta-action-card h3 {
+  color: var(--text-primary);
+}
+
+body.dark-mode .cta-action-card p {
+  color: var(--text-secondary);
+}
+
+/* ===== MINIATURAS GALERÍA ===== */
+body.dark-mode .miniaturas-galeria {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+body.dark-mode .miniatura {
+  border: 2px solid var(--border-color);
+}
+
+body.dark-mode .miniatura.active {
+  border-color: var(--primary-color);
+}
+
+body.dark-mode .miniatura:hover {
+  border-color: var(--primary-light);
+}
+
+/* ===== CHATBOT ===== */
+body.dark-mode #chatbot-window {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+body.dark-mode .chatbot-header {
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+body.dark-mode .chatbot-title {
+  color: var(--text-primary);
+}
+
+body.dark-mode .chatbot-messages {
+  background: var(--bg-primary);
+}
+
+body.dark-mode .bot-message .message-content {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+body.dark-mode #chatbot-input {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+body.dark-mode #chatbot-input::placeholder {
+  color: var(--text-muted);
+}
+
+body.dark-mode .chatbot-quick-questions {
+  background: var(--bg-tertiary);
+  border-top: 1px solid var(--border-color);
+}
+
+body.dark-mode .chatbot-quick-questions span {
+  color: var(--text-primary);
+}
+
+body.dark-mode .quick-question {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+body.dark-mode .quick-question:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* ===== TRANSICIONES SUAVES ===== */
+body.dark-mode .main-content-with-sidebar * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Asegurar que los fondos de las cards cambien */
+body.dark-mode .container {
+  background: transparent;
+}
+
+/* EXCLUIR el panel de accesibilidad del modo oscuro */
+.accessibility-panel,
+.accessibility-content,
+.accessibility-section,
+.theme-btn,
+.language-btn,
+.text-size-btn,
+.system-info {
+  /* Mantener los estilos originales - no se ven afectados por el modo oscuro */
+}
+/* ===== ESPECIFICACIONES TÉCNICAS - ELEMENTOS INDIVIDUALES ===== */
+body.dark-mode .espec-item {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .espec-item:hover {
+  background: var(--border-color);
+  transform: translateX(5px);
+}
+
+body.dark-mode .espec-icon {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  min-width: 30px;
+  text-align: center;
+  margin-top: 0.2rem;
+}
+
+body.dark-mode .espec-content {
+  flex: 1;
+}
+
+body.dark-mode .espec-content p {
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Estilos para las categorías principales */
+body.dark-mode .espec-categoria {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+body.dark-mode .categoria-titulo {
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+body.dark-mode .categoria-titulo i {
+  color: var(--primary-color);
+}
+
+/* Estilos específicos para la categoría destacada del aro cromado */
+body.dark-mode .espec-categoria-destacada {
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, rgba(214, 158, 46, 0.1) 100%);
+  border: 2px solid var(--secondary-color);
+  position: relative;
+}
+
+body.dark-mode .espec-categoria-destacada::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+  border-radius: 10px 10px 0 0;
+}
+
+body.dark-mode .espec-categoria-destacada .categoria-titulo {
+  color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+}
+
+body.dark-mode .espec-categoria-destacada .categoria-titulo i {
+  color: var(--secondary-color);
+}
+
+body.dark-mode .espec-categoria-destacada .espec-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .espec-categoria-destacada .espec-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--secondary-color);
+}
+
+/* Asegurar que el contenedor principal también cambie */
+body.dark-mode .especificaciones-grid {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+body.dark-mode .descripcion-content {
+  background: transparent;
+}
+
+body.dark-mode .descripcion-texto {
+  background: transparent;
+}
+
+/* ===== ACCESORIOS - ELEMENTOS ESPECÍFICOS ===== */
+body.dark-mode .accesorio-nota {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+body.dark-mode .accesorio-imagen {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+body.dark-mode .accesorio-imagen img {
+  border-radius: 6px;
+  filter: brightness(0.9);
+  transition: filter 0.3s ease;
+}
+
+body.dark-mode .accesorio-imagen:hover img {
+  filter: brightness(1);
+}
+
+body.dark-mode .accesorio-badge {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  box-shadow: var(--shadow);
+}
+
+/* Estilos adicionales para mejorar la card completa de accesorio */
+body.dark-mode .accesorio-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .accesorio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  border-color: var(--primary-light);
+}
+
+body.dark-mode .accesorio-info h3 {
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+}
+
+body.dark-mode .accesorio-info p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
