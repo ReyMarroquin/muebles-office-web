@@ -327,16 +327,7 @@ body.dark-mode .container {
   background: transparent;
 }
 
-/* EXCLUIR el panel de accesibilidad del modo oscuro */
-.accessibility-panel,
-.accessibility-content,
-.accessibility-section,
-.theme-btn,
-.language-btn,
-.text-size-btn,
-.system-info {
-  /* Mantener los estilos originales - no se ven afectados por el modo oscuro */
-}
+
 /* ===== ESPECIFICACIONES TÉCNICAS - ELEMENTOS INDIVIDUALES ===== */
 body.dark-mode .espec-item {
   background: var(--bg-tertiary);
