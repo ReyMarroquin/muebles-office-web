@@ -4,325 +4,817 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>OHI-46-ARO-CROMADO Industrial - Ley Silla</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
     <link rel="stylesheet" href="../css/detalle-producto.css">
+
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="detalle-producto-page">
 
-    <!-- Breadcrumb -->
-    <nav class="breadcrumb-industrial">
-        <div class="container">
-            <div class="breadcrumb-content">
-                <a href="../index.html" class="breadcrumb-link">
-                    <i class="fas fa-home"></i>
-                    <span>Inicio</span>
-                </a>
-                <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
-                <a href="../catalogo.html" class="breadcrumb-link">
-                    <span>Catálogo</span>
-                </a>
-                <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
-                <a href="../catalogo.html?categoria=heavy-duty" class="breadcrumb-link">
-                    <span>HEAVY-DUTY</span>
-                </a>
-                <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
-                <span class="breadcrumb-current">OHI-46-ARO-CROMADO</span>
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
 
-    <!-- Hero del Producto -->
-    <section class="producto-hero-industrial">
-        <div class="container">
-            <div class="hero-content">
-                <div class="producto-info">
-                    <div class="producto-badge industrial-badge">
-                        <i class="fas fa-industry"></i>
-                        <span>HEAVY-DUTY</span>
-                    </div>
-                    
-                    <h1 class="producto-titulo">OHI-46-ARO-CROMADO</h1>
-                    
-                    <p class="producto-descripcion">
-                        Versión premium con aro cromado de alta resistencia. Diseño ergonómico para jornadas prolongadas.
-                    </p>
-                    
-                    <div class="producto-precio">
-                        <span class="precio">$5,200</span>
-                        <span class="precio-nota">Precio por unidad</span>
-                    </div>
-                    
-                    <div class="producto-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Aro Cromado</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-user-check"></i>
-                            <span>Ergonómico</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-weight"></i>
-                            <span>140 kg Capacidad</span>
-                        </div>
-                    </div>
-                    
-                    <div class="producto-actions">
-                        <button class="btn btn-primary btn-large">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span>Solicitar Cotización</span>
-                        </button>
-                        <button class="btn btn-secondary">
-                            <i class="fas fa-file-pdf"></i>
-                            <span>Descargar Ficha Técnica</span>
-                        </button>
-                    </div>
+        <!-- HEADER -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <img src="../../Imagenes/leySilla.png" alt="Ley Silla Logo">
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="es-lang">Inicio</a>
+                        <a href="../index.html" class="en-lang">Home</a></li>
+                    <li><a href="../Blog.html" class="es-lang">Blog</a>
+                        <a href="../Blog.html" class="en-lang">Blog</a></li>
+                    <li><a href="../Nosotros.html" class="es-lang">Nosotros</a>
+                        <a href="../Nosotros.html" class="en-lang">us</a></li>
+                    <li><a href="../catalogo.html" class="active es-lang">Catálogo</a>
+                        <a href="../catalogo.html" class="active en-lang">Catalog</a></li>
+                    <li><a href="../contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
                 </div>
                 
-                <div class="producto-visual">
-                    <div class="imagen-principal-container">
-                        <img src="../Imagenes/cromado1.png" 
-                             alt="OHI-46-ARO-CROMADO Industrial" 
-                             class="imagen-principal"
-                             id="productoImagen">
-                        <div class="imagen-overlay-industrial"></div>
-                        <div class="producto-estado">
-                            <span class="estado-badge disponible">
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="../index.html">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../catalogo.html" class="active">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Blog.html">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../Nosotros.html">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#empresas-obligadas">
+                                <i class="fas fa-building"></i>
+                                <span class="es-lang">Empresas Obligadas</span>
+                                <span class="en-lang">Required Companies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#beneficios">
                                 <i class="fas fa-check-circle"></i>
-                                <span>Disponible</span>
-                            </span>
+                                <span class="es-lang">Beneficios</span>
+                                <span class="en-lang">Benefits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html#multas">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="es-lang">Multas y Sanciones</span>
+                                <span class="en-lang">Fines and Penalties</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </aside>
 
-    <!-- Galería de Imágenes -->
-    <section class="galeria-industrial">
-        <div class="container">
-            <div class="galeria-header">
-                <h2>Galería del Producto</h2>
-                <p>Explora cada detalle de nuestra silla industrial con aro cromado</p>
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- Breadcrumb Mejorado -->
+            <nav class="breadcrumb-industrial">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <a href="../index.html" class="breadcrumb-link">
+                            <i class="fas fa-home"></i>
+                            <span class="es-lang">Inicio</span>
+                            <span class="en-lang">Home</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html" class="breadcrumb-link">
+                            <span class="es-lang">Catálogo</span>
+                            <span class="en-lang">Catalog</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html?categoria=industrial" class="breadcrumb-link">
+                            <span class="es-lang">INDUSTRIAL</span>
+                            <span class="en-lang">INDUSTRIAL</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <span class="breadcrumb-current">OHI-46-ARO-CROMADO</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero del Producto Simplificado -->
+            <section class="producto-hero-industrial">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="producto-info">
+                            <div class="producto-header">
+                                
+                                <div class="producto-badge cromo-badge">
+                                    <i class="fas fa-ring"></i>
+                                    <span>ARO CROMADO</span>
+                                </div>
+                            </div>
+                            
+                            <h1 class="producto-titulo">OHI-46-ARO-CROMADO</h1>
+                            
+                            <p class="producto-descripcion es-lang">
+                                Silla industrial con aro cromado de alta calidad, diseñada para entornos de trabajo exigentes donde la durabilidad y resistencia son fundamentales.
+                            </p>
+                            <p class="producto-descripcion en-lang">
+                                Industrial chair with high-quality chrome ring, designed for demanding work environments where durability and resistance are essential.
+                            </p>
+                            
+                            <div class="producto-caracteristicas">
+                                <div class="caracteristica-item">
+                                    <i class="fas fa-weight-hanging"></i>
+                                    <div>
+                                        <strong class="es-lang">Resistencia Máxima Silla:</strong>
+                                        <strong class="en-lang">Maximum Chair Resistance:</strong>
+                                        <span>140 kgs</span>
+                                    </div>
+                                </div>
+                                <div class="caracteristica-item">
+                                    <i class="fas fa-weight"></i>
+                                    <div>
+                                        <strong class="es-lang">Resistencia Aro:</strong>
+                                        <strong class="en-lang">Ring Resistance:</strong>
+                                        <span>50 kgs</span>
+                                    </div>
+                                </div>
+                                <div class="caracteristica-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <div>
+                                        <strong class="es-lang">Diámetro Aro:</strong>
+                                        <strong class="en-lang">Ring Diameter:</strong>
+                                        <span>457 mm (18")</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="producto-actions">
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span class="es-lang">Solicitar Información</span>
+                                    <span class="en-lang">Request Information</span>
+                                </a>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span class="es-lang">Ficha Técnica PDF</span>
+                                    <span class="en-lang">Technical Sheet PDF</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="producto-visual">
+                            <div class="imagen-principal-container">
+                                <img src="../Imagenes/silla-oficina-negra-ruedas.png" 
+                                     alt="OHI-46-ARO-CROMADO - Silla industrial con aro cromado" 
+                                     class="imagen-principal"
+                                     id="productoImagen">
+                                <div class="imagen-overlay-industrial"></div>
+                            </div>
+                            
+                            <div class="miniaturas-galeria">
+                                <div class="miniatura active" data-image="../Imagenes/silla-oficina-negra-ruedas.png">
+                                    <img src="../Imagenes/silla-oficina-negra-ruedas.png" alt="Vista principal">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/silla-oficina-negra-ruedas-2.png">
+                                    <img src="../Imagenes/silla-oficina-negra-ruedas-2.png" alt="Vista frontal">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/respaldo-silla-oficina-negra.png">
+                                    <img src="../Imagenes/respaldo-silla-oficina-negra.png" alt="Vista del respaldo">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/silla-oficina-negra-reposapies.png">
+                                    <img src="../Imagenes/silla-oficina-negra-reposapies.png" alt="Vista con reposapiés">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Especificaciones Técnicas Simplificadas -->
+            <section id="especificaciones" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-list-alt"></i>
+                        </div>
+                        <h2 class="es-lang">Especificaciones Técnicas</h2>
+                        <h2 class="en-lang">Technical Specifications</h2>
+                        <p class="es-lang">Detalles completos del modelo OHI-46-ARO-CROMADO</p>
+                        <p class="en-lang">Complete details of the OHI-46-ARO-CROMADO model</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cube"></i>
+                                        <span class="es-lang">Descripción General</span>
+                                        <span class="en-lang">General Description</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Silla industrial con aro cromado de alta calidad, diseñada para uso intensivo en entornos industriales.</p>
+                                            <p class="en-lang">Industrial chair with high-quality chrome ring, designed for intensive use in industrial environments.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-chair"></i>
+                                        <span class="es-lang">Base</span>
+                                        <span class="en-lang">Base</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-vector-square"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Estrella de 5 puntas en poliamida, rodajas tipo dual.</p>
+                                            <p class="en-lang">5-point star in polyamide, dual-type casters.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-arrows-alt-v"></i>
+                                        <span class="es-lang">Elevación</span>
+                                        <span class="en-lang">Lift</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-compress-arrows-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Por medio de pistón neumático tipo cajero que permite ajustar la altura del asiento.</p>
+                                            <p class="en-lang">Through pneumatic cashier-type piston that allows adjusting the seat height.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-sliders-h"></i>
+                                        <span class="es-lang">Perillas de Ajuste</span>
+                                        <span class="en-lang">Adjustment Knobs</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-cog"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Para ajustar la altura del respaldo y otra la profundidad del respaldo con el asiento (es sólo el tornillo).</p>
+                                            <p class="en-lang">To adjust the backrest height and another the backrest depth with the seat (only the screw).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cogs"></i>
+                                        <span class="es-lang">Mecanismo</span>
+                                        <span class="en-lang">Mechanism</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-bolt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Plato de acero reforzado de dos palancas; una para el accionamiento y bloqueo del pistón neumático, otra para ajustar y bloquear el ángulo de inclinación del respaldo (sistema de contacto permanente).</p>
+                                            <p class="en-lang">Reinforced steel plate with two levers; one for the activation and locking of the pneumatic piston, another to adjust and lock the backrest tilt angle (permanent contact system).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-layer-group"></i>
+                                        <span class="es-lang">Respaldo y Asiento</span>
+                                        <span class="en-lang">Backrest and Seat</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-cube"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Poliuretano compacto suave de uso industrial con interior en madera de aglomerado.</p>
+                                            <p class="en-lang">Soft compact polyurethane for industrial use with particleboard interior.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-weight-hanging"></i>
+                                        <span class="es-lang">Resistencia</span>
+                                        <span class="en-lang">Resistance</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Peso máximo de resistencia: 140 kgs.</p>
+                                            <p class="en-lang">Maximum weight resistance: 140 kgs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Sección específica para ARO CROMADO -->
+                                <div class="espec-categoria espec-categoria-destacada">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-ring"></i>
+                                        <span>ARO CROMADO</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-circle"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Aro de perfil redondo tubular de acero en 5/8" de diámetro, calibre 18.</p>
+                                            <p class="en-lang">Round tubular steel ring profile in 5/8" diameter, 18 gauge.</p>
+                                        </div>
+                                    </div>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-hand-holding"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Brazos de soporte en poliamida, nervado y de color negro.</p>
+                                            <p class="en-lang">Support arms in polyamide, ribbed and black color.</p>
+                                        </div>
+                                    </div>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-palette"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Terminado en cromo, hecho en Italia.</p>
+                                            <p class="en-lang">Chrome finish, made in Italy.</p>
+                                        </div>
+                                    </div>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-ruler"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Diámetro: 457 mm (18").</p>
+                                            <p class="en-lang">Diameter: 457 mm (18").</p>
+                                        </div>
+                                    </div>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-weight-hanging"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Peso máximo de resistencia del aro: 50 kgs.</p>
+                                            <p class="en-lang">Maximum weight resistance of the ring: 50 kgs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Galería de Imágenes -->
+            <section id="galeria" class="galeria-industrial">
+                <div class="container">
+                    <div class="galeria-header">
+                        <div class="header-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <h2 class="es-lang">Galería del Producto</h2>
+                        <h2 class="en-lang">Product Gallery</h2>
+                        <p class="es-lang">Explora cada detalle de nuestra silla industrial OHI-46-ARO-CROMADO</p>
+                        <p class="en-lang">Explore every detail of our OHI-46-ARO-CROMADO industrial chair</p>
+                    </div>
+                    
+                    <div class="galeria-grid">
+                        <div class="galeria-item active" data-image="../Imagenes/silla-oficina-negra-ruedas.png">
+                            <img src="../Imagenes/silla-oficina-negra-ruedas.png" alt="OHI-46-ARO-CROMADO Vista principal - Silla industrial completa">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Vista Principal</span>
+                                <span class="en-lang">Main View</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/silla-oficina-negra-ruedas-2.png">
+                            <img src="../Imagenes/silla-oficina-negra-ruedas-2.png" alt="OHI-46-ARO-CROMADO Vista frontal - Detalle de estructura">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Vista Frontal</span>
+                                <span class="en-lang">Front View</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/respaldo-silla-oficina-negra.png">
+                            <img src="../Imagenes/respaldo-silla-oficina-negra.png" alt="OHI-46-ARO-CROMADO Vista del respaldo - Ergonomía del diseño">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Vista del Respaldo</span>
+                                <span class="en-lang">Backrest View</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/silla-oficina-negra-reposapies.png">
+                            <img src="../Imagenes/silla-oficina-negra-reposapies.png" alt="OHI-46-ARO-CROMADO Vista con reposapiés - Sistema de ajustes">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Con Reposapiés</span>
+                                <span class="en-lang">With Footrest</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Accesorios -->
+            <section id="accesorios" class="accesorios-section">
+                <div class="container">
+                    <div class="accesorios-header">
+                        <div class="header-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h2 class="es-lang">Accesorios Compatibles</h2>
+                        <h2 class="en-lang">Compatible Accessories</h2>
+                        <p class="es-lang">Complementa tu silla OHI-46-ARO-CROMADO con estos accesorios opcionales</p>
+                        <p class="en-lang">Complement your OHI-46-ARO-CROMADO chair with these optional accessories</p>
+                    </div>
+                    
+                    <div class="accesorios-grid">
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/regaton-placeholder.jpg" alt="Regatón Opcional para Silla OHI-46-ARO-CROMADO">
+                                <div class="accesorio-badge es-lang">COMPATIBLE</div>
+                                <div class="accesorio-badge en-lang">COMPATIBLE</div>
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">REGATÓN OPCIONAL</h3>
+                                <h3 class="en-lang">OPTIONAL GLIDE</h3>
+                                <p class="es-lang">Un Regatón para silla con ruedas. Accesorio opcional. Ideal para sustituir las ruedas de la silla.</p>
+                                <p class="en-lang">A Glide for chair with wheels. Optional accessory. Ideal to replace the chair wheels.</p>
+                                <p class="accesorio-nota es-lang">Se venden por separado</p>
+                                <p class="accesorio-nota en-lang">Sold separately</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA PROFESIONAL MEJORADO -->
+            <section class="cta-profesional-industrial">
+                <div class="container">
+                    <div class="cta-profesional-content">
+                        <div class="cta-profesional-text">
+                            <div class="cta-badge">
+                                <i class="fas fa-star"></i>
+                                <span class="es-lang">SOLUCIÓN ESPECIALIZADA</span>
+                                <span class="en-lang">SPECIALIZED SOLUTION</span>
+                            </div>
+                            
+                            <h2 class="cta-titulo">
+                                <span class="es-lang">¿Necesitas una solución industrial personalizada?</span>
+                                <span class="en-lang">Need a customized industrial solution?</span>
+                            </h2>
+                            
+                            <p class="cta-descripcion es-lang">
+                                Nuestros <strong>expertos en mobiliario industrial</strong> analizarán tus necesidades específicas y te recomendarán la mejor opción para tu entorno de trabajo.
+                            </p>
+                            <p class="cta-descripcion en-lang">
+                                Our <strong>industrial furniture experts</strong> will analyze your specific needs and recommend the best option for your work environment.
+                            </p>
+                            
+                            <div class="cta-beneficios">
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Asesoría técnica especializada</span>
+                                    <span class="en-lang">Specialized technical advice</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Análisis de requisitos específicos</span>
+                                    <span class="en-lang">Analysis of specific requirements</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Cotización personalizada sin compromiso</span>
+                                    <span class="en-lang">Customized quote without obligation</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-profesional-actions">
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <h3 class="es-lang">Consulta Especializada</h3>
+                                <h3 class="en-lang">Specialized Consultation</h3>
+                                <p class="es-lang">Recibe asesoramiento personalizado de nuestros expertos</p>
+                                <p class="en-lang">Get personalized advice from our experts</p>
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-comments"></i>
+                                    <span class="es-lang">Contactar Asesor</span>
+                                    <span class="en-lang">Contact Advisor</span>
+                                </a>
+                            </div>
+                            
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                </div>
+                                <h3 class="es-lang">Cotización Personalizada</h3>
+                                <h3 class="en-lang">Custom Quote</h3>
+                                <p class="es-lang">Solicita una cotización adaptada a tus necesidades</p>
+                                <p class="en-lang">Request a quote tailored to your needs</p>
+                                <a href="../contactanos.html?tipo=cotizacion" class="btn btn-secondary btn-large">
+                                    <i class="fas fa-calculator"></i>
+                                    <span class="es-lang">Solicitar Cotización</span>
+                                    <span class="en-lang">Request Quote</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html" class="es-lang">Inicio</a><a href="../index.html" class="en-lang">Home</a></li>
+                        <li><a href="../Blog.html" class="es-lang">Blog</a><a href="../Blog.html" class="en-lang">Chair Law Blog</a></li>
+                        <li><a href="../Nosotros.html" class="es-lang">Nosotros</a><a href="../Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="../catalogo.html" class="es-lang">Catálogo</a><a href="../catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="../contactanos.html" class="es-lang">Contáctanos</a><a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </div> <!-- END WRAPPER -->
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <!-- Botón flotante del chatbot -->
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <!-- Ventana del Chatbot -->
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
             
-            <div class="galeria-grid">
-                <div class="galeria-item active" data-image="../Imagenes/cromado1.png">
-                    <img src="../Imagenes/cromado1.png" alt="OHI-46-ARO-CROMADO Vista principal">
-                    <div class="galeria-overlay">
-                        <i class="fas fa-search-plus"></i>
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Mensajes aparecerán aquí -->
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
                     </div>
                 </div>
-                
-                <div class="galeria-item" data-image="../Imagenes/cromado2.png">
-                    <img src="../Imagenes/cromado2.png" alt="OHI-46-ARO-CROMADO Vista lateral">
-                    <div class="galeria-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                
-                <div class="galeria-item" data-image="../Imagenes/cromado3.png">
-                    <img src="../Imagenes/cromado3.png" alt="OHI-46-ARO-CROMADO Detalle aro">
-                    <div class="galeria-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                
-                <div class="galeria-item" data-image="../Imagenes/cromado4.png">
-                    <img src="../Imagenes/cromado4.png" alt="OHI-46-ARO-CROMADO Vista posterior">
-                    <div class="galeria-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Descripción Detallada -->
-    <section class="descripcion-detallada">
-        <div class="container">
-            <div class="descripcion-header">
-                <h2>Descripción Técnica</h2>
-                <p>Especificaciones detalladas del modelo OHI-46-ARO-CROMADO</p>
             </div>
             
-            <div class="descripcion-content">
-                <div class="descripcion-texto">
-                    <h3>DESCRIPCIÓN:</h3>
-                    <p>Versión premium con aro cromado de alta resistencia. Diseñada específicamente para entornos industriales exigentes donde se requiere durabilidad superior y comodidad ergonómica para jornadas prolongadas.</p>
-                    
-                    <div class="especificaciones-lista">
-                        <div class="espec-item">
-                            <h4>BASE:</h4>
-                            <p>Estrella de 5 puntas en poliamida, rodajas tipo dual.</p>
-                        </div>
-                        
-                        <div class="espec-item">
-                            <h4>ELEVACIÓN:</h4>
-                            <p>Por medio de pistón neumático tipo cajero que permite ajustar la altura del asiento.</p>
-                        </div>
-                        
-                        <div class="espec-item">
-                            <h4>PERILLAS DE AJUSTE:</h4>
-                            <p>Para ajustar la altura del respaldo y otra la profundidad del respaldo con el asiento (es sólo el tornillo).</p>
-                        </div>
-                        
-                        <div class="espec-item">
-                            <h4>MECANISMO:</h4>
-                            <p>Plato de acero reforzado de dos palancas; una para el accionamiento y bloqueo del pistón neumático, otra para ajustar y bloquear el ángulo de inclinación del respaldo (sistema de contacto permanente).</p>
-                        </div>
-                        
-                        <div class="espec-item">
-                            <h4>RESPALDO Y ASIENTO:</h4>
-                            <p>Poliuretano compacto suave de uso industrial con interior en madera de aglomerado.</p>
-                        </div>
-                        
-                        <div class="espec-item">
-                            <h4>RESISTENCIA MÁXIMA:</h4>
-                            <p>140 kgs.</p>
-                        </div>
-                        
-                        <div class="espec-item">
-                            <h4>ARO CROMADO:</h4>
-                            <p>Aro de perfil redondo tubular de acero en 5/8” de diámetro, calibre 18.</p>
-                        </div>
-                        
-                        <div class="espec-item">
-                            <h4>SOPORTE:</h4>
-                            <p>Brazos de soporte en poliamida, nervado y de color negro.</p>
-                        </div>
-                        
-                        <div class="espec-item">
-                            <h4>TERMINADO:</h4>
-                            <p>En cromo, hecho en Italia.</p>
-                        </div>
-                        
-                        <div class="espec-item">
-                            <h4>DIÁMETRO:</h4>
-                            <p>De 457 mm (18”).</p>
-                        </div>
-                        
-                        <div class="espec-item">
-                            <h4>PESO MÁXIMO DE RESISTENCIA (ARO):</h4>
-                            <p>50 kgs.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="descripcion-accesorio">
-                    <div class="accesorio-card">
-                        <div class="accesorio-imagen">
-                            <img src="../Imagenes/regaton-placeholder.jpg" alt="Regatón Opcional">
-                            <div class="accesorio-badge">ACCESORIO OPCIONAL</div>
-                        </div>
-                        <div class="accesorio-info">
-                            <h3>REGATÓN OPCIONAL</h3>
-                            <p>Un Regatón para silla con ruedas. Accesorio opcional. Ideal para sustituir las ruedas de la silla.</p>
-                            <p class="accesorio-nota">Se venden por separado.</p>
-                            <button class="btn btn-outline">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Más Información</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Características Destacadas -->
-    <section class="caracteristicas-destacadas">
-        <div class="container">
-            <div class="caracteristicas-header">
-                <h2>Características Premium</h2>
-                <p>Excelencia en diseño industrial y comodidad ergonómica</p>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
             </div>
             
-            <div class="caracteristicas-grid">
-                <div class="caracteristica-card">
-                    <div class="caracteristica-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h4>Acabado Premium</h4>
-                    <p>Aro cromado de alta calidad con terminado italiano para mayor durabilidad</p>
-                </div>
-                
-                <div class="caracteristica-card">
-                    <div class="caracteristica-icon">
-                        <i class="fas fa-user-check"></i>
-                    </div>
-                    <h4>Ergonomía Superior</h4>
-                    <p>Diseño optimizado para confort durante jornadas laborales prolongadas</p>
-                </div>
-                
-                <div class="caracteristica-card">
-                    <div class="caracteristica-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h4>Máxima Resistencia</h4>
-                    <p>Estructura reforzada con capacidad de carga de 140kg para uso industrial</p>
-                </div>
-                
-                <div class="caracteristica-card">
-                    <div class="caracteristica-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h4>Calidad Certificada</h4>
-                    <p>Materiales premium y procesos de fabricación de última generación</p>
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                    <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                    <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                    <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- CTA Final -->
-    <section class="cta-industrial">
-        <div class="container">
-            <div class="cta-content">
-                <div class="cta-text">
-                    <h2>¿Necesitas Asesoría Especializada?</h2>
-                    <p>Nuestros expertos te ayudarán a elegir la silla industrial perfecta para tu empresa</p>
-                </div>
-                <div class="cta-actions">
-                    <button class="btn btn-primary btn-large">
-                        <i class="fas fa-headset"></i>
-                        <span>Contactar Asesor</span>
-                    </button>
-                    <button class="btn btn-secondary">
-                        <i class="fas fa-calculator"></i>
-                        <span>Solicitar Cotización</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // JavaScript para la galería de imágenes
-        document.addEventListener('DOMContentLoaded', function() {
-            const galeriaItems = document.querySelectorAll('.galeria-item');
-            const imagenPrincipal = document.getElementById('productoImagen');
-            
-            galeriaItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    const nuevaImagen = this.getAttribute('data-image');
-                    
-                    // Remover clase active de todos los items
-                    galeriaItems.forEach(i => i.classList.remove('active'));
-                    
-                    // Agregar clase active al item clickeado
-                    this.classList.add('active');
-                    
-                    // Cambiar imagen principal con efecto de transición
-                    if (imagenPrincipal) {
-                        imagenPrincipal.style.opacity = '0';
-                        setTimeout(() => {
-                            imagenPrincipal.src = nuevaImagen;
-                            imagenPrincipal.style.opacity = '1';
-                        }, 300);
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="../js/main.js"></script>
+    <script src="../js/accessibility.js"></script>
+    <script src="../js/chatbot.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/detalle-producto.js"></script>
 </body>
 </html>
