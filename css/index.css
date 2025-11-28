@@ -1,0 +1,277 @@
+/* ===== MODO OSCURO PARA INDEX - COMPLETO ===== */
+
+/* Hero Section - Modo Oscuro */
+body.dark-mode .hero-ley-silla {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+body.dark-mode .hero-title {
+    color: #f8fafc;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .hero-subtitle {
+    color: #cbd5e1;
+}
+
+body.dark-mode .law-badge {
+    background: rgba(96, 165, 250, 0.1);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    color: #60a5fa;
+    backdrop-filter: blur(10px);
+}
+
+/* Sección Empresas Obligadas - Modo Oscuro */
+body.dark-mode .section-padding {
+    background: #1e293b;
+}
+
+/* Encabezado Cumplimiento */
+body.dark-mode .encabezado-cumplimiento {
+    background: #1e293b;
+    color: #e2e8f0;
+}
+
+body.dark-mode .badge-legal-profesional {
+    background: linear-gradient(135deg, #1e40af, #3730a3);
+    color: #f8fafc;
+}
+
+body.dark-mode .titulo-cumplimiento {
+    color: #f8fafc;
+}
+
+/* Contenido Cumplimiento */
+body.dark-mode .contenido-cumplimiento{
+    background: #334155;
+    color: #e2e8f0;
+}
+
+body.dark-mode .lead-text {
+    color: #e2e8f0;
+}
+
+body.dark-mode .subtext {
+    color: #cbd5e1;
+}
+
+body.dark-mode .highlight-text.es-lang,
+body.dark-mode .highlight-text.en-lang {
+    background: #1e293b;
+    color: #60a5fa;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: inline;
+    font-weight: 600;
+}
+
+body.dark-mode .separador .en-lang,body.dark-mode .separador .es-lang{
+    background: #334155;
+    color: #94a3b8;
+}
+
+body.dark-mode .separador::before,
+body.dark-mode .separador::after {
+    background: #64748b;
+}
+
+/* Cards de Empresas */
+body.dark-mode .empresas-grid {
+    background: #1e293b;
+}
+
+body.dark-mode .empresa-card {
+    background: #334155;
+    border: 1px solid #475569;
+    color: #e2e8f0;
+}
+
+body.dark-mode .empresa-card:hover {
+    background: #475569;
+    border-color: #60a5fa;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .empresa-icon {
+    background: linear-gradient(135deg, #1e40af, #3730a3);
+    color: #f8fafc;
+}
+
+body.dark-mode .empresa-card h3 {
+    color: #f8fafc;
+}
+
+body.dark-mode .empresa-card p {
+    color: #cbd5e1;
+}
+
+/* CTA Empresas */
+body.dark-mode .cta-empresas {
+    background: #334155;
+    border: 1px solid #475569;
+}
+
+body.dark-mode .cta-empresas h3 {
+    color: #f8fafc;
+}
+
+body.dark-mode .cta-empresas p {
+    color: #cbd5e1;
+}
+
+/* Sección Beneficios y Riesgos */
+body.dark-mode .beneficios-riesgos {
+    background: #1e293b;
+}
+
+body.dark-mode .br-grid {
+    background: #1e293b;
+}
+
+/* Card Beneficios */
+body.dark-mode .beneficios-card {
+    background: #334155;
+    border: 1px solid #475569;
+    color: #e2e8f0;
+}
+
+body.dark-mode .beneficios-card .br-header {
+    background: linear-gradient(135deg, #059669, #047857);
+    color: #f8fafc;
+}
+
+body.dark-mode .beneficio-item {
+    border-bottom: 1px solid #475569;
+}
+
+body.dark-mode .beneficio-item:last-child {
+    border-bottom: none;
+}
+
+body.dark-mode .beneficio-item i {
+    color: #10b981;
+}
+
+body.dark-mode .beneficio-item h4 {
+    color: #f8fafc;
+}
+
+body.dark-mode .beneficio-item p {
+    color: #cbd5e1;
+}
+
+/* Card Riesgos */
+body.dark-mode .riesgos-card {
+    background: #334155;
+    border: 1px solid #475569;
+    color: #e2e8f0;
+}
+
+body.dark-mode .riesgos-card .br-header {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: #f8fafc;
+}
+
+body.dark-mode .riesgo-item {
+    border-bottom: 1px solid #475569;
+}
+
+body.dark-mode .riesgo-item:last-child {
+    border-bottom: none;
+}
+
+body.dark-mode .riesgo-item i {
+    color: #ef4444;
+}
+
+body.dark-mode .riesgo-item h4 {
+    color: #f8fafc;
+}
+
+body.dark-mode .riesgo-item p {
+    color: #cbd5e1;
+}
+
+/* Botones en Modo Oscuro */
+body.dark-mode .btn-secondary {
+    background: transparent;
+    color: #e2e8f0;
+    border: 2px solid #e2e8f0;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+    transform: translateY(-2px);
+}
+
+body.dark-mode .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* Textos generales */
+body.dark-mode .es-lang,
+body.dark-mode .en-lang {
+    color: inherit;
+}
+/* ===== CONTROL DE IDIOMAS ===== */
+/* Por defecto ocultar inglés y mostrar español */
+.en-lang {
+    display: none !important;
+}
+
+/* Cuando el body tiene la clase lang-en, ocultar español y mostrar inglés */
+body.lang-en .es-lang {
+    display: none !important;
+}
+
+body.lang-en .en-lang {
+    display: inline !important;
+}
+
+/* Para elementos que deben ser block en lugar de inline */
+body.lang-en .en-lang.hero-title,
+body.lang-en .en-lang.hero-subtitle,
+body.lang-en .en-lang.titulo-cumplimiento {
+    display: block !important;
+}
+
+/* Para los botones y elementos específicos */
+body.lang-en .en-lang.btn-large,
+body.lang-en .en-lang.empresa-card h3,
+body.lang-en .en-lang.empresa-card p {
+    display: block !important;
+}
+
+/* ===== TEXTO GRANDE COMO MODO CLARO ===== */
+body.dark-mode .texto-secundario .highlight-text.es-lang,
+body.dark-mode .texto-secundario .highlight-text.en-lang {
+    background: #1e293b;
+    color: #60a5fa;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    display: block;
+    margin: 0.75rem 0;
+    line-height: 1.6;
+    border-left: 4px solid #60a5fa;
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+}
+
+/* Para ocultar un idioma y mostrar solo el activo */
+.en-lang {
+    display: none !important;
+}
+
+body.lang-en .es-lang {
+    display: none !important;
+}
+
+body.lang-en .en-lang {
+    display: block !important;
+}
