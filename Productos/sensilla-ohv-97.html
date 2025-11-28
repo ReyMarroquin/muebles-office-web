@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SENSILLA-OHV-97 - Ley Silla</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/detalle-producto.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="detalle-producto-page">
+
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <img src="Imagenes/ley_silla_logo_leysilla-1920wn.png" alt="Ley Silla Logo" class="logo-light">
+                    <img src="Imagenes/ley_silla_logo_leysilla-1920w.png" alt="Ley Silla Logo" class="logo-dark">
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="es-lang">Inicio</a>
+                        <a href="../index.html" class="en-lang">Home</a></li>
+                    <li><a href="../Blog.html" class="es-lang">Blog</a>
+                        <a href="../Blog.html" class="en-lang">Blog</a></li>
+                    <li><a href="../Nosotros.html" class="es-lang">Nosotros</a>
+                        <a href="../Nosotros.html" class="en-lang">us</a></li>
+                    <li><a href="../catalogo.html" class="active es-lang">Catálogo</a>
+                        <a href="../catalogo.html" class="active en-lang">Catalog</a></li>
+                    <li><a href="../contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="../index.html">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../catalogo.html" class="active">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Blog.html">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../Nosotros.html">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#empresas-obligadas">
+                                <i class="fas fa-building"></i>
+                                <span class="es-lang">Empresas Obligadas</span>
+                                <span class="en-lang">Required Companies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#beneficios">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="es-lang">Beneficios</span>
+                                <span class="en-lang">Benefits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#multas">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="es-lang">Multas y Sanciones</span>
+                                <span class="en-lang">Fines and Penalties</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- Breadcrumb Mejorado -->
+            <nav class="breadcrumb-industrial">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <a href="../index.html" class="breadcrumb-link">
+                            <i class="fas fa-home"></i>
+                            <span class="es-lang">Inicio</span>
+                            <span class="en-lang">Home</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html" class="breadcrumb-link">
+                            <span class="es-lang">Catálogo</span>
+                            <span class="en-lang">Catalog</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html?categoria=exterior" class="breadcrumb-link">
+                            <span class="es-lang">VISITANTE EXTERIOR</span>
+                            <span class="en-lang">OUTDOOR VISITOR</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <span class="breadcrumb-current">SENSILLA-OHV-97</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero del Producto Simplificado -->
+            <section class="producto-hero-industrial">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="producto-info">
+                            <div class="producto-header">
+                                <div class="producto-badge industrial-badge">
+                                    <i class="fas fa-sun"></i>
+                                    <span class="es-lang">EXTERIOR</span>
+                                    <span class="en-lang">OUTDOOR</span>
+                                </div>
+                            </div>
+                            
+                            <h1 class="producto-titulo">SENSILLA-OHV-97</h1>
+                            
+                            <p class="producto-descripcion es-lang">
+                                Silla para exterior de diseño integral en polipropileno, fabricada en una sola pieza para máxima durabilidad. Resistente a rayos UV y ambiente salino, disponible en 11 colores vibrantes.
+                            </p>
+                            <p class="producto-descripcion en-lang">
+                                Outdoor chair with integral polypropylene design, manufactured in one piece for maximum durability. Resistant to UV rays and saline environment, available in 11 vibrant colors.
+                            </p>
+                            
+                            <div class="producto-actions">
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span class="es-lang">Solicitar Información</span>
+                                    <span class="en-lang">Request Information</span>
+                                </a>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span class="es-lang">Ficha Técnica PDF</span>
+                                    <span class="en-lang">Technical Sheet PDF</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="producto-visual">
+                            <div class="imagen-principal-container">
+                                <img src="../Imagenes/silla-sensilla-ohv97-principal.jpg" 
+                                     alt="SENSILLA-OHV-97 - Silla exterior de polipropileno integral" 
+                                     class="imagen-principal"
+                                     id="productoImagen">
+                                <div class="imagen-overlay-industrial"></div>
+                            </div>
+                            
+                            <div class="miniaturas-galeria">
+                                <div class="miniatura active" data-image="Imagenes/silla-sensilla-ohv97-principal.jpg">
+                                    <img src="../Imagenes/silla-sensilla-ohv97-principal.jpg" alt="Vista principal silla exterior azul">
+                                </div>
+                                <div class="miniatura" data-image="Imagenes/silla-sensilla-ohv97-verde.jpg">
+                                    <img src="../Imagenes/silla-sensilla-ohv97-verde.jpg" alt="Vista silla exterior verde">
+                                </div>
+                                <div class="miniatura" data-image="Imagenes/silla-sensilla-ohv97-roja.jpg">
+                                    <img src="../Imagenes/silla-sensilla-ohv97-roja.jpg" alt="Vista silla exterior roja">
+                                </div>
+                                <div class="miniatura" data-image="Imagenes/silla-sensilla-ohv97-blanca.jpg">
+                                    <img src="../Imagenes/silla-sensilla-ohv97-blanca.jpg" alt="Vista silla exterior blanca">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Especificaciones Técnicas Simplificadas -->
+            <section id="especificaciones" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-list-alt"></i>
+                        </div>
+                        <h2 class="es-lang">Especificaciones Técnicas</h2>
+                        <h2 class="en-lang">Technical Specifications</h2>
+                        <p class="es-lang">Detalles completos del modelo SENSILLA-OHV-97</p>
+                        <p class="en-lang">Complete details of the SENSILLA-OHV-97 model</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cube"></i>
+                                        <span class="es-lang">Descripción General</span>
+                                        <span class="en-lang">General Description</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Silla para exterior fabricada en una sola pieza de polipropileno, diseñada para máxima resistencia y durabilidad en condiciones climáticas adversas.</p>
+                                            <p class="en-lang">Outdoor chair manufactured in one piece of polypropylene, designed for maximum resistance and durability in adverse weather conditions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-shapes"></i>
+                                        <span class="es-lang">Construcción Integral</span>
+                                        <span class="en-lang">Integral Construction</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-cube"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Respaldo, asiento y patas de una sola pieza en polipropileno de alta resistencia y duración para intemperie.</p>
+                                            <p class="en-lang">Backrest, seat and legs made of one piece of high-resistance and durable polypropylene for outdoor use.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span class="es-lang">Resistencia Climática</span>
+                                        <span class="en-lang">Weather Resistance</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-sun"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Resistente a los rayos ultravioleta (UV) y al ambiente salino. Ideal para áreas costeras y exposición prolongada al sol.</p>
+                                            <p class="en-lang">Resistant to ultraviolet (UV) rays and saline environment. Ideal for coastal areas and prolonged sun exposure.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-palette"></i>
+                                        <span class="es-lang">Gama de Colores</span>
+                                        <span class="en-lang">Color Range</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-fill-drip"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Disponible en 11 colores: Blanco (W9), gris (G6), gris oscuro (G7), verde (V5), azul (B7), azul niebla (B9), azul turquesa (BF), rojo (R4), fucsia (R7), ambar (YF), naranja (YB).</p>
+                                            <p class="en-lang">Available in 11 colors: White (W9), gray (G6), dark gray (G7), green (V5), blue (B7), mist blue (B9), turquoise blue (BF), red (R4), fuchsia (R7), amber (YF), orange (YB).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-weight-hanging"></i>
+                                        <span class="es-lang">Capacidad de Carga</span>
+                                        <span class="en-lang">Load Capacity</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-balance-scale"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Peso máximo de resistencia: 130 kgs.</p>
+                                            <p class="en-lang">Maximum weight resistance: 130 kgs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-tree"></i>
+                                        <span class="es-lang">Uso Recomendado</span>
+                                        <span class="en-lang">Recommended Use</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-umbrella-beach"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Ideal para parques, jardines, áreas de playa, piscinas, terrazas, restaurantes al aire libre y cualquier espacio exterior.</p>
+                                            <p class="en-lang">Ideal for parks, gardens, beach areas, pools, terraces, outdoor restaurants and any exterior space.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-recycle"></i>
+                                        <span class="es-lang">Ventajas del Diseño</span>
+                                        <span class="en-lang">Design Advantages</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Diseño monolítico sin uniones que evita acumulación de agua y suciedad. Fácil limpieza y mantenimiento mínimo.</p>
+                                            <p class="en-lang">Monolithic design without joints that prevents water and dirt accumulation. Easy cleaning and minimal maintenance.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Galería de Colores -->
+            <section id="colores" class="galeria-industrial">
+                <div class="container">
+                    <div class="galeria-header">
+                        <div class="header-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h2 class="es-lang">Gama Completa de Colores</h2>
+                        <h2 class="en-lang">Complete Color Range</h2>
+                        <p class="es-lang">Descubre los 11 colores disponibles del modelo SENSILLA-OHV-97</p>
+                        <p class="en-lang">Discover the 11 available colors of the SENSILLA-OHV-97 model</p>
+                    </div>
+                    
+                    <div class="galeria-grid">
+                        <div class="galeria-item active" data-image="Imagenes/silla-sensilla-ohv97-azul.jpg">
+                            <img src="../Imagenes/silla-sensilla-ohv97-azul.jpg" alt="SENSILLA-OHV-97 Color Azul (B7) - Silla exterior azul">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Azul (B7)</span>
+                                <span class="en-lang">Blue (B7)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="Imagenes/silla-sensilla-ohv97-verde.jpg">
+                            <img src="../Imagenes/silla-sensilla-ohv97-verde.jpg" alt="SENSILLA-OHV-97 Color Verde (V5) - Silla exterior verde">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Verde (V5)</span>
+                                <span class="en-lang">Green (V5)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="Imagenes/silla-sensilla-ohv97-roja.jpg">
+                            <img src="../Imagenes/silla-sensilla-ohv97-roja.jpg" alt="SENSILLA-OHV-97 Color Rojo (R4) - Silla exterior roja">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Rojo (R4)</span>
+                                <span class="en-lang">Red (R4)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="Imagenes/silla-sensilla-ohv97-blanca.jpg">
+                            <img src="../Imagenes/silla-sensilla-ohv97-blanca.jpg" alt="SENSILLA-OHV-97 Color Blanco (W9) - Silla exterior blanca">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Blanco (W9)</span>
+                                <span class="en-lang">White (W9)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="Imagenes/silla-sensilla-ohv97-gris.jpg">
+                            <img src="../Imagenes/silla-sensilla-ohv97-gris.jpg" alt="SENSILLA-OHV-97 Color Gris (G6) - Silla exterior gris">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Gris (G6)</span>
+                                <span class="en-lang">Gray (G6)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="Imagenes/silla-sensilla-ohv97-gris-oscuro.jpg">
+                            <img src="../Imagenes/silla-sensilla-ohv97-gris-oscuro.jpg" alt="SENSILLA-OHV-97 Color Gris Oscuro (G7) - Silla exterior gris oscuro">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Gris Oscuro (G7)</span>
+                                <span class="en-lang">Dark Gray (G7)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="Imagenes/silla-sensilla-ohv97-azul-niebla.jpg">
+                            <img src="../Imagenes/silla-sensilla-ohv97-azul-niebla.jpg" alt="SENSILLA-OHV-97 Color Azul Niebla (B9) - Silla exterior azul niebla">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Azul Niebla (B9)</span>
+                                <span class="en-lang">Mist Blue (B9)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="Imagenes/silla-sensilla-ohv97-azul-turquesa.jpg">
+                            <img src="../Imagenes/silla-sensilla-ohv97-azul-turquesa.jpg" alt="SENSILLA-OHV-97 Color Azul Turquesa (BF) - Silla exterior azul turquesa">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Azul Turquesa (BF)</span>
+                                <span class="en-lang">Turquoise Blue (BF)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="Imagenes/silla-sensilla-ohv97-fucsia.jpg">
+                            <img src="../Imagenes/silla-sensilla-ohv97-fucsia.jpg" alt="SENSILLA-OHV-97 Color Fucsia (R7) - Silla exterior fucsia">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Fucsia (R7)</span>
+                                <span class="en-lang">Fuchsia (R7)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="Imagenes/silla-sensilla-ohv97-ambar.jpg">
+                            <img src="../Imagenes/silla-sensilla-ohv97-ambar.jpg" alt="SENSILLA-OHV-97 Color Ambar (YF) - Silla exterior ambar">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Ambar (YF)</span>
+                                <span class="en-lang">Amber (YF)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="Imagenes/silla-sensilla-ohv97-naranja.jpg">
+                            <img src="../Imagenes/silla-sensilla-ohv97-naranja.jpg" alt="SENSILLA-OHV-97 Color Naranja (YB) - Silla exterior naranja">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Naranja (YB)</span>
+                                <span class="en-lang">Orange (YB)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Accesorios -->
+            <section id="accesorios" class="accesorios-section">
+                <div class="container">
+                    <div class="accesorios-header">
+                        <div class="header-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h2 class="es-lang">Accesorios Compatibles</h2>
+                        <h2 class="en-lang">Compatible Accessories</h2>
+                        <p class="es-lang">Complementa tu silla SENSILLA-OHV-97 con estos accesorios opcionales</p>
+                        <p class="en-lang">Complement your SENSILLA-OHV-97 chair with these optional accessories</p>
+                    </div>
+                    
+                    <div class="accesorios-grid">
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/accesorio-apilador-polipropileno.jpg" alt="Sistema de apilado para sillas de polipropileno">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">SISTEMA DE APILADO INTEGRAL</h3>
+                                <h3 class="en-lang">INTEGRAL STACKING SYSTEM</h3>
+                                <p class="es-lang">Sistema diseñado específicamente para sillas de polipropileno de una pieza, permitiendo apilar hasta 20 unidades de forma segura.</p>
+                                <p class="en-lang">System specifically designed for one-piece polypropylene chairs, allowing safe stacking of up to 20 units.</p>
+                                <p class="accesorio-nota es-lang">Se venden por separado</p>
+                                <p class="accesorio-nota en-lang">Sold separately</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/accesorio-carro-transporte.jpg" alt="Carro de transporte para sillas apiladas">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">CARRO DE TRANSPORTE</h3>
+                                <h3 class="en-lang">TRANSPORT CART</h3>
+                                <p class="es-lang">Carro especial para transportar múltiples sillas apiladas, ideal para hoteles, restaurantes y eventos al aire libre.</p>
+                                <p class="en-lang">Special cart for transporting multiple stacked chairs, ideal for hotels, restaurants and outdoor events.</p>
+                                <p class="accesorio-nota es-lang">Se venden por separado</p>
+                                <p class="accesorio-nota en-lang">Sold separately</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA PROFESIONAL MEJORADO -->
+            <section class="cta-profesional-industrial">
+                <div class="container">
+                    <div class="cta-profesional-content">
+                        <div class="cta-profesional-text">
+                            <div class="cta-badge">
+                                <i class="fas fa-star"></i>
+                                <span class="es-lang">SOLUCIÓN EXTERIOR</span>
+                                <span class="en-lang">OUTDOOR SOLUTION</span>
+                            </div>
+                            
+                            <h2 class="cta-titulo">
+                                <span class="es-lang">¿Necesitas mobiliario exterior colorido y duradero?</span>
+                                <span class="en-lang">Need colorful and durable outdoor furniture?</span>
+                            </h2>
+                            
+                            <p class="cta-descripcion es-lang">
+                                Nuestros <strong>expertos en mobiliario exterior</strong> te ayudarán a seleccionar los colores perfectos y la cantidad ideal para tu espacio al aire libre.
+                            </p>
+                            <p class="cta-descripcion en-lang">
+                                Our <strong>outdoor furniture experts</strong> will help you select the perfect colors and ideal quantity for your outdoor space.
+                            </p>
+                            
+                            <div class="cta-beneficios">
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Asesoría en combinación de colores</span>
+                                    <span class="en-lang">Color combination advisory</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Selección de paleta cromática</span>
+                                    <span class="en-lang">Chromatic palette selection</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Cotización personalizada sin compromiso</span>
+                                    <span class="en-lang">Customized quote without obligation</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-profesional-actions">
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <h3 class="es-lang">Consulta de Colores</h3>
+                                <h3 class="en-lang">Color Consultation</h3>
+                                <p class="es-lang">Recibe asesoramiento personalizado para elegir los colores perfectos</p>
+                                <p class="en-lang">Get personalized advice to choose the perfect colors</p>
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-palette"></i>
+                                    <span class="es-lang">Consultar Colores</span>
+                                    <span class="en-lang">Consult Colors</span>
+                                </a>
+                            </div>
+                            
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                </div>
+                                <h3 class="es-lang">Cotización Personalizada</h3>
+                                <h3 class="en-lang">Custom Quote</h3>
+                                <p class="es-lang">Solicita una cotización adaptada a tus necesidades de color y cantidad</p>
+                                <p class="en-lang">Request a quote tailored to your color and quantity needs</p>
+                                <a href="../contactanos.html?tipo=cotizacion" class="btn btn-secondary btn-large">
+                                    <i class="fas fa-calculator"></i>
+                                    <span class="es-lang">Solicitar Cotización</span>
+                                    <span class="en-lang">Request Quote</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html" class="es-lang">Inicio</a><a href="../index.html" class="en-lang">Home</a></li>
+                        <li><a href="../Blog.html" class="es-lang">Blog</a><a href="../Blog.html" class="en-lang">Chair Law Blog</a></li>
+                        <li><a href="../Nosotros.html" class="es-lang">Nosotros</a><a href="../Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="../catalogo.html" class="es-lang">Catálogo</a><a href="../catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="../contactanos.html" class="es-lang">Contáctanos</a><a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </div> <!-- END WRAPPER -->
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <!-- Botón flotante del chatbot -->
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <!-- Ventana del Chatbot -->
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Mensajes aparecerán aquí -->
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                    <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                    <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                    <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/accessibility.js"></script>
+    <script src="../js/chatbot.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/detalle-producto.js"></script>
+</body>
+</html>
