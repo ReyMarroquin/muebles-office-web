@@ -92,3 +92,49 @@ html, body{
     .mobile-menu-btn{ display: inline-flex; }
     .header-actions{ display: none; }
 }
+
+/* ===== MODO OSCURO PARA EL MENÚ DE NAVEGACIÓN ===== */
+body.dark-mode .nav-links a {
+    color: white !important;
+}
+
+body.dark-mode .nav-links a:hover {
+    color: #60a5fa !important;
+}
+
+body.dark-mode .nav-links a.active {
+    color: #60a5fa !important;
+}
+
+/* Específicamente para los textos en español e inglés */
+body.dark-mode .es-lang,
+body.dark-mode .en-lang {
+    color: white !important;
+}
+
+body.dark-mode .es-lang:hover,
+body.dark-mode .en-lang:hover {
+    color: #60a5fa !important;
+}
+
+body.dark-mode .es-lang.active,
+body.dark-mode .en-lang.active {
+    color: #60a5fa !important;
+}
+
+/* ===== LOGO PARA MODO OSCURO ===== */
+.logo-dark {
+    display: none;
+}
+
+.logo-light {
+    display: block;
+}
+
+body.dark-mode .logo-light {
+    display: none;
+}
+
+body.dark-mode .logo-dark {
+    display: block;
+}
