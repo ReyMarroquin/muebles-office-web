@@ -1,13 +1,15 @@
 /* ===== MODO OSCURO PARA CATÁLOGO ===== */
 
-/* Sección Catálogo - Mismo color que empresas-obligadas */
-body.dark-mode .catalogo-section {
-    background: #1e293b; /* Igual que .section-padding de empresas */
+/* Secciones */
+body.dark-mode .catalogo-section,
+body.dark-mode .cta-catalogo {
+    background: #1e293b;
+    color-scheme: dark;
 }
 
-/* Filtros - Modo Oscuro */
+/* Filtros */
 body.dark-mode .catalogo-filters {
-    background: #334155; /* Un tono más claro que el fondo */
+    background: #334155;
     border: 1px solid #475569;
 }
 
@@ -26,28 +28,37 @@ body.dark-mode .filter-select option {
     color: #e2e8f0;
 }
 
-body.dark-mode .view-btn {
+/* View Toggle */
+body.dark-mode .view-toggle {
     background: #475569;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+body.dark-mode .view-btn {
+    background: transparent;
     color: #94a3b8;
-    border: 1px solid #64748b;
+    border: none;
+    transition: all 0.3s ease;
 }
 
 body.dark-mode .view-btn.active {
     background: #60a5fa;
     color: #0f172a;
-    border-color: #60a5fa;
+    border-radius: 8px;
 }
 
-/* Productos Grid - Modo Oscuro */
+/* Productos Grid */
 body.dark-mode .productos-grid {
-    background: #1e293b; /* Mismo que la sección */
+    background: #1e293b;
 }
 
-/* Cards de Productos - Modo Oscuro */
+/* Cards de Productos */
 body.dark-mode .producto-card {
-    background: #334155; /* Igual que las cards de empresas */
+    background: #334155;
     border: 1px solid #475569;
     color: #e2e8f0;
+    transition: all 0.3s ease;
 }
 
 body.dark-mode .producto-card:hover {
@@ -57,28 +68,35 @@ body.dark-mode .producto-card:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Badges de Productos - Modo Oscuro */
+body.dark-mode .producto-card:hover .producto-image {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* Badges */
 body.dark-mode .producto-badge {
     background: linear-gradient(135deg, #60a5fa, #3b82f6);
     color: #0f172a;
     font-weight: 600;
 }
 
-/* Imagen de Producto - Modo Oscuro */
+/* Imagen de Producto */
 body.dark-mode .producto-image {
     background: #475569;
     border-bottom: 1px solid #64748b;
 }
 
-/* Acciones de Producto - Modo Oscuro */
+/* Acciones de Producto */
 body.dark-mode .producto-actions {
-    background: rgba(30, 41, 59, 0.9);
+    background: rgba(51, 65, 85, 0.95);
+    backdrop-filter: blur(10px);
 }
 
 body.dark-mode .action-btn {
     background: #475569;
     color: #e2e8f0;
     border: 1px solid #64748b;
+    transition: all 0.3s ease;
 }
 
 body.dark-mode .action-btn:hover {
@@ -86,10 +104,17 @@ body.dark-mode .action-btn:hover {
     color: #0f172a;
 }
 
-/* Información de Producto - Modo Oscuro */
+/* Información de Producto */
 body.dark-mode .producto-categoria {
+    background: #334155;
     color: #60a5fa;
-    background: rgba(96, 165, 250, 0.1);
+    border: none;
+}
+
+body.dark-mode .producto-categoria:hover {
+    background: #334155 !important;
+    color: #60a5fa !important;
+    transform: none !important;
 }
 
 body.dark-mode .producto-nombre {
@@ -108,7 +133,7 @@ body.dark-mode .precio-actual {
     color: #f8fafc;
 }
 
-/* Features de Producto - Modo Oscuro */
+/* Features de Producto */
 body.dark-mode .producto-features {
     border-top: 1px solid #64748b;
 }
@@ -119,28 +144,29 @@ body.dark-mode .feature-tag {
     border: 1px solid #64748b;
 }
 
-/* Botones de Producto - Modo Oscuro */
+/* Botones de Producto - AZUL MÁS OSCURO */
 body.dark-mode .btn-block {
-    background: #60a5fa;
-    color: #0f172a;
+    background: #2563eb; /* Azul más oscuro */
+    color: #ffffff;
     border: none;
 }
 
 body.dark-mode .btn-block:hover {
-    background: #3b82f6;
+    background: #1d4ed8; /* Azul aún más oscuro al hover */
     transform: translateY(-2px);
 }
 
-/* Paginación - Modo Oscuro */
+/* Paginación */
 body.dark-mode .pagination {
-    background: #334155;
-    border: 1px solid #475569;
+    background: #1e293b;
+    border: none;
 }
 
 body.dark-mode .page-btn {
-    background: #475569;
+    background: #334155;
     color: #e2e8f0;
-    border: 1px solid #64748b;
+    border: 1px solid #475569;
+    transition: all 0.3s ease;
 }
 
 body.dark-mode .page-btn.active {
@@ -150,15 +176,10 @@ body.dark-mode .page-btn.active {
 }
 
 body.dark-mode .page-btn:hover:not(.active) {
-    background: #64748b;
+    background: #475569;
 }
 
-/* CTA Catálogo - Mismo color que empresas-obligadas */
-body.dark-mode .cta-catalogo {
-    background: #1e293b; /* Igual que .section-padding */
-    border-top: 1px solid #334155;
-}
-
+/* CTA Textos */
 body.dark-mode .cta-text h2 {
     color: #f8fafc;
 }
@@ -167,7 +188,11 @@ body.dark-mode .cta-text p {
     color: #cbd5e1;
 }
 
-/* Botones CTA - Modo Oscuro */
+body.dark-mode .cta-catalogo {
+    border-top: 1px solid #334155;
+}
+
+/* Botones CTA */
 body.dark-mode .cta-actions .btn-primary {
     background: #60a5fa;
     color: #0f172a;
@@ -188,7 +213,7 @@ body.dark-mode .cta-actions .btn-secondary:hover {
     color: #1e293b;
 }
 
-/* Control de Idiomas - Modo Oscuro */
+/* Control de Idiomas */
 body.dark-mode .en-lang {
     display: none !important;
 }
@@ -201,32 +226,23 @@ body.lang-en .en-lang {
     display: block !important;
 }
 
-/* Para elementos específicos que necesitan display inline */
 body.lang-en .en-lang.feature-tag,
 body.lang-en .en-lang.producto-badge {
     display: inline-block !important;
 }
 
-/* Transiciones suaves */
-body.dark-mode .producto-card,
-body.dark-mode .action-btn,
-body.dark-mode .page-btn,
-body.dark-mode .view-btn {
-    transition: all 0.3s ease;
+/* Placeholders y Focus */
+body.dark-mode input::placeholder {
+    color: #94a3b8;
 }
 
-/* Efectos hover mejorados */
-body.dark-mode .producto-card:hover .producto-image {
-    transform: scale(1.02);
-    transition: transform 0.3s ease;
+body.dark-mode .search-input:focus,
+body.dark-mode .filter-select:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
 }
 
-body.dark-mode .producto-card:hover .producto-actions {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive para Modo Oscuro */
+/* Responsive */
 @media (max-width: 768px) {
     body.dark-mode .catalogo-filters {
         background: #334155;
@@ -239,142 +255,4 @@ body.dark-mode .producto-card:hover .producto-actions {
     body.dark-mode .producto-card {
         margin-bottom: 1.5rem;
     }
-}
-
-/* Mejoras de accesibilidad */
-body.dark-mode .catalogo-section,
-body.dark-mode .cta-catalogo {
-    color-scheme: dark;
-}
-
-/* Placeholders */
-body.dark-mode input::placeholder {
-    color: #94a3b8;
-}
-
-/* Focus states */
-body.dark-mode .search-input:focus {
-    border-color: #60a5fa;
-    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
-}
-
-body.dark-mode .filter-select:focus {
-    border-color: #60a5fa;
-    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
-}
-
-/* ===== AJUSTES ESPECÍFICOS CATÁLOGO ===== */
-
-/* View Toggle - Invertir colores y agrandar */
-body.dark-mode .view-toggle {
-    background: #475569; /* Color de fondo de los círculos de corazón */
-    border-radius: 10px;
-    padding: 4px;
-}
-
-body.dark-mode .view-btn {
-    background: transparent;
-    color: #94a3b8;
-    border: none;
-    width: 40px; /* Más grande */
-    height: 40px; /* Más grande */
-    font-size: 1.2rem; /* Iconos más grandes */
-}
-
-body.dark-mode .view-btn.active {
-    background: #60a5fa;
-    color: #0f172a;
-    border-radius: 8px;
-}
-
-/* Producto Actions - Color casi igual a las cards */
-body.dark-mode .producto-actions {
-    background: rgba(51, 65, 85, 0.95); /* #334155 con transparencia - casi igual a las cards */
-    backdrop-filter: blur(10px);
-}
-
-/* Producto Categoria - Mismo fondo que producto-info */
-body.dark-mode .producto-categoria {
-    background: #334155; /* Mismo que .producto-card */
-    color: #60a5fa;
-    border: 1px solid #475569;
-}
-
-/* Pagination - Mismo color que los sections */
-body.dark-mode .pagination {
-    background: #1e293b; /* Igual que .catalogo-section */
-    border: 1px solid #334155;
-}
-
-body.dark-mode .page-btn {
-    background: #334155;
-    color: #e2e8f0;
-    border: 1px solid #475569;
-}
-
-body.dark-mode .page-btn.active {
-    background: #60a5fa;
-    color: #0f172a;
-    border-color: #60a5fa;
-}
-
-body.dark-mode .page-btn:hover:not(.active) {
-    background: #475569;
-}
-
-/* ===== AJUSTES ESPECÍFICOS CATÁLOGO ===== */
-
-/* View Toggle - Mantener tamaño anterior */
-body.dark-mode .view-toggle {
-    background: #475569; /* Color de fondo de los círculos de corazón */
-    border-radius: 10px;
-    padding: 4px;
-}
-
-body.dark-mode .view-btn {
-    background: transparent;
-    color: #94a3b8;
-    border: none;
-    /* Mantener tamaño original */
-}
-
-body.dark-mode .view-btn.active {
-    background: #60a5fa;
-    color: #0f172a;
-    border-radius: 8px;
-}
-
-/* Producto Categoria - Quitar hover y bordes */
-body.dark-mode .producto-categoria {
-    background: #334155; /* Mismo que .producto-card */
-    color: #60a5fa;
-    border: none; /* Quitar borde */
-}
-
-/* Quitar cualquier hover de producto-categoria */
-body.dark-mode .producto-categoria:hover {
-    background: #334155; /* Mantener mismo color */
-    transform: none; /* Quitar transformaciones */
-}
-
-/* Pagination - Quitar borde */
-body.dark-mode .pagination {
-    background: #1e293b; /* Igual que .catalogo-section */
-    border: none; /* Quitar borde */
-}
-
-body.dark-mode .page-btn {
-    background: #334155;
-    color: #e2e8f0;
-    border: 1px solid #475569;
-}
-
-body.dark-mode .page-btn.active {
-    background: #60a5fa;
-    color: #0f172a;
-    border-color: #60a5fa;
-}
-
-body.dark-mode .page-btn:hover:not(.active) {
-    background: #475569;
 }
