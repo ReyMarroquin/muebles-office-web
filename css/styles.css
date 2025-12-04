@@ -3747,5 +3747,77 @@ body:not(.english) .en-lang {
     color: var(--primary-color);
 }
 
+    
+   
+/* Por defecto: mostrar español, ocultar inglés */
+.es-lang {
+    display: block;
+}
+.en-lang {
+    display: none;
+}
 
+/* Para elementos inline (spans, enlaces pequeños) */
+span.es-lang, a.es-lang.inline, button .es-lang {
+    display: inline;
+}
+span.en-lang, a.en-lang.inline, button .en-lang {
+    display: none;
+}
 
+/* Cuando el body tiene clase 'english': mostrar inglés, ocultar español */
+body.english .es-lang {
+    display: none !important;
+}
+body.english .en-lang {
+    display: block !important;
+}
+
+body.english span.es-lang,
+body.english a.es-lang.inline,
+body.english button .es-lang {
+    display: none !important;
+}
+body.english span.en-lang,
+body.english a.en-lang.inline,
+body.english button .en-lang {
+    display: inline !important;
+}
+
+/* Para los enlaces del header (están uno al lado del otro) */
+.nav-links li a.es-lang {
+    display: inline-block;
+}
+.nav-links li a.en-lang {
+    display: none;
+}
+body.english .nav-links li a.es-lang {
+    display: none;
+}
+body.english .nav-links li a.en-lang {
+    display: inline-block;
+}
+
+/* ESPECÍFICO PARA LOS BOTONES DEL HERO - Ajuste crucial */
+.hero-actions .es-lang {
+    display: inline-block !important; /* En línea uno al lado del otro */
+}
+
+.hero-actions .en-lang {
+    display: none !important;
+}
+
+body.english .hero-actions .es-lang {
+    display: none !important;
+}
+
+body.english .hero-actions .en-lang {
+    display: inline-block !important; /* En línea uno al lado del otro */
+}
+
+/* Asegurar que los botones mantengan su diseño original */
+.hero-actions a.btn {
+    display: inline-block;
+    margin: 0 10px 10px 0;
+    vertical-align: middle;
+}

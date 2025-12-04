@@ -1154,3 +1154,17 @@ html {
     outline-offset: 2px;
 }
 
+/* Para que ocupe el 60% del contenedor y esté centrado */
+.accesorio-card {
+    width: 60%;
+    max-width: 700px;
+    margin: 0 auto;
+    /* resto de estilos */
+}
+
+/* Para móviles */
+@media (max-width: 768px) {
+    .accesorio-card {
+        width: 90%;
+    }
+}

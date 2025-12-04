@@ -89,12 +89,15 @@ function initLanguageManager() {
             
             const lang = this.getAttribute('data-lang');
             applyLanguage(lang);
+            
+            // Actualizar la clase "active" en los enlaces del header
+            updateActiveNavLinks(lang);
         });
     });
 }
 
 function applyLanguage(lang) {
-    // Cambiar idioma
+    // Cambiar idioma - usando CSS para mostrar/ocultar
     if (lang === 'en') {
         document.body.classList.add('english');
     } else {
@@ -102,6 +105,33 @@ function applyLanguage(lang) {
     }
     
     localStorage.setItem('language', lang);
+    
+    // También actualizar el atributo lang del html
+    document.documentElement.lang = lang;
+}
+
+function updateActiveNavLinks(lang) {
+    // Remover clase active de todos los enlaces de navegación
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active');
+    });
+    
+    // Agregar clase active solo al enlace del idioma actual
+    if (lang === 'en') {
+        // Encontrar el enlace inglés que corresponda a la página actual
+        const currentPage = window.location.pathname.split('/').pop();
+        const englishLink = document.querySelector(`.nav-links a.en-lang[href="${currentPage}"]`);
+        if (englishLink) {
+            englishLink.classList.add('active');
+        }
+    } else {
+        // Encontrar el enlace español que corresponda a la página actual
+        const currentPage = window.location.pathname.split('/').pop();
+        const spanishLink = document.querySelector(`.nav-links a.es-lang[href="${currentPage}"]`);
+        if (spanishLink) {
+            spanishLink.classList.add('active');
+        }
+    }
 }
 
 // GESTIÓN DE TAMAÑOS DE TEXTO
@@ -187,4 +217,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Actualizar información del sistema al redimensionar
     window.addEventListener('resize', updateSystemInfo);
+    
+    // Inicializar los enlaces activos según el idioma
+    const savedLanguage = localStorage.getItem('language') || 'es';
+    updateActiveNavLinks(savedLanguage);
 });
