@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>INNOVA-OHV-2700 - Ley Silla</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/detalle-producto.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="detalle-producto-page">
+
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920wn.png" alt="Ley Silla Logo" class="logo-light">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920w.png" alt="Ley Silla Logo" class="logo-dark">
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="es-lang">Inicio</a>
+                        <a href="../index.html" class="en-lang">Home</a></li>
+                    <li><a href="../Blog.html" class="es-lang">Blog</a>
+                        <a href="../Blog.html" class="en-lang">Blog</a></li>
+                    <li><a href="../Nosotros.html" class="es-lang">Nosotros</a>
+                        <a href="../Nosotros.html" class="en-lang">us</a></li>
+                    <li><a href="../catalogo.html" class="active es-lang">Catálogo</a>
+                        <a href="../catalogo.html" class="active en-lang">Catalog</a></li>
+                    <li><a href="../contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="../index.html">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../catalogo.html" class="active">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Blog.html">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../Nosotros.html">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#empresas-obligadas">
+                                <i class="fas fa-building"></i>
+                                <span class="es-lang">Empresas Obligadas</span>
+                                <span class="en-lang">Required Companies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#beneficios">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="es-lang">Beneficios</span>
+                                <span class="en-lang">Benefits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#multas">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="es-lang">Multas y Sanciones</span>
+                                <span class="en-lang">Fines and Penalties</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- Breadcrumb Mejorado -->
+            <nav class="breadcrumb-industrial">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <a href="../index.html" class="breadcrumb-link">
+                            <i class="fas fa-home"></i>
+                            <span class="es-lang">Inicio</span>
+                            <span class="en-lang">Home</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html" class="breadcrumb-link">
+                            <span class="es-lang">Catálogo</span>
+                            <span class="en-lang">Catalog</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html?categoria=interior" class="breadcrumb-link">
+                            <span class="es-lang">VISITANTE INTERIOR</span>
+                            <span class="en-lang">INDOOR VISITOR</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <span class="breadcrumb-current">INNOVA-OHV-2700</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero del Producto Simplificado -->
+            <section class="producto-hero-industrial">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="producto-info">
+                            <div class="producto-header">
+                                <div class="producto-badge industrial-badge">
+                                    <i class="fas fa-home"></i>
+                                    <span class="es-lang">INNOVACIÓN INTERIOR</span>
+                                    <span class="en-lang">INDOOR INNOVATION</span>
+                                </div>
+                            </div>
+                            
+                            <h1 class="producto-titulo">INNOVA-OHV-2700</h1>
+                            
+                            <p class="producto-descripcion es-lang">
+                                Silla para interior con diseño innovador de estructura tubular ovalada y acabado epóxico de alta calidad. Ofrece la mayor personalización del mercado con 9 colores de asiento/respaldo y 4 colores de estructura para crear combinaciones únicas.
+                            </p>
+                            <p class="producto-descripcion en-lang">
+                                Indoor chair with innovative oval tubular structure design and high-quality epoxy finish. Offers the highest customization in the market with 9 seat/backrest colors and 4 structure colors to create unique combinations.
+                            </p>
+                            
+                            <div class="producto-actions">
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span class="es-lang">Solicitar Información</span>
+                                    <span class="en-lang">Request Information</span>
+                                </a>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span class="es-lang">Ficha Técnica PDF</span>
+                                    <span class="en-lang">Technical Sheet PDF</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="producto-visual">
+                            <div class="imagen-principal-container">
+                                <img src="../Imagenes/producto32-1.png" 
+                                     alt="INNOVA-OHV-2700 - Silla con estructura ovalada innovadora" 
+                                     class="imagen-principal"
+                                     id="productoImagen">
+                                <div class="imagen-overlay-industrial"></div>
+                            </div>
+                            
+                            <div class="miniaturas-galeria">
+                                <div class="miniatura active" data-image="../Imagenes/producto32-1.png">
+                                    <img src="../Imagenes/producto32-1.png" alt="INNOVA-OHV-2700 Color Negro">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto32-2.png">
+                                    <img src="../Imagenes/producto32-2.png" alt="INNOVA-OHV-2700 Color Gris">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto32-3.png">
+                                    <img src="../Imagenes/producto32-3.png" alt="INNOVA-OHV-2700 Color Verde">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto32-4.png">
+                                    <img src="../Imagenes/producto32-4.png" alt="INNOVA-OHV-2700 Color Rojo">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto32-5.png">
+                                    <img src="../Imagenes/producto32-5.png" alt="INNOVA-OHV-2700 Color Azul">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto32-6.png">
+                                    <img src="../Imagenes/producto32-6.png" alt="INNOVA-OHV-2700 Color Blanco">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Especificaciones Técnicas Simplificadas -->
+            <section id="especificaciones" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-list-alt"></i>
+                        </div>
+                        <h2 class="es-lang">Especificaciones Técnicas</h2>
+                        <h2 class="en-lang">Technical Specifications</h2>
+                        <p class="es-lang">Detalles completos del modelo INNOVA-OHV-2700</p>
+                        <p class="en-lang">Complete details of the INNOVA-OHV-2700 model</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cube"></i>
+                                        <span class="es-lang">Descripción General</span>
+                                        <span class="en-lang">General Description</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Silla para interior con diseño innovador que combina estructura tubular ovalada única con máxima personalización de colores. Representa la vanguardia en mobiliario para interiores con opciones de personalización sin precedentes.</p>
+                                            <p class="en-lang">Indoor chair with innovative design combining unique oval tubular structure with maximum color customization. Represents the forefront in indoor furniture with unprecedented customization options.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cubes"></i>
+                                        <span class="es-lang">Estructura Ovalada Innovadora</span>
+                                        <span class="en-lang">Innovative Oval Structure</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-expand-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Acero tubular ovalado de 30 X 15 mm, calibre 16, con acabado de pintura epóxica (electrostática). Diseño exclusivo que ofrece mayor estabilidad y estética distintiva.</p>
+                                            <p class="en-lang">30 X 15 mm oval tubular steel, gauge 16, with epoxy (electrostatic) paint finish. Exclusive design offering greater stability and distinctive aesthetics.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-palette"></i>
+                                        <span class="es-lang">Colores de Estructura</span>
+                                        <span class="en-lang">Structure Colors</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-fill-drip"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">4 colores disponibles para la estructura: Negro, gris cálido, gris o blanco. Acabado epóxico electrostático de alta resistencia a golpes, rayaduras y desgaste.</p>
+                                            <p class="en-lang">4 colors available for the structure: Black, warm gray, gray or white. Electrostatic epoxy finish highly resistant to impacts, scratches and wear.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-chair"></i>
+                                        <span class="es-lang">Asiento y Respaldo</span>
+                                        <span class="en-lang">Seat and Backrest</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-shapes"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">En dos piezas en polipropileno de alta resistencia y duración. Diseño modular que permite combinaciones únicas con la estructura.</p>
+                                            <p class="en-lang">In two pieces of high-resistance and durable polypropylene. Modular design allowing unique combinations with the structure.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-paint-brush"></i>
+                                        <span class="es-lang">Colores de Asiento/Respaldo</span>
+                                        <span class="en-lang">Seat/Backrest Colors</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-palette"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">9 colores vibrantes: Negro, gris, verde, rojo, azul, blanco, berenjena, gris cálido, naranja. La mayor gama cromática del mercado para personalización total.</p>
+                                            <p class="en-lang">9 vibrant colors: Black, gray, green, red, blue, white, eggplant, warm gray, orange. The widest color range in the market for total customization.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-weight-hanging"></i>
+                                        <span class="es-lang">Resistencia</span>
+                                        <span class="en-lang">Resistance</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Peso máximo de resistencia: 120 kgs. Estructura ovalada que distribuye el peso de manera más eficiente para mayor estabilidad y durabilidad.</p>
+                                            <p class="en-lang">Maximum weight resistance: 120 kgs. Oval structure that distributes weight more efficiently for greater stability and durability.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-puzzle-piece"></i>
+                                        <span class="es-lang">Accesorio Opcional</span>
+                                        <span class="en-lang">Optional Accessory</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-link"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Conector opcional para unir varias sillas (se vende por separado). Permite crear configuraciones en línea para auditorios, salas de conferencias o eventos.</p>
+                                            <p class="en-lang">Optional connector to join several chairs (sold separately). Allows creating line configurations for auditoriums, conference rooms or events.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Galería de Imágenes -->
+            <section id="galeria" class="galeria-industrial">
+                <div class="container">
+                    <div class="galeria-header">
+                        <div class="header-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <h2 class="es-lang">Galería del Producto</h2>
+                        <h2 class="en-lang">Product Gallery</h2>
+                        <p class="es-lang">Explora las combinaciones posibles del INNOVA-OHV-2700</p>
+                        <p class="en-lang">Explore possible combinations of INNOVA-OHV-2700</p>
+                    </div>
+                    
+                    <div class="galeria-grid">
+                        <div class="galeria-item active" data-image="../Imagenes/producto32-1.png">
+                            <img src="../Imagenes/producto32-1.png" alt="INNOVA-OHV-2700 Estructura negra con asiento negro">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Negro/Negro</span>
+                                <span class="en-lang">Black/Black</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto32-2.png">
+                            <img src="../Imagenes/producto32-2.png" alt="INNOVA-OHV-2700 Estructura gris con asiento gris">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Gris/Gris</span>
+                                <span class="en-lang">Gray/Gray</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto32-3.png">
+                            <img src="../Imagenes/producto32-3.png" alt="INNOVA-OHV-2700 Estructura blanca con asiento verde">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Blanco/Verde</span>
+                                <span class="en-lang">White/Green</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto32-4.png">
+                            <img src="../Imagenes/producto32-4.png" alt="INNOVA-OHV-2700 Estructura gris cálido con asiento rojo">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Gris Cálido/Rojo</span>
+                                <span class="en-lang">Warm Gray/Red</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto32-5.png">
+                            <img src="../Imagenes/producto32-5.png" alt="INNOVA-OHV-2700 Estructura negra con asiento azul">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Negro/Azul</span>
+                                <span class="en-lang">Black/Blue</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto32-6.png">
+                            <img src="../Imagenes/producto32-6.png" alt="INNOVA-OHV-2700 Estructura blanca con asiento blanco">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Blanco/Blanco</span>
+                                <span class="en-lang">White/White</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto32-7.png">
+                            <img src="../Imagenes/producto32-7.png" alt="INNOVA-OHV-2700 Estructura gris con asiento berenjena">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Gris/Berenjena</span>
+                                <span class="en-lang">Gray/Eggplant</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto32-8.png">
+                            <img src="../Imagenes/producto32-8.png" alt="INNOVA-OHV-2700 Estructura gris cálido con asiento naranja">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Gris Cálido/Naranja</span>
+                                <span class="en-lang">Warm Gray/Orange</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sistema de Personalización -->
+            <section id="personalizacion" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <h2 class="es-lang">Sistema de Personalización</h2>
+                        <h2 class="en-lang">Customization System</h2>
+                        <p class="es-lang">Crea combinaciones únicas con el INNOVA-OHV-2700</p>
+                        <p class="en-lang">Create unique combinations with INNOVA-OHV-2700</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-calculator"></i>
+                                        <span class="es-lang">Combinaciones Posibles</span>
+                                        <span class="en-lang">Possible Combinations</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-infinity"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">4 colores de estructura × 9 colores de asiento/respaldo = 36 combinaciones únicas. La mayor capacidad de personalización del mercado para adaptarse exactamente a tu identidad corporativa.</p>
+                                            <p class="en-lang">4 structure colors × 9 seat/backrest colors = 36 unique combinations. The greatest customization capacity in the market to adapt exactly to your corporate identity.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-spray-can"></i>
+                                        <span class="es-lang">Acabado Epóxico Electrostático</span>
+                                        <span class="en-lang">Electrostatic Epoxy Finish</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-atom"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Pintura aplicada mediante proceso electrostático que garantiza uniformidad, mayor adherencia y durabilidad excepcional. Resistente a golpes, rayones y desgaste por uso intensivo.</p>
+                                            <p class="en-lang">Paint applied through electrostatic process guaranteeing uniformity, greater adhesion and exceptional durability. Resistant to impacts, scratches and intensive use wear.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-vector-square"></i>
+                                        <span class="es-lang">Diseño Ovalado Exclusivo</span>
+                                        <span class="en-lang">Exclusive Oval Design</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-egg"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Tubular ovalado de 30 X 15 mm que ofrece mayor resistencia torsional y estética distintiva. Perfil que mejora la ergonomía y proporciona un look moderno y exclusivo.</p>
+                                            <p class="en-lang">30 X 15 mm oval tubular offering greater torsional resistance and distinctive aesthetics. Profile that improves ergonomics and provides a modern and exclusive look.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-link"></i>
+                                        <span class="es-lang">Sistema de Conexión</span>
+                                        <span class="en-lang">Connection System</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-network-wired"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Conector opcional que permite unir sillas en configuraciones lineales perfectamente alineadas. Ideal para auditorios, salas de conferencias, cines o cualquier espacio que requiera orden y uniformidad.</p>
+                                            <p class="en-lang">Optional connector allowing joining chairs in perfectly aligned linear configurations. Ideal for auditoriums, conference rooms, cinemas or any space requiring order and uniformity.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Accesorios -->
+            <section id="accesorios" class="accesorios-section">
+                <div class="container">
+                    <div class="accesorios-header">
+                        <div class="header-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h2 class="es-lang">Accesorios Compatibles</h2>
+                        <h2 class="en-lang">Compatible Accessories</h2>
+                        <p class="es-lang">Potencia las funcionalidades de tu INNOVA-OHV-2700</p>
+                        <p class="en-lang">Enhance the functionalities of your INNOVA-OHV-2700</p>
+                    </div>
+                    
+                    <div class="accesorios-grid">
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/accesorio-conector-innova.png" alt="Conector para sillas INNOVA">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">CONECTOR MULTISILLA</h3>
+                                <h3 class="en-lang">MULTI-CHAIR CONNECTOR</h3>
+                                <p class="es-lang">Sistema de conexión que permite unir varias sillas INNOVA-OHV-2700 en línea recta perfectamente alineadas. Ideal para crear filas ordenadas en auditorios, salas de espera o espacios de eventos.</p>
+                                <p class="en-lang">Connection system allowing joining several INNOVA-OHV-2700 chairs in perfectly aligned straight lines. Ideal for creating orderly rows in auditoriums, waiting rooms or event spaces.</p>
+                                <p class="accesorio-nota es-lang">Se vende por separado</p>
+                                <p class="accesorio-nota en-lang">Sold separately</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/accesorio-protectores-innova.png" alt="Protectores para estructura INNOVA">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">PROTECTORES OVALADOS</h3>
+                                <h3 class="en-lang">OVAL PROTECTORS</h3>
+                                <p class="es-lang">Protectores especialmente diseñados para la estructura ovalada de 30 X 15 mm. Protegen pisos delicados y mantienen el acabado epóxico de la estructura.</p>
+                                <p class="en-lang">Protectors specially designed for the 30 X 15 mm oval structure. Protect delicate floors and maintain the epoxy finish of the structure.</p>
+                                <p class="accesorio-nota es-lang">Se venden por separado</p>
+                                <p class="accesorio-nota en-lang">Sold separately</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/accesorio-apilador-innova.png" alt="Sistema de apilado INNOVA">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">SISTEMA DE APILADO</h3>
+                                <h3 class="en-lang">STACKING SYSTEM</h3>
+                                <p class="es-lang">Sistema diseñado específicamente para la estructura ovalada de INNOVA-OHV-2700, permitiendo apilamiento seguro y optimización de espacio de almacenamiento.</p>
+                                <p class="en-lang">System specifically designed for the oval structure of INNOVA-OHV-2700, allowing safe stacking and storage space optimization.</p>
+                                <p class="accesorio-nota es-lang">Se vende por separado</p>
+                                <p class="accesorio-nota en-lang">Sold separately</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA PROFESIONAL MEJORADO -->
+            <section class="cta-profesional-industrial">
+                <div class="container">
+                    <div class="cta-profesional-content">
+                        <div class="cta-profesional-text">
+                            <div class="cta-badge">
+                                <i class="fas fa-palette"></i>
+                                <span class="es-lang">PERSONALIZACIÓN TOTAL</span>
+                                <span class="en-lang">TOTAL CUSTOMIZATION</span>
+                            </div>
+                            
+                            <h2 class="cta-titulo">
+                                <span class="es-lang">¿Quieres mobiliario que se adapte perfectamente a tu identidad corporativa?</span>
+                                <span class="en-lang">Want furniture that perfectly adapts to your corporate identity?</span>
+                            </h2>
+                            
+                            <p class="cta-descripcion es-lang">
+                                Nuestros <strong>expertos en personalización de mobiliario</strong> te ayudarán a diseñar la combinación perfecta entre estructura y asiento de tu INNOVA-OHV-2700, seleccionando entre 36 posibles combinaciones para crear un ambiente único y coherente con tu marca.
+                            </p>
+                            <p class="cta-descripcion en-lang">
+                                Our <strong>furniture customization experts</strong> will help you design the perfect combination between structure and seat of your INNOVA-OHV-2700, selecting from 36 possible combinations to create a unique environment consistent with your brand.
+                            </p>
+                            
+                            <div class="cta-beneficios">
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Diseño entre 36 combinaciones</span>
+                                    <span class="en-lang">Design among 36 combinations</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Asesoría de color corporativo</span>
+                                    <span class="en-lang">Corporate color advisory</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Cotización personalizada sin compromiso</span>
+                                    <span class="en-lang">Customized quote without obligation</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-profesional-actions">
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <h3 class="es-lang">Diseño Personalizado</h3>
+                                <h3 class="en-lang">Custom Design</h3>
+                                <p class="es-lang">Crea tu combinación única entre 4 estructuras y 9 colores de asiento</p>
+                                <p class="en-lang">Create your unique combination among 4 structures and 9 seat colors</p>
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-sliders-h"></i>
+                                    <span class="es-lang">Diseñar Combinación</span>
+                                    <span class="en-lang">Design Combination</span>
+                                </a>
+                            </div>
+                            
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                </div>
+                                <h3 class="es-lang">Cotización Personalizada</h3>
+                                <h3 class="en-lang">Custom Quote</h3>
+                                <p class="es-lang">Solicita una cotización para tu diseño INNOVA personalizado</p>
+                                <p class="en-lang">Request a quote for your customized INNOVA design</p>
+                                <a href="../contactanos.html?tipo=cotizacion-personalizada" class="btn btn-secondary btn-large">
+                                    <i class="fas fa-calculator"></i>
+                                    <span class="es-lang">Solicitar Cotización</span>
+                                    <span class="en-lang">Request Quote</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
+                        <li><a href="../Blog.html" class="es-lang">Blog</a><a href="Blog.html" class="en-lang">Chair Law Blog</a></li>
+                        <li><a href="../Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="../catalogo.html" class="es-lang">Catálogo</a><a href="../catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="../contactanos.html" class="es-lang">Contáctanos</a><a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </div> <!-- END WRAPPER -->
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <!-- Botón flotante del chatbot -->
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <!-- Ventana del Chatbot -->
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Mensajes aparecerán aquí -->
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                    <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                    <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                    <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/accessibility.js"></script>
+    <script src="../js/chatbot.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/detalle-producto.js"></script>
+</body>
+</html>

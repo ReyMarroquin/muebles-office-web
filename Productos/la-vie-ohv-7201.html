@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>LA-VIE-OHV-7201 - Ley Silla</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/detalle-producto.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="detalle-producto-page">
+
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920wn.png" alt="Ley Silla Logo" class="logo-light">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920w.png" alt="Ley Silla Logo" class="logo-dark">
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="es-lang">Inicio</a>
+                        <a href="../index.html" class="en-lang">Home</a></li>
+                    <li><a href="../Blog.html" class="es-lang">Blog</a>
+                        <a href="../Blog.html" class="en-lang">Blog</a></li>
+                    <li><a href="../Nosotros.html" class="es-lang">Nosotros</a>
+                        <a href="../Nosotros.html" class="en-lang">us</a></li>
+                    <li><a href="../catalogo.html" class="active es-lang">Catálogo</a>
+                        <a href="../catalogo.html" class="active en-lang">Catalog</a></li>
+                    <li><a href="../contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="../index.html">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../catalogo.html" class="active">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Blog.html">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../Nosotros.html">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#empresas-obligadas">
+                                <i class="fas fa-building"></i>
+                                <span class="es-lang">Empresas Obligadas</span>
+                                <span class="en-lang">Required Companies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#beneficios">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="es-lang">Beneficios</span>
+                                <span class="en-lang">Benefits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#multas">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="es-lang">Multas y Sanciones</span>
+                                <span class="en-lang">Fines and Penalties</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- Breadcrumb Mejorado -->
+            <nav class="breadcrumb-industrial">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <a href="../index.html" class="breadcrumb-link">
+                            <i class="fas fa-home"></i>
+                            <span class="es-lang">Inicio</span>
+                            <span class="en-lang">Home</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html" class="breadcrumb-link">
+                            <span class="es-lang">Catálogo</span>
+                            <span class="en-lang">Catalog</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html?categoria=exterior" class="breadcrumb-link">
+                            <span class="es-lang">VISITANTE EXTERIOR</span>
+                            <span class="en-lang">OUTDOOR VISITOR</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <span class="breadcrumb-current">LA-VIE-OHV-7201</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero del Producto Simplificado -->
+            <section class="producto-hero-industrial">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="producto-info">
+                            <div class="producto-header">
+                                <div class="producto-badge industrial-badge">
+                                    <i class="fas fa-umbrella-beach"></i>
+                                    <span class="es-lang">EXTERIOR COMERCIAL</span>
+                                    <span class="en-lang">COMMERCIAL OUTDOOR</span>
+                                </div>
+                            </div>
+                            
+                            <h1 class="producto-titulo">LA-VIE-OHV-7201</h1>
+                            
+                            <p class="producto-descripcion es-lang">
+                                Silla para exterior estilo LA-VIE fabricada de una sola pieza en polipropileno de alta resistencia para intemperie. Resistente a rayos ultravioleta (UV) y ambiente salino, ideal para uso comercial ligero en terrazas, cafeterías y espacios exteriores.
+                            </p>
+                            <p class="producto-descripcion en-lang">
+                                LA-VIE style outdoor chair manufactured in a single piece of high-resistance polypropylene for outdoor use. Resistant to ultraviolet (UV) rays and saline environment, ideal for light commercial use on terraces, cafeterias and outdoor spaces.
+                            </p>
+                            
+                            <div class="producto-actions">
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span class="es-lang">Solicitar Información</span>
+                                    <span class="en-lang">Request Information</span>
+                                </a>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span class="es-lang">Ficha Técnica PDF</span>
+                                    <span class="en-lang">Technical Sheet PDF</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="producto-visual">
+                            <div class="imagen-principal-container">
+                                <img src="../Imagenes/producto34-1.png" 
+                                     alt="LA-VIE-OHV-7201 - Silla exterior estilo LA-VIE" 
+                                     class="imagen-principal"
+                                     id="productoImagen">
+                                <div class="imagen-overlay-industrial"></div>
+                            </div>
+                            
+                            <div class="miniaturas-galeria">
+                                <div class="miniatura active" data-image="../Imagenes/producto34-1.png">
+                                    <img src="../Imagenes/producto34-1.png" alt="LA-VIE-OHV-7201 Color Blanco (W9)">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto34-2.png">
+                                    <img src="../Imagenes/producto34-2.png" alt="LA-VIE-OHV-7201 Color Gris (G6)">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto34-3.png">
+                                    <img src="../Imagenes/producto34-3.png" alt="LA-VIE-OHV-7201 Color Negro (K5)">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto34-4.png">
+                                    <img src="../Imagenes/producto34-4.png" alt="LA-VIE-OHV-7201 Color Verde (V4)">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto34-5.png">
+                                    <img src="../Imagenes/producto34-5.png" alt="LA-VIE-OHV-7201 Color Azul Nieve (B9)">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto34-6.png">
+                                    <img src="../Imagenes/producto34-6.png" alt="LA-VIE-OHV-7201 Color Naranja (YB)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Especificaciones Técnicas Simplificadas -->
+            <section id="especificaciones" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-list-alt"></i>
+                        </div>
+                        <h2 class="es-lang">Especificaciones Técnicas</h2>
+                        <h2 class="en-lang">Technical Specifications</h2>
+                        <p class="es-lang">Detalles completos del modelo LA-VIE-OHV-7201</p>
+                        <p class="en-lang">Complete details of the LA-VIE-OHV-7201 model</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cube"></i>
+                                        <span class="es-lang">Descripción General</span>
+                                        <span class="en-lang">General Description</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Silla estilo LA-VIE para exterior fabricada de una sola pieza en polipropileno de alta resistencia y duración para intemperie. Diseñada específicamente para uso comercial ligero en espacios exteriores, combinando elegancia y durabilidad.</p>
+                                            <p class="en-lang">LA-VIE style outdoor chair manufactured in a single piece of high-resistance and durable polypropylene for outdoor use. Specifically designed for light commercial use in outdoor spaces, combining elegance and durability.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cubes"></i>
+                                        <span class="es-lang">Construcción Monobloque</span>
+                                        <span class="en-lang">Monoblock Construction</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-expand-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Respaldo, asiento y patas fabricados de una sola pieza en polipropileno de alta resistencia. Construcción monobloque que elimina uniones débiles y garantiza mayor durabilidad estructural para uso comercial.</p>
+                                            <p class="en-lang">Backrest, seat and legs manufactured in a single piece of high-resistance polypropylene. Monoblock construction that eliminates weak joints and guarantees greater structural durability for commercial use.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-sun"></i>
+                                        <span class="es-lang">Resistencia a Intemperie</span>
+                                        <span class="en-lang">Weather Resistance</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Material especialmente formulado para resistir condiciones climáticas extremas: rayos ultravioleta (UV), lluvia, calor y frío. Resistente al ambiente salino, ideal para zonas costeras y áreas con alta humedad.</p>
+                                            <p class="en-lang">Material specially formulated to withstand extreme weather conditions: ultraviolet (UV) rays, rain, heat and cold. Resistant to saline environment, ideal for coastal areas and spaces with high humidity.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-palette"></i>
+                                        <span class="es-lang">Colores Disponibles</span>
+                                        <span class="en-lang">Available Colors</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-fill-drip"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">6 colores resistentes a la intemperie: Blanco (W9), gris (G6), negro (K5), verde (V4), azul nieve (B9), naranja (YB). Pigmentos estabilizados contra UV que mantienen su color original por años.</p>
+                                            <p class="en-lang">6 weather-resistant colors: White (W9), gray (G6), black (K5), green (V4), snow blue (B9), orange (YB). UV-stabilized pigments that maintain their original color for years.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-weight-hanging"></i>
+                                        <span class="es-lang">Resistencia y Capacidad</span>
+                                        <span class="en-lang">Resistance and Capacity</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-dumbbell"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Peso máximo de resistencia: 130 kgs. Estructura monobloque de polipropileno reforzado diseñada para uso comercial ligero, distribuyendo el peso uniformemente para mayor estabilidad.</p>
+                                            <p class="en-lang">Maximum weight resistance: 130 kgs. Monoblock structure of reinforced polypropylene designed for light commercial use, distributing weight evenly for greater stability.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-briefcase"></i>
+                                        <span class="es-lang">Uso Comercial Ligero</span>
+                                        <span class="en-lang">Light Commercial Use</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-store"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Diseñada específicamente para uso comercial ligero en: cafeterías, terrazas de restaurantes, hoteles, centros comerciales y espacios públicos exteriores. Perfecta equilibrio entre estilo y funcionalidad comercial.</p>
+                                            <p class="en-lang">Specifically designed for light commercial use in: cafeterias, restaurant terraces, hotels, shopping centers and outdoor public spaces. Perfect balance between style and commercial functionality.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-broom"></i>
+                                        <span class="es-lang">Mantenimiento</span>
+                                        <span class="en-lang">Maintenance</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-spray-can"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Superficie no porosa que facilita la limpieza. Solo requiere agua y jabón neutro. No necesita tratamientos especiales, pintura o protección adicional contra la intemperie.</p>
+                                            <p class="en-lang">Non-porous surface that facilitates cleaning. Only requires water and neutral soap. Does not need special treatments, painting or additional protection against weather.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Galería de Imágenes -->
+            <section id="galeria" class="galeria-industrial">
+                <div class="container">
+                    <div class="galeria-header">
+                        <div class="header-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <h2 class="es-lang">Galería del Producto</h2>
+                        <h2 class="en-lang">Product Gallery</h2>
+                        <p class="es-lang">Explora los colores disponibles del LA-VIE-OHV-7201</p>
+                        <p class="en-lang">Explore available colors of LA-VIE-OHV-7201</p>
+                    </div>
+                    
+                    <div class="galeria-grid">
+                        <div class="galeria-item active" data-image="../Imagenes/producto34-1.png">
+                            <img src="../Imagenes/producto34-1.png" alt="LA-VIE-OHV-7201 Color Blanco (W9)">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Blanco (W9)</span>
+                                <span class="en-lang">White (W9)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto34-2.png">
+                            <img src="../Imagenes/producto34-2.png" alt="LA-VIE-OHV-7201 Color Gris (G6)">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Gris (G6)</span>
+                                <span class="en-lang">Gray (G6)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto34-3.png">
+                            <img src="../Imagenes/producto34-3.png" alt="LA-VIE-OHV-7201 Color Negro (K5)">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Negro (K5)</span>
+                                <span class="en-lang">Black (K5)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto34-4.png">
+                            <img src="../Imagenes/producto34-4.png" alt="LA-VIE-OHV-7201 Color Verde (V4)">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Verde (V4)</span>
+                                <span class="en-lang">Green (V4)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto34-5.png">
+                            <img src="../Imagenes/producto34-5.png" alt="LA-VIE-OHV-7201 Color Azul Nieve (B9)">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Azul Nieve (B9)</span>
+                                <span class="en-lang">Snow Blue (B9)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto34-6.png">
+                            <img src="../Imagenes/producto34-6.png" alt="LA-VIE-OHV-7201 Color Naranja (YB)">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Naranja (YB)</span>
+                                <span class="en-lang">Orange (YB)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto34-7.png">
+                            <img src="../Imagenes/producto34-7.png" alt="LA-VIE-OHV-7201 en terraza comercial">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Uso Comercial</span>
+                                <span class="en-lang">Commercial Use</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto34-8.png">
+                            <img src="../Imagenes/producto34-8.png" alt="LA-VIE-OHV-7201 conjunto exterior">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Conjunto Exterior</span>
+                                <span class="en-lang">Outdoor Set</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ventajas del Diseño LA-VIE -->
+            <section id="diseno" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-chair"></i>
+                        </div>
+                        <h2 class="es-lang">Ventajas del Diseño LA-VIE</h2>
+                        <h2 class="en-lang">LA-VIE Design Advantages</h2>
+                        <p class="es-lang">Elegancia y funcionalidad para espacios exteriores</p>
+                        <p class="en-lang">Elegance and functionality for outdoor spaces</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-shield-virus"></i>
+                                        <span class="es-lang">Estabilización UV Avanzada</span>
+                                        <span class="en-lang">Advanced UV Stabilization</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-sun"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Aditivos especiales de última generación que protegen contra la degradación por rayos ultravioleta. Mantiene color, flexibilidad y propiedades mecánicas durante años de exposición solar directa en uso comercial.</p>
+                                            <p class="en-lang">State-of-the-art special additives that protect against degradation by ultraviolet rays. Maintains color, flexibility and mechanical properties for years of direct sun exposure in commercial use.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-tint"></i>
+                                        <span class="es-lang">Resistencia a Ambientes Salinos</span>
+                                        <span class="en-lang">Saline Environment Resistance</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-water"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Formulación especial que resiste la corrosión en ambientes salinos. Ideal para zonas costeras, restaurantes frente al mar, hoteles playeros y establecimientos comerciales en áreas con alta salinidad.</p>
+                                            <p class="en-lang">Special formulation that resists corrosion in saline environments. Ideal for coastal areas, seaside restaurants, beach hotels and commercial establishments in areas with high salinity.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-couch"></i>
+                                        <span class="es-lang">Ergonomía y Confort</span>
+                                        <span class="en-lang">Ergonomics and Comfort</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-user-check"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Diseño LA-VIE que combina líneas modernas con ergonomía optimizada para uso prolongado. Respaldo y asiento contorneados que proporcionan soporte lumbar y máximo confort en espacios comerciales.</p>
+                                            <p class="en-lang">LA-VIE design combining modern lines with optimized ergonomics for prolonged use. Contoured backrest and seat providing lumbar support and maximum comfort in commercial spaces.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-recycle"></i>
+                                        <span class="es-lang">Sostenibilidad Comercial</span>
+                                        <span class="en-lang">Commercial Sustainability</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-leaf"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Polipropileno 100% reciclable con larga vida útil que reduce costos de reemplazo. Ideal para establecimientos comerciales que buscan mobiliario durable y amigable con el medio ambiente.</p>
+                                            <p class="en-lang">100% recyclable polypropylene with long lifespan that reduces replacement costs. Ideal for commercial establishments looking for durable and environmentally friendly furniture.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aplicaciones Comerciales -->
+            <section id="aplicaciones" class="accesorios-section">
+                <div class="container">
+                    <div class="accesorios-header">
+                        <div class="header-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h2 class="es-lang">Aplicaciones Comerciales</h2>
+                        <h2 class="en-lang">Commercial Applications</h2>
+                        <p class="es-lang">Espacios ideales para el LA-VIE-OHV-7201</p>
+                        <p class="en-lang">Ideal spaces for LA-VIE-OHV-7201</p>
+                    </div>
+                    
+                    <div class="accesorios-grid">
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-cafeteria.png" alt="Cafetería con sillas LA-VIE">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">CAFETERÍAS Y TERRAZAS</h3>
+                                <h3 class="en-lang">CAFETERIAS AND TERRACES</h3>
+                                <p class="es-lang">Perfecta para cafeterías, bistrós y terrazas de restaurantes. Estilo elegante combinado con durabilidad para uso comercial diario en espacios exteriores.</p>
+                                <p class="en-lang">Perfect for cafeterias, bistros and restaurant terraces. Elegant style combined with durability for daily commercial use in outdoor spaces.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-hotel.png" alt="Hotel con sillas LA-VIE">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">HOTELES Y RESORTS</h3>
+                                <h3 class="en-lang">HOTELS AND RESORTS</h3>
+                                <p class="es-lang">Ideal para áreas de piscina, jardines y terrazas hoteleras. Resistencia comprobada a ambientes salinos y exposición solar continua.</p>
+                                <p class="en-lang">Ideal for pool areas, gardens and hotel terraces. Proven resistance to saline environments and continuous sun exposure.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-centro-comercial.png" alt="Centro comercial con sillas LA-VIE">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">CENTROS COMERCIALES</h3>
+                                <h3 class="en-lang">SHOPPING CENTERS</h3>
+                                <p class="es-lang">Excelente para áreas de descanso en patios de comidas y espacios comunes de centros comerciales. Fácil mantenimiento y alta resistencia al uso público.</p>
+                                <p class="en-lang">Excellent for rest areas in food courts and common spaces of shopping centers. Easy maintenance and high resistance to public use.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA PROFESIONAL MEJORADO -->
+            <section class="cta-profesional-industrial">
+                <div class="container">
+                    <div class="cta-profesional-content">
+                        <div class="cta-profesional-text">
+                            <div class="cta-badge">
+                                <i class="fas fa-store"></i>
+                                <span class="es-lang">COMERCIAL EXTERIOR</span>
+                                <span class="en-lang">COMMERCIAL OUTDOOR</span>
+                            </div>
+                            
+                            <h2 class="cta-titulo">
+                                <span class="es-lang">¿Buscas mobiliario exterior elegante para tu negocio?</span>
+                                <span class="en-lang">Looking for elegant outdoor furniture for your business?</span>
+                            </h2>
+                            
+                            <p class="cta-descripcion es-lang">
+                                Nuestros <strong>expertos en mobiliario comercial exterior</strong> te asesorarán en la selección del color ideal y la cantidad necesaria de sillas LA-VIE-OHV-7201 para tu establecimiento. Garantizamos durabilidad comprobada para uso comercial ligero con estilo elegante.
+                            </p>
+                            <p class="cta-descripcion en-lang">
+                                Our <strong>commercial outdoor furniture experts</strong> will advise you on selecting the ideal color and necessary quantity of LA-VIE-OHV-7201 chairs for your establishment. We guarantee proven durability for light commercial use with elegant style.
+                            </p>
+                            
+                            <div class="cta-beneficios">
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Uso comercial ligero garantizado</span>
+                                    <span class="en-lang">Guaranteed light commercial use</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Resistencia a ambientes salinos</span>
+                                    <span class="en-lang">Resistance to saline environments</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">6 colores comerciales disponibles</span>
+                                    <span class="en-lang">6 commercial colors available</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-profesional-actions">
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <h3 class="es-lang">Selección Comercial</h3>
+                                <h3 class="en-lang">Commercial Selection</h3>
+                                <p class="es-lang">Elige entre 6 colores comerciales para tu espacio exterior empresarial</p>
+                                <p class="en-lang">Choose from 6 commercial colors for your business outdoor space</p>
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-swatchbook"></i>
+                                    <span class="es-lang">Ver Colores Comerciales</span>
+                                    <span class="en-lang">View Commercial Colors</span>
+                                </a>
+                            </div>
+                            
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                                <h3 class="es-lang">Cotización Comercial</h3>
+                                <h3 class="en-lang">Commercial Quote</h3>
+                                <p class="es-lang">Solicita una cotización para tu proyecto comercial con LA-VIE</p>
+                                <p class="en-lang">Request a quote for your commercial project with LA-VIE</p>
+                                <a href="../contactanos.html?tipo=cotizacion-comercial" class="btn btn-secondary btn-large">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                    <span class="es-lang">Solicitar Cotización Comercial</span>
+                                    <span class="en-lang">Request Commercial Quote</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
+                        <li><a href="../Blog.html" class="es-lang">Blog</a><a href="Blog.html" class="en-lang">Chair Law Blog</a></li>
+                        <li><a href="../Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="../catalogo.html" class="es-lang">Catálogo</a><a href="../catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="../contactanos.html" class="es-lang">Contáctanos</a><a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </div> <!-- END WRAPPER -->
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <!-- Botón flotante del chatbot -->
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <!-- Ventana del Chatbot -->
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Mensajes aparecerán aquí -->
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                    <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                    <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                    <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/accessibility.js"></script>
+    <script src="../js/chatbot.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/detalle-producto.js"></script>
+</body>
+</html>

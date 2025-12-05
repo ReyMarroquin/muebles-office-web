@@ -3716,8 +3716,8 @@ body:not(.english) .en-lang {
 }
 
 .page-btn.active {
-    background: var(--primary-color);
-    color: white;
+    background: var(--accent-blue);
+    color: var(--white);
     border-color: var(--primary-color);
 }
 
