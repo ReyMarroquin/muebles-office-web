@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>¿Tu Empresa Está Obligada a Cumplir la Ley Silla? | Blog Ley Silla</title>
+    <meta name="description" content="Descubre si tu empresa está obligada a cumplir con la Ley Silla según la normativa vigente. Guía completa por sectores y tipos de empresas.">
+    
+    <link rel="stylesheet" href="css/blog-article.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="¿Tu Empresa Está Obligada a Cumplir la Ley Silla?">
+    <meta property="og:description" content="Guía definitiva para determinar si tu empresa debe implementar la Ley Silla según la normativa mexicana.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="Imagenes/cumpleconlaley.png">
+</head>
+<body class="blog-article-page">
+
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <a href="index.html">
+                        <img src="Imagenes/ley_silla_logo_leysilla-1920wn.png" alt="Ley Silla Logo" class="logo-light">
+                        <img src="Imagenes/ley_silla_logo_leysilla-1920w.png" alt="Ley Silla Logo" class="logo-dark">
+                    </a>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="es-lang">Inicio</a>
+                        <a href="index.html" class="en-lang">Home</a></li>
+                    <li><a href="Blog.html" class="active es-lang">Blog</a>
+                        <a href="Blog.html" class="active en-lang">Blog</a></li>
+                    <li><a href="Nosotros.html" class="es-lang">Nosotros</a>
+                        <a href="Nosotros.html" class="en-lang">Us</a></li>
+                    <li><a href="catalogo.html" class="es-lang">Catálogo</a>
+                        <a href="catalogo.html" class="en-lang">Catalog</a></li>
+                    <li><a href="contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="index.html">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalogo.html">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ley-silla.html">
+                                <i class="fas fa-gavel"></i>
+                                <span class="es-lang">Ley Silla</span>
+                                <span class="en-lang">Chair Law</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Blog.html" class="active">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Nosotros.html">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- CABECERA DEL ARTÍCULO -->
+            <article class="blog-article-container">
+                <div class="container-sm">
+
+                    <!-- Encabezado del artículo -->
+                    <header class="article-header">
+                        <div class="article-category category-ley-silla">
+                            <span class="es-lang">Ley Silla</span>
+                            <span class="en-lang">Chair Law</span>
+                        </div>
+                        
+                        <h1 class="article-title es-lang">
+                            ¿Tu Empresa Está Obligada a Cumplir la Ley Silla? Descúbrelo Aquí
+                        </h1>
+                        <h1 class="article-title en-lang">
+                            Is Your Company Required to Comply with Chair Law? Find Out Here
+                        </h1>
+                        
+                        <div class="article-meta">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <div class="author-details">
+                                    <span class="author-name">Lic. Javier Morales</span>
+                                    <span class="author-role es-lang">Consultor en Cumplimiento Normativo</span>
+                                    <span class="author-role en-lang">Regulatory Compliance Consultant</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-stats">
+                                <div class="stat">
+                                    <i class="far fa-calendar"></i>
+                                    <span class="es-lang">Publicado: 28 Feb, 2025</span>
+                                    <span class="en-lang">Published: Feb 28, 2025</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="far fa-clock"></i>
+                                    <span class="es-lang">7 min lectura</span>
+                                    <span class="en-lang">7 min read</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="far fa-eye"></i>
+                                    <span>3,200 vistas</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Imagen destacada -->
+                        <div class="article-featured-image">
+                            <img src="Imagenes/cumpleconlaley.png" alt="Empresas obligadas Ley Silla">
+                            <div class="image-caption es-lang">
+                                Identifica si tu empresa está en la lista de obligadas a cumplir la Ley Silla
+                            </div>
+                            <div class="image-caption en-lang">
+                                Identify if your company is on the list required to comply with Chair Law
+                            </div>
+                        </div>
+                    </header>
+
+                    <!-- CONTENIDO DEL ARTÍCULO -->
+                    <div class="article-content">
+                        
+                        <!-- Introducción -->
+                        <section class="article-section">
+                            <p class="lead es-lang">
+                                La confusión sobre qué empresas deben cumplir con la Ley Silla es común. 
+                                Muchos empresarios creen que solo aplica a grandes corporaciones o 
+                                sectores específicos, cuando la realidad es mucho más amplia. 
+                                Esta guía te ayudará a determinar con certeza si tu empresa está obligada.
+                            </p>
+                            <p class="lead en-lang">
+                                Confusion about which companies must comply with Chair Law is common. 
+                                Many business owners believe it only applies to large corporations or 
+                                specific sectors, when reality is much broader. 
+                                This guide will help you determine with certainty if your company is required.
+                            </p>
+                        </section>
+
+                        <!-- Sección 1: Verificador Interactivo -->
+                        <section class="article-section">
+                            <h2 class="section-title es-lang">1. Verificador Interactivo: ¿Debes Cumplir?</h2>
+                            <h2 class="section-title en-lang">1. Interactive Checker: Must You Comply?</h2>
+                            
+                            <div class="compliance-checker">
+                                <div class="checker-header">
+                                    <h3 class="es-lang">Responde estas preguntas clave</h3>
+                                    <h3 class="en-lang">Answer these key questions</h3>
+                                    <p class="es-lang">Marca todas las que apliquen a tu empresa</p>
+                                    <p class="en-lang">Check all that apply to your company</p>
+                                </div>
+                                
+                                <div class="checker-questions">
+                                    <div class="question-group">
+                                        <h4 class="es-lang">1. Tipo de Trabajo</h4>
+                                        <h4 class="en-lang">1. Type of Work</h4>
+                                        <div class="question-item">
+                                            <input type="checkbox" id="q1a" data-weight="10">
+                                            <label for="q1a">
+                                                <span class="es-lang">Trabajadores en estaciones fijas (escritorio, computadora)</span>
+                                                <span class="en-lang">Workers at fixed stations (desk, computer)</span>
+                                            </label>
+                                        </div>
+                                        <div class="question-item">
+                                            <input type="checkbox" id="q1b" data-weight="8">
+                                            <label for="q1b">
+                                                <span class="es-lang">Empleados que permanecen sentados más de 4 horas continuas</span>
+                                                <span class="en-lang">Employees who remain seated more than 4 continuous hours</span>
+                                            </label>
+                                        </div>
+                                        <div class="question-item">
+                                            <input type="checkbox" id="q1c" data-weight="5">
+                                            <label for="q1c">
+                                                <span class="es-lang">Trabajo que requiere concentración prolongada en un lugar</span>
+                                                <span class="en-lang">Work requiring prolonged concentration in one place</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="question-group">
+                                        <h4 class="es-lang">2. Sector y Actividad</h4>
+                                        <h4 class="en-lang">2. Sector and Activity</h4>
+                                        <div class="question-item">
+                                            <input type="checkbox" id="q2a" data-weight="10">
+                                            <label for="q2a">
+                                                <span class="es-lang">Centros de llamadas (call centers)</span>
+                                                <span class="en-lang">Call centers</span>
+                                            </label>
+                                        </div>
+                                        <div class="question-item">
+                                            <input type="checkbox" id="q2b" data-weight="9">
+                                            <label for="q2b">
+                                                <span class="es-lang">Empresas de tecnología y desarrollo de software</span>
+                                                <span class="en-lang">Technology companies and software development</span>
+                                            </label>
+                                        </div>
+                                        <div class="question-item">
+                                            <input type="checkbox" id="q2c" data-weight="8">
+                                            <label for="q2c">
+                                                <span class="es-lang">Instituciones financieras y bancos</span>
+                                                <span class="en-lang">Financial institutions and banks</span>
+                                            </label>
+                                        </div>
+                                        <div class="question-item">
+                                            <input type="checkbox" id="q2d" data-weight="7">
+                                            <label for="q2d">
+                                                <span class="es-lang">Empresas de servicios administrativos</span>
+                                                <span class="en-lang">Administrative services companies</span>
+                                            </label>
+                                        </div>
+                                        <div class="question-item">
+                                            <input type="checkbox" id="q2e" data-weight="6">
+                                            <label for="q2e">
+                                                <span class="es-lang">Comercios con personal de atención al cliente sentado</span>
+                                                <span class="en-lang">Businesses with seated customer service staff</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="question-group">
+                                        <h4 class="es-lang">3. Características de la Empresa</h4>
+                                        <h4 class="en-lang">3. Company Characteristics</h4>
+                                        <div class="question-item">
+                                            <input type="checkbox" id="q3a" data-weight="6">
+                                            <label for="q3a">
+                                                <span class="es-lang">Más de 10 empleados en nómina</span>
+                                                <span class="en-lang">More than 10 employees on payroll</span>
+                                            </label>
+                                        </div>
+                                        <div class="question-item">
+                                            <input type="checkbox" id="q3b" data-weight="5">
+                                            <label for="q3b">
+                                                <span class="es-lang">Registrada ante el IMSS</span>
+                                                <span class="en-lang">Registered with IMSS</span>
+                                            </label>
+                                        </div>
+                                        <div class="question-item">
+                                            <input type="checkbox" id="q3c" data-weight="4">
+                                            <label for="q3c">
+                                                <span class="es-lang">Tiene local comercial o oficinas propias</span>
+                                                <span class="en-lang">Has commercial premises or own offices</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="checker-results">
+                                    <div class="result-card">
+                                        <div class="result-score" id="complianceScore">0</div>
+                                        <div class="result-label es-lang">Puntos de Cumplimiento</div>
+                                        <div class="result-label en-lang">Compliance Points</div>
+                                    </div>
+                                    
+                                    <div class="result-analysis">
+                                        <h4 class="es-lang">Resultado:</h4>
+                                        <h4 class="en-lang">Result:</h4>
+                                        <div class="result-message" id="resultMessage">
+                                            <p class="es-lang">Responde las preguntas para conocer tu nivel de obligatoriedad</p>
+                                            <p class="en-lang">Answer questions to know your compliance level</p>
+                                        </div>
+                                        
+                                        <div class="result-scale">
+                                            <div class="scale-item low">
+                                                <span class="es-lang">0-15: Baja probabilidad</span>
+                                                <span class="en-lang">0-15: Low probability</span>
+                                            </div>
+                                            <div class="scale-item medium">
+                                                <span class="es-lang">16-30: Probable obligación</span>
+                                                <span class="en-lang">16-30: Probable obligation</span>
+                                            </div>
+                                            <div class="scale-item high">
+                                                <span class="es-lang">31+: Obligación clara</span>
+                                                <span class="en-lang">31+: Clear obligation</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="checker-actions">
+                                    <button class="btn btn-secondary" id="resetChecker">
+                                        <i class="fas fa-redo"></i>
+                                        <span class="es-lang">Reiniciar Verificador</span>
+                                        <span class="en-lang">Reset Checker</span>
+                                    </button>
+                                    <button class="btn btn-primary" id="saveResults">
+                                        <i class="fas fa-download"></i>
+                                        <span class="es-lang">Descargar Resultado</span>
+                                        <span class="en-lang">Download Result</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Sección 2: Sectores Obligados por Ley -->
+                        <section class="article-section">
+                            <h2 class="section-title es-lang">2. Sectores Específicamente Obligados</h2>
+                            <h2 class="section-title en-lang">2. Specifically Required Sectors</h2>
+                            
+                            <div class="info-box important">
+                                <div class="info-box-icon">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
+                                <div class="info-box-content">
+                                    <h4 class="es-lang">Base Legal</h4>
+                                    <h4 class="en-lang">Legal Basis</h4>
+                                    <p class="es-lang">
+                                        Según la reforma al Artículo 132 de la Ley Federal del Trabajo y 
+                                        la NOM-036-STPS-2018, estos sectores tienen obligación expresa 
+                                        independientemente de su tamaño.
+                                    </p>
+                                    <p class="en-lang">
+                                        According to the reform to Article 132 of the Federal Labor Law and 
+                                        NOM-036-STPS-2018, these sectors have express obligation 
+                                        regardless of their size.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Tabla de sectores -->
+                            <div class="sectors-table">
+                                <div class="table-header">
+                                    <h3 class="es-lang">Sectores con Obligación Expresa</h3>
+                                    <h3 class="en-lang">Sectors with Express Obligation</h3>
+                                </div>
+                                
+                                <div class="sector-cards">
+                                    <div class="sector-card high-priority">
+                                        <div class="sector-icon">
+                                            <i class="fas fa-phone-alt"></i>
+                                        </div>
+                                        <h4 class="es-lang">Centros de Llamadas</h4>
+                                        <h4 class="en-lang">Call Centers</h4>
+                                        <p class="es-lang">
+                                            <strong>100% obligados</strong><br>
+                                            Todos los trabajadores en estaciones telefónicas
+                                        </p>
+                                        <p class="en-lang">
+                                            <strong>100% required</strong><br>
+                                            All workers at telephone stations
+                                        </p>
+                                        <div class="sector-stats">
+                                            <span class="es-lang">Inspección prioritaria</span>
+                                            <span class="en-lang">Priority inspection</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="sector-card high-priority">
+                                        <div class="sector-icon">
+                                            <i class="fas fa-laptop-code"></i>
+                                        </div>
+                                        <h4 class="es-lang">Tecnología</h4>
+                                        <h4 class="en-lang">Technology</h4>
+                                        <p class="es-lang">
+                                            <strong>Desarrolladores 100%</strong><br>
+                                            Programadores, diseñadores, analistas
+                                        </p>
+                                        <p class="en-lang">
+                                            <strong>Developers 100%</strong><br>
+                                            Programmers, designers, analysts
+                                        </p>
+                                        <div class="sector-stats">
+                                            <span class="es-lang">Alto riesgo ergonómico</span>
+                                            <span class="en-lang">High ergonomic risk</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="sector-card medium-priority">
+                                        <div class="sector-icon">
+                                            <i class="fas fa-university"></i>
+                                        </div>
+                                        <h4 class="es-lang">Financiero</h4>
+                                        <h4 class="en-lang">Financial</h4>
+                                        <p class="es-lang">
+                                            <strong>Cajeros y ejecutivos 100%</strong><br>
+                                            Personal en ventanilla o atención directa
+                                        </p>
+                                        <p class="en-lang">
+                                            <strong>Tellers and executives 100%</strong><br>
+                                            Staff at counters or direct service
+                                        </p>
+                                        <div class="sector-stats">
+                                            <span class="es-lang">Inspecciones frecuentes</span>
+                                            <span class="en-lang">Frequent inspections</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="sector-card medium-priority">
+                                        <div class="sector-icon">
+                                            <i class="fas fa-headset"></i>
+                                        </div>
+                                        <h4 class="es-lang">Atención a Clientes</h4>
+                                        <h4 class="en-lang">Customer Service</h4>
+                                        <p class="es-lang">
+                                            <strong>Servicio sentado 100%</strong><br>
+                                            Recepcionistas, agentes de servicio
+                                        </p>
+                                        <p class="en-lang">
+                                            <strong>Seated service 100%</strong><br>
+                                            Receptionists, service agents
+                                        </p>
+                                        <div class="sector-stats">
+                                            <span class="es-lang">Verificación común</span>
+                                            <span class="en-lang">Common verification</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="sector-card low-priority">
+                                        <div class="sector-icon">
+                                            <i class="fas fa-store"></i>
+                                        </div>
+                                        <h4 class="es-lang">Comercio</h4>
+                                        <h4 class="en-lang">Commerce</h4>
+                                        <p class="es-lang">
+                                            <strong>Cajeros y administrativos</strong><br>
+                                            Si pasan +4 horas sentados continuas
+                                        </p>
+                                        <p class="en-lang">
+                                            <strong>Cashiers and administrative</strong><br>
+                                            If they spend +4 continuous hours seated
+                                        </p>
+                                        <div class="sector-stats">
+                                            <span class="es-lang">Inspecciones aleatorias</span>
+                                            <span class="en-lang">Random inspections</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="sector-card low-priority">
+                                        <div class="sector-icon">
+                                            <i class="fas fa-industry"></i>
+                                        </div>
+                                        <h4 class="es-lang">Manufactura</h4>
+                                        <h4 class="en-lang">Manufacturing</h4>
+                                        <p class="es-lang">
+                                            <strong>Personal administrativo</strong><br>
+                                            Oficinistas, supervisores de planta
+                                        </p>
+                                        <p class="en-lang">
+                                            <strong>Administrative staff</strong><br>
+                                            Office workers, plant supervisors
+                                        </p>
+                                        <div class="sector-stats">
+                                            <span class="es-lang">Foco en áreas de oficina</span>
+                                            <span class="en-lang">Focus on office areas</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Mapa de inspecciones -->
+                            <div class="inspection-map">
+                                <h3 class="es-lang">Mapa de Inspecciones por Sector</h3>
+                                <h3 class="en-lang">Inspection Map by Sector</h3>
+                                <div class="map-visual">
+                                    <div class="map-sector" style="left: 10%; top: 20%; background: #e74c3c;">
+                                        <div class="sector-dot"></div>
+                                        <div class="sector-label es-lang">Call Centers</div>
+                                        <div class="sector-label en-lang">Call Centers</div>
+                                        <div class="sector-frequency es-lang">85% inspeccionados</div>
+                                        <div class="sector-frequency en-lang">85% inspected</div>
+                                    </div>
+                                    <div class="map-sector" style="left: 30%; top: 40%; background: #e67e22;">
+                                        <div class="sector-dot"></div>
+                                        <div class="sector-label es-lang">Tecnología</div>
+                                        <div class="sector-label en-lang">Technology</div>
+                                        <div class="sector-frequency es-lang">70% inspeccionados</div>
+                                        <div class="sector-frequency en-lang">70% inspected</div>
+                                    </div>
+                                    <div class="map-sector" style="left: 50%; top: 30%; background: #f39c12;">
+                                        <div class="sector-dot"></div>
+                                        <div class="sector-label es-lang">Financiero</div>
+                                        <div class="sector-label en-lang">Financial</div>
+                                        <div class="sector-frequency es-lang">65% inspeccionados</div>
+                                        <div class="sector-frequency en-lang">65% inspected</div>
+                                    </div>
+                                    <div class="map-sector" style="left: 70%; top: 50%; background: #3498db;">
+                                        <div class="sector-dot"></div>
+                                        <div class="sector-label es-lang">Servicios</div>
+                                        <div class="sector-label en-lang">Services</div>
+                                        <div class="sector-frequency es-lang">45% inspeccionados</div>
+                                        <div class="sector-frequency en-lang">45% inspected</div>
+                                    </div>
+                                    <div class="map-sector" style="left: 40%; top: 70%; background: #2ecc71;">
+                                        <div class="sector-dot"></div>
+                                        <div class="sector-label es-lang">Comercio</div>
+                                        <div class="sector-label en-lang">Commerce</div>
+                                        <div class="sector-frequency es-lang">30% inspeccionados</div>
+                                        <div class="sector-frequency en-lang">30% inspected</div>
+                                    </div>
+                                </div>
+                                <div class="map-legend">
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background: #e74c3c;"></div>
+                                        <span class="es-lang">Alta prioridad (80-100%)</span>
+                                        <span class="en-lang">High priority (80-100%)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background: #e67e22;"></div>
+                                        <span class="es-lang">Media-alta (60-79%)</span>
+                                        <span class="en-lang">Medium-high (60-79%)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background: #f39c12;"></div>
+                                        <span class="es-lang">Media (40-59%)</span>
+                                        <span class="en-lang">Medium (40-59%)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background: #3498db;"></div>
+                                        <span class="es-lang">Media-baja (20-39%)</span>
+                                        <span class="en-lang">Medium-low (20-39%)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background: #2ecc71;"></div>
+                                        <span class="es-lang">Baja (0-19%)</span>
+                                        <span class="en-lang">Low (0-19%)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Sección 3: Excepciones y Casos Especiales -->
+                        <section class="article-section">
+                            <h2 class="section-title es-lang">3. Excepciones y Casos Especiales</h2>
+                            <h2 class="section-title en-lang">3. Exceptions and Special Cases</h2>
+                            
+                            <div class="exceptions-container">
+                                <div class="exception-card false-myth">
+                                    <div class="exception-header">
+                                        <i class="fas fa-times-circle"></i>
+                                        <h4 class="es-lang">Mitos Comunes (FALSOS)</h4>
+                                        <h4 class="en-lang">Common Myths (FALSE)</h4>
+                                    </div>
+                                    <div class="exception-content">
+                                        <ul>
+                                            <li class="es-lang">
+                                                <strong>"Solo aplica a empresas grandes"</strong><br>
+                                                <span class="es-lang">FALSO: Aplica desde 1 empleado si cumple condiciones</span>
+                                                <span class="en-lang">FALSE: Applies from 1 employee if conditions met</span>
+                                            </li>
+                                            <li class="es-lang">
+                                                <strong:"Los freelancers no están obligados"</strong><br>
+                                                <span class="es-lang">FALSO: Si tienen local y trabajadores, SÍ aplica</span>
+                                                <span class="en-lang">FALSE: If they have premises and workers, YES applies</span>
+                                            </li>
+                                            <li class="es-lang">
+                                                <strong>"El teletrabajo está exento"</strong><br>
+                                                <span class="es-lang">FALSO: El empleador debe proveer mobiliario adecuado</span>
+                                                <span class="en-lang">FALSE: Employer must provide adequate furniture</span>
+                                            </li>
+                                            <li class="es-lang">
+                                                <strong:"Solo en CDMX y ciudades grandes"</strong><br>
+                                                <span class="es-lang">FALSO: Aplica en TODO el territorio nacional</span>
+                                                <span class="en-lang">FALSE: Applies in ALL national territory</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="exception-card true-exception">
+                                    <div class="exception-header">
+                                        <i class="fas fa-check-circle"></i>
+                                        <h4 class="es-lang">Verdaderas Excepciones</h4>
+                                        <h4 class="en-lang">True Exceptions</h4>
+                                    </div>
+                                    <div class="exception-content">
+                                        <ul>
+                                            <li class="es-lang">
+                                                <strong>Trabajadores móviles</strong><br>
+                                                <span class="es-lang">Vendedores externos, repartidores, mensajeros</span>
+                                                <span class="en-lang">External salespeople, delivery personnel, messengers</span>
+                                            </li>
+                                            <li class="es-lang">
+                                                <strong>Personal con rotación constante</strong><br>
+                                                <span class="es-lang">Que no permanece más de 2 horas en un puesto</span>
+                                                <span class="en-lang">Who doesn't remain more than 2 hours at a station</span>
+                                            </li>
+                                            <li class="es-lang">
+                                                <strong>Empresas familiares sin empleados</strong><br>
+                                                <span class="es-lang">Donde solo trabajan los dueños/familiares directos</span>
+                                                <span class="en-lang">Where only owners/direct relatives work</span>
+                                            </li>
+                                            <li class="es-lang">
+                                                <strong>Trabajo eventual por proyecto</strong><br>
+                                                <span class="es-lang">Contratos menores a 3 meses sin renovación</span>
+                                                <span class="en-lang">Contracts less than 3 months without renewal</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Casos complejos -->
+                            <div class="complex-cases">
+                                <h3 class="es-lang">Casos Complejos Frecuentes</h3>
+                                <h3 class="en-lang">Frequent Complex Cases</h3>
+                                
+                                <div class="case-accordion">
+                                    <div class="case-item">
+                                        <button class="case-header">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="es-lang">Empresas con teletrabajo híbrido</span>
+                                            <span class="en-lang">Companies with hybrid telework</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                        <div class="case-content">
+                                            <p class="es-lang">
+                                                <strong>Solución:</strong> Debes proporcionar silla ergonómica para días en oficina 
+                                                y subsidio o silla para días en casa. Ambas deben cumplir NOM-036.
+                                            </p>
+                                            <p class="en-lang">
+                                                <strong>Solution:</strong> You must provide ergonomic chair for office days 
+                                                and subsidy or chair for home days. Both must comply with NOM-036.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="case-item">
+                                        <button class="case-header">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="es-lang">Coworking spaces y oficinas compartidas</span>
+                                            <span class="en-lang">Coworking spaces and shared offices</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                        <div class="case-content">
+                                            <p class="es-lang">
+                                                <strong>Solución:</strong> La responsabilidad es del empleador, no del coworking. 
+                                                Debes verificar que el mobiliario del espacio cumpla con la normativa.
+                                            </p>
+                                            <p class="en-lang">
+                                                <strong>Solution:</strong> Responsibility is with employer, not coworking. 
+                                                You must verify space furniture complies with regulations.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="case-item">
+                                        <button class="case-header">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="es-lang">Contratistas y subcontratistas</span>
+                                            <span class="en-lang">Contractors and subcontractors</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                        <div class="case-content">
+                                            <p class="es-lang">
+                                                <strong>Solución:</strong> La empresa principal es solidariamente responsable. 
+                                                Debe incluir cláusulas de cumplimiento en contratos.
+                                            </p>
+                                            <p class="en-lang">
+                                                <strong>Solution:</strong> Main company is jointly responsible. 
+                                                Must include compliance clauses in contracts.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="case-item">
+                                        <button class="case-header">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="es-lang">Startups y empresas en crecimiento</span>
+                                            <span class="en-lang">Startups and growing companies</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                        <div class="case-content">
+                                            <p class="es-lang">
+                                                <strong>Solución:</strong> El cumplimiento es progresivo pero obligatorio. 
+                                                Se recomienda implementar desde el primer empleado para evitar multas futuras.
+                                            </p>
+                                            <p class="en-lang">
+                                                <strong>Solution:</strong> Compliance is progressive but mandatory. 
+                                                Recommended to implement from first employee to avoid future fines.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Sección 4: Consecuencias por Incumplimiento -->
+                        <section class="article-section">
+                            <h2 class="section-title es-lang">4. ¿Qué Pasa si No Cumples?</h2>
+                            <h2 class="section-title en-lang">4. What Happens if You Don't Comply?</h2>
+                            
+                            <div class="consequences-timeline">
+                                <div class="timeline-step negative">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h3 class="es-lang">Inspección STPS</h3>
+                                        <h3 class="en-lang">STPS Inspection</h3>
+                                        <p class="es-lang">
+                                            La Secretaría del Trabaje puede inspeccionar en cualquier momento. 
+                                            El 65% de las inspecciones son por denuncia de trabajadores.
+                                        </p>
+                                        <p class="en-lang">
+                                            Labor Department can inspect at any time. 
+                                            65% of inspections are due to worker complaints.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-step negative">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h3 class="es-lang">Multas Inmediatas</h3>
+                                        <h3 class="en-lang">Immediate Fines</h3>
+                                        <p class="es-lang">
+                                            Multas de $3,500 - $7,500 por empleado afectado, 
+                                            más multas administrativas de hasta $250,000.
+                                        </p>
+                                        <p class="en-lang">
+                                            Fines of $3,500 - $7,500 per affected employee, 
+                                            plus administrative fines up to $250,000.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-step negative">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h3 class="es-lang">Demandas Laborales</h3>
+                                        <h3 class="en-lang">Labor Lawsuits</h3>
+                                        <p class="es-lang">
+                                            Empleados pueden demandar por daños a la salud. 
+                                            Indemnizaciones promedio: 1-2 años de salario.
+                                        </p>
+                                        <p class="en-lang">
+                                            Employees can sue for health damages. 
+                                            Average compensation: 1-2 years salary.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-step negative">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h3 class="es-lang">Clausura Temporal</h3>
+                                        <h3 class="en-lang">Temporary Closure</h3>
+                                        <p class="es-lang">
+                                            Por reincidencia o riesgo grave a la salud, 
+                                            la STPS puede ordenar clausura de 3-30 días.
+                                        </p>
+                                        <p class="en-lang">
+                                            For recidivism or serious health risk, 
+                                            Labor Department can order 3-30 days closure.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Comparación visual -->
+                            <div class="comparison-visual">
+                                <div class="comparison-header">
+                                    <h3 class="es-lang">Costo de Cumplir vs. Costo de No Cumplir</h3>
+                                    <h3 class="en-lang">Cost to Comply vs. Cost of Non-Compliance</h3>
+                                </div>
+                                <div class="comparison-bars">
+                                    <div class="bar-group">
+                                        <div class="bar-label es-lang">Inversión en Cumplimiento</div>
+                                        <div class="bar-label en-lang">Compliance Investment</div>
+                                        <div class="bar positive" style="width: 35%">
+                                            <span class="bar-value">$50,000 MXN</span>
+                                        </div>
+                                    </div>
+                                    <div class="bar-group">
+                                        <div class="bar-label es-lang">Multa por 10 empleados</div>
+                                        <div class="bar-label en-lang">Fine for 10 employees</div>
+                                        <div class="bar negative" style="width: 70%">
+                                            <span class="bar-value">$100,000 MXN</span>
+                                        </div>
+                                    </div>
+                                    <div class="bar-group">
+                                        <div class="bar-label es-lang">Multa + demanda laboral</div>
+                                        <div class="bar-label en-lang">Fine + labor lawsuit</div>
+                                        <div class="bar negative" style="width: 100%">
+                                            <span class="bar-value">$250,000+ MXN</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparison-note">
+                                    <p class="es-lang">
+                                        <strong>Conclusión:</strong> Cumplir cuesta 2-5 veces menos que las consecuencias del incumplimiento.
+                                    </p>
+                                    <p class="en-lang">
+                                        <strong>Conclusion:</strong> Complying costs 2-5 times less than non-compliance consequences.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Conclusión -->
+                        <section class="article-section conclusion">
+                            <h2 class="section-title es-lang">Conclusión: Mejor Prevenir que Lamentar</h2>
+                            <h2 class="section-title en-lang">Conclusion: Better Safe Than Sorry</h2>
+                            
+                            <div class="conclusion-content">
+                                <p class="es-lang">
+                                    Determinar si tu empresa está obligada a cumplir la Ley Silla es más simple 
+                                    de lo que parece. Si tienes empleados que trabajan sentados más de 4 horas 
+                                    continuas en estaciones fijas, la respuesta es casi siempre SÍ.
+                                </p>
+                                <p class="en-lang">
+                                    Determining if your company is required to comply with Chair Law is simpler 
+                                    than it seems. If you have employees who work seated more than 4 continuous 
+                                    hours at fixed stations, the answer is almost always YES.
+                                </p>
+                                
+                                <div class="action-steps">
+                                    <div class="step-card">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h4 class="es-lang">Evalúa tu Situación</h4>
+                                            <h4 class="en-lang">Evaluate Your Situation</h4>
+                                            <p class="es-lang">
+                                                Usa el verificador interactivo de este artículo o 
+                                                consulta con un especialista en cumplimiento normativo.
+                                            </p>
+                                            <p class="en-lang">
+                                                Use this article's interactive checker or 
+                                                consult with a regulatory compliance specialist.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="step-card">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h4 class="es-lang">Documenta tu Evaluación</h4>
+                                            <h4 class="en-lang">Document Your Evaluation</h4>
+                                            <p class="es-lang">
+                                                Guarda evidencia de tu análisis. Esto puede servir 
+                                                como atenuante en caso de inspección.
+                                            </p>
+                                            <p class="en-lang">
+                                                Save evidence of your analysis. This can serve 
+                                                as mitigating factor in case of inspection.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="step-card">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h4 class="es-lang">Implementa Progresivamente</h4>
+                                            <h4 class="en-lang">Implement Progressively</h4>
+                                            <p class="es-lang">
+                                                No necesitas hacerlo todo de golpe. Crea un plan 
+                                                de implementación por fases realista.
+                                            </p>
+                                            <p class="en-lang">
+                                                You don't need to do everything at once. Create a 
+                                </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="cta-box">
+                                    <h3 class="es-lang">¿Aún tienes dudas sobre tu obligación?</h3>
+                                    <h3 class="en-lang">Still have doubts about your obligation?</h3>
+                                    <p class="es-lang">
+                                        Ofrecemos consultoría gratuita para analizar tu caso específico 
+                                        y determinar con exactitud si tu empresa debe cumplir la Ley Silla.
+                                    </p>
+                                    <p class="en-lang">
+                                        We offer free consultation to analyze your specific case 
+                                        and determine exactly if your company must comply with Chair Law.
+                                    </p>
+                                    
+                                    <div class="cta-buttons">
+                                        <a href="contactanos.html" class="btn btn-primary">
+                                            <i class="fas fa-calendar-check"></i>
+                                            <span class="es-lang">Agendar Consulta Gratuita</span>
+                                            <span class="en-lang">Schedule Free Consultation</span>
+                                        </a>
+                                        <a href="catalogo.html" class="btn btn-secondary">
+                                            <i class="fas fa-chair"></i>
+                                            <span class="es-lang">Ver Sillas Certificadas</span>
+                                            <span class="en-lang">View Certified Chairs</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Compartir -->
+                        <footer class="article-footer">
+                            <div class="share-buttons">
+                                <span class="share-label es-lang">Compartir este artículo:</span>
+                                <span class="share-label en-lang">Share this article:</span>
+                                
+                                <button class="share-btn facebook" aria-label="Compartir en Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+                                
+                                <button class="share-btn twitter" aria-label="Compartir en Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+                                
+                                <button class="share-btn linkedin" aria-label="Compartir en LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </button>
+                                
+                                <button class="share-btn whatsapp" aria-label="Compartir en WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </button>
+                                
+                                <button class="share-btn copy-link" aria-label="Copiar enlace" id="copyLinkBtn">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ARTÍCULOS RELACIONADOS -->
+            <section class="related-posts-section">
+                <div class="container-sm">
+                    <div class="section-header">
+                        <h2 class="es-lang">Artículos Relacionados</h2>
+                        <h2 class="en-lang">Related Articles</h2>
+                        <p class="es-lang">Continúa informándote sobre la Ley Silla y cumplimiento normativo</p>
+                        <p class="en-lang">Continue learning about Chair Law and regulatory compliance</p>
+                    </div>
+                    
+                    <div class="related-posts-grid">
+                        <article class="related-post-card">
+                            <div class="post-image">
+                                <img src="Imagenes/Hoy-entro-en-vigor-la-Ley-Silla-que-cambia-y-de-cuanto-es-la-multa.png" alt="Multas 2025">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-category category-multas">
+                                    <span class="es-lang">Multas</span>
+                                    <span class="en-lang">Fines</span>
+                                </div>
+                                <h3 class="post-title es-lang">Actualización 2025: Multas por Incumplimiento</h3>
+                                <h3 class="post-title en-lang">2025 Update: Fines for Non-Compliance</h3>
+                                <a href="articulo-multas-2025.html" class="read-more-link">
+                                    <span class="es-lang">Leer artículo</span>
+                                    <span class="en-lang">Read article</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                        
+                        <article class="related-post-card">
+                            <div class="post-image">
+                                <img src="Imagenes/leysillablog1.png" alt="Guía Implementación">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-category category-ley-silla">
+                                    <span class="es-lang">Ley Silla</span>
+                                    <span class="en-lang">Chair Law</span>
+                                </div>
+                                <h3 class="post-title es-lang">Guía Completa para Implementar la Ley Silla</h3>
+                                <h3 class="post-title en-lang">Complete Guide to Implement Chair Law</h3>
+                                <a href="articulo-guia-implementacion.html" class="read-more-link">
+                                    <span class="es-lang">Leer artículo</span>
+                                    <span class="en-lang">Read article</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                        
+                        <article class="related-post-card">
+                            <div class="post-image">
+                                <img src="Imagenes/inspeccion.png" alt="Inspecciones STPS">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-category category-multas">
+                                    <span class="es-lang">Multas</span>
+                                    <span class="en-lang">Fines</span>
+                                </div>
+                                <h3 class="post-title es-lang">Preparándose para una Inspección de la STPS</h3>
+                                <h3 class="post-title en-lang">Preparing for a STPS Inspection</h3>
+                                <a href="articulo-inspecciones-stps.html" class="read-more-link">
+                                    <span class="es-lang">Leer artículo</span>
+                                    <span class="en-lang">Read article</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
+                        <li><a href="Blog.html" class="es-lang">Blog</a><a href="Blog.html" class="en-lang">Chair Law Blog</a></li>
+                        <li><a href="Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="catalogo.html" class="es-lang">Catálogo</a><a href="catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="contactanos.html" class="es-lang">Contáctanos</a><a href="contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Mi empresa debe cumplir la Ley Silla?">¿Mi empresa debe cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Must my company comply with Chair Law?">Must my company comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas están obligadas?">¿Qué empresas están obligadas?</button>
+                    <button class="quick-question en-lang" data-question="Which companies are required?">Which companies are required?</button>
+                    <button class="quick-question es-lang" data-question="¿Hay excepciones a la Ley Silla?">¿Hay excepciones?</button>
+                    <button class="quick-question en-lang" data-question="Are there exceptions to Chair Law?">Are there exceptions?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/main.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/sidebar.js"></script>
+    
+    <!-- Script específico del artículo -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sidebar functionality
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            
+            function toggleSidebar() {
+                sidebar.classList.toggle('active');
+                sidebarOverlay.classList.toggle('active');
+                
+                if (sidebar.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            }
+            
+            if (sidebarToggle) {
+                sidebarToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleSidebar();
+                });
+            }
+            
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', function() {
+                    toggleSidebar();
+                });
+            }
+            
+            // Verificador de cumplimiento interactivo
+            const checkboxes = document.querySelectorAll('.question-item input');
+            const complianceScore = document.getElementById('complianceScore');
+            const resultMessage = document.getElementById('resultMessage');
+            const resetButton = document.getElementById('resetChecker');
+            const saveButton = document.getElementById('saveResults');
+            
+            let totalScore = 0;
+            
+            function updateComplianceScore() {
+                totalScore = 0;
+                
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        const weight = parseInt(checkbox.getAttribute('data-weight'));
+                        totalScore += weight;
+                    }
+                });
+                
+                // Actualizar puntaje
+                complianceScore.textContent = totalScore;
+                
+                // Actualizar mensaje
+                let message = '';
+                let messageEn = '';
+                
+                if (totalScore === 0) {
+                    message = 'Responde las preguntas para conocer tu nivel de obligatoriedad';
+                    messageEn = 'Answer questions to know your compliance level';
+                } else if (totalScore <= 15) {
+                    message = 'Probablemente NO estás obligado. Tu empresa tiene baja exposición a la Ley Silla.';
+                    messageEn = 'You are probably NOT required. Your company has low exposure to Chair Law.';
+                } else if (totalScore <= 30) {
+                    message = 'Posiblemente SÍ estás obligado. Recomendamos evaluación profesional.';
+                    messageEn = 'You possibly ARE required. We recommend professional evaluation.';
+                } else {
+                    message = 'Definitivamente SÍ estás obligado. Debes implementar la Ley Silla urgentemente.';
+                    messageEn = 'You definitely ARE required. You must implement Chair Law urgently.';
+                }
+                
+                resultMessage.innerHTML = `
+                    <p class="es-lang">${message}</p>
+                    <p class="en-lang">${messageEn}</p>
+                `;
+                
+                // Actualizar escala
+                updateScaleColors();
+            }
+            
+            function updateScaleColors() {
+                const scaleItems = document.querySelectorAll('.scale-item');
+                
+                scaleItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                if (totalScore <= 15) {
+                    document.querySelector('.scale-item.low').classList.add('active');
+                } else if (totalScore <= 30) {
+                    document.querySelector('.scale-item.medium').classList.add('active');
+                } else {
+                    document.querySelector('.scale-item.high').classList.add('active');
+                }
+            }
+            
+            // Event listeners para checkboxes
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateComplianceScore);
+            });
+            
+            // Botón reiniciar
+            if (resetButton) {
+                resetButton.addEventListener('click', function() {
+                    checkboxes.forEach(checkbox => {
+                        checkbox.checked = false;
+                    });
+                    totalScore = 0;
+                    updateComplianceScore();
+                });
+            }
+            
+            // Botón guardar resultados
+            if (saveButton) {
+                saveButton.addEventListener('click', function() {
+                    const results = {
+                        score: totalScore,
+                        date: new Date().toLocaleDateString(),
+                        answers: []
+                    };
+                    
+                    checkboxes.forEach(checkbox => {
+                        if (checkbox.checked) {
+                            const label = checkbox.nextElementSibling;
+                            results.answers.push({
+                                question: label.textContent.trim(),
+                                weight: parseInt(checkbox.getAttribute('data-weight'))
+                            });
+                        }
+                    });
+                    
+                    // Crear contenido para descargar
+                    let content = `RESULTADO VERIFICADOR LEY SILLA\n`;
+                    content += `Fecha: ${results.date}\n`;
+                    content += `Puntaje Total: ${results.score}\n`;
+                    content += `\nRespuestas seleccionadas:\n`;
+                    
+                    results.answers.forEach(answer => {
+                        content += `• ${answer.question} (${answer.weight} pts)\n`;
+                    });
+                    
+                    content += `\nInterpretación: `;
+                    
+                    if (totalScore <= 15) {
+                        content += `Baja probabilidad de obligación`;
+                    } else if (totalScore <= 30) {
+                        content += `Probable obligación - Consultar especialista`;
+                    } else {
+                        content += `Obligación clara - Implementar urgentemente`;
+                    }
+                    
+                    // Descargar archivo
+                    const blob = new Blob([content], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `verificador-ley-silla-${results.date.replace(/\//g, '-')}.txt`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                });
+            }
+            
+            // Acordeón de casos complejos
+            const caseHeaders = document.querySelectorAll('.case-header');
+            
+            caseHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.fa-chevron-down');
+                    
+                    // Cerrar otros
+                    document.querySelectorAll('.case-content').forEach(item => {
+                        if (item !== content && item.classList.contains('active')) {
+                            item.classList.remove('active');
+                            item.previousElementSibling.querySelector('.fa-chevron-down').style.transform = 'rotate(0deg)';
+                        }
+                    });
+                    
+                    // Toggle actual
+                    content.classList.toggle('active');
+                    icon.style.transform = content.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+                });
+            });
+            
+            // Copy link functionality
+            const copyLinkBtn = document.getElementById('copyLinkBtn');
+            if (copyLinkBtn) {
+                copyLinkBtn.addEventListener('click', function() {
+                    const url = window.location.href;
+                    navigator.clipboard.writeText(url).then(() => {
+                        // Show feedback
+                        const originalHTML = this.innerHTML;
+                        this.innerHTML = '<i class="fas fa-check"></i>';
+                        this.style.backgroundColor = '#4CAF50';
+                        
+                        setTimeout(() => {
+                            this.innerHTML = originalHTML;
+                            this.style.backgroundColor = '';
+                        }, 2000);
+                    });
+                });
+            }
+            
+            // Share buttons
+            const shareButtons = document.querySelectorAll('.share-btn');
+            shareButtons.forEach(btn => {
+                if (!btn.classList.contains('copy-link')) {
+                    btn.addEventListener('click', function() {
+                        const url = encodeURIComponent(window.location.href);
+                        const title = encodeURIComponent(document.title);
+                        let shareUrl = '';
+                        
+                        if (this.classList.contains('facebook')) {
+                            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                        } else if (this.classList.contains('twitter')) {
+                            shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+                        } else if (this.classList.contains('linkedin')) {
+                            shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+                        } else if (this.classList.contains('whatsapp')) {
+                            shareUrl = `https://wa.me/?text=${title}%20${url}`;
+                        }
+                        
+                        if (shareUrl) {
+                            window.open(shareUrl, '_blank', 'width=600,height=400');
+                        }
+                    });
+                }
+            });
+            
+            // Inicializar verificador
+            updateComplianceScore();
+        });
+    </script>
+</body>
+</html>
