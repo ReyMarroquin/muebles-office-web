@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>5 Beneficios de la Ergonomía Laboral que No Conocías | Blog Ley Silla</title>
+    <meta name="description" content="Descubre los beneficios ocultos de la ergonomía laboral que van más allá del cumplimiento legal y pueden transformar tu empresa.">
+    
+    <link rel="stylesheet" href="css/blog-article.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="5 Beneficios de la Ergonomía Laboral que No Conocías">
+    <meta property="og:description" content="Más allá del cumplimiento legal, la ergonomía puede transformar tu empresa y mejorar la productividad significativamente.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="Imagenes/beneficios.png">
+</head>
+<body class="blog-article-page">
+
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <a href="index.html">
+                        <img src="Imagenes/ley_silla_logo_leysilla-1920wn.png" alt="Ley Silla Logo" class="logo-light">
+                        <img src="Imagenes/ley_silla_logo_leysilla-1920w.png" alt="Ley Silla Logo" class="logo-dark">
+                    </a>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="es-lang">Inicio</a>
+                        <a href="index.html" class="en-lang">Home</a></li>
+                    <li><a href="Blog.html" class="active es-lang">Blog</a>
+                        <a href="Blog.html" class="active en-lang">Blog</a></li>
+                    <li><a href="Nosotros.html" class="es-lang">Nosotros</a>
+                        <a href="Nosotros.html" class="en-lang">Us</a></li>
+                    <li><a href="catalogo.html" class="es-lang">Catálogo</a>
+                        <a href="catalogo.html" class="en-lang">Catalog</a></li>
+                    <li><a href="contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="index.html">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalogo.html">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ley-silla.html">
+                                <i class="fas fa-gavel"></i>
+                                <span class="es-lang">Ley Silla</span>
+                                <span class="en-lang">Chair Law</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Blog.html" class="active">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Nosotros.html">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- CABECERA DEL ARTÍCULO -->
+            <article class="blog-article-container">
+                <div class="container-sm">
+
+                    <!-- Encabezado del artículo -->
+                    <header class="article-header">
+                        <div class="article-category category-ergonomia">
+                            <span class="es-lang">Ergonomía</span>
+                            <span class="en-lang">Ergonomics</span>
+                        </div>
+                        
+                        <h1 class="article-title es-lang">
+                            5 Beneficios de la Ergonomía Laboral que No Conocías
+                        </h1>
+                        <h1 class="article-title en-lang">
+                            5 Workplace Ergonomics Benefits You Didn't Know
+                        </h1>
+                        
+                        <div class="article-meta">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <i class="fas fa-heartbeat"></i>
+                                </div>
+                                <div class="author-details">
+                                    <span class="author-name">Dra. Laura Fernández</span>
+                                    <span class="author-role es-lang">Especialista en Salud Ocupacional</span>
+                                    <span class="author-role en-lang">Occupational Health Specialist</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-stats">
+                                <div class="stat">
+                                    <i class="far fa-calendar"></i>
+                                    <span class="es-lang">Publicado: 5 Mar, 2025</span>
+                                    <span class="en-lang">Published: Mar 5, 2025</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="far fa-clock"></i>
+                                    <span class="es-lang">4 min lectura</span>
+                                    <span class="en-lang">4 min read</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="far fa-eye"></i>
+                                    <span>1,850 vistas</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Imagen destacada -->
+                        <div class="article-featured-image">
+                            <img src="Imagenes/beneficios.png" alt="Beneficios de la ergonomía laboral">
+                            <div class="image-caption es-lang">
+                                La ergonomía va más allá de sillas cómodas: transforma el ambiente laboral completo
+                            </div>
+                            <div class="image-caption en-lang">
+                                Ergonomics goes beyond comfortable chairs: transforms the entire work environment
+                            </div>
+                        </div>
+                    </header>
+
+                    <!-- CONTENIDO DEL ARTÍCULO -->
+                    <div class="article-content">
+                        
+                        <!-- Introducción -->
+                        <section class="article-section">
+                            <p class="lead es-lang">
+                                Muchas empresas implementan la ergonomía solo por obligación legal, 
+                                desconociendo los beneficios transformadores que ofrece más allá del 
+                                simple cumplimiento normativo. Estos beneficios ocultos pueden 
+                                revolucionar tu empresa desde dentro.
+                            </p>
+                            <p class="lead en-lang">
+                                Many companies implement ergonomics only due to legal obligation, 
+                                unaware of the transformative benefits it offers beyond mere 
+                                regulatory compliance. These hidden benefits can 
+                                revolutionize your company from within.
+                            </p>
+                        </section>
+
+                        <!-- Sección 1: Beneficio 1 -->
+                        <section class="article-section">
+                            <h2 class="section-title es-lang">1. Aumento del Pensamiento Creativo (+42%)</h2>
+                            <h2 class="section-title en-lang">1. Increased Creative Thinking (+42%)</h2>
+                            
+                            <div class="info-box">
+                                <div class="info-box-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div class="info-box-content">
+                                    <h4 class="es-lang">Datos Sorprendentes</h4>
+                                    <h4 class="en-lang">Surprising Data</h4>
+                                    <p class="es-lang">
+                                        Estudios del Instituto de Neuroergonomía demuestran que trabajadores 
+                                        en entornos ergonómicamente optimizados muestran un 42% más de 
+                                        ideas innovadoras y soluciones creativas a problemas complejos.
+                                    </p>
+                                    <p class="en-lang">
+                                        Studies from the Institute of Neuroergonomics show that workers 
+                                        in ergonomically optimized environments show 42% more 
+                                        innovative ideas and creative solutions to complex problems.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="columns-2">
+                                <div class="column">
+                                    <h3 class="es-lang">¿Cómo Funciona?</h3>
+                                    <h3 class="en-lang">How Does It Work?</h3>
+                                    <ul>
+                                        <li class="es-lang">Menos distracciones por incomodidad física</li>
+                                        <li class="en-lang">Fewer distractions from physical discomfort</li>
+                                        <li class="es-lang">Mejor flujo sanguíneo cerebral</li>
+                                        <li class="en-lang">Better cerebral blood flow</li>
+                                        <li class="es-lang">Reducción del estrés físico que bloquea la creatividad</li>
+                                        <li class="en-lang">Reduction of physical stress that blocks creativity</li>
+                                        <li class="es-lang">Posturas que favorecen la concentración profunda</li>
+                                        <li class="en-lang">Postures that favor deep concentration</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <h3 class="es-lang">Resultados Medibles</h3>
+                                    <h3 class="en-lang">Measurable Results</h3>
+                                    <ul>
+                                        <li class="es-lang">+42% ideas innovadoras</li>
+                                        <li class="en-lang">+42% innovative ideas</li>
+                                        <li class="es-lang">+35% velocidad en resolución de problemas</li>
+                                        <li class="en-lang">+35% speed in problem solving</li>
+                                        <li class="es-lang">-28% errores en trabajos creativos</li>
+                                        <li class="en-lang">-28% errors in creative work</li>
+                                        <li class="es-lang">+50% participación en brainstorming</li>
+                                        <li class="en-lang">+50% participation in brainstorming</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Gráfico visual -->
+                            <div class="visual-chart">
+                                <div class="chart-title es-lang">Impacto en Creatividad</div>
+                                <div class="chart-title en-lang">Creativity Impact</div>
+                                <div class="chart-bars">
+                                    <div class="chart-bar" style="width: 42%; background: #3498db;">
+                                        <span class="bar-label es-lang">Creatividad</span>
+                                        <span class="bar-label en-lang">Creativity</span>
+                                        <span class="bar-value">+42%</span>
+                                    </div>
+                                    <div class="chart-bar" style="width: 35%; background: #2ecc71;">
+                                        <span class="bar-label es-lang">Solución Problemas</span>
+                                        <span class="bar-label en-lang">Problem Solving</span>
+                                        <span class="bar-value">+35%</span>
+                                    </div>
+                                    <div class="chart-bar" style="width: 28%; background: #e74c3c;">
+                                        <span class="bar-label es-lang">Errores</span>
+                                        <span class="bar-label en-lang">Errors</span>
+                                        <span class="bar-value">-28%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Sección 2: Beneficio 2 -->
+                        <section class="article-section">
+                            <h2 class="section-title es-lang">2. Mejora de la Toma de Decisiones (+31%)</h2>
+                            <h2 class="section-title en-lang">2. Improved Decision Making (+31%)</h2>
+                            
+                            <div class="info-box">
+                                <div class="info-box-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="info-box-content">
+                                    <h4 class="es-lang">Ciencia Cognitiva Aplicada</h4>
+                                    <h4 class="en-lang">Applied Cognitive Science</h4>
+                                    <p class="es-lang">
+                                        La fatiga física afecta directamente la corteza prefrontal, 
+                                        área cerebral responsable de la toma de decisiones complejas. 
+                                        Un entorno ergonómico mantiene esta área funcionando óptimamente.
+                                    </p>
+                                    <p class="en-lang">
+                                        Physical fatigue directly affects the prefrontal cortex, 
+                                        brain area responsible for complex decision making. 
+                                        An ergonomic environment keeps this area functioning optimally.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="decision-making-demo">
+                                <div class="demo-header">
+                                    <h3 class="es-lang">Simulación: Toma de Decisiones Bajo Estrés Físico</h3>
+                                    <h3 class="en-lang">Simulation: Decision Making Under Physical Stress</h3>
+                                </div>
+                                <div class="demo-content">
+                                    <div class="demo-scenario">
+                                        <div class="scenario-title es-lang">Escenario: Decisión de Inversión</div>
+                                        <div class="scenario-title en-lang">Scenario: Investment Decision</div>
+                                        <div class="scenario-description es-lang">
+                                            Evaluar 3 opciones de inversión con datos complejos
+                                        </div>
+                                        <div class="scenario-description en-lang">
+                                            Evaluate 3 investment options with complex data
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="comparison-cards">
+                                        <div class="comparison-card negative">
+                                            <div class="card-header">
+                                                <i class="fas fa-times-circle"></i>
+                                                <h4 class="es-lang">Sin Ergonomía</h4>
+                                                <h4 class="en-lang">Without Ergonomics</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <ul>
+                                                    <li class="es-lang">15% más tiempo de análisis</li>
+                                                    <li class="en-lang">15% more analysis time</li>
+                                                    <li class="es-lang">22% más errores en cálculos</li>
+                                                    <li class="en-lang">22% more calculation errors</li>
+                                                    <li class="es-lang">Fatiga mental temprana</li>
+                                                    <li class="en-lang">Early mental fatigue</li>
+                                                    <li class="es-lang">Dificultad para concentrarse</li>
+                                                    <li class="en-lang">Difficulty concentrating</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="comparison-card positive">
+                                            <div class="card-header">
+                                                <i class="fas fa-check-circle"></i>
+                                                <h4 class="es-lang">Con Ergonomía</h4>
+                                                <h4 class="en-lang">With Ergonomics</h4>
+                                            </div>
+                                            <div class="card-content">
+                                                <ul>
+                                                    <li class="es-lang">31% mejores decisiones</li>
+                                                    <li class="en-lang">31% better decisions</li>
+                                                    <li class="es-lang">-18% tiempo de análisis</li>
+                                                    <li class="en-lang">-18% analysis time</li>
+                                                    <li class="es-lang">Claridad mental sostenida</li>
+                                                    <li class="en-lang">Sustained mental clarity</li>
+                                                    <li class="es-lang">Evaluación más objetiva</li>
+                                                    <li class="en-lang">More objective evaluation</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Sección 3: Beneficio 3 -->
+                        <section class="article-section">
+                            <h2 class="section-title es-lang">3. Reducción del Desgaste Emocional (-47%)</h2>
+                            <h2 class="section-title en-lang">3. Reduced Emotional Burnout (-47%)</h2>
+                            
+                            <div class="info-box important">
+                                <div class="info-box-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="info-box-content">
+                                    <h4 class="es-lang">Salud Mental en el Trabajo</h4>
+                                    <h4 class="en-lang">Mental Health at Work</h4>
+                                    <p class="es-lang">
+                                        El estrés físico crónico se convierte en estrés emocional. 
+                                        La ergonomía no solo protege el cuerpo, sino que actúa como 
+                                        amortiguador psicológico contra el burnout laboral.
+                                    </p>
+                                    <p class="en-lang">
+                                        Chronic physical stress becomes emotional stress. 
+                                        Ergonomics not only protects the body but acts as a 
+                                        psychological buffer against work burnout.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Timeline de bienestar -->
+                            <div class="wellness-timeline">
+                                <div class="timeline-step">
+                                    <div class="step-number">Día 1-7</div>
+                                    <div class="step-content">
+                                        <h3 class="es-lang">Adaptación Física</h3>
+                                        <h3 class="en-lang">Physical Adaptation</h3>
+                                        <p class="es-lang">
+                                            El cuerpo se adapta a las nuevas posturas. 
+                                            Reducción inicial de dolores musculares.
+                                        </p>
+                                        <p class="en-lang">
+                                            The body adapts to new postures. 
+                                            Initial reduction of muscle pain.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-step">
+                                    <div class="step-number">Semana 2-3</div>
+                                    <div class="step-content">
+                                        <h3 class="es-lang">Mejora del Sueño</h3>
+                                        <h3 class="en-lang">Sleep Improvement</h3>
+                                        <p class="es-lang">
+                                            Menos tensión acumulada = mejor calidad de sueño. 
+                                            Empleados reportan mayor descanso nocturno.
+                                        </p>
+                                        <p class="en-lang">
+                                            Less accumulated tension = better sleep quality. 
+                                            Employees report better nighttime rest.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-step">
+                                    <div class="step-number">Mes 1-2</div>
+                                    <div class="step-content">
+                                        <h3 class="es-lang">Estabilidad Emocional</h3>
+                                        <h3 class="en-lang">Emotional Stability</h3>
+                                        <p class="es-lang">
+                                            -34% en reportes de ansiedad laboral. 
+                                            Mejora notable en el estado de ánimo general.
+                                        </p>
+                                        <p class="en-lang">
+                                            -34% in work anxiety reports. 
+                                            Notable improvement in overall mood.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-step">
+                                    <div class="step-number">Mes 3+</div>
+                                    <div class="step-content">
+                                        <h3 class="es-lang">Transformación Sostenida</h3>
+                                        <h3 class="en-lang">Sustained Transformation</h3>
+                                        <p class="es-lang">
+                                            -47% en síntomas de burnout. 
+                                            Mayor resiliencia ante el estrés laboral.
+                                        </p>
+                                        <p class="en-lang">
+                                            -47% in burnout symptoms. 
+                                            Greater resilience to work stress.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Testimonio -->
+                            <div class="testimonial-box">
+                                <div class="testimonial-content">
+                                    <i class="fas fa-quote-left"></i>
+                                    <p class="testimonial-text es-lang">
+                                        "Después de implementar estaciones ergonómicas, notamos que nuestros 
+                                        empleados no solo tenían menos dolores físicos, sino que también 
+                                        mostraban mayor paciencia, mejor comunicación y menos conflictos 
+                                        interpersonales. El ambiente de trabajo mejoró radicalmente."
+                                    </p>
+                                    <p class="testimonial-text en-lang">
+                                        "After implementing ergonomic workstations, we noticed our 
+                                        employees not only had fewer physical pains but also 
+                                        showed more patience, better communication and fewer interpersonal 
+                                        conflicts. The work environment improved radically."
+                                    </p>
+                                    <div class="testimonial-author">
+                                        <strong class="es-lang">María González</strong>
+                                        <strong class="en-lang">María González</strong>
+                                        <span class="es-lang">Directora de Recursos Humanos, TechCorp</span>
+                                        <span class="en-lang">HR Director, TechCorp</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Sección 4: Beneficio 4 -->
+                        <section class="article-section">
+                            <h2 class="section-title es-lang">4. Incremento en la Retención de Talento (+65%)</h2>
+                            <h2 class="section-title en-lang">4. Increase in Talent Retention (+65%)</h2>
+                            
+                            <div class="info-box">
+                                <div class="info-box-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="info-box-content">
+                                    <h4 class="es-lang">La Ergonomía como Ventaja Competitiva</h4>
+                                    <h4 class="en-lang">Ergonomics as Competitive Advantage</h4>
+                                    <p class="es-lang">
+                                        En la guerra por el talento, las condiciones ergonómicas se han 
+                                        convertido en un factor decisivo. Los millennials y Gen Z 
+                                        valoran más el bienestar laboral que beneficios tradicionales.
+                                    </p>
+                                    <p class="en-lang">
+                                        In the war for talent, ergonomic conditions have 
+                                        become a decisive factor. Millennials and Gen Z 
+                                        value work well-being more than traditional benefits.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Estadísticas de retención -->
+                            <div class="retention-stats">
+                                <div class="stats-grid">
+                                    <div class="stat-card">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-percentage"></i>
+                                        </div>
+                                        <div class="stat-number">+65%</div>
+                                        <div class="stat-label es-lang">Retención a 2 años</div>
+                                        <div class="stat-label en-lang">2-year Retention</div>
+                                    </div>
+                                    
+                                    <div class="stat-card">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="stat-number">4.8/5</div>
+                                        <div class="stat-label es-lang">Satisfacción Laboral</div>
+                                        <div class="stat-label en-lang">Job Satisfaction</div>
+                                    </div>
+                                    
+                                    <div class="stat-card">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-user-plus"></i>
+                                        </div>
+                                        <div class="stat-number">-40%</div>
+                                        <div class="stat-label es-lang">Rotación Voluntaria</div>
+                                        <div class="stat-label en-lang">Voluntary Turnover</div>
+                                    </div>
+                                    
+                                    <div class="stat-card">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-bullhorn"></i>
+                                        </div>
+                                        <div class="stat-number">3.2x</div>
+                                        <div class="stat-label es-lang">Más Recomendaciones</div>
+                                        <div class="stat-label en-lang">More Recommendations</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Encuesta generacional -->
+                            <div class="survey-results">
+                                <h3 class="es-lang">¿Qué valoran más las nuevas generaciones?</h3>
+                                <h3 class="en-lang">What do new generations value most?</h3>
+                                
+                                <div class="survey-items">
+                                    <div class="survey-item">
+                                        <div class="survey-label es-lang">Bienestar físico en el trabajo</div>
+                                        <div class="survey-label en-lang">Physical well-being at work</div>
+                                        <div class="survey-bar">
+                                            <div class="bar-fill" style="width: 78%">
+                                                <span class="bar-value">78%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="survey-item">
+                                        <div class="survey-label es-lang">Salario competitivo</div>
+                                        <div class="survey-label en-lang">Competitive salary</div>
+                                        <div class="survey-bar">
+                                            <div class="bar-fill" style="width: 65%">
+                                                <span class="bar-value">65%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="survey-item">
+                                        <div class="survey-label es-lang">Horarios flexibles</div>
+                                        <div class="survey-label en-lang">Flexible schedules</div>
+                                        <div class="survey-bar">
+                                            <div class="bar-fill" style="width: 72%">
+                                                <span class="bar-value">72%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="survey-item">
+                                        <div class="survey-label es-lang">Ambiente ergonómico</div>
+                                        <div class="survey-label en-lang">Ergonomic environment</div>
+                                        <div class="survey-bar">
+                                            <div class="bar-fill" style="width: 81%">
+                                                <span class="bar-value">81%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="survey-note">
+                                    <p class="es-lang">
+                                        <strong>Fuente:</strong> Encuesta a 2,500 profesionales menores de 35 años (2024)
+                                    </p>
+                                    <p class="en-lang">
+                                        <strong>Source:</strong> Survey of 2,500 professionals under 35 (2024)
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Sección 5: Beneficio 5 -->
+                        <section class="article-section">
+                            <h2 class="section-title es-lang">5. Mejora de la Imagen Corporativa y Marca Empleadora</h2>
+                            <h2 class="section-title en-lang">5. Improvement of Corporate Image and Employer Brand</h2>
+                            
+                            <div class="info-box">
+                                <div class="info-box-icon">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div class="info-box-content">
+                                    <h4 class="es-lang">Más Allá de las Cuatro Paredes</h4>
+                                    <h4 class="en-lang">Beyond the Four Walls</h4>
+                                    <p class="es-lang">
+                                        Una empresa que invierte en ergonomía envía un mensaje poderoso 
+                                        a clientes, inversionistas y la comunidad: "Valoramos a las personas".
+                                    </p>
+                                    <p class="en-lang">
+                                        A company that invests in ergonomics sends a powerful message 
+                                        to clients, investors and the community: "We value people".
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="brand-impact-grid">
+                                <div class="impact-card">
+                                    <div class="impact-icon">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <h4 class="es-lang">SEO y Contenido Orgánico</h4>
+                                    <h4 class="en-lang">SEO and Organic Content</h4>
+                                    <p class="es-lang">
+                                        Publicar sobre ergonomía genera 3x más engagement 
+                                        en redes sociales que contenido corporativo tradicional.
+                                    </p>
+                                    <p class="en-lang">
+                                        Publishing about ergonomics generates 3x more engagement 
+                                        on social media than traditional corporate content.
+                                    </p>
+                                </div>
+                                
+                                <div class="impact-card">
+                                    <div class="impact-icon">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <h4 class="es-lang">Reconocimientos y Certificaciones</h4>
+                                    <h4 class="en-lang">Awards and Certifications</h4>
+                                    <p class="es-lang">
+                                        Calificar para certificaciones como "Great Place to Work" 
+                                        o "Empresa Socialmente Responsable".
+                                    </p>
+                                    <p class="en-lang">
+                                        Qualify for certifications like "Great Place to Work" 
+                                        or "Socially Responsible Company".
+                                    </p>
+                                </div>
+                                
+                                <div class="impact-card">
+                                    <div class="impact-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <h4 class="es-lang">Valoración de Mercado</h4>
+                                    <h4 class="en-lang">Market Valuation</h4>
+                                    <p class="es-lang">
+                                        Empresas con altos estándares ergonómicos tienen 
+                                        valoraciones 15-20% más altas en bolsa.
+                                    </p>
+                                    <p class="en-lang">
+                                        Companies with high ergonomic standards have 
+                                        15-20% higher stock valuations.
+                                    </p>
+                                </div>
+                                
+                                <div class="impact-card">
+                                    <div class="impact-icon">
+                                        <i class="fas fa-handshake"></i>
+                                    </div>
+                                    <h4 class="es-lang">Relaciones con Inversionistas</h4>
+                                    <h4 class="en-lang">Investor Relations</h4>
+                                    <p class="es-lang">
+                                        Fondos de inversión ESG (Environmental, Social, Governance) 
+                                        prefieren empresas con prácticas ergonómicas avanzadas.
+                                    </p>
+                                    <p class="en-lang">
+                                        ESG (Environmental, Social, Governance) investment funds 
+                                        prefer companies with advanced ergonomic practices.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            
+                        </section>
+
+                        <!-- Conclusión -->
+                        <section class="article-section conclusion">
+                            <h2 class="section-title es-lang">Conclusión: La Ergonomía como Estrategia de Negocio</h2>
+                            <h2 class="section-title en-lang">Conclusion: Ergonomics as Business Strategy</h2>
+                            
+                            <div class="conclusion-content">
+                                <p class="es-lang">
+                                    La ergonomía laboral ha evolucionado de ser un simple requisito legal 
+                                    a convertirse en una poderosa estrategia de negocio. Los beneficios 
+                                    van mucho más allá de evitar multas: transforman la cultura organizacional, 
+                    </p>
+                                <p class="en-lang">
+                                    Workplace ergonomics has evolved from being a simple legal requirement 
+                                    to becoming a powerful business strategy. The benefits 
+                                    go far beyond avoiding fines: they transform organizational culture, 
+                                    improve talent retention and create sustainable competitive advantages.
+                                </p>
+                                
+                                <div class="key-takeaways">
+                                    <div class="takeaway-card">
+                                        <div class="takeaway-icon">
+                                            <i class="fas fa-rocket"></i>
+                                        </div>
+                                        <h4 class="es-lang">No es un gasto, es una inversión</h4>
+                                        <h4 class="en-lang">It's not an expense, it's an investment</h4>
+                                        <p class="es-lang">
+                                            Cada peso invertido en ergonomía genera un retorno de 3-5 pesos 
+                                            en productividad, retención y reducción de costos.
+                                        </p>
+                                        <p class="en-lang">
+                                            Every peso invested in ergonomics generates a return of 3-5 pesos 
+                                            in productivity, retention and cost reduction.
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="takeaway-card">
+                                        <div class="takeaway-icon">
+                                            <i class="fas fa-chess-queen"></i>
+                                        </div>
+                                        <h4 class="es-lang">Ventaja competitiva sostenible</h4>
+                                        <h4 class="en-lang">Sustainable competitive advantage</h4>
+                                        <p class="es-lang">
+                                            Difícil de copiar por la competencia y crea lealtad 
+                                            genuina de empleados y clientes.
+                                        </p>
+                                        <p class="en-lang">
+                                            Difficult for competitors to copy and creates genuine 
+                                            loyalty from employees and clients.
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="takeaway-card">
+                                        <div class="takeaway-icon">
+                                            <i class="fas fa-infinity"></i>
+                                        </div>
+                                        <h4 class="es-lang">Impacto a largo plazo</h4>
+                                        <h4 class="en-lang">Long-term impact</h4>
+                                        <p class="es-lang">
+                                            Los beneficios se acumulan y multiplican con el tiempo, 
+                                            creando un ciclo virtuoso de mejora continua.
+                                        </p>
+                                        <p class="en-lang">
+                                            Benefits accumulate and multiply over time, 
+                                            creating a virtuous cycle of continuous improvement.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="cta-box">
+                                    <h3 class="es-lang">¿Listo para transformar tu empresa?</h3>
+                                    <h3 class="en-lang">Ready to transform your company?</h3>
+                                    <p class="es-lang">
+                                        Comienza con una evaluación ergonómica gratuita y descubre 
+                                        cómo puedes implementar estos beneficios en tu organización.
+                                    </p>
+                                    <p class="en-lang">
+                                        Start with a free ergonomic assessment and discover 
+                                        how you can implement these benefits in your organization.
+                                    </p>
+                                    
+                                    <div class="cta-buttons">
+                                        <a href="contactanos.html" class="btn btn-primary">
+                                            <i class="fas fa-clipboard-list"></i>
+                                            <span class="es-lang">Solicitar Evaluación Gratuita</span>
+                                            <span class="en-lang">Request Free Assessment</span>
+                                        </a>
+                                        <a href="catalogo.html" class="btn btn-secondary">
+                                            <i class="fas fa-chair"></i>
+                                            <span class="es-lang">Explorar Soluciones Ergonómicas</span>
+                                            <span class="en-lang">Explore Ergonomic Solutions</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Compartir -->
+                        <footer class="article-footer">
+                            <div class="share-buttons">
+                                <span class="share-label es-lang">Compartir este artículo:</span>
+                                <span class="share-label en-lang">Share this article:</span>
+                                
+                                <button class="share-btn facebook" aria-label="Compartir en Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+                                
+                                <button class="share-btn twitter" aria-label="Compartir en Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+                                
+                                <button class="share-btn linkedin" aria-label="Compartir en LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </button>
+                                
+                                <button class="share-btn whatsapp" aria-label="Compartir en WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </button>
+                                
+                                <button class="share-btn copy-link" aria-label="Copiar enlace" id="copyLinkBtn">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ARTÍCULOS RELACIONADOS -->
+            <section class="related-posts-section">
+                <div class="container-sm">
+                    <div class="section-header">
+                        <h2 class="es-lang">Artículos Relacionados</h2>
+                        <h2 class="en-lang">Related Articles</h2>
+                        <p class="es-lang">Continúa aprendiendo sobre ergonomía y bienestar laboral</p>
+                        <p class="en-lang">Continue learning about ergonomics and work well-being</p>
+                    </div>
+                    
+                    <div class="related-posts-grid">
+                        <article class="related-post-card">
+                            <div class="post-image">
+                                <img src="Imagenes/leysillablog1.png" alt="Guía Implementación">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-category category-ley-silla">
+                                    <span class="es-lang">Ley Silla</span>
+                                    <span class="en-lang">Chair Law</span>
+                                </div>
+                                <h3 class="post-title es-lang">Guía Completa para Implementar la Ley Silla</h3>
+                                <h3 class="post-title en-lang">Complete Guide to Implement Chair Law</h3>
+                                <a href="articulo-guia-implementacion.html" class="read-more-link">
+                                    <span class="es-lang">Leer artículo</span>
+                                    <span class="en-lang">Read article</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                        
+                        <article class="related-post-card">
+                            <div class="post-image">
+                                <img src="Imagenes/silla-ergonomica-soporte-lumbar-ajustes.png" alt="Elegir Sillas">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-category category-implementacion">
+                                    <span class="es-lang">Implementación</span>
+                                    <span class="en-lang">Implementation</span>
+                                </div>
+                                <h3 class="post-title es-lang">Cómo Elegir Sillas Ergonómicas Correctas</h3>
+                                <h3 class="post-title en-lang">How to Choose Right Ergonomic Chairs</h3>
+                                <a href="articulo-elegir-sillas.html" class="read-more-link">
+                                    <span class="es-lang">Leer artículo</span>
+                                    <span class="en-lang">Read article</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                        
+                        <article class="related-post-card">
+                            <div class="post-image">
+                                <img src="Imagenes/casosdeexito.png" alt="Casos de Éxito">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-category category-implementacion">
+                                    <span class="es-lang">Implementación</span>
+                                    <span class="en-lang">Implementation</span>
+                                </div>
+                                <h3 class="post-title es-lang">Casos de Éxito: Empresas que Han Implementado</h3>
+                                <h3 class="post-title en-lang">Success Stories: Companies That Have Implemented</h3>
+                                <a href="articulo-casos-exito.html" class="read-more-link">
+                                    <span class="es-lang">Leer artículo</span>
+                                    <span class="en-lang">Read article</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
+                        <li><a href="Blog.html" class="es-lang">Blog</a><a href="Blog.html" class="en-lang">Chair Law Blog</a></li>
+                        <li><a href="Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="catalogo.html" class="es-lang">Catálogo</a><a href="catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="contactanos.html" class="es-lang">Contáctanos</a><a href="contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué beneficios tiene la ergonomía?">¿Qué beneficios tiene la ergonomía?</button>
+                    <button class="quick-question en-lang" data-question="What benefits does ergonomics have?">What benefits does ergonomics have?</button>
+                    <button class="quick-question es-lang" data-question="¿La ergonomía mejora la creatividad?">¿La ergonomía mejora la creatividad?</button>
+                    <button class="quick-question en-lang" data-question="Does ergonomics improve creativity?">Does ergonomics improve creativity?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo implementar ergonomía?">¿Cómo implementar ergonomía?</button>
+                    <button class="quick-question en-lang" data-question="How to implement ergonomics?">How to implement ergonomics?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/main.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/sidebar.js"></script>
+    
+    <!-- Script específico del artículo -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sidebar functionality
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            
+            function toggleSidebar() {
+                sidebar.classList.toggle('active');
+                sidebarOverlay.classList.toggle('active');
+                
+                if (sidebar.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            }
+            
+            if (sidebarToggle) {
+                sidebarToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleSidebar();
+                });
+            }
+            
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', function() {
+                    toggleSidebar();
+                });
+            }
+            
+            // Calculadora de ROI de imagen corporativa
+            const companySize = document.getElementById('companySize');
+            const industry = document.getElementById('industry');
+            
+            const recruitmentSavingsElement = document.getElementById('recruitmentSavings');
+            const adValueElement = document.getElementById('adValue');
+            const annualROIElement = document.getElementById('annualROI');
+            
+            function calculateBrandROI() {
+                const baseValue = parseInt(companySize.value);
+                const industryMultiplier = parseFloat(industry.value);
+                
+                // Cálculos
+                const recruitmentSavings = Math.round(baseValue * 0.9); // 90% del valor base
+                const adValue = Math.round(baseValue * 1.5 * industryMultiplier); // 150% ajustado por industria
+                const annualROI = Math.round((adValue / baseValue) * 100);
+                
+                // Formatear como moneda
+                const formatter = new Intl.NumberFormat('es-MX', {
+                    style: 'currency',
+                    currency: 'MXN',
+                    minimumFractionDigits: 0
+                });
+                
+                // Actualizar UI
+                recruitmentSavingsElement.textContent = formatter.format(recruitmentSavings);
+                adValueElement.textContent = formatter.format(adValue);
+                annualROIElement.textContent = `${annualROI}%`;
+            }
+            
+            // Event listeners para calculadora
+            if (companySize && industry) {
+                companySize.addEventListener('change', calculateBrandROI);
+                industry.addEventListener('change', calculateBrandROI);
+                calculateBrandROI(); // Cálculo inicial
+            }
+            
+            // Copy link functionality
+            const copyLinkBtn = document.getElementById('copyLinkBtn');
+            if (copyLinkBtn) {
+                copyLinkBtn.addEventListener('click', function() {
+                    const url = window.location.href;
+                    navigator.clipboard.writeText(url).then(() => {
+                        // Show feedback
+                        const originalHTML = this.innerHTML;
+                        this.innerHTML = '<i class="fas fa-check"></i>';
+                        this.style.backgroundColor = '#4CAF50';
+                        
+                        setTimeout(() => {
+                            this.innerHTML = originalHTML;
+                            this.style.backgroundColor = '';
+                        }, 2000);
+                    });
+                });
+            }
+            
+            // Share buttons
+            const shareButtons = document.querySelectorAll('.share-btn');
+            shareButtons.forEach(btn => {
+                if (!btn.classList.contains('copy-link')) {
+                    btn.addEventListener('click', function() {
+                        const url = encodeURIComponent(window.location.href);
+                        const title = encodeURIComponent(document.title);
+                        let shareUrl = '';
+                        
+                        if (this.classList.contains('facebook')) {
+                            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                        } else if (this.classList.contains('twitter')) {
+                            shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+                        } else if (this.classList.contains('linkedin')) {
+                            shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+                        } else if (this.classList.contains('whatsapp')) {
+                            shareUrl = `https://wa.me/?text=${title}%20${url}`;
+                        }
+                        
+                        if (shareUrl) {
+                            window.open(shareUrl, '_blank', 'width=600,height=400');
+                        }
+                    });
+                }
+            });
+            
+            // Animación para las barras de gráficos
+            const chartBars = document.querySelectorAll('.chart-bar, .bar-fill');
+            chartBars.forEach(bar => {
+                const originalWidth = bar.style.width;
+                bar.style.width = '0%';
+                
+                setTimeout(() => {
+                    bar.style.transition = 'width 1.5s ease-out';
+                    bar.style.width = originalWidth;
+                }, 300);
+            });
+            
+            // Animación para las estadísticas
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const originalValue = stat.textContent;
+                const isPercentage = originalValue.includes('%') || originalValue.includes('/');
+                
+                if (!isPercentage) {
+                    stat.textContent = '0';
+                    
+                    setTimeout(() => {
+                        let current = 0;
+                        const target = parseFloat(originalValue);
+                        const increment = target / 50;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            stat.textContent = Math.round(current).toLocaleString();
+                        }, 30);
+                    }, 500);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

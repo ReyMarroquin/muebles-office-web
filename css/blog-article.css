@@ -1377,6 +1377,7 @@ body.dark-theme .cta-box h3 {
     color: #f1f5f9 !important;
 }
 
+
 /* Botones principales */
 body[data-theme="dark"] .btn-primary,
 body.dark-theme .btn-primary {
@@ -1490,5 +1491,424 @@ body.dark-theme .en-lang {
     color: #cbd5e1 !important;
 }
 
-/* REMOVER TODAS LAS REGLAS ANTERIORES DE MODO OSCURO QUE ESTÁN AL FINAL */
-/* El código anterior reemplaza completamente lo que tenías */
+/* ============================================ */
+/* SOLUCIÓN: Modo oscuro para el artículo del blog */
+/* ============================================ */
+
+/* Cuando body tiene la clase dark-mode */
+body.dark-mode.blog-article-page {
+    background: #0f172a !important;
+    background-color: #0f172a !important;
+    background-image: none !important;
+}
+
+/* Contenedor principal */
+body.dark-mode .blog-article-container {
+    background: transparent !important;
+}
+
+/* Header del artículo */
+body.dark-mode .article-header {
+    background: #1e293b !important;
+    border: 1px solid #4a5568 !important;
+}
+
+/* Título del artículo */
+
+body.dark-mode .article-title {
+    background: linear-gradient(135deg, #60a5fa, #3b82f6) !important;
+    -webkit-background-clip: text !important;  /* ESPACIO AQUÍ */
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+}
+
+/* Contenido principal */
+body.dark-mode .article-content {
+    background: #1e293b !important;
+    border: 1px solid #4a5568 !important;
+}
+
+/* Párrafo destacado */
+body.dark-mode .lead {
+    color: #cbd5e1 !important;
+    background: rgba(59, 130, 246, 0.1) !important;
+    border-left: 4px solid #3b82f6 !important;
+}
+
+/* Títulos de sección */
+body.dark-mode .section-title {
+    color: #f1f5f9 !important;
+}
+
+body.dark-mode .section-title::before {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+}
+
+/* Etiquetas */
+body.dark-mode .tag {
+    background: linear-gradient(135deg, #334155, #475569) !important;
+    color: #cbd5e1 !important;
+}
+
+body.dark-mode .tag:hover {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    color: #f1f5f9 !important;
+}
+
+/* Botones de compartir */
+body.dark-mode .share-btn {
+    background: #334155 !important;
+    color: #cbd5e1 !important;
+}
+
+/* Artículos relacionados */
+body.dark-mode .related-posts-section {
+    background: transparent !important;
+}
+
+/* Fuerza el modo oscuro en toda la página */
+body.dark-mode.blog-article-page,
+body.dark-mode.blog-article-page .page-wrapper,
+body.dark-mode.blog-article-page .main-content-with-sidebar {
+    background: #0f172a !important;
+    background-color: #0f172a !important;
+}
+
+/* Asegura que el texto sea legible */
+body.dark-mode.blog-article-page p,
+body.dark-mode.blog-article-page li,
+body.dark-mode.blog-article-page span,
+body.dark-mode.blog-article-page div {
+    color: #cbd5e1 !important;
+}
+
+/* ============================================ */
+/* CORRECCIONES ESPECÍFICAS PARA MODO OSCURO */
+/* ============================================ */
+
+/* STEP-CONTENT - Timeline steps */
+body.dark-mode .step-content {
+    background: #1e293b !important;
+    border: 1px solid #4a5568 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+    color: #cbd5e1 !important;
+}
+
+body.dark-mode .step-content h3 {
+    color: #f1f5f9 !important;
+}
+
+/* FEATURE-CARD - Tarjetas de características */
+body.dark-mode .feature-card {
+    background: linear-gradient(135deg, #1e293b, #0f172a) !important;
+    border: 1px solid #4a5568 !important;
+    color: #cbd5e1 !important;
+}
+
+body.dark-mode .feature-card:hover {
+    background: linear-gradient(135deg, #334155, #1e293b) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4) !important;
+}
+
+body.dark-mode .feature-card h4 {
+    color: #f1f5f9 !important;
+}
+
+/* FEATURE-CARD hover con borde de color */
+body.dark-mode .feature-card:hover::before {
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8) !important;
+    opacity: 1 !important;
+}
+
+/* ARTICLE-SECTION CONCLUSION - El problema del contraste */
+body.dark-mode .conclusion {
+    background: #1e293b !important; /* Oscuro, no gris claro */
+    border: 1px solid #4a5568 !important;
+    color: #cbd5e1 !important;
+}
+
+body.dark-mode .conclusion .section-title {
+    color: #f1f5f9 !important;
+}
+
+/* CTA-BOX dentro de conclusion */
+body.dark-mode .cta-box {
+    background: linear-gradient(135deg, #1d4ed8, #1e3a8a) !important;
+    color: #f1f5f9 !important;
+}
+
+body.dark-mode .cta-box h3 {
+    color: #f1f5f9 !important;
+}
+
+/* ============================================ */
+/* IMÁGENES RESPONSIVAS - MOSTRAR PARTE SUPERIOR */
+/* ============================================ */
+
+/* ARTÍCULOS RELACIONADOS - Imágenes y contenedores */
+body.dark-mode .related-posts-section {
+    background: transparent !important;
+}
+
+body.dark-mode .related-post-card {
+    background: #1e293b !important;
+    border: 1px solid #4a5568 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+    height: 100%; /* Para que todas las tarjetas tengan misma altura */
+    display: flex;
+    flex-direction: column;
+}
+
+body.dark-mode .related-post-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3) !important;
+    border-color: #3b82f6 !important;
+}
+
+/* CONTENEDOR DE IMAGEN - RESPONSIVO */
+.related-post-card .post-image {
+    position: relative !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    /* Altura responsiva proporcional al ancho */
+    height: 0 !important;
+    padding-bottom: 56.25% !important; /* Relación 16:9 (9/16 = 0.5625) */
+}
+
+/* IMAGEN - MOSTRAR SIEMPRE LA PARTE SUPERIOR */
+.related-post-card .post-image img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important; /* ¡ESTO ES CLAVE! Muestra la parte superior */
+    transition: transform 0.5s ease !important;
+}
+
+/* Efecto hover más sutil */
+.related-post-card:hover .post-image img {
+    transform: scale(1.03) !important; /* Más sutil que 1.05 */
+}
+
+/* Contenido de la tarjeta - Se expande para llenar espacio */
+body.dark-mode .related-post-card .post-content {
+    padding: 1.5rem !important;
+    background: transparent !important;
+    flex-grow: 1; /* Hace que el contenido ocupe el espacio restante */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Categoría */
+body.dark-mode .related-post-card .post-category {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    color: white !important;
+    display: inline-block !important;
+    padding: 0.4rem 1rem !important;
+    border-radius: 20px !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1rem !important;
+    align-self: flex-start; /* Se alinea a la izquierda */
+}
+
+/* Título */
+body.dark-mode .related-post-card .post-title {
+    color: #f1f5f9 !important;
+    font-size: 1.2rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 1rem !important;
+    font-weight: 600 !important;
+    flex-grow: 1; /* Empuja el botón hacia abajo */
+}
+
+/* Leer más link - Se queda abajo */
+body.dark-mode .read-more-link {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    color: white !important;
+    margin-top: auto; /* Empuja el botón al fondo */
+    align-self: flex-start; /* Alinea a la izquierda */
+}
+
+/* ============================================ */
+/* RESPONSIVE PARA DIFERENTES DISPOSITIVOS */
+/* ============================================ */
+
+/* MÓVILES (hasta 768px) */
+@media (max-width: 768px) {
+    .related-posts-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .related-post-card .post-image {
+        padding-bottom: 60% !important; /* Un poco más cuadrada en móviles */
+    }
+    
+    body.dark-mode .related-post-card .post-content {
+        padding: 1.25rem !important;
+    }
+    
+    body.dark-mode .related-post-card .post-title {
+        font-size: 1.1rem !important;
+    }
+}
+
+/* TABLETS (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .related-posts-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+    
+    .related-post-card .post-image {
+        padding-bottom: 50% !important; /* Más cuadrada en tablets */
+    }
+}
+
+/* ESCRITORIO (1025px a 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .related-posts-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 2rem !important;
+    }
+    
+    .related-post-card .post-image {
+        padding-bottom: 56.25% !important; /* 16:9 estándar */
+    }
+}
+
+/* ESCRITORIO GRANDE (más de 1440px) */
+@media (min-width: 1441px) {
+    .related-posts-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 2.5rem !important;
+        max-width: 1400px !important;
+        margin: 0 auto !important;
+    }
+    
+    .related-post-card .post-image {
+        padding-bottom: 50% !important; /* Un poco más cuadrada */
+    }
+}
+
+/* ============================================ */
+/* SOLUCIÓN ALTERNATIVA: AJUSTE POR IMAGEN */
+/* ============================================ */
+
+/* Si quieres control exacto para cada imagen, podrías usar: */
+
+/* Para imágenes donde quieras mostrar más la parte superior */
+.image-top .post-image img {
+    object-position: top 25% center !important;
+}
+
+/* Para imágenes donde quieras mostrar el centro */
+.image-center .post-image img {
+    object-position: center center !important;
+}
+
+/* O ajustar dinámicamente con data attributes */
+.post-image img[data-focus="top"] {
+    object-position: top center !important;
+}
+
+.post-image img[data-focus="center"] {
+    object-position: center center !important;
+}
+
+.post-image img[data-focus="bottom"] {
+    object-position: bottom center !important;
+}
+
+/* ============================================ */
+/* MEJORA PARA MODO CLARO TAMBIÉN */
+/* ============================================ */
+
+/* Aplicar el mismo sistema de imágenes para modo claro */
+.related-post-card .post-image {
+    position: relative !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    height: 0 !important;
+    padding-bottom: 56.25% !important;
+}
+
+.related-post-card .post-image img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+    transition: transform 0.5s ease !important;
+}
+
+/* Para el grid de artículos relacionados en general */
+.related-posts-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 2rem !important;
+    margin-top: 3rem !important;
+}
+
+/* Asegurar que todas las tarjetas tengan misma altura */
+.related-posts-grid > * {
+    display: flex !important;
+}
+
+.related-post-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+/* ============================================ */
+/* FALLBACK PARA NAVEGADORES VIEJOS */
+/* ============================================ */
+
+/* Si object-position no es soportado */
+@supports not (object-position: top center) {
+    .related-post-card .post-image {
+        height: 200px !important; /* Altura fija como fallback */
+        padding-bottom: 0 !important;
+    }
+    
+    .related-post-card .post-image img {
+        position: relative !important;
+        height: auto !important;
+        max-height: 200px !important;
+        /* Cortar manualmente la imagen */
+        margin-top: -20%; /* Muestra más la parte superior */
+    }
+}
+
+/* ============================================ */
+/* ANIMACIONES MEJORADAS */
+/* ============================================ */
+
+.related-post-card {
+    transform-origin: center !important;
+}
+
+.related-post-card:hover {
+    transform: translateY(-8px) scale(1.01) !important;
+    box-shadow: 
+        0 15px 30px rgba(0,0,0,0.25),
+        0 0 0 1px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Transición suave para la imagen al hover */
+.related-post-card .post-image {
+    transition: all 0.3s ease !important;
+}
+
+.related-post-card:hover .post-image {
+    transform: translateY(-2px) !important;
+}
