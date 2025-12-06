@@ -225,10 +225,10 @@
                             <h1 class="catalogo-title es-lang">Catálogo de Sillas</h1>
                             <h1 class="catalogo-title en-lang">Chairs Catalog</h1>
                             <p class="catalogo-subtitle es-lang">
-                                Descubre nuestra exclusiva colección de sillas industriales heavy-duty diseñadas para cumplir con la Ley Silla y garantizar la máxima durabilidad.
+                                Descubre nuestra exclusiva colección de sillas industriales diseñadas para cumplir con la Ley Silla y garantizar la máxima durabilidad.
                             </p>
                             <p class="catalogo-subtitle en-lang">
-                                Discover our exclusive collection of heavy-duty industrial chairs designed to comply with Chair Law and ensure maximum durability.
+                                Discover our exclusive collection of industrial chairs designed to comply with Chair Law and ensure maximum durability.
                             </p>
                             
                             <div class="search-box">
@@ -249,15 +249,23 @@
                     <!-- Filtros Superiores -->
                     <div class="catalogo-filters">
                         <div class="filter-group">
-                            <span class="filter-label es-lang">Ordenar por:</span>
-                            <span class="filter-label en-lang">Sort by:</span>
-                            <select class="filter-select">
-                                <option class="es-lang">Más Populares</option>
-                                <option class="en-lang">Most Popular</option>
-                                <option class="es-lang">Precio: Menor a Mayor</option>
-                                <option class="en-lang">Price: Low to High</option>
-                                <option class="es-lang">Precio: Mayor a Menor</option>
-                                <option class="en-lang">Price: High to Low</option>
+                            <span class="filter-label es-lang">Filtrar por:</span>
+                            <span class="filter-label en-lang">Filter by:</span>
+                            <select class="filter-select" id="categoryFilter">
+                                <option value="all" class="es-lang">TODAS LAS CATEGORÍAS</option>
+                                <option value="all" class="en-lang">ALL CATEGORIES</option>
+                                <option value="industriales" class="es-lang">INDUSTRIALES</option>
+                                <option value="industriales" class="en-lang">INDUSTRIAL</option>
+                                <option value="visitante-exterior" class="es-lang">VISITANTE EXTERIOR</option>
+                                <option value="visitante-exterior" class="en-lang">OUTDOOR VISITOR</option>
+                                <option value="visitante-interior" class="es-lang">VISITANTE INTERIOR</option>
+                                <option value="visitante-interior" class="en-lang">INDOOR VISITOR</option>
+                                <option value="bancos" class="es-lang">BANCOS</option>
+                                <option value="bancos" class="en-lang">STOOLS</option>
+                                <option value="bancas" class="es-lang">BANCAS</option>
+                                <option value="bancas" class="en-lang">BENCHES</option>
+                                <option value="sillas-ruedas" class="es-lang">SILLAS CON RUEDAS</option>
+                                <option value="sillas-ruedas" class="en-lang">CHAIRS WITH WHEELS</option>
                             </select>
                         </div>
                         <div class="view-toggle">
@@ -274,7 +282,7 @@
                     <div class="productos-grid" id="productosGrid">
                         
                         <!-- Producto 1 - OHI-46 -->
-                        <div class="producto-card" data-category="heavy-duty" data-price="4500">
+                        <div class="producto-card" data-category="industriales">
                             <div class="producto-badge es-lang">Más Vendido</div>
                             <div class="producto-badge en-lang">Best Seller</div>
                             <div class="producto-image">
@@ -289,7 +297,7 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">HEAVY-DUTY</span>
+                                <span class="producto-categoria">INDUSTRIALES</span>
                                 <h3 class="producto-nombre">OHI-46 INDUSTRIAL</h3>
                                 
                                 <p class="producto-descripcion es-lang">
@@ -298,9 +306,6 @@
                                 <p class="producto-descripcion en-lang">
                                     Heavy industrial chair with reinforced steel structure and chrome base. Ideal for demanding work environments.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,500</span>
-                                </div>
                                 <div class="producto-features">
                                     <span class="feature-tag es-lang">Acero Reforzado</span>
                                     <span class="feature-tag en-lang">Reinforced Steel</span>
@@ -316,7 +321,7 @@
                         </div>
 
                         <!-- Producto 2 - OHI-46-ARO-CROMADO -->
-                        <div class="producto-card" data-category="heavy-duty" data-price="5200">
+                        <div class="producto-card" data-category="industriales">
                             <div class="producto-image">
                                 <img src="Imagenes/cromado1.png" alt="Silla Industrial OHI-46 Aro Cromado">
                                 <div class="producto-actions">
@@ -329,7 +334,7 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">HEAVY-DUTY</span>
+                                <span class="producto-categoria">INDUSTRIALES</span>
                                 <h3 class="producto-nombre">OHI-46-ARO-CROMADO</h3>
 
                                 <p class="producto-descripcion es-lang">
@@ -338,9 +343,6 @@
                                 <p class="producto-descripcion en-lang">
                                     Premium version with high-resistance chrome ring. Ergonomic design for extended shifts.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$5,200</span>
-                                </div>
                                 <div class="producto-features">
                                     <span class="feature-tag es-lang">Aro Cromado</span>
                                     <span class="feature-tag en-lang">Chrome Ring</span>
@@ -356,7 +358,7 @@
                         </div>
 
                         <!-- Producto 3 - OHI-48 -->
-                        <div class="producto-card" data-category="heavy-duty" data-price="4800">
+                        <div class="producto-card" data-category="industriales">
                             <div class="producto-badge es-lang">Nuevo</div>
                             <div class="producto-badge en-lang">New</div>
                             <div class="producto-image">
@@ -371,7 +373,7 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">HEAVY-DUTY</span>
+                                <span class="producto-categoria">INDUSTRIALES</span>
                                 <h3 class="producto-nombre">OHI-48 INDUSTRIAL</h3>
                                 <p class="producto-descripcion es-lang">
                                     Modelo actualizado con mejoras en soporte lumbar y materiales de mayor durabilidad. Capacidad 150kg.
@@ -379,9 +381,6 @@
                                 <p class="producto-descripcion en-lang">
                                     Updated model with improved lumbar support and more durable materials. Capacity 150kg.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,800</span>
-                                </div>
                                 <div class="producto-features">
                                     <span class="feature-tag es-lang">Soporte Lumbar</span>
                                     <span class="feature-tag en-lang">Lumbar Support</span>
@@ -397,7 +396,7 @@
                         </div>
 
                         <!-- Producto 4 - OHI-48-ARO-CROMADO -->
-                        <div class="producto-card" data-category="heavy-duty" data-price="5500">
+                        <div class="producto-card" data-category="industriales">
                             <div class="producto-image">
                                 <img src="Imagenes/OHI-48-ARO.png" alt="Silla Industrial OHI-48 Aro Cromado">
                                 <div class="producto-actions">
@@ -410,7 +409,7 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">HEAVY-DUTY</span>
+                                <span class="producto-categoria">INDUSTRIALES</span>
                                 <h3 class="producto-nombre">OHI-48-ARO-CROMADO INDUSTRIAL</h3>
                                 <p class="producto-descripcion es-lang">
                                     Modelo profesional con ajustes de altura y respaldo. Ideal para supervisores y personal técnico.
@@ -418,9 +417,6 @@
                                 <p class="producto-descripcion en-lang">
                                     Professional model with height and backrest adjustments. Ideal for supervisors and technical staff.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$5,500</span>
-                                </div>
                                 <div class="producto-features">
                                     <span class="feature-tag es-lang">Ajustable</span>
                                     <span class="feature-tag en-lang">Adjustable</span>
@@ -436,7 +432,7 @@
                         </div>
 
                         <!-- Producto 5 - OHR-2800-2Pcr -->
-                        <div class="producto-card" data-category="ivy" data-price="6200">
+                        <div class="producto-card" data-category="bancas">
                             <div class="producto-badge es-lang">Max Resistencia</div>
                             <div class="producto-badge en-lang">Max Resistance</div>
                             <div class="producto-image">
@@ -451,7 +447,7 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">IVY</span>
+                                <span class="producto-categoria">BANCAS</span>
                                 <h3 class="producto-nombre">OHR-2800-2Pcr BANCA</h3>
                                 <p class="producto-descripcion es-lang">
                                     Máxima resistencia con capacidad de 200kg. Estructura de acero industrial y base quintuple.
@@ -459,9 +455,6 @@
                                 <p class="producto-descripcion en-lang">
                                     Maximum resistance with 200kg capacity. Industrial steel structure and quintuple base.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$6,200</span>
-                                </div>
                                 <div class="producto-features">
                                     <span class="feature-tag es-lang">200kg Capacidad</span>
                                     <span class="feature-tag en-lang">200kg Capacity</span>
@@ -477,7 +470,7 @@
                         </div>
 
                         <!-- Producto 6 - OHR-2800-3Pcr -->
-                        <div class="producto-card" data-category="ivy" data-price="3800">
+                        <div class="producto-card" data-category="bancas">
                             <div class="producto-badge es-lang">Económico</div>
                             <div class="producto-badge en-lang">Economical</div>
                             <div class="producto-image">
@@ -492,7 +485,7 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">IVY</span>
+                                <span class="producto-categoria">BANCAS</span>
                                 <h3 class="producto-nombre">OHR-2800-3Pcr BANCA</h3>
                                 <p class="producto-descripcion es-lang">
                                     Opción económica sin comprometer calidad. Ideal para empresas que requieren múltiples unidades.
@@ -500,9 +493,6 @@
                                 <p class="producto-descripcion en-lang">
                                     Economical option without compromising quality. Ideal for companies requiring multiple units.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$3,800</span>
-                                </div>
                                 <div class="producto-features">
                                     <span class="feature-tag es-lang">Económico</span>
                                     <span class="feature-tag en-lang">Economical</span>
@@ -517,10 +507,10 @@
                             </div>
                         </div>
 
-                        <!-- Producto 7 - OHI-50 PREMIUM -->
-                        <div class="producto-card" data-category="IVY" data-price="6800">
+                        <!-- Producto 7 - OHR-2800-4Pcr -->
+                        <div class="producto-card" data-category="bancas">
                             <div class="producto-image">
-                                <img src="Imagenes/IVY-OHR.png" alt="Silla Industrial OHI-50 Premium">
+                                <img src="Imagenes/IVY-OHR.png" alt="Banca OHR-2800-4Pcr">
                                 <div class="producto-actions">
                                     <button class="action-btn wishlist-btn">
                                         <i class="far fa-heart"></i>
@@ -531,7 +521,7 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">IVY</span>
+                                <span class="producto-categoria">BANCAS</span>
                                 <h3 class="producto-nombre">OHR-2800-4Pcr BANCA</h3>
                                 <p class="producto-descripcion es-lang">
                                     Modelo premium con materiales de alta gama y diseño ergonómico avanzado. Capacidad 180kg.
@@ -539,9 +529,6 @@
                                 <p class="producto-descripcion en-lang">
                                     Premium model with high-end materials and advanced ergonomic design. Capacity 180kg.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$6,800</span>
-                                </div>
                                 <div class="producto-features">
                                     <span class="feature-tag es-lang">Premium</span>
                                     <span class="feature-tag en-lang">Premium</span>
@@ -556,10 +543,10 @@
                             </div>
                         </div>
 
-                        <!-- Producto 8 - OHR-3000 BASIC -->
-                        <div class="producto-card" data-category="ivy" data-price="3200">
+                        <!-- Producto 8 - OHR-2600-2P -->
+                        <div class="producto-card" data-category="bancas">
                             <div class="producto-image">
-                                <img src="Imagenes/eli.png" alt="ELLITICO">
+                                <img src="Imagenes/eli.png" alt="Banca OHR-2600-2P">
                                 <div class="producto-actions">
                                     <button class="action-btn wishlist-btn">
                                         <i class="far fa-heart"></i>
@@ -570,22 +557,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">ELLITICO</span>
+                                <span class="producto-categoria">BANCAS</span>
                                 <h3 class="producto-nombre">OHR-2600-2P BANCA</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Modelo básico ideal para espacios reducidos. Calidad garantizada a precio accesible.
+                                    Modelo básico ideal para espacios reducidos. Calidad garantizada.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Basic model ideal for reduced spaces. Guaranteed quality at an affordable price.
+                                    Basic model ideal for reduced spaces. Guaranteed quality.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$3,200</span>
-                                </div>
                                 <div class="producto-features">
                                     <span class="feature-tag es-lang">Básico</span>
                                     <span class="feature-tag en-lang">Basic</span>
-                                    <span class="feature-tag es-lang">Económico</span>
-                                    <span class="feature-tag en-lang">Economical</span>
+                                    <span class="feature-tag es-lang">Compacto</span>
+                                    <span class="feature-tag en-lang">Compact</span>
                                 </div>
                                 <a href="Productos/ellitico-ohr-2600-2p.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -595,12 +579,10 @@
                             </div>
                         </div>
 
-                        <!-- Producto 9 - OHI-52 EXECUTIVE -->
-                        <div class="producto-card" data-category="heavy-duty" data-price="7500">
-                            <div class="producto-badge es-lang">Ejecutivo</div>
-                            <div class="producto-badge en-lang">Executive</div>
+                        <!-- Producto 9 - OHR-2600-3P -->
+                        <div class="producto-card" data-category="bancas">
                             <div class="producto-image">
-                                <img src="Imagenes/OHR-2600-3P.png" alt="Silla ELLITICO OHR-2600-3P BANCA">
+                                <img src="Imagenes/OHR-2600-3P.png" alt="Banca OHR-2600-3P">
                                 <div class="producto-actions">
                                     <button class="action-btn wishlist-btn">
                                         <i class="far fa-heart"></i>
@@ -611,7 +593,7 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">ELLITICO</span>
+                                <span class="producto-categoria">BANCAS</span>
                                 <h3 class="producto-nombre">OHR-2600-3P BANCA</h3>
                                 <p class="producto-descripcion es-lang">
                                     Modelo ejecutivo con acabados premium y máxima comodidad. Ideal para directivos.
@@ -619,9 +601,6 @@
                                 <p class="producto-descripcion en-lang">
                                     Executive model with premium finishes and maximum comfort. Ideal for executives.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$7,500</span>
-                                </div>
                                 <div class="producto-features">
                                     <span class="feature-tag es-lang">Ejecutivo</span>
                                     <span class="feature-tag en-lang">Executive</span>
@@ -636,12 +615,10 @@
                             </div>
                         </div>
 
-                        <!-- Producto 10 - OHR-3500 COMFORT -->
-                        <div class="producto-card" data-category="ELLITICO" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 10 - OHR-2600-4P -->
+                        <div class="producto-card" data-category="bancas">
                             <div class="producto-image">
-                                <img src="Imagenes/OHR-2600-4P.png" alt="OHR-2600-4P BANCA">
+                                <img src="Imagenes/OHR-2600-4P.png" alt="Banca OHR-2600-4P">
                                 <div class="producto-actions">
                                     <button class="action-btn wishlist-btn">
                                         <i class="far fa-heart"></i>
@@ -652,7 +629,7 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">ELLITICO</span>
+                                <span class="producto-categoria">BANCAS</span>
                                 <h3 class="producto-nombre">OHR-2600-4P BANCA</h3>
                                 <p class="producto-descripcion es-lang">
                                     Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
@@ -660,14 +637,11 @@
                                 <p class="producto-descripcion en-lang">
                                     Design focused on comfort with improved lumbar support. Ideal for long shifts.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
                                     <span class="feature-tag es-lang">Soporte Lumbar</span>
                                     <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Durabilidad</span>
+                                    <span class="feature-tag en-lang">Durability</span>
                                 </div>
                                 <a href="Productos/ellitico-ohr-2600-4p.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -678,11 +652,9 @@
                         </div>
 
                         <!-- Producto 11 - OHR-2600-5P -->
-                        <div class="producto-card" data-category="ELLITICO" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <div class="producto-card" data-category="bancas">
                             <div class="producto-image">
-                                <img src="Imagenes/OHR-2600-5P.png" alt="OHR-2600-5P BANCA">
+                                <img src="Imagenes/OHR-2600-5P.png" alt="Banca OHR-2600-5P">
                                 <div class="producto-actions">
                                     <button class="action-btn wishlist-btn">
                                         <i class="far fa-heart"></i>
@@ -693,22 +665,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">ELLITICO</span>
+                                <span class="producto-categoria">BANCAS</span>
                                 <h3 class="producto-nombre">OHR-2600-5P BANCA</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Diseño robusto con materiales de alta resistencia. Ideal para entornos industriales.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Robust design with high-resistance materials. Ideal for industrial environments.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Robusto</span>
+                                    <span class="feature-tag en-lang">Robust</span>
+                                    <span class="feature-tag es-lang">Industrial</span>
+                                    <span class="feature-tag en-lang">Industrial</span>
                                 </div>
                                 <a href="Productos/ellitico-ohr-2600-5p.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -719,9 +688,7 @@
                         </div>
 
                         <!-- Producto 12 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="PLUS" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <div class="producto-card" data-category="visitante-exterior">
                             <div class="producto-image">
                                 <img src="Imagenes/PLUS.png" alt="OHV-73 VISITANTE EXTERIOR">
                                 <div class="producto-actions">
@@ -734,22 +701,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">PLUS</span>
+                                <span class="producto-categoria">VISITANTE EXTERIOR</span>
                                 <h3 class="producto-nombre">OHV-73 VISITANTE EXTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Diseño resistente a la intemperie ideal para áreas exteriores. Materiales de alta durabilidad.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Weather-resistant design ideal for outdoor areas. High durability materials.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Resistente Intemperie</span>
+                                    <span class="feature-tag en-lang">Weather Resistant</span>
+                                    <span class="feature-tag es-lang">Exterior</span>
+                                    <span class="feature-tag en-lang">Outdoor</span>
                                 </div>
                                 <a href="Productos/plus-ohv-73.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -759,11 +723,8 @@
                             </div>
                         </div>
 
-                        
-                            <!-- Producto 13 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="SENSILLA" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 13 - OHV-97 VISITANTE EXTERIOR -->
+                        <div class="producto-card" data-category="visitante-exterior">
                             <div class="producto-image">
                                 <img src="Imagenes/OHV-97.png" alt="OHV-97 VISITANTE EXTERIOR">
                                 <div class="producto-actions">
@@ -776,22 +737,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">SENSILLA</span>
+                                <span class="producto-categoria">VISITANTE EXTERIOR</span>
                                 <h3 class="producto-nombre">OHV-97 VISITANTE EXTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Silla exterior con diseño moderno y materiales resistentes a condiciones climáticas.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Outdoor chair with modern design and weather-resistant materials.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Moderno</span>
+                                    <span class="feature-tag en-lang">Modern</span>
+                                    <span class="feature-tag es-lang">Resistente</span>
+                                    <span class="feature-tag en-lang">Resistant</span>
                                 </div>
                                 <a href="Productos/sensilla-ohv-97.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -801,12 +759,8 @@
                             </div>
                         </div>
 
-
-
-                         <!-- Producto 14 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="SENSILLA" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 14 - OHV-7211B BANCO -->
+                        <div class="producto-card" data-category="bancos">
                             <div class="producto-image">
                                 <img src="Imagenes/OHV-7211B.png" alt="OHV-7211B BANCO">
                                 <div class="producto-actions">
@@ -819,22 +773,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">SENSILLA</span>
+                                <span class="producto-categoria">BANCOS</span>
                                 <h3 class="producto-nombre">OHV-7211B BANCO</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Banco robusto para áreas de descanso industrial. Estructura de acero reforzado.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Robust stool for industrial rest areas. Reinforced steel structure.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Robusto</span>
+                                    <span class="feature-tag en-lang">Robust</span>
+                                    <span class="feature-tag es-lang">Industrial</span>
+                                    <span class="feature-tag en-lang">Industrial</span>
                                 </div>
                                 <a href="Productos/sensilla-ohv-7211b.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -844,11 +795,8 @@
                             </div>
                         </div>
 
-
-                         <!-- Producto 15 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="SENSILLA" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 15 - OHV-7211C BANCO -->
+                        <div class="producto-card" data-category="bancos">
                             <div class="producto-image">
                                 <img src="Imagenes/OHV-7211C.png" alt="OHV-7211C BANCO">
                                 <div class="producto-actions">
@@ -861,22 +809,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">SENSILLA</span>
+                                <span class="producto-categoria">BANCOS</span>
                                 <h3 class="producto-nombre">OHV-7211C BANCO</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Banco industrial con acabados premium. Ideal para áreas de producción.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Industrial stool with premium finishes. Ideal for production areas.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Premium</span>
+                                    <span class="feature-tag en-lang">Premium</span>
+                                    <span class="feature-tag es-lang">Producción</span>
+                                    <span class="feature-tag en-lang">Production</span>
                                 </div>
                                 <a href="Productos/sensilla-ohv-7211c.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -886,14 +831,10 @@
                             </div>
                         </div>
 
-
-
-                         <!-- Producto 16 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="MILK" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 16 - OHV-66 VISITANTE INTERIOR -->
+                        <div class="producto-card" data-category="visitante-interior">
                             <div class="producto-image">
-                                <img src="Imagenes/MILK-OHV.png" alt="OHV-66 VISITANTE EXTERIOR">
+                                <img src="Imagenes/MILK-OHV.png" alt="OHV-66 VISITANTE INTERIOR">
                                 <div class="producto-actions">
                                     <button class="action-btn wishlist-btn">
                                         <i class="far fa-heart"></i>
@@ -904,22 +845,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">MILK</span>
+                                <span class="producto-categoria">VISITANTE INTERIOR</span>
                                 <h3 class="producto-nombre">OHV-66 VISITANTE INTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Silla para visitantes en áreas interiores. Diseño ergonómico y materiales de calidad.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Visitor chair for indoor areas. Ergonomic design and quality materials.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Ergonómico</span>
+                                    <span class="feature-tag en-lang">Ergonomic</span>
+                                    <span class="feature-tag es-lang">Interior</span>
+                                    <span class="feature-tag en-lang">Indoor</span>
                                 </div>
                                 <a href="Productos/milk-ovh-66.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -929,12 +867,10 @@
                             </div>
                         </div>
 
-                        <!-- Producto 17 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="CIAO" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 17 - OHV-11 VISITANTE INTERIOR -->
+                        <div class="producto-card" data-category="visitante-interior">
                             <div class="producto-image">
-                                <img src="Imagenes/CIAO-OHV.png" alt="OHV-11 VISITANTE EXTERIOR">
+                                <img src="Imagenes/CIAO-OHV.png" alt="OHV-11 VISITANTE INTERIOR">
                                 <div class="producto-actions">
                                     <button class="action-btn wishlist-btn">
                                         <i class="far fa-heart"></i>
@@ -945,22 +881,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">CIAO</span>
+                                <span class="producto-categoria">VISITANTE INTERIOR</span>
                                 <h3 class="producto-nombre">OHV-11 VISITANTE INTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Modelo elegante para áreas de recepción. Diseño contemporáneo y funcional.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Elegant model for reception areas. Contemporary and functional design.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Elegante</span>
+                                    <span class="feature-tag en-lang">Elegant</span>
+                                    <span class="feature-tag es-lang">Recepción</span>
+                                    <span class="feature-tag en-lang">Reception</span>
                                 </div>
                                 <a href="Productos/ciao-ohv-11.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -970,12 +903,10 @@
                             </div>
                         </div>
 
-                        <!-- Producto 18 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="CIAO" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 18 - OHV-11B VISITANTE INTERIOR -->
+                        <div class="producto-card" data-category="visitante-interior">
                             <div class="producto-image">
-                                <img src="Imagenes/OHV-11B.png" alt="OHV-11B VISITANTE EXTERIOR">
+                                <img src="Imagenes/OHV-11B.png" alt="OHV-11B VISITANTE INTERIOR">
                                 <div class="producto-actions">
                                     <button class="action-btn wishlist-btn">
                                         <i class="far fa-heart"></i>
@@ -986,22 +917,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">CIAO</span>
+                                <span class="producto-categoria">VISITANTE INTERIOR</span>
                                 <h3 class="producto-nombre">OHV-11B VISITANTE INTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Versión mejorada para mayor comodidad. Ideal para áreas de espera.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Improved version for greater comfort. Ideal for waiting areas.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Mejorado</span>
+                                    <span class="feature-tag en-lang">Improved</span>
+                                    <span class="feature-tag es-lang">Espera</span>
+                                    <span class="feature-tag en-lang">Waiting</span>
                                 </div>
                                 <a href="Productos/Ciao-ohv-11b.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1011,10 +939,8 @@
                             </div>
                         </div>
 
-                        <!-- Producto 19 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="CORE" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 19 - OHV-20 VISITANTE INTERIOR -->
+                        <div class="producto-card" data-category="visitante-interior">
                             <div class="producto-image">
                                 <img src="Imagenes/CORE-OHV.png" alt="OHV-20 VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1027,22 +953,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">CORE</span>
+                                <span class="producto-categoria">VISITANTE INTERIOR</span>
                                 <h3 class="producto-nombre">OHV-20 VISITANTE INTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Diseño minimalista para espacios modernos. Alta durabilidad y fácil mantenimiento.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Minimalist design for modern spaces. High durability and easy maintenance.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Minimalista</span>
+                                    <span class="feature-tag en-lang">Minimalist</span>
+                                    <span class="feature-tag es-lang">Moderno</span>
+                                    <span class="feature-tag en-lang">Modern</span>
                                 </div>
                                 <a href="Productos/core-ohv-20.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1052,10 +975,8 @@
                             </div>
                         </div>
 
-                        <!-- Producto 20 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="ALPHA" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 20 - OHV-102 VISITANTE INTERIOR -->
+                        <div class="producto-card" data-category="visitante-interior">
                             <div class="producto-image">
                                 <img src="Imagenes/ALPHA.png" alt="OHV-102 VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1068,22 +989,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">ALPHA</span>
+                                <span class="producto-categoria">VISITANTE INTERIOR</span>
                                 <h3 class="producto-nombre">OHV-102 VISITANTE INTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Modelo premium para salas de juntas. Confort y elegancia combinados.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Premium model for meeting rooms. Combined comfort and elegance.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Premium</span>
+                                    <span class="feature-tag en-lang">Premium</span>
+                                    <span class="feature-tag es-lang">Juntas</span>
+                                    <span class="feature-tag en-lang">Meetings</span>
                                 </div>
                                 <a href="Productos/alpha-ohv-102.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1093,11 +1011,8 @@
                             </div>
                         </div>
 
-
-                        <!-- Producto 21 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="ALPHA" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 21 - OHV-102-ALTA BANCO -->
+                        <div class="producto-card" data-category="bancos">
                             <div class="producto-image">
                                 <img src="Imagenes/ALPHA-OHV.png" alt="OHV-102-ALTA BANCO">
                                 <div class="producto-actions">
@@ -1110,22 +1025,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">ALPHA</span>
+                                <span class="producto-categoria">BANCOS</span>
                                 <h3 class="producto-nombre">OHV-102-ALTA BANCO</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Banco de altura regulable. Ideal para áreas de trabajo industrial.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Adjustable height stool. Ideal for industrial work areas.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Altura Ajustable</span>
+                                    <span class="feature-tag en-lang">Adjustable Height</span>
+                                    <span class="feature-tag es-lang">Industrial</span>
+                                    <span class="feature-tag en-lang">Industrial</span>
                                 </div>
                                 <a href="Productos/alpha-ohv-102-alta.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1135,11 +1047,8 @@
                             </div>
                         </div>
 
-
-                         <!-- Producto 22 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="QUICK" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 22 - OHV-47 VISITANTE INTERIOR -->
+                        <div class="producto-card" data-category="visitante-interior">
                             <div class="producto-image">
                                 <img src="Imagenes/QUICK.png" alt="OHV-47 VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1152,22 +1061,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">QUICK</span>
+                                <span class="producto-categoria">VISITANTE INTERIOR</span>
                                 <h3 class="producto-nombre">OHV-47 VISITANTE INTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Silla rápida de montaje para espacios temporales. Práctica y funcional.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Quick-assembly chair for temporary spaces. Practical and functional.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Montaje Rápido</span>
+                                    <span class="feature-tag en-lang">Quick Assembly</span>
+                                    <span class="feature-tag es-lang">Temporal</span>
+                                    <span class="feature-tag en-lang">Temporary</span>
                                 </div>
                                 <a href="Productos/quick-ohv-47.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1177,10 +1083,8 @@
                             </div>
                         </div>
 
-                         <!-- Producto 23 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="QUICK" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 23 - OHV-47-ALTA BANCO -->
+                        <div class="producto-card" data-category="bancos">
                             <div class="producto-image">
                                 <img src="Imagenes/OHV-47-ALTA.png" alt="OHV-47-ALTA BANCO">
                                 <div class="producto-actions">
@@ -1193,22 +1097,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">QUICK</span>
+                                <span class="producto-categoria">BANCOS</span>
                                 <h3 class="producto-nombre">OHV-47-ALTA BANCO</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Banco alto para áreas de trabajo industrial. Estructura reforzada.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    High stool for industrial work areas. Reinforced structure.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Alto</span>
+                                    <span class="feature-tag en-lang">High</span>
+                                    <span class="feature-tag es-lang">Reforzado</span>
+                                    <span class="feature-tag en-lang">Reinforced</span>
                                 </div>
                                 <a href="Productos/quick-ohv-47-alta.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1218,10 +1119,8 @@
                             </div>
                         </div>
 
-                         <!-- Producto 24 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="STRIKE" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 24 - OHV-13 VISITANTE INTERIOR -->
+                        <div class="producto-card" data-category="visitante-interior">
                             <div class="producto-image">
                                 <img src="Imagenes/STRIKE-OHV-13.png" alt="OHV-13 VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1234,22 +1133,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">STRIKE</span>
+                                <span class="producto-categoria">VISITANTE INTERIOR</span>
                                 <h3 class="producto-nombre">OHV-13 VISITANTE INTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Diseño moderno para áreas corporativas. Alta resistencia y durabilidad.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Modern design for corporate areas. High resistance and durability.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Corporativo</span>
+                                    <span class="feature-tag en-lang">Corporate</span>
+                                    <span class="feature-tag es-lang">Resistente</span>
+                                    <span class="feature-tag en-lang">Resistant</span>
                                 </div>
                                 <a href="Productos/strike-ohv-13.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1258,10 +1154,9 @@
                                 </a>
                             </div>
                         </div>
-                         <!-- Producto 25 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="STRIKE" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+
+                        <!-- Producto 25 - OHV-13-ALTA BANCO -->
+                        <div class="producto-card" data-category="bancos">
                             <div class="producto-image">
                                 <img src="Imagenes/OHV-13-ALTA.png" alt="OHV-13-ALTA BANCO">
                                 <div class="producto-actions">
@@ -1274,22 +1169,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">STRIKE</span>
+                                <span class="producto-categoria">BANCOS</span>
                                 <h3 class="producto-nombre">OHV-13-ALTA BANCO</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Banco alto para áreas de trabajo. Diseño robusto y funcional.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    High stool for work areas. Robust and functional design.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Robusto</span>
+                                    <span class="feature-tag en-lang">Robust</span>
+                                    <span class="feature-tag es-lang">Funcional</span>
+                                    <span class="feature-tag en-lang">Functional</span>
                                 </div>
                                 <a href="Productos/strike-ohv-13-alta.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1299,10 +1191,8 @@
                             </div>
                         </div>
 
-                         <!-- Producto 26 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="SHELL" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 26 - OHV-37 VISITANTE INTERIOR -->
+                        <div class="producto-card" data-category="visitante-interior">
                             <div class="producto-image">
                                 <img src="Imagenes/SHELL.png" alt="OHV-37 VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1315,22 +1205,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">SHELL</span>
+                                <span class="producto-categoria">VISITANTE INTERIOR</span>
                                 <h3 class="producto-nombre">OHV-37 VISITANTE INTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Diseño ergonómico para largas jornadas. Materiales de alta calidad.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Ergonomic design for long shifts. High quality materials.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Ergonómico</span>
+                                    <span class="feature-tag en-lang">Ergonomic</span>
+                                    <span class="feature-tag es-lang">Alta Calidad</span>
+                                    <span class="feature-tag en-lang">High Quality</span>
                                 </div>
                                 <a href="Productos/shell-ohv-37.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1340,10 +1227,8 @@
                             </div>
                         </div>
 
-                         <!-- Producto 27 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="SHELL" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 27 - OHV-37-ALTA BANCO -->
+                        <div class="producto-card" data-category="bancos">
                             <div class="producto-image">
                                 <img src="Imagenes/OHV-37-ALTA.png" alt="OHV-37-ALTA BANCO">
                                 <div class="producto-actions">
@@ -1356,22 +1241,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">SHELL</span>
+                                <span class="producto-categoria">BANCOS</span>
                                 <h3 class="producto-nombre">OHV-37-ALTA BANCO</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Banco industrial de altura regulable. Ideal para líneas de producción.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Industrial stool with adjustable height. Ideal for production lines.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Industrial</span>
+                                    <span class="feature-tag en-lang">Industrial</span>
+                                    <span class="feature-tag es-lang">Producción</span>
+                                    <span class="feature-tag en-lang">Production</span>
                                 </div>
                                 <a href="Productos/shell-ohv-37-alta.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1381,10 +1263,8 @@
                             </div>
                         </div>
 
-                         <!-- Producto 28 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="BISTRO" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 28 - OHV-57-ALTA BANCO -->
+                        <div class="producto-card" data-category="bancos">
                             <div class="producto-image">
                                 <img src="Imagenes/BISTRO.png" alt="OHV-57-ALTA BANCO">
                                 <div class="producto-actions">
@@ -1397,22 +1277,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">BISTRO</span>
+                                <span class="producto-categoria">BANCOS</span>
                                 <h3 class="producto-nombre">OHV-57-ALTA BANCO</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Banco estilo bistro para áreas de descanso. Diseño versátil.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Bistro-style stool for rest areas. Versatile design.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Bistro</span>
+                                    <span class="feature-tag en-lang">Bistro</span>
+                                    <span class="feature-tag es-lang">Versátil</span>
+                                    <span class="feature-tag en-lang">Versatile</span>
                                 </div>
                                 <a href="Productos/bistro_ohv_57-alta.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1422,10 +1299,8 @@
                             </div>
                         </div>
 
-                         <!-- Producto 29 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="STANZA" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 29 - OHV-56-ALTO BANCO -->
+                        <div class="producto-card" data-category="bancos">
                             <div class="producto-image">
                                 <img src="Imagenes/STANZA.png" alt="OHV-56-ALTO BANCO">
                                 <div class="producto-actions">
@@ -1438,22 +1313,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">STANZA</span>
+                                <span class="producto-categoria">BANCOS</span>
                                 <h3 class="producto-nombre">OHV-56-ALTO BANCO</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Banco alto para áreas técnicas. Estructura metálica resistente.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    High stool for technical areas. Resistant metal structure.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Técnico</span>
+                                    <span class="feature-tag en-lang">Technical</span>
+                                    <span class="feature-tag es-lang">Metálico</span>
+                                    <span class="feature-tag en-lang">Metal</span>
                                 </div>
                                 <a href="Productos/stanza-ohv-56-alta.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1463,10 +1335,8 @@
                             </div>
                         </div>
 
-                         <!-- Producto 30 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="OLIVER" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 30 - OHV-141 BANCO -->
+                        <div class="producto-card" data-category="bancos">
                             <div class="producto-image">
                                 <img src="Imagenes/OLIVER.png" alt="OHV-141 BANCO">
                                 <div class="producto-actions">
@@ -1479,22 +1349,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">OLIVER</span>
+                                <span class="producto-categoria">BANCOS</span>
                                 <h3 class="producto-nombre">OHV-141 BANCO</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Banco industrial robusto. Capacidad de carga elevada.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Robust industrial stool. High load capacity.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Alta Carga</span>
+                                    <span class="feature-tag en-lang">High Load</span>
+                                    <span class="feature-tag es-lang">Industrial</span>
+                                    <span class="feature-tag en-lang">Industrial</span>
                                 </div>
                                 <a href="Productos/oliver-ohv-141.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1504,10 +1371,8 @@
                             </div>
                         </div>
 
-                        <!-- Producto 31 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="REVOLUTION" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 31 - OHV-86CR VISITANTE INTERIOR -->
+                        <div class="producto-card" data-category="visitante-interior">
                             <div class="producto-image">
                                 <img src="Imagenes/REVOLUTION.png" alt="OHV-86CR VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1520,22 +1385,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">REVOLUTION</span>
+                                <span class="producto-categoria">VISITANTE INTERIOR</span>
                                 <h3 class="producto-nombre">OHV-86CR VISITANTE INTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Diseño revolucionario para espacios modernos. Confort y estilo.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Revolutionary design for modern spaces. Comfort and style.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Revolucionario</span>
+                                    <span class="feature-tag en-lang">Revolutionary</span>
+                                    <span class="feature-tag es-lang">Estilo</span>
+                                    <span class="feature-tag en-lang">Style</span>
                                 </div>
                                 <a href="Productos/revolution-ohv-86cr.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1545,10 +1407,8 @@
                             </div>
                         </div>
 
-                        <!-- Producto 32 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="INNOVA" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 32 - OHV-2700 VISITANTE INTERIOR -->
+                        <div class="producto-card" data-category="visitante-interior">
                             <div class="producto-image">
                                 <img src="Imagenes/INNOVA.png" alt="OHV-2700 VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1561,22 +1421,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">INNOVA</span>
+                                <span class="producto-categoria">VISITANTE INTERIOR</span>
                                 <h3 class="producto-nombre">OHV-2700 VISITANTE INTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Modelo innovador con características mejoradas. Alta tecnología.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Innovative model with improved features. High technology.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Innovador</span>
+                                    <span class="feature-tag en-lang">Innovative</span>
+                                    <span class="feature-tag es-lang">Tecnología</span>
+                                    <span class="feature-tag en-lang">Technology</span>
                                 </div>
                                 <a href="Productos/innova-ohv-2700.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1586,10 +1443,8 @@
                             </div>
                         </div>
 
-                        <!-- Producto 33 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="SOLEI" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 33 - OHV-59 VISITANTE EXTERIOR -->
+                        <div class="producto-card" data-category="visitante-exterior">
                             <div class="producto-image">
                                 <img src="Imagenes/SOLEI.png" alt="OHV-59 VISITANTE EXTERIOR">
                                 <div class="producto-actions">
@@ -1602,22 +1457,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">SOLEI</span>
+                                <span class="producto-categoria">VISITANTE EXTERIOR</span>
                                 <h3 class="producto-nombre">OHV-59 VISITANTE EXTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Silla exterior con protección UV. Ideal para terrazas y jardines.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Outdoor chair with UV protection. Ideal for terraces and gardens.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Protección UV</span>
+                                    <span class="feature-tag en-lang">UV Protection</span>
+                                    <span class="feature-tag es-lang">Terraza</span>
+                                    <span class="feature-tag en-lang">Terrace</span>
                                 </div>
                                 <a href="Productos/solei-ohv-59.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1627,10 +1479,8 @@
                             </div>
                         </div>
 
-                        <!-- Producto 34 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="LA VIE" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 34 - OHV-7201 VISITANTE EXTERIOR -->
+                        <div class="producto-card" data-category="visitante-exterior">
                             <div class="producto-image">
                                 <img src="Imagenes/LA-VIE.png" alt="OHV-7201 VISITANTE EXTERIOR">
                                 <div class="producto-actions">
@@ -1643,22 +1493,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">LA VIE</span>
+                                <span class="producto-categoria">VISITANTE EXTERIOR</span>
                                 <h3 class="producto-nombre">OHV-7201 VISITANTE EXTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Diseño elegante para exteriores. Resistente a condiciones climáticas.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Elegant design for outdoors. Resistant to weather conditions.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Elegante</span>
+                                    <span class="feature-tag en-lang">Elegant</span>
+                                    <span class="feature-tag es-lang">Clima</span>
+                                    <span class="feature-tag en-lang">Weather</span>
                                 </div>
                                 <a href="Productos/la-vie-ohv-7201.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1668,10 +1515,8 @@
                             </div>
                         </div>
 
-                        <!-- Producto 35 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="CIAO" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 35 - OHS-11-NEGRO SILLAS CON RUEDAS -->
+                        <div class="producto-card" data-category="sillas-ruedas">
                             <div class="producto-image">
                                 <img src="Imagenes/CIAO.png" alt="OHS-11-NEGRO SILLAS CON RUEDAS">
                                 <div class="producto-actions">
@@ -1684,22 +1529,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">CIAO</span>
+                                <span class="producto-categoria">SILLAS CON RUEDAS</span>
                                 <h3 class="producto-nombre">OHS-11-NEGRO SILLAS CON RUEDAS</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Silla con ruedas para movilidad en oficinas. Diseño ergonómico y funcional.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Chair with wheels for office mobility. Ergonomic and functional design.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Movilidad</span>
+                                    <span class="feature-tag en-lang">Mobility</span>
+                                    <span class="feature-tag es-lang">Oficina</span>
+                                    <span class="feature-tag en-lang">Office</span>
                                 </div>
                                 <a href="Productos/ciao-ohs-11-negro.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1709,10 +1551,8 @@
                             </div>
                         </div>
 
-                        <!-- Producto 36 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="RIMINI" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 36 - RIMINI SILLAS CON RUEDAS -->
+                        <div class="producto-card" data-category="sillas-ruedas">
                             <div class="producto-image">
                                 <img src="Imagenes/RIMINI.png" alt="RIMINI SILLAS CON RUEDAS">
                                 <div class="producto-actions">
@@ -1725,22 +1565,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">RIMINI</span>
+                                <span class="producto-categoria">SILLAS CON RUEDAS</span>
                                 <h3 class="producto-nombre">RIMINI SILLAS CON RUEDAS</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Silla ejecutiva con ruedas. Confort y movilidad combinados.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Executive chair with wheels. Combined comfort and mobility.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Ejecutiva</span>
+                                    <span class="feature-tag en-lang">Executive</span>
+                                    <span class="feature-tag es-lang">Movilidad</span>
+                                    <span class="feature-tag en-lang">Mobility</span>
                                 </div>
                                 <a href="Productos/rimini-36.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1750,10 +1587,8 @@
                             </div>
                         </div>
 
-                        <!-- Producto 37 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="CONTEMPO" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 37 - OHS-10 SILLAS CON RUEDAS -->
+                        <div class="producto-card" data-category="sillas-ruedas">
                             <div class="producto-image">
                                 <img src="Imagenes/CONTEMPO.png" alt="OHS-10 SILLAS CON RUEDAS">
                                 <div class="producto-actions">
@@ -1766,22 +1601,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">CONTEMPO</span>
+                                <span class="producto-categoria">SILLAS CON RUEDAS</span>
                                 <h3 class="producto-nombre">OHS-10 SILLAS CON RUEDAS</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Silla contemporánea con ruedas. Diseño moderno y funcional.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Contemporary chair with wheels. Modern and functional design.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Contemporánea</span>
+                                    <span class="feature-tag en-lang">Contemporary</span>
+                                    <span class="feature-tag es-lang">Moderno</span>
+                                    <span class="feature-tag en-lang">Modern</span>
                                 </div>
                                 <a href="Productos/contempo-ohs-10-37.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1791,10 +1623,8 @@
                             </div>
                         </div>
 
-                        <!-- Producto 38 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="ECOVISTA" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 38 - ECOVISTA VISITANTE INTERIOR -->
+                        <div class="producto-card" data-category="visitante-interior">
                             <div class="producto-image">
                                 <img src="Imagenes/ECOVISTA.png" alt="ECOVISTA VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1807,22 +1637,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">ECOVISTA</span>
+                                <span class="producto-categoria">VISITANTE INTERIOR</span>
                                 <h3 class="producto-nombre">ECOVISTA VISITANTE INTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Diseño ecológico con materiales reciclables. Confort y sostenibilidad.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Ecological design with recyclable materials. Comfort and sustainability.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Ecológico</span>
+                                    <span class="feature-tag en-lang">Ecological</span>
+                                    <span class="feature-tag es-lang">Sostenible</span>
+                                    <span class="feature-tag en-lang">Sustainable</span>
                                 </div>
                                 <a href="Productos/ecovista-38.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1832,10 +1659,8 @@
                             </div>
                         </div>
 
-                        <!-- Producto 39 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="ISO SIN BRAZOS" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 39 - ISO-SIN-BRAZOS VISITANTE INTERIOR -->
+                        <div class="producto-card" data-category="visitante-interior">
                             <div class="producto-image">
                                 <img src="Imagenes/ISO-SIN-BRAZOS.png" alt="ISO-SIN-BRAZOS VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1848,22 +1673,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">ISO SIN BRAZOS</span>
+                                <span class="producto-categoria">VISITANTE INTERIOR</span>
                                 <h3 class="producto-nombre">ISO-SIN-BRAZOS VISITANTE INTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Silla sin brazos para espacios reducidos. Cumple normas ISO.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Armless chair for reduced spaces. Complies with ISO standards.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Sin Brazos</span>
+                                    <span class="feature-tag en-lang">Armless</span>
+                                    <span class="feature-tag es-lang">ISO</span>
+                                    <span class="feature-tag en-lang">ISO</span>
                                 </div>
                                 <a href="Productos/iso-sin-brazos-39.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1873,10 +1695,8 @@
                             </div>
                         </div>
 
-                        <!-- Producto 40 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="NOVAISO SIN BRAZOS" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 40 - NOVAISO-SIN-BRAZOS VISITANTE INTERIOR -->
+                        <div class="producto-card" data-category="visitante-interior">
                             <div class="producto-image">
                                 <img src="Imagenes/NOVAISO.png" alt="NOVAISO-SIN-BRAZOS VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1889,22 +1709,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">NOVAISO SIN BRAZOS</span>
+                                <span class="producto-categoria">VISITANTE INTERIOR</span>
                                 <h3 class="producto-nombre">NOVAISO-SIN-BRAZOS VISITANTE INTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Nueva versión sin brazos. Diseño actualizado y funcional.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    New armless version. Updated and functional design.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Nueva Versión</span>
+                                    <span class="feature-tag en-lang">New Version</span>
+                                    <span class="feature-tag es-lang">Funcional</span>
+                                    <span class="feature-tag en-lang">Functional</span>
                                 </div>
                                 <a href="Productos/novaiso-sin-brazos.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1914,10 +1731,8 @@
                             </div>
                         </div>
 
-                        <!-- Producto 41 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="DELTA" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 41 - OHV-14 VISITANTE INTERIOR -->
+                        <div class="producto-card" data-category="visitante-interior">
                             <div class="producto-image">
                                 <img src="Imagenes/DELTA.png" alt="OHV-14 VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1930,22 +1745,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">DELTA</span>
+                                <span class="producto-categoria">VISITANTE INTERIOR</span>
                                 <h3 class="producto-nombre">OHV-14 VISITANTE INTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Diseño delta para máxima estabilidad. Ideal para áreas de trabajo.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Delta design for maximum stability. Ideal for work areas.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Estabilidad</span>
+                                    <span class="feature-tag en-lang">Stability</span>
+                                    <span class="feature-tag es-lang">Trabajo</span>
+                                    <span class="feature-tag en-lang">Work</span>
                                 </div>
                                 <a href="Productos/delta-ohv-14.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1955,10 +1767,8 @@
                             </div>
                         </div>
 
-                        <!-- Producto 42 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="REEF" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 42 - OHV-62 VISITANTE EXTERIOR -->
+                        <div class="producto-card" data-category="visitante-exterior">
                             <div class="producto-image">
                                 <img src="Imagenes/REEF.png" alt="OHV-62 VISITANTE EXTERIOR">
                                 <div class="producto-actions">
@@ -1971,22 +1781,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">REEF</span>
+                                <span class="producto-categoria">VISITANTE EXTERIOR</span>
                                 <h3 class="producto-nombre">OHV-62 VISITANTE EXTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Silla exterior estilo reef. Resistente a la humedad y salinidad.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Reef-style outdoor chair. Resistant to humidity and salinity.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Resistente</span>
+                                    <span class="feature-tag en-lang">Resistant</span>
+                                    <span class="feature-tag es-lang">Humedad</span>
+                                    <span class="feature-tag en-lang">Humidity</span>
                                 </div>
                                 <a href="Productos/reef-ohv-62.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -1996,10 +1803,8 @@
                             </div>
                         </div>
 
-                        <!-- Producto 43 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="ALISSA" data-price="4200">
-                            <div class="producto-badge es-lang">Confort</div>
-                            <div class="producto-badge en-lang">Comfort</div>
+                        <!-- Producto 43 - OHV-91 VISITANTE EXTERIOR -->
+                        <div class="producto-card" data-category="visitante-exterior">
                             <div class="producto-image">
                                 <img src="Imagenes/ALISSA.png" alt="OHV-91 VISITANTE EXTERIOR">
                                 <div class="producto-actions">
@@ -2012,22 +1817,19 @@
                                 </div>
                             </div>
                             <div class="producto-info">
-                                <span class="producto-categoria">ALISSA</span>
+                                <span class="producto-categoria">VISITANTE EXTERIOR</span>
                                 <h3 class="producto-nombre">OHV-91 VISITANTE EXTERIOR</h3>
                                 <p class="producto-descripcion es-lang">
-                                    Diseño enfocado en la comodidad con soporte lumbar mejorado. Ideal para jornadas largas.
+                                    Silla exterior premium. Diseño elegante y alta durabilidad.
                                 </p>
                                 <p class="producto-descripcion en-lang">
-                                    Design focused on comfort with improved lumbar support. Ideal for long shifts.
+                                    Premium outdoor chair. Elegant design and high durability.
                                 </p>
-                                <div class="producto-precio">
-                                    <span class="precio-actual">$4,200</span>
-                                </div>
                                 <div class="producto-features">
-                                    <span class="feature-tag es-lang">Confort</span>
-                                    <span class="feature-tag en-lang">Comfort</span>
-                                    <span class="feature-tag es-lang">Soporte Lumbar</span>
-                                    <span class="feature-tag en-lang">Lumbar Support</span>
+                                    <span class="feature-tag es-lang">Premium</span>
+                                    <span class="feature-tag en-lang">Premium</span>
+                                    <span class="feature-tag es-lang">Durabilidad</span>
+                                    <span class="feature-tag en-lang">Durability</span>
                                 </div>
                                 <a href="Productos/alissa-ohv-91.html" class="btn btn-primary btn-block">
                                     <i class="fas fa-eye"></i>
@@ -2036,10 +1838,6 @@
                                 </a>
                             </div>
                         </div>
-
-                    </div>
-
-                        
 
                     </div>
 
