@@ -1168,3 +1168,19 @@ html {
         width: 90%;
     }
 }
+
+body.dark-mode .producto-caracteristicas,body.dark-mode .galeria-header, body.dark-mode .miniaturas-galeria{
+    background-color: #1a202c;
+    border: 0px;
+}
+body.dark-mode .galeria-industrial, body.dark-mode .galeria-grid, body.dark-mode .descripcion-header,body.dark-mode .accesorios-header{
+    background-color: #1a202c;
+    padding: 15px;
+}
+body.dark-mode .galeria-item, body.dark-mode .accesorio-nota{
+    background-color: #242833;
+}
+body.dark-mode .espec-item, body.dark-mode .accesorio-imagen{
+    background-color: #2d3748;
+    border: 0px;
+}
