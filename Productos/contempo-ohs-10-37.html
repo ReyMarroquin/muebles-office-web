@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CONTEMPO-OHS-10 - Ley Silla</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/detalle-producto.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="detalle-producto-page">
+
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920wn.png" alt="Ley Silla Logo" class="logo-light">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920w.png" alt="Ley Silla Logo" class="logo-dark">
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="es-lang">Inicio</a>
+                        <a href="../index.html" class="en-lang">Home</a></li>
+                    <li><a href="../Blog.html" class="es-lang">Blog</a>
+                        <a href="../Blog.html" class="en-lang">Blog</a></li>
+                    <li><a href="../Nosotros.html" class="es-lang">Nosotros</a>
+                        <a href="../Nosotros.html" class="en-lang">us</a></li>
+                    <li><a href="../catalogo.html" class="active es-lang">Catálogo</a>
+                        <a href="../catalogo.html" class="active en-lang">Catalog</a></li>
+                    <li><a href="../contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="../index.html">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../catalogo.html" class="active">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Blog.html">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../Nosotros.html">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#empresas-obligadas">
+                                <i class="fas fa-building"></i>
+                                <span class="es-lang">Empresas Obligadas</span>
+                                <span class="en-lang">Required Companies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#beneficios">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="es-lang">Beneficios</span>
+                                <span class="en-lang">Benefits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#multas">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="es-lang">Multas y Sanciones</span>
+                                <span class="en-lang">Fines and Penalties</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- Breadcrumb Mejorado -->
+            <nav class="breadcrumb-industrial">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <a href="../index.html" class="breadcrumb-link">
+                            <i class="fas fa-home"></i>
+                            <span class="es-lang">Inicio</span>
+                            <span class="en-lang">Home</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html" class="breadcrumb-link">
+                            <span class="es-lang">Catálogo</span>
+                            <span class="en-lang">Catalog</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html?categoria=con-ruedas" class="breadcrumb-link">
+                            <span class="es-lang">SILLAS CON RUEDAS</span>
+                            <span class="en-lang">CHAIRS WITH WHEELS</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <span class="breadcrumb-current">CONTEMPO-OHS-10</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero del Producto Simplificado -->
+            <section class="producto-hero-industrial">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="producto-info">
+                            <div class="producto-header">
+                                <div class="producto-badge industrial-badge">
+                                    <i class="fas fa-sliders-h"></i>
+                                    <span class="es-lang">AJUSTABLE PREMIUM</span>
+                                    <span class="en-lang">PREMIUM ADJUSTABLE</span>
+                                </div>
+                            </div>
+                            
+                            <h1 class="producto-titulo">CONTEMPO-OHS-10</h1>
+                            
+                            <p class="producto-descripcion es-lang">
+                                Silla ergonómica premium con ruedas y múltiples ajustes personalizables. Cuenta con sistema de ajuste de profundidad, elevación neumática, base estrellada de 5 puntas y espuma de alta densidad para máximo confort en entornos corporativos de uso comercial ligero.
+                            </p>
+                            <p class="producto-descripcion en-lang">
+                                Premium ergonomic chair with wheels and multiple customizable adjustments. Features depth adjustment system, pneumatic elevation, 5-point star base and high-density foam for maximum comfort in corporate environments for light commercial use.
+                            </p>
+                            
+                            <div class="producto-actions">
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span class="es-lang">Solicitar Información</span>
+                                    <span class="en-lang">Request Information</span>
+                                </a>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span class="es-lang">Ficha Técnica PDF</span>
+                                    <span class="en-lang">Technical Sheet PDF</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="producto-visual">
+                            <div class="imagen-principal-container">
+                                <img src="../Imagenes/producto37-1.png" 
+                                     alt="CONTEMPO-OHS-10 - Silla ergonómica ajustable" 
+                                     class="imagen-principal"
+                                     id="productoImagen">
+                                <div class="imagen-overlay-industrial"></div>
+                            </div>
+                            
+                            <div class="miniaturas-galeria">
+                                <div class="miniatura active" data-image="../Imagenes/producto37-1.png">
+                                    <img src="../Imagenes/producto37-1.png" alt="CONTEMPO-OHS-10 Vista frontal">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto37-2.png">
+                                    <img src="../Imagenes/producto37-2.png" alt="CONTEMPO-OHS-10 Vista lateral ajustes">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto37-3.png">
+                                    <img src="../Imagenes/producto37-3.png" alt="CONTEMPO-OHS-10 Vista trasera">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto37-4.png">
+                                    <img src="../Imagenes/producto37-4.png" alt="CONTEMPO-OHS-10 Base estrellada 5 puntas">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto37-5.png">
+                                    <img src="../Imagenes/producto37-5.png" alt="CONTEMPO-OHS-10 Mecanismo de ajuste">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto37-6.png">
+                                    <img src="../Imagenes/producto37-6.png" alt="CONTEMPO-OHS-10 en oficina moderna">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Especificaciones Técnicas Simplificadas -->
+            <section id="especificaciones" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-list-alt"></i>
+                        </div>
+                        <h2 class="es-lang">Especificaciones Técnicas</h2>
+                        <h2 class="en-lang">Technical Specifications</h2>
+                        <p class="es-lang">Detalles completos del modelo CONTEMPO-OHS-10</p>
+                        <p class="en-lang">Complete details of the CONTEMPO-OHS-10 model</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cube"></i>
+                                        <span class="es-lang">Descripción General</span>
+                                        <span class="en-lang">General Description</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Silla ergonómica premium con ruedas diseñada para ofrecer máxima personalización y confort. Ideal para uso comercial ligero en oficinas corporativas, con múltiples sistemas de ajuste que se adaptan a las necesidades específicas de cada usuario.</p>
+                                            <p class="en-lang">Premium ergonomic chair with wheels designed to offer maximum personalization and comfort. Ideal for light commercial use in corporate offices, with multiple adjustment systems adapting to specific needs of each user.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-star"></i>
+                                        <span class="es-lang">Base Estrellada de 5 Puntas</span>
+                                        <span class="en-lang">5-Point Star Base</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-shapes"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Base fabricada en poliamida de alta resistencia con diseño de estrella de 5 puntas. Rodajas tipo dual que permiten movimiento suave y multidireccional sobre diferentes tipos de superficies de piso.</p>
+                                            <p class="en-lang">Base manufactured in high-resistance polyamide with 5-point star design. Dual-type casters allowing smooth and multidirectional movement on different floor surface types.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-arrows-alt-v"></i>
+                                        <span class="es-lang">Sistema de Elevación Neumática</span>
+                                        <span class="en-lang">Pneumatic Elevation System</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-compress-arrows-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Pistón neumático de alta calidad que permite ajustar la altura del asiento de forma precisa y suave. Controlado mediante palanca de accionamiento integrada en el mecanismo para fácil acceso y operación.</p>
+                                            <p class="en-lang">High-quality pneumatic piston allowing precise and smooth seat height adjustment. Controlled through integrated actuation lever in mechanism for easy access and operation.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-ruler-combined"></i>
+                                        <span class="es-lang">Ajuste de Profundidad</span>
+                                        <span class="en-lang">Depth Adjustment</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-arrows-alt-h"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Sistema de ajuste de profundidad mediante tornillo cabeza allen. Permite regular la distancia entre el respaldo y el asiento para adaptarse perfectamente a la longitud del torso de cada usuario.</p>
+                                            <p class="en-lang">Depth adjustment system through allen head screw. Allows regulating distance between backrest and seat to perfectly adapt to torso length of each user.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cogs"></i>
+                                        <span class="es-lang">Mecanismo Reforzado</span>
+                                        <span class="en-lang">Reinforced Mechanism</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-cog"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Plato de acero reforzado que integra palanca de accionamiento y bloqueo del pistón neumático. Diseño robusto que garantiza durabilidad y estabilidad incluso bajo uso comercial ligero continuo.</p>
+                                            <p class="en-lang">Reinforced steel plate integrating actuation lever and pneumatic piston lock. Robust design guaranteeing durability and stability even under continuous light commercial use.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-couch"></i>
+                                        <span class="es-lang">Confort de Alta Densidad</span>
+                                        <span class="en-lang">High Density Comfort</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-layer-group"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Respaldo y asiento con hule espuma laminado flexible de alta densidad (22 kgs/m³ en respaldo, 24 kgs/m³ en asiento). Material de alta resiliencia que mantiene su forma y propiedades con el uso prolongado.</p>
+                                            <p class="en-lang">Backrest and seat with flexible laminated foam of high density (22 kgs/m³ in backrest, 24 kgs/m³ in seat). High resilience material maintaining its shape and properties with prolonged use.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-palette"></i>
+                                        <span class="es-lang">Personalización de Tapiz</span>
+                                        <span class="en-lang">Upholstery Customization</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-swatchbook"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Tapizado disponible en colores de su elección de nuestras colecciones Cancún o Zenzé. Amplia variedad de opciones para coordinar con la identidad corporativa o preferencias estéticas personales.</p>
+                                            <p class="en-lang">Upholstery available in colors of your choice from our Cancún or Zenzé collections. Wide variety of options to coordinate with corporate identity or personal aesthetic preferences.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-weight-hanging"></i>
+                                        <span class="es-lang">Capacidad y Configuraciones</span>
+                                        <span class="en-lang">Capacity and Configurations</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-dumbbell"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Peso máximo de resistencia: 120 kgs. Disponible con kits cajeros que aumentan las alturas en 240 mm. Diseñada específicamente para uso comercial ligero en entornos corporativos profesionales.</p>
+                                            <p class="en-lang">Maximum weight resistance: 120 kgs. Available with cashier kits increasing heights by 240 mm. Specifically designed for light commercial use in professional corporate environments.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Galería de Imágenes -->
+            <section id="galeria" class="galeria-industrial">
+                <div class="container">
+                    <div class="galeria-header">
+                        <div class="header-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <h2 class="es-lang">Galería del Producto</h2>
+                        <h2 class="en-lang">Product Gallery</h2>
+                        <p class="es-lang">Explora la versatilidad del CONTEMPO-OHS-10</p>
+                        <p class="en-lang">Explore the versatility of CONTEMPO-OHS-10</p>
+                    </div>
+                    
+                    <div class="galeria-grid">
+                        <div class="galeria-item active" data-image="../Imagenes/producto37-1.png">
+                            <img src="../Imagenes/producto37-1.png" alt="CONTEMPO-OHS-10 Vista frontal ergonómica">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Vista Ergonómica</span>
+                                <span class="en-lang">Ergonomic View</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto37-2.png">
+                            <img src="../Imagenes/producto37-2.png" alt="CONTEMPO-OHS-10 Ajustes personalizables">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Ajustes Múltiples</span>
+                                <span class="en-lang">Multiple Adjustments</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto37-3.png">
+                            <img src="../Imagenes/producto37-3.png" alt="CONTEMPO-OHS-10 Vista trasera diseño">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Diseño Contemporáneo</span>
+                                <span class="en-lang">Contemporary Design</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto37-4.png">
+                            <img src="../Imagenes/producto37-4.png" alt="CONTEMPO-OHS-10 Base 5 puntas dual">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Base Dual</span>
+                                <span class="en-lang">Dual Base</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto37-5.png">
+                            <img src="../Imagenes/producto37-5.png" alt="CONTEMPO-OHS-10 Mecanismo de ajuste">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Mecanismo Premium</span>
+                                <span class="en-lang">Premium Mechanism</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto37-6.png">
+                            <img src="../Imagenes/producto37-6.png" alt="CONTEMPO-OHS-10 en oficina corporativa">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Ambiente Corporativo</span>
+                                <span class="en-lang">Corporate Environment</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto37-7.png">
+                            <img src="../Imagenes/producto37-7.png" alt="CONTEMPO-OHS-10 colores tapizado">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Opciones de Color</span>
+                                <span class="en-lang">Color Options</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto37-8.png">
+                            <img src="../Imagenes/producto37-8.png" alt="CONTEMPO-OHS-10 con kit cajero">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Con Kit Cajero</span>
+                                <span class="en-lang">With Cashier Kit</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sistemas de Ajuste Personalizable -->
+            <section id="ajustes" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <h2 class="es-lang">Sistemas de Ajuste Personalizable</h2>
+                        <h2 class="en-lang">Customizable Adjustment Systems</h2>
+                        <p class="es-lang">Adaptabilidad total para cada usuario</p>
+                        <p class="en-lang">Total adaptability for each user</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-ruler-vertical"></i>
+                                        <span class="es-lang">Ajuste de Altura Neumático</span>
+                                        <span class="en-lang">Pneumatic Height Adjustment</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-tachometer-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Sistema de pistón neumático que permite ajustes de altura precisos mediante simple palanca. Rango de ajuste optimizado para adaptarse a diferentes alturas de escritorio y preferencias de postura.</p>
+                                            <p class="en-lang">Pneumatic piston system allowing precise height adjustments through simple lever. Optimized adjustment range to adapt to different desk heights and posture preferences.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-arrows-alt-h"></i>
+                                        <span class="es-lang">Ajuste de Profundidad Mecánico</span>
+                                        <span class="en-lang">Mechanical Depth Adjustment</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-screwdriver"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Tornillo cabeza allen que permite modificar la profundidad del asiento. Ajuste fino que asegura soporte lumbar óptimo independientemente de la longitud del torso del usuario.</p>
+                                            <p class="en-lang">Allen head screw allowing modifying seat depth. Fine adjustment ensuring optimal lumbar support regardless of user torso length.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-compress-alt"></i>
+                                        <span class="es-lang">Espuma de Doble Densidad</span>
+                                        <span class="en-lang">Dual Density Foam</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-weight"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Densidades específicas por zona: 22 kgs/m³ en respaldo para soporte lumbar y 24 kgs/m³ en asiento para confort de sentado. Distribución inteligente que optimiza presión y soporte.</p>
+                                            <p class="en-lang">Specific densities per zone: 22 kgs/m³ in backrest for lumbar support and 24 kgs/m³ in seat for sitting comfort. Intelligent distribution optimizing pressure and support.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-plus-square"></i>
+                                        <span class="es-lang">Kit Cajero Opcional</span>
+                                        <span class="en-lang">Optional Cashier Kit</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-cash-register"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Kit especial que aumenta las alturas de la silla en 240 mm. Ideal para estaciones de trabajo elevadas, mostradores de atención al público o entornos que requieren mayor altura de visualización.</p>
+                                            <p class="en-lang">Special kit increasing chair heights by 240 mm. Ideal for elevated workstations, customer service counters or environments requiring greater viewing height.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Opciones de Personalización -->
+            <section id="personalizacion" class="accesorios-section">
+                <div class="container">
+                    <div class="accesorios-header">
+                        <div class="header-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h2 class="es-lang">Opciones de Personalización</h2>
+                        <h2 class="en-lang">Customization Options</h2>
+                        <p class="es-lang">Adapta el CONTEMPO-OHS-10 a tu estilo</p>
+                        <p class="en-lang">Adapt CONTEMPO-OHS-10 to your style</p>
+                    </div>
+                    
+                    <div class="accesorios-grid">
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/coleccion-cancun.png" alt="Colección Cancún de tapizados">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">COLECCIÓN CANCÚN</h3>
+                                <h3 class="en-lang">CANCÚN COLLECTION</h3>
+                                <p class="es-lang">Gama de colores modernos y vibrantes inspirados en el caribe mexicano. Incluye tonos azules, turquesas, verdes y neutrales contemporáneos para ambientes dinámicos y creativos.</p>
+                                <p class="en-lang">Range of modern and vibrant colors inspired by Mexican Caribbean. Includes blue, turquoise, green and contemporary neutral tones for dynamic and creative environments.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/coleccion-zenze.png" alt="Colección Zenzé de tapizados">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">COLECCIÓN ZENZÉ</h3>
+                                <h3 class="en-lang">ZENZÉ COLLECTION</h3>
+                                <p class="es-lang">Paleta de colores sofisticados y elegantes para entornos corporativos serios. Tonos grises, negros, azules marinos y burgundy que transmiten profesionalismo y seriedad.</p>
+                                <p class="en-lang">Sophisticated and elegant color palette for serious corporate environments. Gray, black, navy blue and burgundy tones transmitting professionalism and seriousness.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/kit-cajero-contempo.png" alt="Kit cajero para CONTEMPO-OHS-10">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">KIT CAJERO</h3>
+                                <h3 class="en-lang">CASHIER KIT</h3>
+                                <p class="es-lang">Extensión que aumenta la altura total de la silla en 240 mm. Perfecto para mostradores de recepción, áreas de atención al cliente y estaciones de trabajo elevadas.</p>
+                                <p class="en-lang">Extension increasing total chair height by 240 mm. Perfect for reception counters, customer service areas and elevated workstations.</p>
+                                <p class="accesorio-nota es-lang">Nota: Se vende por separado</p>
+                                <p class="accesorio-nota en-lang">Note: Sold separately</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA PROFESIONAL MEJORADO -->
+            <section class="cta-profesional-industrial">
+                <div class="container">
+                    <div class="cta-profesional-content">
+                        <div class="cta-profesional-text">
+                            <div class="cta-badge">
+                                <i class="fas fa-user-check"></i>
+                                <span class="es-lang">ERGONOMÍA PERSONALIZADA</span>
+                                <span class="en-lang">PERSONALIZED ERGONOMICS</span>
+                            </div>
+                            
+                            <h2 class="cta-titulo">
+                                <span class="es-lang">¿Necesitas sillas que se adapten perfectamente a cada miembro de tu equipo?</span>
+                                <span class="en-lang">Need chairs that perfectly adapt to each team member?</span>
+                            </h2>
+                            
+                            <p class="cta-descripcion es-lang">
+                                Nuestros <strong>especialistas en ergonomía laboral</strong> te ayudarán a configurar las sillas CONTEMPO-OHS-10 para cada puesto de trabajo. Ofrecemos ajustes personalizados, selección de colores corporativos y kits especializados según las necesidades específicas de tu empresa.
+                            </p>
+                            <p class="cta-descripcion en-lang">
+                                Our <strong>work ergonomics specialists</strong> will help you configure CONTEMPO-OHS-10 chairs for each workstation. We offer personalized adjustments, corporate color selection and specialized kits according to specific needs of your company.
+                            </p>
+                            
+                            <div class="cta-beneficios">
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Ajuste de profundidad personalizable</span>
+                                    <span class="en-lang">Customizable depth adjustment</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">2 colecciones de colores disponibles</span>
+                                    <span class="en-lang">2 color collections available</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Kit cajero opcional (+240 mm)</span>
+                                    <span class="en-lang">Optional cashier kit (+240 mm)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-profesional-actions">
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-swatchbook"></i>
+                                </div>
+                                <h3 class="es-lang">Selección de Colores</h3>
+                                <h3 class="en-lang">Color Selection</h3>
+                                <p class="es-lang">Elige entre las colecciones Cancún o Zenzé para personalizar tus sillas</p>
+                                <p class="en-lang">Choose between Cancún or Zenzé collections to customize your chairs</p>
+                                <a href="../contactanos.html?tipo=colores" class="btn btn-primary btn-large">
+                                    <i class="fas fa-palette"></i>
+                                    <span class="es-lang">Ver Colecciones</span>
+                                    <span class="en-lang">View Collections</span>
+                                </a>
+                            </div>
+                            
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <h3 class="es-lang">Configuración Corporativa</h3>
+                                <h3 class="en-lang">Corporate Configuration</h3>
+                                <p class="es-lang">Solicita asesoría para configurar múltiples sillas CONTEMPO para tu empresa</p>
+                                <p class="en-lang">Request advisory to configure multiple CONTEMPO chairs for your company</p>
+                                <a href="../contactanos.html?tipo=configuracion-corporativa" class="btn btn-secondary btn-large">
+                                    <i class="fas fa-building"></i>
+                                    <span class="es-lang">Configuración Corporativa</span>
+                                    <span class="en-lang">Corporate Configuration</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
+                        <li><a href="../Blog.html" class="es-lang">Blog</a><a href="Blog.html" class="en-lang">Chair Law Blog</a></li>
+                        <li><a href="../Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="../catalogo.html" class="es-lang">Catálogo</a><a href="../catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="../contactanos.html" class="es-lang">Contáctanos</a><a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </div> <!-- END WRAPPER -->
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <!-- Botón flotante del chatbot -->
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <!-- Ventana del Chatbot -->
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Mensajes aparecerán aquí -->
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                    <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                    <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                    <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/accessibility.js"></script>
+    <script src="../js/chatbot.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/detalle-producto.js"></script>
+</body>
+</html>

@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>RIMINI - Ley Silla</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/detalle-producto.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="detalle-producto-page">
+
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920wn.png" alt="Ley Silla Logo" class="logo-light">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920w.png" alt="Ley Silla Logo" class="logo-dark">
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="es-lang">Inicio</a>
+                        <a href="../index.html" class="en-lang">Home</a></li>
+                    <li><a href="../Blog.html" class="es-lang">Blog</a>
+                        <a href="../Blog.html" class="en-lang">Blog</a></li>
+                    <li><a href="../Nosotros.html" class="es-lang">Nosotros</a>
+                        <a href="../Nosotros.html" class="en-lang">us</a></li>
+                    <li><a href="../catalogo.html" class="active es-lang">Catálogo</a>
+                        <a href="../catalogo.html" class="active en-lang">Catalog</a></li>
+                    <li><a href="../contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="../index.html">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../catalogo.html" class="active">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Blog.html">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../Nosotros.html">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#empresas-obligadas">
+                                <i class="fas fa-building"></i>
+                                <span class="es-lang">Empresas Obligadas</span>
+                                <span class="en-lang">Required Companies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#beneficios">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="es-lang">Beneficios</span>
+                                <span class="en-lang">Benefits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#multas">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="es-lang">Multas y Sanciones</span>
+                                <span class="en-lang">Fines and Penalties</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- Breadcrumb Mejorado -->
+            <nav class="breadcrumb-industrial">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <a href="../index.html" class="breadcrumb-link">
+                            <i class="fas fa-home"></i>
+                            <span class="es-lang">Inicio</span>
+                            <span class="en-lang">Home</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html" class="breadcrumb-link">
+                            <span class="es-lang">Catálogo</span>
+                            <span class="en-lang">Catalog</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html?categoria=con-ruedas" class="breadcrumb-link">
+                            <span class="es-lang">SILLAS CON RUEDAS</span>
+                            <span class="en-lang">CHAIRS WITH WHEELS</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <span class="breadcrumb-current">RIMINI</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero del Producto Simplificado -->
+            <section class="producto-hero-industrial">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="producto-info">
+                            <div class="producto-header">
+                                <div class="producto-badge industrial-badge">
+                                    <i class="fas fa-crown"></i>
+                                    <span class="es-lang">EJECUTIVA PREMIUM</span>
+                                    <span class="en-lang">PREMIUM EXECUTIVE</span>
+                                </div>
+                            </div>
+                            
+                            <h1 class="producto-titulo">RIMINI</h1>
+                            
+                            <p class="producto-descripcion es-lang">
+                                Silla ejecutiva premium con ruedas de diseño italiano. Cuenta con respaldo alto, sistema de reclinación neumática, ajuste de altura por pistón, tapizado en soft revolving leather negro y construcción en materiales de alta densidad para máximo confort y durabilidad en entornos corporativos.
+                            </p>
+                            <p class="producto-descripcion en-lang">
+                                Premium executive chair with wheels of Italian design. Features high backrest, pneumatic reclining system, height adjustment by piston, soft revolving leather black upholstery and construction in high-density materials for maximum comfort and durability in corporate environments.
+                            </p>
+                            
+                            <div class="producto-actions">
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span class="es-lang">Solicitar Información</span>
+                                    <span class="en-lang">Request Information</span>
+                                </a>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span class="es-lang">Ficha Técnica PDF</span>
+                                    <span class="en-lang">Technical Sheet PDF</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="producto-visual">
+                            <div class="imagen-principal-container">
+                                <img src="../Imagenes/producto36-1.png" 
+                                     alt="RIMINI - Silla ejecutiva premium con ruedas" 
+                                     class="imagen-principal"
+                                     id="productoImagen">
+                                <div class="imagen-overlay-industrial"></div>
+                            </div>
+                            
+                            <div class="miniaturas-galeria">
+                                <div class="miniatura active" data-image="../Imagenes/producto36-1.png">
+                                    <img src="../Imagenes/producto36-1.png" alt="RIMINI Vista frontal ejecutiva">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto36-2.png">
+                                    <img src="../Imagenes/producto36-2.png" alt="RIMINI Vista lateral diseño">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto36-3.png">
+                                    <img src="../Imagenes/producto36-3.png" alt="RIMINI Vista trasera premium">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto36-4.png">
+                                    <img src="../Imagenes/producto36-4.png" alt="RIMINI Base estrellada 5 puntas">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto36-5.png">
+                                    <img src="../Imagenes/producto36-5.png" alt="RIMINI Mecanismo de reclinación">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto36-6.png">
+                                    <img src="../Imagenes/producto36-6.png" alt="RIMINI en oficina ejecutiva">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Especificaciones Técnicas Simplificadas -->
+            <section id="especificaciones" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-list-alt"></i>
+                        </div>
+                        <h2 class="es-lang">Especificaciones Técnicas</h2>
+                        <h2 class="en-lang">Technical Specifications</h2>
+                        <p class="es-lang">Detalles completos del modelo RIMINI</p>
+                        <p class="en-lang">Complete details of the RIMINI model</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cube"></i>
+                                        <span class="es-lang">Descripción General</span>
+                                        <span class="en-lang">General Description</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Silla ejecutiva premium con ruedas de diseño italiano. Combina elegancia, tecnología ergonómica avanzada y materiales de primera calidad para uso comercial ligero en entornos corporativos de alto nivel.</p>
+                                            <p class="en-lang">Premium executive chair with wheels of Italian design. Combines elegance, advanced ergonomic technology and first-quality materials for light commercial use in high-level corporate environments.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-star"></i>
+                                        <span class="es-lang">Base Estrellada Premium</span>
+                                        <span class="en-lang">Premium Star Base</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-shapes"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Base de estrella de 5 puntas fabricada en poliamida de alta resistencia. Rodajas tipo dual que permiten movimiento suave en múltiples direcciones sobre diferentes superficies de piso.</p>
+                                            <p class="en-lang">5-point star base manufactured in high-resistance polyamide. Dual-type casters allowing smooth movement in multiple directions on different floor surfaces.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-arrows-alt-v"></i>
+                                        <span class="es-lang">Sistema de Elevación Neumática</span>
+                                        <span class="en-lang">Pneumatic Elevation System</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-compress-arrows-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Pistón neumático de alta calidad que permite ajustar la altura del asiento de forma suave y precisa. Sistema certificado para miles de ciclos de uso sin pérdida de rendimiento.</p>
+                                            <p class="en-lang">High-quality pneumatic piston allowing smooth and precise seat height adjustment. Certified system for thousands of use cycles without performance loss.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cogs"></i>
+                                        <span class="es-lang">Mecanismo de Reclinación</span>
+                                        <span class="en-lang">Reclining Mechanism</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-sliders-h"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Plato de acero reforzado con sistema de reclinación sincronizada. Incluye palanca de bloqueo y perilla de regulación de tensión para personalizar la resistencia del movimiento de reclinación.</p>
+                                            <p class="en-lang">Reinforced steel plate with synchronized reclining system. Includes locking lever and tension adjustment knob to customize reclining movement resistance.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-couch"></i>
+                                        <span class="es-lang">Asiento y Respaldo Premium</span>
+                                        <span class="en-lang">Premium Seat and Backrest</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-layer-group"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Respaldo alto con hule espuma laminado flexible de alta densidad (22 kgs/m³ en respaldo, 24 kgs/m³ en asiento). Material de alta resiliencia que recupera su forma original después de cada uso.</p>
+                                            <p class="en-lang">High backrest with flexible laminated foam of high density (22 kgs/m³ in backrest, 24 kgs/m³ in seat). High resilience material that recovers its original shape after each use.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-palette"></i>
+                                        <span class="es-lang">Tapizado de Lujo</span>
+                                        <span class="en-lang">Luxury Upholstery</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-leather"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Tapizado en soft revolving leather color negro. Material de alta durabilidad, fácil limpieza y apariencia ejecutiva profesional. Brazos acojinados y tapizados para máximo confort.</p>
+                                            <p class="en-lang">Upholstery in soft revolving leather black color. High durability material, easy cleaning and professional executive appearance. Padded and upholstered armrests for maximum comfort.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-weight-hanging"></i>
+                                        <span class="es-lang">Capacidad y Uso</span>
+                                        <span class="en-lang">Capacity and Use</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-dumbbell"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Peso máximo de resistencia: 120 kgs. Diseñada para uso comercial ligero en oficinas ejecutivas, salas de juntas y entornos corporativos que requieren elegancia y funcionalidad premium.</p>
+                                            <p class="en-lang">Maximum weight resistance: 120 kgs. Designed for light commercial use in executive offices, board rooms and corporate environments requiring elegance and premium functionality.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-hands"></i>
+                                        <span class="es-lang">Brazos Ergonómicos</span>
+                                        <span class="en-lang">Ergonomic Armrests</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-hand-paper"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Brazos fabricados en polipropileno de alta resistencia, acojinados y tapizados con el mismo material del asiento. Diseño ergonómico que soporta antebrazos reduciendo la tensión en hombros y cuello.</p>
+                                            <p class="en-lang">Armrests manufactured in high-resistance polypropylene, padded and upholstered with same material as seat. Ergonomic design supporting forearms reducing tension in shoulders and neck.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Galería de Imágenes -->
+            <section id="galeria" class="galeria-industrial">
+                <div class="container">
+                    <div class="galeria-header">
+                        <div class="header-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <h2 class="es-lang">Galería del Producto</h2>
+                        <h2 class="en-lang">Product Gallery</h2>
+                        <p class="es-lang">Explora la elegancia y funcionalidad del RIMINI</p>
+                        <p class="en-lang">Explore the elegance and functionality of RIMINI</p>
+                    </div>
+                    
+                    <div class="galeria-grid">
+                        <div class="galeria-item active" data-image="../Imagenes/producto36-1.png">
+                            <img src="../Imagenes/producto36-1.png" alt="RIMINI Vista frontal ejecutiva">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Vista Ejecutiva</span>
+                                <span class="en-lang">Executive View</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto36-2.png">
+                            <img src="../Imagenes/producto36-2.png" alt="RIMINI Vista lateral diseño italiano">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Diseño Italiano</span>
+                                <span class="en-lang">Italian Design</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto36-3.png">
+                            <img src="../Imagenes/producto36-3.png" alt="RIMINI Vista trasera premium">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Detalle Premium</span>
+                                <span class="en-lang">Premium Detail</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto36-4.png">
+                            <img src="../Imagenes/producto36-4.png" alt="RIMINI Base 5 puntas dual">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Base 5 Puntas</span>
+                                <span class="en-lang">5-Point Base</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto36-5.png">
+                            <img src="../Imagenes/producto36-5.png" alt="RIMINI Mecanismo reclinación">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Reclinación Sincronizada</span>
+                                <span class="en-lang">Synchronized Reclining</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto36-6.png">
+                            <img src="../Imagenes/producto36-6.png" alt="RIMINI en oficina corporativa">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Ambiente Corporativo</span>
+                                <span class="en-lang">Corporate Environment</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto36-7.png">
+                            <img src="../Imagenes/producto36-7.png" alt="RIMINI detalle tapizado cuero">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Tapizado Cuero</span>
+                                <span class="en-lang">Leather Upholstery</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto36-8.png">
+                            <img src="../Imagenes/producto36-8.png" alt="RIMINI conjunto ejecutivo">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Conjunto Ejecutivo</span>
+                                <span class="en-lang">Executive Set</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tecnología Ergonómica Avanzada -->
+            <section id="tecnologia" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h2 class="es-lang">Tecnología Ergonómica Avanzada</h2>
+                        <h2 class="en-lang">Advanced Ergonomic Technology</h2>
+                        <p class="es-lang">Innovación para el confort ejecutivo</p>
+                        <p class="en-lang">Innovation for executive comfort</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-lungs"></i>
+                                        <span class="es-lang">Espuma de Alta Densidad</span>
+                                        <span class="en-lang">High Density Foam</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-weight"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Hule espuma laminado flexible con densidad de 22 kgs/m³ en respaldo y 24 kgs/m³ en asiento. Densidades específicas para cada zona que optimizan soporte y confort durante jornadas prolongadas.</p>
+                                            <p class="en-lang">Flexible laminated foam with density of 22 kgs/m³ in backrest and 24 kgs/m³ in seat. Specific densities for each zone optimizing support and comfort during extended work periods.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-sync-alt"></i>
+                                        <span class="es-lang">Sistema de Reclinación Sincronizada</span>
+                                        <span class="en-lang">Synchronized Reclining System</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-random"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Mecanismo que coordina el movimiento del asiento y respaldo manteniendo ángulos ergonómicos óptimos. La palanca de bloqueo permite fijar la posición deseada, mientras la perilla ajusta la tensión.</p>
+                                            <p class="en-lang">Mechanism coordinating seat and backrest movement maintaining optimal ergonomic angles. Locking lever allows fixing desired position, while knob adjusts tension.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-wind"></i>
+                                        <span class="es-lang">Pistón Neumático de Precisión</span>
+                                        <span class="en-lang">Precision Pneumatic Piston</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-tachometer-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Sistema de elevación que permite ajustes milimétricos de altura. Operación suave y silenciosa con capacidad para más de 100,000 ciclos de uso manteniendo su precisión original.</p>
+                                            <p class="en-lang">Elevation system allowing millimeter height adjustments. Smooth and silent operation with capacity for over 100,000 use cycles maintaining original precision.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span class="es-lang">Construcción Reforzada</span>
+                                        <span class="en-lang">Reinforced Construction</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-hard-hat"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Plato de acero reforzado que distribuye tensiones uniformemente. Estructura diseñada para resistir el uso comercial ligero manteniendo estabilidad y durabilidad excepcionales.</p>
+                                            <p class="en-lang">Reinforced steel plate distributing tensions evenly. Structure designed to withstand light commercial use maintaining exceptional stability and durability.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aplicaciones Ejecutivas -->
+            <section id="aplicaciones" class="accesorios-section">
+                <div class="container">
+                    <div class="accesorios-header">
+                        <div class="header-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h2 class="es-lang">Aplicaciones Ejecutivas</h2>
+                        <h2 class="en-lang">Executive Applications</h2>
+                        <p class="es-lang">Entornos ideales para la silla RIMINI</p>
+                        <p class="en-lang">Ideal environments for RIMINI chair</p>
+                    </div>
+                    
+                    <div class="accesorios-grid">
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-direccion.png" alt="Oficina de dirección con silla RIMINI">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">OFICINAS DE DIRECCIÓN</h3>
+                                <h3 class="en-lang">MANAGEMENT OFFICES</h3>
+                                <p class="es-lang">Ideal para directores, gerentes y ejecutivos de alto nivel. El diseño premium y ergonomía avanzada reflejan estatus profesional mientras optimizan la productividad.</p>
+                                <p class="en-lang">Ideal for directors, managers and high-level executives. Premium design and advanced ergonomics reflect professional status while optimizing productivity.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-juntas.png" alt="Sala de juntas con sillas RIMINI">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">SALAS DE JUNTAS</h3>
+                                <h3 class="en-lang">BOARD ROOMS</h3>
+                                <p class="es-lang">Perfecta para salas de reuniones ejecutivas y juntas directivas. La elegancia del diseño italiano complementa ambientes corporativos de prestigio.</p>
+                                <p class="en-lang">Perfect for executive meeting rooms and board meetings. The elegance of Italian design complements prestigious corporate environments.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-recepcion-ejecutiva.png" alt="Recepción ejecutiva con silla RIMINI">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">RECEPCIONES EJECUTIVAS</h3>
+                                <h3 class="en-lang">EXECUTIVE RECEPTIONS</h3>
+                                <p class="es-lang">Excelente para áreas de espera ejecutivas y recepciones de alto nivel. Transmite profesionalismo y atención al detalle desde el primer contacto.</p>
+                                <p class="en-lang">Excellent for executive waiting areas and high-level receptions. Transmits professionalism and attention to detail from first contact.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA PROFESIONAL MEJORADO -->
+            <section class="cta-profesional-industrial">
+                <div class="container">
+                    <div class="cta-profesional-content">
+                        <div class="cta-profesional-text">
+                            <div class="cta-badge">
+                                <i class="fas fa-award"></i>
+                                <span class="es-lang">EJECUTIVA PREMIUM</span>
+                                <span class="en-lang">PREMIUM EXECUTIVE</span>
+                            </div>
+                            
+                            <h2 class="cta-titulo">
+                                <span class="es-lang">¿Buscas la silla ejecutiva perfecta para tu oficina corporativa?</span>
+                                <span class="en-lang">Looking for the perfect executive chair for your corporate office?</span>
+                            </h2>
+                            
+                            <p class="cta-descripcion es-lang">
+                                Nuestros <strong>especialistas en mobiliario ejecutivo</strong> te asesorarán en la selección de la silla RIMINI para tu espacio de trabajo. Ofrecemos ergonomía certificada, materiales premium y diseño italiano para directivos y profesionales exigentes.
+                            </p>
+                            <p class="cta-descripcion en-lang">
+                                Our <strong>executive furniture specialists</strong> will advise you on selecting the RIMINI chair for your workspace. We offer certified ergonomics, premium materials and Italian design for demanding managers and professionals.
+                            </p>
+                            
+                            <div class="cta-beneficios">
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Tapizado soft revolving leather</span>
+                                    <span class="en-lang">Soft revolving leather upholstery</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Reclinación sincronizada ajustable</span>
+                                    <span class="en-lang">Adjustable synchronized reclining</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Espuma alta densidad 22/24 kgs/m³</span>
+                                    <span class="en-lang">High density foam 22/24 kgs/m³</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-profesional-actions">
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-chair"></i>
+                                </div>
+                                <h3 class="es-lang">Prueba Ejecutiva</h3>
+                                <h3 class="en-lang">Executive Test</h3>
+                                <p class="es-lang">Solicita una prueba del confort ejecutivo de la silla RIMINI en tu oficina</p>
+                                <p class="en-lang">Request a test of the executive comfort of RIMINI chair in your office</p>
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-couch"></i>
+                                    <span class="es-lang">Solicitar Prueba Ejecutiva</span>
+                                    <span class="en-lang">Request Executive Test</span>
+                                </a>
+                            </div>
+                            
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                                <h3 class="es-lang">Cotización Ejecutiva</h3>
+                                <h3 class="en-lang">Executive Quote</h3>
+                                <p class="es-lang">Solicita una cotización premium para equipar tu oficina con sillas RIMINI</p>
+                                <p class="en-lang">Request a premium quote to equip your office with RIMINI chairs</p>
+                                <a href="../contactanos.html?tipo=cotizacion-ejecutiva" class="btn btn-secondary btn-large">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                    <span class="es-lang">Cotización Ejecutiva</span>
+                                    <span class="en-lang">Executive Quote</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
+                        <li><a href="../Blog.html" class="es-lang">Blog</a><a href="Blog.html" class="en-lang">Chair Law Blog</a></li>
+                        <li><a href="../Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="../catalogo.html" class="es-lang">Catálogo</a><a href="../catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="../contactanos.html" class="es-lang">Contáctanos</a><a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </div> <!-- END WRAPPER -->
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <!-- Botón flotante del chatbot -->
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <!-- Ventana del Chatbot -->
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Mensajes aparecerán aquí -->
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                    <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                    <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                    <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/accessibility.js"></script>
+    <script src="../js/chatbot.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/detalle-producto.js"></script>
+</body>
+</html>

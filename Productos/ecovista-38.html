@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ECOVISTA - Ley Silla</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/detalle-producto.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="detalle-producto-page">
+
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920wn.png" alt="Ley Silla Logo" class="logo-light">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920w.png" alt="Ley Silla Logo" class="logo-dark">
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="es-lang">Inicio</a>
+                        <a href="../index.html" class="en-lang">Home</a></li>
+                    <li><a href="../Blog.html" class="es-lang">Blog</a>
+                        <a href="../Blog.html" class="en-lang">Blog</a></li>
+                    <li><a href="../Nosotros.html" class="es-lang">Nosotros</a>
+                        <a href="../Nosotros.html" class="en-lang">us</a></li>
+                    <li><a href="../catalogo.html" class="active es-lang">Catálogo</a>
+                        <a href="../catalogo.html" class="active en-lang">Catalog</a></li>
+                    <li><a href="../contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="../index.html">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../catalogo.html" class="active">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Blog.html">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../Nosotros.html">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#empresas-obligadas">
+                                <i class="fas fa-building"></i>
+                                <span class="es-lang">Empresas Obligadas</span>
+                                <span class="en-lang">Required Companies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#beneficios">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="es-lang">Beneficios</span>
+                                <span class="en-lang">Benefits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#multas">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="es-lang">Multas y Sanciones</span>
+                                <span class="en-lang">Fines and Penalties</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- Breadcrumb Mejorado -->
+            <nav class="breadcrumb-industrial">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <a href="../index.html" class="breadcrumb-link">
+                            <i class="fas fa-home"></i>
+                            <span class="es-lang">Inicio</span>
+                            <span class="en-lang">Home</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html" class="breadcrumb-link">
+                            <span class="es-lang">Catálogo</span>
+                            <span class="en-lang">Catalog</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html?categoria=interior" class="breadcrumb-link">
+                            <span class="es-lang">VISITANTE INTERIOR</span>
+                            <span class="en-lang">INDOOR VISITOR</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <span class="breadcrumb-current">ECOVISTA</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero del Producto Simplificado -->
+            <section class="producto-hero-industrial">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="producto-info">
+                            <div class="producto-header">
+                                <div class="producto-badge industrial-badge">
+                                    <i class="fas fa-leaf"></i>
+                                    <span class="es-lang">VISITANTE ECOLÓGICO</span>
+                                    <span class="en-lang">ECOLOGICAL VISITOR</span>
+                                </div>
+                            </div>
+                            
+                            <h1 class="producto-titulo">ECOVISTA</h1>
+                            
+                            <p class="producto-descripcion es-lang">
+                                Silla para visitante interior con diseño ecológico y confort premium. Estructura en acero tubular con acabado epóxico electrostático negro, asiento y respaldo en espuma de alta densidad y tapizado personalizable de las colecciones Cancún o Zenzé.
+                            </p>
+                            <p class="producto-descripcion en-lang">
+                                Indoor visitor chair with ecological design and premium comfort. Structure in tubular steel with electrostatic epoxy black finish, seat and backrest in high-density foam and customizable upholstery from Cancún or Zenzé collections.
+                            </p>
+                            
+                            <div class="producto-actions">
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span class="es-lang">Solicitar Información</span>
+                                    <span class="en-lang">Request Information</span>
+                                </a>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span class="es-lang">Ficha Técnica PDF</span>
+                                    <span class="en-lang">Technical Sheet PDF</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="producto-visual">
+                            <div class="imagen-principal-container">
+                                <img src="../Imagenes/producto38-1.png" 
+                                     alt="ECOVISTA - Silla visitante interior ecológica" 
+                                     class="imagen-principal"
+                                     id="productoImagen">
+                                <div class="imagen-overlay-industrial"></div>
+                            </div>
+                            
+                            <div class="miniaturas-galeria">
+                                <div class="miniatura active" data-image="../Imagenes/producto38-1.png">
+                                    <img src="../Imagenes/producto38-1.png" alt="ECOVISTA Vista frontal">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto38-2.png">
+                                    <img src="../Imagenes/producto38-2.png" alt="ECOVISTA Vista lateral">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto38-3.png">
+                                    <img src="../Imagenes/producto38-3.png" alt="ECOVISTA Vista trasera">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto38-4.png">
+                                    <img src="../Imagenes/producto38-4.png" alt="ECOVISTA Estructura tubular">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto38-5.png">
+                                    <img src="../Imagenes/producto38-5.png" alt="ECOVISTA Detalle tapizado">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto38-6.png">
+                                    <img src="../Imagenes/producto38-6.png" alt="ECOVISTA en recepción">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Especificaciones Técnicas Simplificadas -->
+            <section id="especificaciones" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-list-alt"></i>
+                        </div>
+                        <h2 class="es-lang">Especificaciones Técnicas</h2>
+                        <h2 class="en-lang">Technical Specifications</h2>
+                        <p class="es-lang">Detalles completos del modelo ECOVISTA</p>
+                        <p class="en-lang">Complete details of the ECOVISTA model</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cube"></i>
+                                        <span class="es-lang">Descripción General</span>
+                                        <span class="en-lang">General Description</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Silla para visitante interior con enfoque ecológico y diseño ergonómico. Perfecta para recepciones, salas de espera y áreas comunes donde se requiere confort y estética contemporánea para uso comercial ligero.</p>
+                                            <p class="en-lang">Indoor visitor chair with ecological focus and ergonomic design. Perfect for receptions, waiting rooms and common areas requiring comfort and contemporary aesthetics for light commercial use.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-industry"></i>
+                                        <span class="es-lang">Estructura de Acero Tubular</span>
+                                        <span class="en-lang">Tubular Steel Structure</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-drafting-compass"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Estructura fabricada en acero tubular de 7/8" de diámetro, calibre 20. Diseño robusto y duradero que garantiza estabilidad y resistencia para uso comercial ligero continuo.</p>
+                                            <p class="en-lang">Structure manufactured in 7/8" diameter tubular steel, gauge 20. Robust and durable design guaranteeing stability and resistance for continuous light commercial use.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-spray-can"></i>
+                                        <span class="es-lang">Acabado Epóxico Electrostático</span>
+                                        <span class="en-lang">Electrostatic Epoxy Finish</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-atom"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Pintura epóxica aplicada mediante proceso electrostático color negro. Acabado de alta resistencia a golpes, rayones y desgaste, manteniendo su apariencia impecable por más tiempo.</p>
+                                            <p class="en-lang">Epoxy paint applied through electrostatic process in black color. High-resistance finish to impacts, scratches and wear, maintaining its impeccable appearance longer.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-couch"></i>
+                                        <span class="es-lang">Confort de Alta Densidad</span>
+                                        <span class="en-lang">High Density Comfort</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-layer-group"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Asiento y respaldo con hule espuma laminado flexible de alta densidad (22 kgs/m³ en respaldo, 24 kgs/m³ en asiento). Material de alta resiliencia que recupera su forma original después de cada uso.</p>
+                                            <p class="en-lang">Seat and backrest with flexible laminated foam of high density (22 kgs/m³ in backrest, 24 kgs/m³ in seat). High resilience material recovering its original shape after each use.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-palette"></i>
+                                        <span class="es-lang">Personalización de Tapiz</span>
+                                        <span class="en-lang">Upholstery Customization</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-swatchbook"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Tapizado disponible en colores de su elección de nuestras colecciones Cancún o Zenzé. Amplia variedad de opciones para coordinar con la identidad corporativa o diseño interior del espacio.</p>
+                                            <p class="en-lang">Upholstery available in colors of your choice from our Cancún or Zenzé collections. Wide variety of options to coordinate with corporate identity or interior space design.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-weight-hanging"></i>
+                                        <span class="es-lang">Capacidad y Uso</span>
+                                        <span class="en-lang">Capacity and Use</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-dumbbell"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Peso máximo de resistencia: 80 kgs. Diseñada específicamente para uso comercial ligero en recepciones, salas de espera, áreas comunes y espacios de visitantes interiores.</p>
+                                            <p class="en-lang">Maximum weight resistance: 80 kgs. Specifically designed for light commercial use in receptions, waiting rooms, common areas and indoor visitor spaces.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-recycle"></i>
+                                        <span class="es-lang">Enfoque Ecológico</span>
+                                        <span class="en-lang">Ecological Focus</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-leaf"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Diseño que prioriza materiales duraderos y procesos de fabricación responsables. Estructura de acero reciclable y espuma de alta durabilidad que reduce la necesidad de reemplazo frecuente.</p>
+                                            <p class="en-lang">Design prioritizing durable materials and responsible manufacturing processes. Recyclable steel structure and high-durability foam reducing need for frequent replacement.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-chair"></i>
+                                        <span class="es-lang">Ergonomía Básica</span>
+                                        <span class="en-lang">Basic Ergonomics</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-user-check"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Diseño ergonómico que proporciona soporte lumbar adecuado para estancias cortas a medianas. Ideal para áreas de espera donde los visitantes necesitan comodidad durante períodos de tiempo limitados.</p>
+                                            <p class="en-lang">Ergonomic design providing adequate lumbar support for short to medium stays. Ideal for waiting areas where visitors need comfort during limited time periods.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Galería de Imágenes -->
+            <section id="galeria" class="galeria-industrial">
+                <div class="container">
+                    <div class="galeria-header">
+                        <div class="header-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <h2 class="es-lang">Galería del Producto</h2>
+                        <h2 class="en-lang">Product Gallery</h2>
+                        <p class="es-lang">Explora el diseño ecológico del ECOVISTA</p>
+                        <p class="en-lang">Explore the ecological design of ECOVISTA</p>
+                    </div>
+                    
+                    <div class="galeria-grid">
+                        <div class="galeria-item active" data-image="../Imagenes/producto38-1.png">
+                            <img src="../Imagenes/producto38-1.png" alt="ECOVISTA Vista frontal ecológica">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Vista Ecológica</span>
+                                <span class="en-lang">Ecological View</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto38-2.png">
+                            <img src="../Imagenes/producto38-2.png" alt="ECOVISTA Vista lateral diseño">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Diseño Contemporáneo</span>
+                                <span class="en-lang">Contemporary Design</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto38-3.png">
+                            <img src="../Imagenes/producto38-3.png" alt="ECOVISTA Vista trasera estructura">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Estructura Sólida</span>
+                                <span class="en-lang">Solid Structure</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto38-4.png">
+                            <img src="../Imagenes/producto38-4.png" alt="ECOVISTA Detalle acero tubular">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Acero Tubular</span>
+                                <span class="en-lang">Tubular Steel</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto38-5.png">
+                            <img src="../Imagenes/producto38-5.png" alt="ECOVISTA Detalle tapizado calidad">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Tapizado Premium</span>
+                                <span class="en-lang">Premium Upholstery</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto38-6.png">
+                            <img src="../Imagenes/producto38-6.png" alt="ECOVISTA en área de recepción">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">En Recepción</span>
+                                <span class="en-lang">In Reception</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto38-7.png">
+                            <img src="../Imagenes/producto38-7.png" alt="ECOVISTA conjunto sala de espera">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Sala de Espera</span>
+                                <span class="en-lang">Waiting Room</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto38-8.png">
+                            <img src="../Imagenes/producto38-8.png" alt="ECOVISTA colores personalizables">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Colores Personalizables</span>
+                                <span class="en-lang">Customizable Colors</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tecnología Ecológica y Durabilidad -->
+            <section id="ecologia" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h2 class="es-lang">Tecnología Ecológica y Durabilidad</h2>
+                        <h2 class="en-lang">Ecological Technology and Durability</h2>
+                        <p class="es-lang">Compromiso con la sostenibilidad y calidad</p>
+                        <p class="en-lang">Commitment to sustainability and quality</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-recycle"></i>
+                                        <span class="es-lang">Materiales Reciclables</span>
+                                        <span class="en-lang">Recyclable Materials</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-trash-restore"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Estructura de acero tubular 100% reciclable. Tapizados seleccionados por su durabilidad para prolongar el ciclo de vida del producto y reducir el impacto ambiental.</p>
+                                            <p class="en-lang">100% recyclable tubular steel structure. Upholstery selected for its durability to prolong product life cycle and reduce environmental impact.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-bolt"></i>
+                                        <span class="es-lang">Acabado Electrostático</span>
+                                        <span class="en-lang">Electrostatic Finish</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-atom"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Proceso de pintura electrostática que minimiza el desperdicio de material y emisiones. Mayor adherencia de la pintura que reduce la necesidad de retoques y mantenimiento.</p>
+                                            <p class="en-lang">Electrostatic painting process minimizing material waste and emissions. Greater paint adhesion reducing need for touch-ups and maintenance.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-heartbeat"></i>
+                                        <span class="es-lang">Espuma de Alta Resiliencia</span>
+                                        <span class="en-lang">High Resilience Foam</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-expand-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Densidades específicas por zona (22/24 kgs/m³) que optimizan durabilidad y confort. Material que recupera su forma original después de cada uso, prolongando su vida útil.</p>
+                                            <p class="en-lang">Specific densities per zone (22/24 kgs/m³) optimizing durability and comfort. Material recovering its original shape after each use, prolonging its lifespan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span class="es-lang">Diseño para Larga Duración</span>
+                                        <span class="en-lang">Long-Lasting Design</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-award"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Construcción robusta pensada para uso comercial ligero prolongado. Menor frecuencia de reemplazo que reduce el consumo de recursos y residuos generados.</p>
+                                            <p class="en-lang">Robust construction designed for prolonged light commercial use. Lower replacement frequency reducing resource consumption and generated waste.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aplicaciones para Visitantes -->
+            <section id="aplicaciones" class="accesorios-section">
+                <div class="container">
+                    <div class="accesorios-header">
+                        <div class="header-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h2 class="es-lang">Aplicaciones para Visitantes</h2>
+                        <h2 class="en-lang">Visitor Applications</h2>
+                        <p class="es-lang">Espacios ideales para la silla ECOVISTA</p>
+                        <p class="en-lang">Ideal spaces for ECOVISTA chair</p>
+                    </div>
+                    
+                    <div class="accesorios-grid">
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-recepcion-eco.png" alt="Recepción con sillas ECOVISTA">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">RECEPCIONES CORPORATIVAS</h3>
+                                <h3 class="en-lang">CORPORATE RECEPTIONS</h3>
+                                <p class="es-lang">Perfecta para áreas de recepción donde se reciben visitantes y clientes. Diseño profesional que transmite seriedad e interés por el confort de quienes visitan la empresa.</p>
+                                <p class="en-lang">Perfect for reception areas receiving visitors and clients. Professional design transmitting seriousness and interest in comfort of those visiting the company.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-espera-eco.png" alt="Sala de espera con sillas ECOVISTA">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">SALAS DE ESPERA</h3>
+                                <h3 class="en-lang">WAITING ROOMS</h3>
+                                <p class="es-lang">Ideal para consultorios médicos, oficinas gubernamentales y espacios de espera. Confort adecuado para estancias cortas a medianas con diseño atemporal.</p>
+                                <p class="en-lang">Ideal for medical offices, government offices and waiting spaces. Adequate comfort for short to medium stays with timeless design.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-comun-eco.png" alt="Área común con sillas ECOVISTA">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">ÁREAS COMUNES</h3>
+                                <h3 class="en-lang">COMMON AREAS</h3>
+                                <p class="es-lang">Excelente para lounges corporativos, áreas de descanso y espacios compartidos. Resistencia adecuada para uso público ocasional con mantenimiento mínimo.</p>
+                                <p class="en-lang">Excellent for corporate lounges, rest areas and shared spaces. Adequate resistance for occasional public use with minimal maintenance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA PROFESIONAL MEJORADO -->
+            <section class="cta-profesional-industrial">
+                <div class="container">
+                    <div class="cta-profesional-content">
+                        <div class="cta-profesional-text">
+                            <div class="cta-badge">
+                                <i class="fas fa-seedling"></i>
+                                <span class="es-lang">VISITANTE ECOLÓGICO</span>
+                                <span class="en-lang">ECOLOGICAL VISITOR</span>
+                            </div>
+                            
+                            <h2 class="cta-titulo">
+                                <span class="es-lang">¿Buscas mobiliario ecológico para tus áreas de visitantes?</span>
+                                <span class="en-lang">Looking for ecological furniture for your visitor areas?</span>
+                            </h2>
+                            
+                            <p class="cta-descripcion es-lang">
+                                Nuestros <strong>especialistas en mobiliario ecológico</strong> te asesorarán en la selección de colores y cantidad de sillas ECOVISTA para tus espacios de visitantes. Ofrecemos personalización de tapizados, estructura durable y compromiso con la sostenibilidad ambiental.
+                            </p>
+                            <p class="cta-descripcion en-lang">
+                                Our <strong>ecological furniture specialists</strong> will advise you on selecting colors and quantity of ECOVISTA chairs for your visitor spaces. We offer upholstery customization, durable structure and commitment to environmental sustainability.
+                            </p>
+                            
+                            <div class="cta-beneficios">
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Estructura acero tubular reciclable</span>
+                                    <span class="en-lang">Recyclable tubular steel structure</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Espuma alta densidad 22/24 kgs/m³</span>
+                                    <span class="en-lang">High density foam 22/24 kgs/m³</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Personalización Cancún/Zenzé</span>
+                                    <span class="en-lang">Cancún/Zenzé customization</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-profesional-actions">
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <h3 class="es-lang">Personalización Ecológica</h3>
+                                <h3 class="en-lang">Ecological Customization</h3>
+                                <p class="es-lang">Elige colores de las colecciones Cancún o Zenzé para tus sillas ECOVISTA</p>
+                                <p class="en-lang">Choose colors from Cancún or Zenzé collections for your ECOVISTA chairs</p>
+                                <a href="../contactanos.html?tipo=personalizacion-eco" class="btn btn-primary btn-large">
+                                    <i class="fas fa-swatchbook"></i>
+                                    <span class="es-lang">Personalizar Sillas</span>
+                                    <span class="en-lang">Customize Chairs</span>
+                                </a>
+                            </div>
+                            
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                                <h3 class="es-lang">Cotización Ecológica</h3>
+                                <h3 class="en-lang">Ecological Quote</h3>
+                                <p class="es-lang">Solicita una cotización para equipar tus áreas de visitantes con ECOVISTA</p>
+                                <p class="en-lang">Request a quote to equip your visitor areas with ECOVISTA</p>
+                                <a href="../contactanos.html?tipo=cotizacion-ecologica" class="btn btn-secondary btn-large">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                    <span class="es-lang">Cotización Ecológica</span>
+                                    <span class="en-lang">Ecological Quote</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
+                        <li><a href="../Blog.html" class="es-lang">Blog</a><a href="Blog.html" class="en-lang">Chair Law Blog</a></li>
+                        <li><a href="../Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="../catalogo.html" class="es-lang">Catálogo</a><a href="../catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="../contactanos.html" class="es-lang">Contáctanos</a><a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </div> <!-- END WRAPPER -->
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <!-- Botón flotante del chatbot -->
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <!-- Ventana del Chatbot -->
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Mensajes aparecerán aquí -->
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                    <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                    <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                    <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/accessibility.js"></script>
+    <script src="../js/chatbot.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/detalle-producto.js"></script>
+</body>
+</html>

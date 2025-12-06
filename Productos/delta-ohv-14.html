@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>DELTA-OHV-14 - Ley Silla</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/detalle-producto.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="detalle-producto-page">
+
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920wn.png" alt="Ley Silla Logo" class="logo-light">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920w.png" alt="Ley Silla Logo" class="logo-dark">
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="es-lang">Inicio</a>
+                        <a href="../index.html" class="en-lang">Home</a></li>
+                    <li><a href="../Blog.html" class="es-lang">Blog</a>
+                        <a href="../Blog.html" class="en-lang">Blog</a></li>
+                    <li><a href="../Nosotros.html" class="es-lang">Nosotros</a>
+                        <a href="../Nosotros.html" class="en-lang">us</a></li>
+                    <li><a href="../catalogo.html" class="active es-lang">Catálogo</a>
+                        <a href="../catalogo.html" class="active en-lang">Catalog</a></li>
+                    <li><a href="../contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="../index.html">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../catalogo.html" class="active">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Blog.html">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../Nosotros.html">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#empresas-obligadas">
+                                <i class="fas fa-building"></i>
+                                <span class="es-lang">Empresas Obligadas</span>
+                                <span class="en-lang">Required Companies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#beneficios">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="es-lang">Beneficios</span>
+                                <span class="en-lang">Benefits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#multas">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="es-lang">Multas y Sanciones</span>
+                                <span class="en-lang">Fines and Penalties</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- Breadcrumb Mejorado -->
+            <nav class="breadcrumb-industrial">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <a href="../index.html" class="breadcrumb-link">
+                            <i class="fas fa-home"></i>
+                            <span class="es-lang">Inicio</span>
+                            <span class="en-lang">Home</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html" class="breadcrumb-link">
+                            <span class="es-lang">Catálogo</span>
+                            <span class="en-lang">Catalog</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html?categoria=interior" class="breadcrumb-link">
+                            <span class="es-lang">VISITANTE INTERIOR</span>
+                            <span class="en-lang">INDOOR VISITOR</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <span class="breadcrumb-current">DELTA-OHV-14</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero del Producto Simplificado -->
+            <section class="producto-hero-industrial">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="producto-info">
+                            <div class="producto-header">
+                                <div class="producto-badge industrial-badge">
+                                    <i class="fas fa-gem"></i>
+                                    <span class="es-lang">ELEGANCIA CROMADA</span>
+                                    <span class="en-lang">CHROMED ELEGANCE</span>
+                                </div>
+                            </div>
+                            
+                            <h1 class="producto-titulo">DELTA-OHV-14</h1>
+                            
+                            <p class="producto-descripcion es-lang">
+                                Silla para visitante interior con estructura en acero sólido "cold rolled" y acabado en cromo brillante. Asiento y respaldo en dos piezas de polipropileno de alta resistencia, disponible en 5 colores vibrantes para adaptarse a cualquier diseño interior.
+                            </p>
+                            <p class="producto-descripcion en-lang">
+                                Indoor visitor chair with solid "cold rolled" steel structure and bright chrome finish. Seat and backrest in two pieces of high-resistance polypropylene, available in 5 vibrant colors to adapt to any interior design.
+                            </p>
+                            
+                            <div class="producto-actions">
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span class="es-lang">Solicitar Información</span>
+                                    <span class="en-lang">Request Information</span>
+                                </a>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span class="es-lang">Ficha Técnica PDF</span>
+                                    <span class="en-lang">Technical Sheet PDF</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="producto-visual">
+                            <div class="imagen-principal-container">
+                                <img src="../Imagenes/producto41-1.png" 
+                                     alt="DELTA-OHV-14 - Silla con estructura cromada" 
+                                     class="imagen-principal"
+                                     id="productoImagen">
+                                <div class="imagen-overlay-industrial"></div>
+                            </div>
+                            
+                            <div class="miniaturas-galeria">
+                                <div class="miniatura active" data-image="../Imagenes/producto41-1.png">
+                                    <img src="../Imagenes/producto41-1.png" alt="DELTA-OHV-14 Color Negro">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto41-2.png">
+                                    <img src="../Imagenes/producto41-2.png" alt="DELTA-OHV-14 Color Gris">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto41-3.png">
+                                    <img src="../Imagenes/producto41-3.png" alt="DELTA-OHV-14 Color Blanco">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto41-4.png">
+                                    <img src="../Imagenes/producto41-4.png" alt="DELTA-OHV-14 Color Azul">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto41-5.png">
+                                    <img src="../Imagenes/producto41-5.png" alt="DELTA-OHV-14 Color Amarillo">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto41-6.png">
+                                    <img src="../Imagenes/producto41-6.png" alt="DELTA-OHV-14 en recepción">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Especificaciones Técnicas Simplificadas -->
+            <section id="especificaciones" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-list-alt"></i>
+                        </div>
+                        <h2 class="es-lang">Especificaciones Técnicas</h2>
+                        <h2 class="en-lang">Technical Specifications</h2>
+                        <p class="es-lang">Detalles completos del modelo DELTA-OHV-14</p>
+                        <p class="en-lang">Complete details of the DELTA-OHV-14 model</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cube"></i>
+                                        <span class="es-lang">Descripción General</span>
+                                        <span class="en-lang">General Description</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Silla para visitante interior que combina la elegancia del cromo con la durabilidad del polipropileno. Estructura metálica sólida y acabado brillante que aporta un toque de sofisticación a cualquier espacio interior profesional.</p>
+                                            <p class="en-lang">Indoor visitor chair combining chrome elegance with polypropylene durability. Solid metallic structure and bright finish adding a touch of sophistication to any professional interior space.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-industry"></i>
+                                        <span class="es-lang">Estructura de Acero Sólido</span>
+                                        <span class="en-lang">Solid Steel Structure</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-drafting-compass"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Estructura fabricada en acero sólido "cold rolled" de 1/2" de diámetro. Proceso de fabricación que garantiza máxima resistencia y estabilidad, con terminado en cromo brillante de alta calidad.</p>
+                                            <p class="en-lang">Structure manufactured in solid "cold rolled" steel of 1/2" diameter. Manufacturing process guaranteeing maximum resistance and stability, with high-quality bright chrome finish.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-gem"></i>
+                                        <span class="es-lang">Acabado en Cromo Brillante</span>
+                                        <span class="en-lang">Bright Chrome Finish</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-sparkles"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Terminado en cromo de alta reflectividad que proporciona apariencia premium y elegante. Acabado resistente a la corrosión y oxidación, manteniendo su brillo original por años con mínimo mantenimiento.</p>
+                                            <p class="en-lang">High reflectivity chrome finish providing premium and elegant appearance. Corrosion and oxidation resistant finish, maintaining its original shine for years with minimal maintenance.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-couch"></i>
+                                        <span class="es-lang">Asiento y Respaldo en Polipropileno</span>
+                                        <span class="en-lang">Polypropylene Seat and Backrest</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-shapes"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Fabricados en dos piezas independientes de polipropileno de alta resistencia y duración. Material ligero pero extremadamente durable, con diseño ergonómico que proporciona confort durante periodos prolongados.</p>
+                                            <p class="en-lang">Manufactured in two independent pieces of high-resistance and durable polypropylene. Light but extremely durable material, with ergonomic design providing comfort during extended periods.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-palette"></i>
+                                        <span class="es-lang">Colores Disponibles</span>
+                                        <span class="en-lang">Available Colors</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-fill-drip"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">5 colores vibrantes para el asiento y respaldo: Negro, gris, blanco, azul y amarillo. Combinación perfecta con la estructura cromada para crear contrastes estéticos impactantes.</p>
+                                            <p class="en-lang">5 vibrant colors for seat and backrest: Black, gray, white, blue and yellow. Perfect combination with chrome structure to create impactful aesthetic contrasts.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-weight-hanging"></i>
+                                        <span class="es-lang">Capacidad de Carga</span>
+                                        <span class="en-lang">Load Capacity</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-dumbbell"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Peso máximo de resistencia: 120 kgs. Estructura de acero sólido y diseño robusto que garantiza seguridad y estabilidad incluso bajo uso intensivo en entornos comerciales.</p>
+                                            <p class="en-lang">Maximum weight resistance: 120 kgs. Solid steel structure and robust design guaranteeing safety and stability even under intensive use in commercial environments.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-recycle"></i>
+                                        <span class="es-lang">Durabilidad y Mantenimiento</span>
+                                        <span class="en-lang">Durability and Maintenance</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Polipropileno de alta resistencia que no se decolora, agrieta o deforma con el tiempo. Estructura cromada que solo requiere limpieza con paño suave para mantener su brillo original.</p>
+                                            <p class="en-lang">High-resistance polypropylene that does not discolor, crack or deform over time. Chrome structure only requiring cleaning with soft cloth to maintain its original shine.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-chair"></i>
+                                        <span class="es-lang">Diseño Modular</span>
+                                        <span class="en-lang">Modular Design</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-puzzle-piece"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Asiento y respaldo en dos piezas separadas que facilitan reparaciones individuales si fuera necesario. Sistema de montaje sencillo que reduce costos de mantenimiento y aumenta vida útil.</p>
+                                            <p class="en-lang">Seat and backrest in two separate pieces facilitating individual repairs if necessary. Simple mounting system reducing maintenance costs and increasing lifespan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Galería de Imágenes -->
+            <section id="galeria" class="galeria-industrial">
+                <div class="container">
+                    <div class="galeria-header">
+                        <div class="header-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <h2 class="es-lang">Galería del Producto</h2>
+                        <h2 class="en-lang">Product Gallery</h2>
+                        <p class="es-lang">Explora los colores disponibles del DELTA-OHV-14</p>
+                        <p class="en-lang">Explore available colors of DELTA-OHV-14</p>
+                    </div>
+                    
+                    <div class="galeria-grid">
+                        <div class="galeria-item active" data-image="../Imagenes/producto41-1.png">
+                            <img src="../Imagenes/producto41-1.png" alt="DELTA-OHV-14 Color Negro cromado">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Negro/Cromo</span>
+                                <span class="en-lang">Black/Chrome</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto41-2.png">
+                            <img src="../Imagenes/producto41-2.png" alt="DELTA-OHV-14 Color Gris cromado">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Gris/Cromo</span>
+                                <span class="en-lang">Gray/Chrome</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto41-3.png">
+                            <img src="../Imagenes/producto41-3.png" alt="DELTA-OHV-14 Color Blanco cromado">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Blanco/Cromo</span>
+                                <span class="en-lang">White/Chrome</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto41-4.png">
+                            <img src="../Imagenes/producto41-4.png" alt="DELTA-OHV-14 Color Azul cromado">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Azul/Cromo</span>
+                                <span class="en-lang">Blue/Chrome</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto41-5.png">
+                            <img src="../Imagenes/producto41-5.png" alt="DELTA-OHV-14 Color Amarillo cromado">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Amarillo/Cromo</span>
+                                <span class="en-lang">Yellow/Chrome</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto41-6.png">
+                            <img src="../Imagenes/producto41-6.png" alt="DELTA-OHV-14 en recepción elegante">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">En Recepción</span>
+                                <span class="en-lang">In Reception</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto41-7.png">
+                            <img src="../Imagenes/producto41-7.png" alt="DELTA-OHV-14 conjunto moderno">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Conjunto Moderno</span>
+                                <span class="en-lang">Modern Set</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto41-8.png">
+                            <img src="../Imagenes/producto41-8.png" alt="DELTA-OHV-14 detalle estructura cromada">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Detalle Cromo</span>
+                                <span class="en-lang">Chrome Detail</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tecnología Cold Rolled y Cromado -->
+            <section id="tecnologia" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <h2 class="es-lang">Tecnología Cold Rolled y Cromado</h2>
+                        <h2 class="en-lang">Cold Rolled and Chrome Technology</h2>
+                        <p class="es-lang">Excelencia en materiales y acabados</p>
+                        <p class="en-lang">Excellence in materials and finishes</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-temperature-low"></i>
+                                        <span class="es-lang">Acero Cold Rolled</span>
+                                        <span class="en-lang">Cold Rolled Steel</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-hard-hat"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Proceso de fabricación a temperatura ambiente que aumenta la resistencia y dureza del acero. Resultado: estructura más robusta, mayor precisión dimensional y superficie más lisa para el acabado en cromo.</p>
+                                            <p class="en-lang">Room temperature manufacturing process increasing steel resistance and hardness. Result: more robust structure, greater dimensional precision and smoother surface for chrome finish.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-gem"></i>
+                                        <span class="es-lang">Cromado de Alta Calidad</span>
+                                        <span class="en-lang">High Quality Chrome Plating</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-sparkles"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Proceso electroquímico que deposita una capa uniforme de cromo sobre el acero. Proporciona resistencia superior a la corrosión, fácil mantenimiento y apariencia de lujo que perdura por años.</p>
+                                            <p class="en-lang">Electrochemical process depositing uniform chrome layer over steel. Provides superior corrosion resistance, easy maintenance and luxury appearance lasting for years.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span class="es-lang">Doble Protección</span>
+                                        <span class="en-lang">Double Protection</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-layer-group"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Combinación única de acero cold rolled (resistencia estructural) + cromado (protección superficial). Resultado: silla que mantiene su integridad y apariencia a pesar del uso intensivo y el paso del tiempo.</p>
+                                            <p class="en-lang">Unique combination of cold rolled steel (structural resistance) + chrome plating (surface protection). Result: chair maintaining its integrity and appearance despite intensive use and passage of time.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-bolt"></i>
+                                        <span class="es-lang">Resistencia a Impactos</span>
+                                        <span class="en-lang">Impact Resistance</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-hammer"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">El polipropileno de alta densidad absorbe impactos sin deformarse permanentemente. Ideal para entornos de alto tráfico donde las sillas pueden sufrir golpes accidentales durante su uso diario.</p>
+                                            <p class="en-lang">High density polypropylene absorbs impacts without permanent deformation. Ideal for high-traffic environments where chairs may suffer accidental bumps during daily use.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aplicaciones de Lujo -->
+            <section id="aplicaciones" class="accesorios-section">
+                <div class="container">
+                    <div class="accesorios-header">
+                        <div class="header-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h2 class="es-lang">Aplicaciones de Lujo</h2>
+                        <h2 class="en-lang">Luxury Applications</h2>
+                        <p class="es-lang">Espacios ideales para el DELTA-OHV-14</p>
+                        <p class="en-lang">Ideal spaces for DELTA-OHV-14</p>
+                    </div>
+                    
+                    <div class="accesorios-grid">
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-hotel-lujo.png" alt="Hotel de lujo con sillas DELTA">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">HOTELES Y RESORTS</h3>
+                                <h3 class="en-lang">HOTELS AND RESORTS</h3>
+                                <p class="es-lang">Perfecta para lobbies, recepciones y áreas comunes de hoteles de categoría. El acabado cromado aporta elegancia contemporánea que complementa diseños interiores sofisticados.</p>
+                                <p class="en-lang">Perfect for lobbies, receptions and common areas of category hotels. Chrome finish adds contemporary elegance complementing sophisticated interior designs.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-oficina-premium.png" alt="Oficina premium con sillas DELTA">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">OFICINAS CORPORATIVAS</h3>
+                                <h3 class="en-lang">CORPORATE OFFICES</h3>
+                                <p class="es-lang">Ideal para salas de espera ejecutivas y recepciones corporativas. Transmite profesionalismo y atención al detalle desde el primer contacto con clientes y visitantes.</p>
+                                <p class="en-lang">Ideal for executive waiting rooms and corporate receptions. Transmits professionalism and attention to detail from first contact with clients and visitors.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-restaurante-moderno.png" alt="Restaurante moderno con sillas DELTA">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">RESTAURANTES Y CAFETERÍAS</h3>
+                                <h3 class="en-lang">RESTAURANTS AND CAFETERIAS</h3>
+                                <p class="es-lang">Excelente para establecimientos gastronómicos de diseño contemporáneo. La combinación cromo/color crea ambientes dinámicos y visualmente atractivos para comensales.</p>
+                                <p class="en-lang">Excellent for gastronomic establishments with contemporary design. Chrome/color combination creates dynamic and visually attractive environments for diners.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA PROFESIONAL MEJORADO -->
+            <section class="cta-profesional-industrial">
+                <div class="container">
+                    <div class="cta-profesional-content">
+                        <div class="cta-profesional-text">
+                            <div class="cta-badge">
+                                <i class="fas fa-crown"></i>
+                                <span class="es-lang">ELEGANCIA CROMADA</span>
+                                <span class="en-lang">CHROMED ELEGANCE</span>
+                            </div>
+                            
+                            <h2 class="cta-titulo">
+                                <span class="es-lang">¿Buscas mobiliario que combine durabilidad con elegancia contemporánea?</span>
+                                <span class="en-lang">Looking for furniture combining durability with contemporary elegance?</span>
+                            </h2>
+                            
+                            <p class="cta-descripcion es-lang">
+                                Nuestros <strong>expertos en diseño interior</strong> te asesorarán en la selección del color perfecto y la disposición de sillas DELTA-OHV-14 para tu espacio. Ofrecemos combinaciones personalizadas, estructura cromada de lujo y 5 opciones de color para crear ambientes únicos.
+                            </p>
+                            <p class="cta-descripcion en-lang">
+                                Our <strong>interior design experts</strong> will advise you on selecting perfect color and arrangement of DELTA-OHV-14 chairs for your space. We offer personalized combinations, luxury chrome structure and 5 color options to create unique environments.
+                            </p>
+                            
+                            <div class="cta-beneficios">
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Estructura acero cold rolled cromado</span>
+                                    <span class="en-lang">Cold rolled steel chrome structure</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">5 colores vibrantes disponibles</span>
+                                    <span class="en-lang">5 vibrant colors available</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Resistencia 120 kgs garantizada</span>
+                                    <span class="en-lang">120 kgs resistance guaranteed</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-profesional-actions">
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <h3 class="es-lang">Selección de Color</h3>
+                                <h3 class="en-lang">Color Selection</h3>
+                                <p class="es-lang">Elige entre 5 colores vibrantes para combinar con estructura cromada</p>
+                                <p class="en-lang">Choose among 5 vibrant colors to combine with chrome structure</p>
+                                <a href="../contactanos.html?tipo=colores-delta" class="btn btn-primary btn-large">
+                                    <i class="fas fa-swatchbook"></i>
+                                    <span class="es-lang">Ver Combinaciones</span>
+                                    <span class="en-lang">View Combinations</span>
+                                </a>
+                            </div>
+                            
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                                <h3 class="es-lang">Cotización de Lujo</h3>
+                                <h3 class="en-lang">Luxury Quote</h3>
+                                <p class="es-lang">Solicita una cotización para equipar tu espacio con sillas DELTA cromadas</p>
+                                <p class="en-lang">Request a quote to equip your space with chrome DELTA chairs</p>
+                                <a href="../contactanos.html?tipo=cotizacion-lujo" class="btn btn-secondary btn-large">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                    <span class="es-lang">Cotización Lujo</span>
+                                    <span class="en-lang">Luxury Quote</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
+                        <li><a href="../Blog.html" class="es-lang">Blog</a><a href="Blog.html" class="en-lang">Chair Law Blog</a></li>
+                        <li><a href="../Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="../catalogo.html" class="es-lang">Catálogo</a><a href="../catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="../contactanos.html" class="es-lang">Contáctanos</a><a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </div> <!-- END WRAPPER -->
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <!-- Botón flotante del chatbot -->
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <!-- Ventana del Chatbot -->
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Mensajes aparecerán aquí -->
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                    <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                    <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                    <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/accessibility.js"></script>
+    <script src="../js/chatbot.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/detalle-producto.js"></script>
+</body>
+</html>

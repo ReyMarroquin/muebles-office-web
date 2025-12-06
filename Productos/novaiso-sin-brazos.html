@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>NOVAISO-SIN-BRAZOS - Ley Silla</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/detalle-producto.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="detalle-producto-page">
+
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920wn.png" alt="Ley Silla Logo" class="logo-light">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920w.png" alt="Ley Silla Logo" class="logo-dark">
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="es-lang">Inicio</a>
+                        <a href="../index.html" class="en-lang">Home</a></li>
+                    <li><a href="../Blog.html" class="es-lang">Blog</a>
+                        <a href="../Blog.html" class="en-lang">Blog</a></li>
+                    <li><a href="../Nosotros.html" class="es-lang">Nosotros</a>
+                        <a href="../Nosotros.html" class="en-lang">us</a></li>
+                    <li><a href="../catalogo.html" class="active es-lang">Catálogo</a>
+                        <a href="../catalogo.html" class="active en-lang">Catalog</a></li>
+                    <li><a href="../contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="../index.html">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../catalogo.html" class="active">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Blog.html">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../Nosotros.html">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#empresas-obligadas">
+                                <i class="fas fa-building"></i>
+                                <span class="es-lang">Empresas Obligadas</span>
+                                <span class="en-lang">Required Companies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#beneficios">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="es-lang">Beneficios</span>
+                                <span class="en-lang">Benefits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#multas">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="es-lang">Multas y Sanciones</span>
+                                <span class="en-lang">Fines and Penalties</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- Breadcrumb Mejorado -->
+            <nav class="breadcrumb-industrial">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <a href="../index.html" class="breadcrumb-link">
+                            <i class="fas fa-home"></i>
+                            <span class="es-lang">Inicio</span>
+                            <span class="en-lang">Home</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html" class="breadcrumb-link">
+                            <span class="es-lang">Catálogo</span>
+                            <span class="en-lang">Catalog</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html?categoria=interior" class="breadcrumb-link">
+                            <span class="es-lang">VISITANTE INTERIOR</span>
+                            <span class="en-lang">INDOOR VISITOR</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <span class="breadcrumb-current">NOVAISO-SIN-BRAZOS</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero del Producto Simplificado -->
+            <section class="producto-hero-industrial">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="producto-info">
+                            <div class="producto-header">
+                                <div class="producto-badge industrial-badge">
+                                    <i class="fas fa-compress-alt"></i>
+                                    <span class="es-lang">COMPACTA SIN BRAZOS</span>
+                                    <span class="en-lang">COMPACT ARMLESS</span>
+                                </div>
+                            </div>
+                            
+                            <h1 class="producto-titulo">NOVAISO-SIN-BRAZOS</h1>
+                            
+                            <p class="producto-descripcion es-lang">
+                                Silla para visitante interior sin brazos con estructura tubular ovalada de alta resistencia. Diseño compacto y moderno en polipropileno de alta duración, ideal para espacios reducidos donde se prioriza la máxima capacidad y fácil circulación.
+                            </p>
+                            <p class="producto-descripcion en-lang">
+                                Armless indoor visitor chair with oval tubular structure of high resistance. Compact and modern design in high-durability polypropylene, ideal for reduced spaces prioritizing maximum capacity and easy circulation.
+                            </p>
+                            
+                            <div class="producto-actions">
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span class="es-lang">Solicitar Información</span>
+                                    <span class="en-lang">Request Information</span>
+                                </a>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span class="es-lang">Ficha Técnica PDF</span>
+                                    <span class="en-lang">Technical Sheet PDF</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="producto-visual">
+                            <div class="imagen-principal-container">
+                                <img src="../Imagenes/producto40-1.png" 
+                                     alt="NOVAISO-SIN-BRAZOS - Silla compacta sin brazos" 
+                                     class="imagen-principal"
+                                     id="productoImagen">
+                                <div class="imagen-overlay-industrial"></div>
+                            </div>
+                            
+                            <div class="miniaturas-galeria">
+                                <div class="miniatura active" data-image="../Imagenes/producto40-1.png">
+                                    <img src="../Imagenes/producto40-1.png" alt="NOVAISO-SIN-BRAZOS Color Negro">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto40-2.png">
+                                    <img src="../Imagenes/producto40-2.png" alt="NOVAISO-SIN-BRAZOS Color Azul">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto40-3.png">
+                                    <img src="../Imagenes/producto40-3.png" alt="NOVAISO-SIN-BRAZOS Vista lateral">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto40-4.png">
+                                    <img src="../Imagenes/producto40-4.png" alt="NOVAISO-SIN-BRAZOS Estructura ovalada">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto40-5.png">
+                                    <img src="../Imagenes/producto40-5.png" alt="NOVAISO-SIN-BRAZOS Detalle diseño">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto40-6.png">
+                                    <img src="../Imagenes/producto40-6.png" alt="NOVAISO-SIN-BRAZOS en sala compacta">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Especificaciones Técnicas Simplificadas -->
+            <section id="especificaciones" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-list-alt"></i>
+                        </div>
+                        <h2 class="es-lang">Especificaciones Técnicas</h2>
+                        <h2 class="en-lang">Technical Specifications</h2>
+                        <p class="es-lang">Detalles completos del modelo NOVAISO-SIN-BRAZOS</p>
+                        <p class="en-lang">Complete details of the NOVAISO-SIN-BRAZOS model</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cube"></i>
+                                        <span class="es-lang">Descripción General</span>
+                                        <span class="en-lang">General Description</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Silla para visitante interior sin brazos con diseño moderno y compacto. Perfecta para espacios donde se requiere maximizar la capacidad de asientos sin comprometer la circulación o el acceso a mesas y superficies de trabajo.</p>
+                                            <p class="en-lang">Armless indoor visitor chair with modern and compact design. Perfect for spaces requiring maximizing seating capacity without compromising circulation or access to tables and work surfaces.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-industry"></i>
+                                        <span class="es-lang">Estructura Tubular Ovalada</span>
+                                        <span class="en-lang">Oval Tubular Structure</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-drafting-compass"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Estructura fabricada en acero tubular ovalado de 1 1/8" X 19/32", calibre 18. Diseño ovalado que proporciona mayor resistencia torsional y estabilidad sin necesidad de brazos laterales, optimizando el espacio.</p>
+                                            <p class="en-lang">Structure manufactured in oval tubular steel of 1 1/8" X 19/32", gauge 18. Oval design providing greater torsional resistance and stability without need for side arms, optimizing space.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-spray-can"></i>
+                                        <span class="es-lang">Acabado Epóxico Electrostático</span>
+                                        <span class="en-lang">Electrostatic Epoxy Finish</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-atom"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Pintura epóxica aplicada mediante proceso electrostático color negro. Acabado de alta resistencia a impactos, rayones y desgaste por uso continuo, manteniendo su apariencia profesional por más tiempo.</p>
+                                            <p class="en-lang">Epoxy paint applied through electrostatic process in black color. High-resistance finish to impacts, scratches and continuous use wear, maintaining its professional appearance longer.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-couch"></i>
+                                        <span class="es-lang">Asiento y Respaldo en Polipropileno</span>
+                                        <span class="en-lang">Polypropylene Seat and Backrest</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-shapes"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Fabricados en dos piezas independientes de polipropileno de alta resistencia y duración. Material ligero pero extremadamente durable, con diseño ergonómico que proporciona confort durante periodos de espera.</p>
+                                            <p class="en-lang">Manufactured in two independent pieces of high-resistance and durable polypropylene. Light but extremely durable material, with ergonomic design providing comfort during waiting periods.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-palette"></i>
+                                        <span class="es-lang">Colores Disponibles</span>
+                                        <span class="en-lang">Available Colors</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-fill-drip"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">2 colores prácticos para el asiento y respaldo: Negro o azul. Combinación perfecta con la estructura negra epóxica para crear ambientes profesionales y modernos.</p>
+                                            <p class="en-lang">2 practical colors for seat and backrest: Black or blue. Perfect combination with black epoxy structure to create professional and modern environments.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-weight-hanging"></i>
+                                        <span class="es-lang">Capacidad de Carga</span>
+                                        <span class="en-lang">Load Capacity</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-dumbbell"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Peso máximo de resistencia: 120 kgs. Estructura tubular ovalada y diseño robusto que garantiza seguridad y estabilidad para uso comercial ligero en diversos entornos interiores.</p>
+                                            <p class="en-lang">Maximum weight resistance: 120 kgs. Oval tubular structure and robust design guaranteeing safety and stability for light commercial use in various indoor environments.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-compress-alt"></i>
+                                        <span class="es-lang">Ventajas del Diseño Sin Brazos</span>
+                                        <span class="en-lang">Armless Design Advantages</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-arrows-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Permite mayor densidad de sillas en espacios reducidos, facilita el acceso a mesas y mejora la circulación lateral. Ideal para salas de espera compactas, áreas de capacitación y espacios multifuncionales.</p>
+                                            <p class="en-lang">Allows greater chair density in reduced spaces, facilitates access to tables and improves lateral circulation. Ideal for compact waiting rooms, training areas and multifunctional spaces.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-recycle"></i>
+                                        <span class="es-lang">Durabilidad y Mantenimiento</span>
+                                        <span class="en-lang">Durability and Maintenance</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Polipropileno de alta resistencia que no se decolora, agrieta o deforma con el tiempo. Estructura epóxica que solo requiere limpieza con paño húmedo para mantener su apariencia impecable.</p>
+                                            <p class="en-lang">High-resistance polypropylene that does not discolor, crack or deform over time. Epoxy structure only requiring cleaning with damp cloth to maintain its impeccable appearance.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Galería de Imágenes -->
+            <section id="galeria" class="galeria-industrial">
+                <div class="container">
+                    <div class="galeria-header">
+                        <div class="header-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <h2 class="es-lang">Galería del Producto</h2>
+                        <h2 class="en-lang">Product Gallery</h2>
+                        <p class="es-lang">Explora la versatilidad del NOVAISO-SIN-BRAZOS</p>
+                        <p class="en-lang">Explore the versatility of NOVAISO-SIN-BRAZOS</p>
+                    </div>
+                    
+                    <div class="galeria-grid">
+                        <div class="galeria-item active" data-image="../Imagenes/producto40-1.png">
+                            <img src="../Imagenes/producto40-1.png" alt="NOVAISO-SIN-BRAZOS Color Negro frontal">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Negro</span>
+                                <span class="en-lang">Black</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto40-2.png">
+                            <img src="../Imagenes/producto40-2.png" alt="NOVAISO-SIN-BRAZOS Color Azul">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Azul</span>
+                                <span class="en-lang">Blue</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto40-3.png">
+                            <img src="../Imagenes/producto40-3.png" alt="NOVAISO-SIN-BRAZOS Vista lateral compacta">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Perfil Delgado</span>
+                                <span class="en-lang">Thin Profile</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto40-4.png">
+                            <img src="../Imagenes/producto40-4.png" alt="NOVAISO-SIN-BRAZOS Estructura ovalada detalle">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Estructura Ovalada</span>
+                                <span class="en-lang">Oval Structure</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto40-5.png">
+                            <img src="../Imagenes/producto40-5.png" alt="NOVAISO-SIN-BRAZOS Detalle sin brazos">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Diseño Sin Brazos</span>
+                                <span class="en-lang">Armless Design</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto40-6.png">
+                            <img src="../Imagenes/producto40-6.png" alt="NOVAISO-SIN-BRAZOS en sala compacta">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Espacio Compacto</span>
+                                <span class="en-lang">Compact Space</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto40-7.png">
+                            <img src="../Imagenes/producto40-7.png" alt="NOVAISO-SIN-BRAZOS disposición en fila">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Máxima Densidad</span>
+                                <span class="en-lang">Maximum Density</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto40-8.png">
+                            <img src="../Imagenes/producto40-8.png" alt="NOVAISO-SIN-BRAZOS conjunto moderno">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Conjunto Moderno</span>
+                                <span class="en-lang">Modern Set</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Optimización de Espacios Reducidos -->
+            <section id="optimizacion" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <h2 class="es-lang">Optimización de Espacios Reducidos</h2>
+                        <h2 class="en-lang">Reduced Space Optimization</h2>
+                        <p class="es-lang">Máximo aprovechamiento en mínimo espacio</p>
+                        <p class="en-lang">Maximum utilization in minimum space</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-ruler-combined"></i>
+                                        <span class="es-lang">Dimensiones Compactas</span>
+                                        <span class="en-lang">Compact Dimensions</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-compress-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Diseño especialmente desarrollado para espacios reducidos. Ancho mínimo que permite acomodar más sillas en el mismo metro lineal, maximizando la capacidad de cualquier sala.</p>
+                                            <p class="en-lang">Design specially developed for reduced spaces. Minimum width allowing accommodating more chairs in same linear meter, maximizing capacity of any room.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-chair"></i>
+                                        <span class="es-lang">Máxima Densidad de Asientos</span>
+                                        <span class="en-lang">Maximum Seating Density</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Hasta 25% más sillas en el mismo espacio comparado con modelos con brazos. Ideal para salas de capacitación, auditorios pequeños y áreas de espera con alta demanda.</p>
+                                            <p class="en-lang">Up to 25% more chairs in same space compared to arm models. Ideal for training rooms, small auditoriums and waiting areas with high demand.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-door-open"></i>
+                                        <span class="es-lang">Circulación Mejorada</span>
+                                        <span class="en-lang">Improved Circulation</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-people-arrows"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Ausencia de brazos laterales permite mayor espacio para el paso entre sillas. Facilita la entrada y salida de usuarios sin necesidad de mover sillas contiguas.</p>
+                                            <p class="en-lang">Absence of side arms allows more space for passage between chairs. Facilitates user entry and exit without need to move adjacent chairs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-boxes"></i>
+                                        <span class="es-lang">Almacenamiento Eficiente</span>
+                                        <span class="en-lang">Efficient Storage</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-warehouse"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Diseño apilable que optimiza el espacio de almacenamiento cuando no está en uso. Ideal para espacios multifuncionales que requieren rápida reconfiguración.</p>
+                                            <p class="en-lang">Stackable design optimizing storage space when not in use. Ideal for multifunctional spaces requiring quick reconfiguration.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aplicaciones para Espacios Compactos -->
+            <section id="aplicaciones" class="accesorios-section">
+                <div class="container">
+                    <div class="accesorios-header">
+                        <div class="header-icon">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <h2 class="es-lang">Aplicaciones para Espacios Compactos</h2>
+                        <h2 class="en-lang">Compact Space Applications</h2>
+                        <p class="es-lang">Espacios ideales para la silla NOVAISO-SIN-BRAZOS</p>
+                        <p class="en-lang">Ideal spaces for NOVAISO-SIN-BRAZOS chair</p>
+                    </div>
+                    
+                    <div class="accesorios-grid">
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-espera-compacta.png" alt="Sala de espera compacta con sillas NOVAISO">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">SALAS DE ESPERA COMPACTAS</h3>
+                                <h3 class="en-lang">COMPACT WAITING ROOMS</h3>
+                                <p class="es-lang">Perfecta para consultorios médicos, oficinas pequeñas y espacios de recepción con área limitada. Maximiza el número de asientos sin crear sensación de aglomeración.</p>
+                                <p class="en-lang">Perfect for medical offices, small offices and reception spaces with limited area. Maximizes number of seats without creating crowding sensation.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-capacitacion-compacta.png" alt="Sala de capacitación compacta con sillas NOVAISO">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">SALAS DE CAPACITACIÓN</h3>
+                                <h3 class="en-lang">TRAINING ROOMS</h3>
+                                <p class="es-lang">Ideal para espacios de formación donde se necesita acomodar el máximo número de participantes. Facilita la disposición en filas y trabajo en mesas compartidas.</p>
+                                <p class="en-lang">Ideal for training spaces needing to accommodate maximum number of participants. Facilitates row arrangement and work on shared tables.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-oficina-modular.png" alt="Oficina modular con sillas NOVAISO">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">OFICINAS MODULARES</h3>
+                                <h3 class="en-lang">MODULAR OFFICES</h3>
+                                <p class="es-lang">Excelente para espacios de coworking y oficinas con diseño abierto. Permite rápida reconfiguración según necesidades del día sin sacrificar comodidad básica.</p>
+                                <p class="en-lang">Excellent for coworking spaces and offices with open design. Allows quick reconfiguration according to daily needs without sacrificing basic comfort.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA PROFESIONAL MEJORADO -->
+            <section class="cta-profesional-industrial">
+                <div class="container">
+                    <div class="cta-profesional-content">
+                        <div class="cta-profesional-text">
+                            <div class="cta-badge">
+                                <i class="fas fa-maximize"></i>
+                                <span class="es-lang">MAXIMIZA TU ESPACIO</span>
+                                <span class="en-lang">MAXIMIZE YOUR SPACE</span>
+                            </div>
+                            
+                            <h2 class="cta-titulo">
+                                <span class="es-lang">¿Tienes espacio limitado pero necesitas máxima capacidad de asientos?</span>
+                                <span class="en-lang">Have limited space but need maximum seating capacity?</span>
+                            </h2>
+                            
+                            <p class="cta-descripcion es-lang">
+                                Nuestros <strong>expertos en optimización de espacios</strong> te ayudarán a diseñar la disposición perfecta de sillas NOVAISO-SIN-BRAZOS para tu área. Ofrecemos soluciones que maximizan capacidad hasta en un 25% más que sillas con brazos, sin comprometer comodidad básica.
+                            </p>
+                            <p class="cta-descripcion en-lang">
+                                Our <strong>space optimization experts</strong> will help you design perfect arrangement of NOVAISO-SIN-BRAZOS chairs for your area. We offer solutions maximizing capacity up to 25% more than arm chairs, without compromising basic comfort.
+                            </p>
+                            
+                            <div class="cta-beneficios">
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Hasta 25% más capacidad</span>
+                                    <span class="en-lang">Up to 25% more capacity</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">2 colores prácticos (negro/azul)</span>
+                                    <span class="en-lang">2 practical colors (black/blue)</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Resistencia 120 kgs garantizada</span>
+                                    <span class="en-lang">120 kgs resistance guaranteed</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-profesional-actions">
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-ruler-combined"></i>
+                                </div>
+                                <h3 class="es-lang">Planificación Espacial</h3>
+                                <h3 class="en-lang">Spatial Planning</h3>
+                                <p class="es-lang">Recibe asesoría gratuita para maximizar tu espacio con NOVAISO</p>
+                                <p class="en-lang">Receive free advisory to maximize your space with NOVAISO</p>
+                                <a href="../contactanos.html?tipo=planificacion-espacial" class="btn btn-primary btn-large">
+                                    <i class="fas fa-expand-arrows-alt"></i>
+                                    <span class="es-lang">Planificar Mi Espacio</span>
+                                    <span class="en-lang">Plan My Space</span>
+                                </a>
+                            </div>
+                            
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                                <h3 class="es-lang">Cotización Compacta</h3>
+                                <h3 class="en-lang">Compact Quote</h3>
+                                <p class="es-lang">Solicita una cotización para equipar tu espacio compacto</p>
+                                <p class="en-lang">Request a quote to equip your compact space</p>
+                                <a href="../contactanos.html?tipo=cotizacion-compacta" class="btn btn-secondary btn-large">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                    <span class="es-lang">Cotización Compacta</span>
+                                    <span class="en-lang">Compact Quote</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
+                        <li><a href="../Blog.html" class="es-lang">Blog</a><a href="Blog.html" class="en-lang">Chair Law Blog</a></li>
+                        <li><a href="../Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="../catalogo.html" class="es-lang">Catálogo</a><a href="../catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="../contactanos.html" class="es-lang">Contáctanos</a><a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </div> <!-- END WRAPPER -->
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <!-- Botón flotante del chatbot -->
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <!-- Ventana del Chatbot -->
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Mensajes aparecerán aquí -->
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                    <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                    <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                    <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/accessibility.js"></script>
+    <script src="../js/chatbot.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/detalle-producto.js"></script>
+</body>
+</html>

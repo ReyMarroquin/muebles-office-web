@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>REEF-OHV-62 - Ley Silla</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/detalle-producto.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="detalle-producto-page">
+
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920wn.png" alt="Ley Silla Logo" class="logo-light">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920w.png" alt="Ley Silla Logo" class="logo-dark">
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="es-lang">Inicio</a>
+                        <a href="../index.html" class="en-lang">Home</a></li>
+                    <li><a href="../Blog.html" class="es-lang">Blog</a>
+                        <a href="../Blog.html" class="en-lang">Blog</a></li>
+                    <li><a href="../Nosotros.html" class="es-lang">Nosotros</a>
+                        <a href="../Nosotros.html" class="en-lang">us</a></li>
+                    <li><a href="../catalogo.html" class="active es-lang">Catálogo</a>
+                        <a href="../catalogo.html" class="active en-lang">Catalog</a></li>
+                    <li><a href="../contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="../index.html">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../catalogo.html" class="active">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Blog.html">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../Nosotros.html">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#empresas-obligadas">
+                                <i class="fas fa-building"></i>
+                                <span class="es-lang">Empresas Obligadas</span>
+                                <span class="en-lang">Required Companies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#beneficios">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="es-lang">Beneficios</span>
+                                <span class="en-lang">Benefits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#multas">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="es-lang">Multas y Sanciones</span>
+                                <span class="en-lang">Fines and Penalties</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- Breadcrumb Mejorado -->
+            <nav class="breadcrumb-industrial">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <a href="../index.html" class="breadcrumb-link">
+                            <i class="fas fa-home"></i>
+                            <span class="es-lang">Inicio</span>
+                            <span class="en-lang">Home</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html" class="breadcrumb-link">
+                            <span class="es-lang">Catálogo</span>
+                            <span class="en-lang">Catalog</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html?categoria=exterior" class="breadcrumb-link">
+                            <span class="es-lang">VISITANTE EXTERIOR</span>
+                            <span class="en-lang">OUTDOOR VISITOR</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <span class="breadcrumb-current">REEF-OHV-62</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero del Producto Simplificado -->
+            <section class="producto-hero-industrial">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="producto-info">
+                            <div class="producto-header">
+                                <div class="producto-badge industrial-badge">
+                                    <i class="fas fa-sun"></i>
+                                    <span class="es-lang">RESISTENTE A LA INTEMPERIE</span>
+                                    <span class="en-lang">WEATHER RESISTANT</span>
+                                </div>
+                            </div>
+                            
+                            <h1 class="producto-titulo">REEF-OHV-62</h1>
+                            
+                            <p class="producto-descripcion es-lang">
+                                Silla para visitante exterior fabricada con patas de aluminio tubular natural y asiento/respaldo de polipropileno de alta resistencia. Diseño especializado para uso en exteriores, resistente a rayos UV y ambiente salino.
+                            </p>
+                            <p class="producto-descripcion en-lang">
+                                Outdoor visitor chair manufactured with natural tubular aluminum legs and high-resistance polypropylene seat/backrest. Specialized design for outdoor use, resistant to UV rays and saline environment.
+                            </p>
+                            
+                            <div class="producto-actions">
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span class="es-lang">Solicitar Información</span>
+                                    <span class="en-lang">Request Information</span>
+                                </a>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span class="es-lang">Ficha Técnica PDF</span>
+                                    <span class="en-lang">Technical Sheet PDF</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="producto-visual">
+                            <div class="imagen-principal-container">
+                                <img src="../Imagenes/producto42-1.png" 
+                                     alt="REEF-OHV-62 - Silla para exterior resistente" 
+                                     class="imagen-principal"
+                                     id="productoImagen">
+                                <div class="imagen-overlay-industrial"></div>
+                            </div>
+                            
+                            <div class="miniaturas-galeria">
+                                <div class="miniatura active" data-image="../Imagenes/producto42-1.png">
+                                    <img src="../Imagenes/producto42-1.png" alt="REEF-OHV-62 Vista frontal">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto42-2.png">
+                                    <img src="../Imagenes/producto42-2.png" alt="REEF-OHV-62 Vista lateral">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto42-3.png">
+                                    <img src="../Imagenes/producto42-3.png" alt="REEF-OHV-62 Detalle aluminio natural">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto42-4.png">
+                                    <img src="../Imagenes/producto42-4.png" alt="REEF-OHV-62 Estructura tubular">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto42-5.png">
+                                    <img src="../Imagenes/producto42-5.png" alt="REEF-OHV-62 Color gris">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto42-6.png">
+                                    <img src="../Imagenes/producto42-6.png" alt="REEF-OHV-62 Uso en exteriores">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Especificaciones Técnicas Simplificadas -->
+            <section id="especificaciones" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-list-alt"></i>
+                        </div>
+                        <h2 class="es-lang">Especificaciones Técnicas</h2>
+                        <h2 class="en-lang">Technical Specifications</h2>
+                        <p class="es-lang">Detalles completos del modelo REEF-OHV-62</p>
+                        <p class="en-lang">Complete details of the REEF-OHV-62 model</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cube"></i>
+                                        <span class="es-lang">Descripción General</span>
+                                        <span class="en-lang">General Description</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Silla para visitante exterior diseñada específicamente para resistir condiciones climáticas adversas. Ideal para terrazas, áreas de espera exteriores, patios y espacios abiertos donde se requiere durabilidad y resistencia a la intemperie.</p>
+                                            <p class="en-lang">Outdoor visitor chair specifically designed to resist adverse weather conditions. Ideal for terraces, outdoor waiting areas, patios and open spaces requiring durability and weather resistance.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-industry"></i>
+                                        <span class="es-lang">Patas de Aluminio Tubular</span>
+                                        <span class="en-lang">Tubular Aluminum Legs</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-drafting-compass"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Patas fabricadas en aluminio tubular de 1" de diámetro, calibre 16, con terminado natural. El aluminio es resistente a la corrosión, no se oxida y mantiene su apariencia original incluso en condiciones húmedas.</p>
+                                            <p class="en-lang">Legs manufactured in 1" diameter tubular aluminum, gauge 16, with natural finish. Aluminum is corrosion resistant, does not rust and maintains its original appearance even in humid conditions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-couch"></i>
+                                        <span class="es-lang">Asiento y Respaldo en Polipropileno</span>
+                                        <span class="en-lang">Polypropylene Seat and Backrest</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-shapes"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Fabricado de una sola pieza en polipropileno de alta resistencia y duración para intemperie. Material especialmente formulado para resistir los rayos ultravioleta (UV) y el ambiente salino sin degradarse o decolorarse.</p>
+                                            <p class="en-lang">Manufactured in one piece of high-resistance and durable polypropylene for outdoor use. Material specially formulated to resist ultraviolet rays (UV) and saline environment without degrading or discoloring.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-palette"></i>
+                                        <span class="es-lang">Color Gris</span>
+                                        <span class="en-lang">Gray Color</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-fill-drip"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Color gris que combina perfectamente con cualquier entorno exterior. Tonos neutros que no se decoloran con la exposición solar y mantienen su apariencia profesional durante años.</p>
+                                            <p class="en-lang">Gray color perfectly combining with any outdoor environment. Neutral tones that do not discolor with sun exposure and maintain their professional appearance for years.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-weight-hanging"></i>
+                                        <span class="es-lang">Capacidad de Carga</span>
+                                        <span class="en-lang">Load Capacity</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-dumbbell"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Peso máximo de resistencia: 100 kgs. Diseño robusto que garantiza seguridad y estabilidad para uso comercial ligero en exteriores.</p>
+                                            <p class="en-lang">Maximum weight resistance: 100 kgs. Robust design guaranteeing safety and stability for light commercial outdoor use.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span class="es-lang">Resistencia a la Intemperie</span>
+                                        <span class="en-lang">Weather Resistance</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-sun"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Especialmente diseñada para uso en exteriores. Resistente a rayos UV, lluvia, humedad y ambiente salino. No requiere mantenimiento especial y es fácil de limpiar.</p>
+                                            <p class="en-lang">Specially designed for outdoor use. Resistant to UV rays, rain, humidity and saline environment. Does not require special maintenance and is easy to clean.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-anchor"></i>
+                                        <span class="es-lang">Resistente a Ambiente Salino</span>
+                                        <span class="en-lang">Saline Environment Resistant</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-water"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Ideal para zonas costeras o áreas con alta concentración de sal en el ambiente. Materiales seleccionados específicamente para no corroerse ni degradarse en estas condiciones.</p>
+                                            <p class="en-lang">Ideal for coastal areas or zones with high salt concentration in the environment. Materials specifically selected not to corrode or degrade under these conditions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-recycle"></i>
+                                        <span class="es-lang">Durabilidad y Mantenimiento</span>
+                                        <span class="en-lang">Durability and Maintenance</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Polipropileno de alta resistencia que no se decolora, agrieta o deforma con la exposición prolongada al sol. Aluminio natural que no requiere pintura ni tratamientos anti-corrosión.</p>
+                                            <p class="en-lang">High-resistance polypropylene that does not discolor, crack or deform with prolonged sun exposure. Natural aluminum that does not require paint or anti-corrosion treatments.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Galería de Imágenes -->
+            <section id="galeria" class="galeria-industrial">
+                <div class="container">
+                    <div class="galeria-header">
+                        <div class="header-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <h2 class="es-lang">Galería del Producto</h2>
+                        <h2 class="en-lang">Product Gallery</h2>
+                        <p class="es-lang">Explora la resistencia del REEF-OHV-62 en exteriores</p>
+                        <p class="en-lang">Explore the resistance of REEF-OHV-62 outdoors</p>
+                    </div>
+                    
+                    <div class="galeria-grid">
+                        <div class="galeria-item active" data-image="../Imagenes/producto42-1.png">
+                            <img src="../Imagenes/producto42-1.png" alt="REEF-OHV-62 Vista frontal completa">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Vista Frontal</span>
+                                <span class="en-lang">Front View</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto42-2.png">
+                            <img src="../Imagenes/producto42-2.png" alt="REEF-OHV-62 Vista lateral detalle">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Perfil Lateral</span>
+                                <span class="en-lang">Side Profile</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto42-3.png">
+                            <img src="../Imagenes/producto42-3.png" alt="REEF-OHV-62 Detalle aluminio natural">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Aluminio Natural</span>
+                                <span class="en-lang">Natural Aluminum</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto42-4.png">
+                            <img src="../Imagenes/producto42-4.png" alt="REEF-OHV-62 Estructura tubular detalle">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Estructura Tubular</span>
+                                <span class="en-lang">Tubular Structure</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto42-5.png">
+                            <img src="../Imagenes/producto42-5.png" alt="REEF-OHV-62 Color gris polipropileno">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Color Gris</span>
+                                <span class="en-lang">Gray Color</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto42-6.png">
+                            <img src="../Imagenes/producto42-6.png" alt="REEF-OHV-62 en uso exterior">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Uso Exterior</span>
+                                <span class="en-lang">Outdoor Use</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto42-7.png">
+                            <img src="../Imagenes/producto42-7.png" alt="REEF-OHV-62 conjunto terraza">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Conjunto Terraza</span>
+                                <span class="en-lang">Terrace Set</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto42-8.png">
+                            <img src="../Imagenes/producto42-8.png" alt="REEF-OHV-62 área de espera exterior">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Área de Espera</span>
+                                <span class="en-lang">Waiting Area</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aplicaciones para Exteriores -->
+            <section id="aplicaciones" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <h2 class="es-lang">Aplicaciones para Exteriores</h2>
+                        <h2 class="en-lang">Outdoor Applications</h2>
+                        <p class="es-lang">Espacios ideales para la silla REEF-OHV-62</p>
+                        <p class="en-lang">Ideal spaces for REEF-OHV-62 chair</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-umbrella-beach"></i>
+                                        <span class="es-lang">Terrazas y Patios</span>
+                                        <span class="en-lang">Terraces and Patios</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-home"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Perfecta para áreas al aire libre de restaurantes, hoteles y establecimientos comerciales. Resistente a la exposición solar directa y cambios de temperatura.</p>
+                                            <p class="en-lang">Perfect for outdoor areas of restaurants, hotels and commercial establishments. Resistant to direct sun exposure and temperature changes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-building"></i>
+                                        <span class="es-lang">Áreas de Espera Exteriores</span>
+                                        <span class="en-lang">Outdoor Waiting Areas</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Ideal para clínicas, oficinas gubernamentales y establecimientos que requieren áreas de espera en exteriores. Mantiene su integridad estructural sin importar las condiciones climáticas.</p>
+                                            <p class="en-lang">Ideal for clinics, government offices and establishments requiring outdoor waiting areas. Maintains its structural integrity regardless of weather conditions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-water"></i>
+                                        <span class="es-lang">Zonas Costeras</span>
+                                        <span class="en-lang">Coastal Areas</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-anchor"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Especialmente diseñada para resistir el ambiente salino de playas, puertos y zonas costeras. No se corroe ni degrada con la brisa marina.</p>
+                                            <p class="en-lang">Specially designed to resist saline environment of beaches, ports and coastal areas. Does not corrode or degrade with sea breeze.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-swimming-pool"></i>
+                                        <span class="es-lang">Áreas de Piscina</span>
+                                        <span class="en-lang">Pool Areas</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-tint"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Resistente al cloro, humedad constante y exposición solar intensa. Fácil de limpiar y mantener en áreas con agua.</p>
+                                            <p class="en-lang">Resistant to chlorine, constant humidity and intense sun exposure. Easy to clean and maintain in water areas.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ventajas del Diseño para Exteriores -->
+            <section id="ventajas" class="accesorios-section">
+                <div class="container">
+                    <div class="accesorios-header">
+                        <div class="header-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h2 class="es-lang">Ventajas del Diseño para Exteriores</h2>
+                        <h2 class="en-lang">Outdoor Design Advantages</h2>
+                        <p class="es-lang">Características especiales para uso en exteriores</p>
+                        <p class="en-lang">Special features for outdoor use</p>
+                    </div>
+                    
+                    <div class="accesorios-grid">
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/ventaja-uv.png" alt="Resistencia a rayos UV">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">RESISTENCIA A RAYOS UV</h3>
+                                <h3 class="en-lang">UV RAYS RESISTANCE</h3>
+                                <p class="es-lang">Polipropileno especial que no se decolora ni degrada con la exposición prolongada al sol. Mantiene su color gris original durante años.</p>
+                                <p class="en-lang">Special polypropylene that does not discolor or degrade with prolonged sun exposure. Maintains its original gray color for years.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/ventaja-corrosion.png" alt="Resistencia a la corrosión">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">SIN CORROSIÓN</h3>
+                                <h3 class="en-lang">NO CORROSION</h3>
+                                <p class="es-lang">Aluminio tubular natural que no se oxida ni requiere pintura. Ideal para áreas húmedas o con alta humedad ambiental.</p>
+                                <p class="en-lang">Natural tubular aluminum that does not rust or require paint. Ideal for humid areas or with high environmental humidity.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/ventaja-mantenimiento.png" alt="Bajo mantenimiento">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">BAJO MANTENIMIENTO</h3>
+                                <h3 class="en-lang">LOW MAINTENANCE</h3>
+                                <p class="es-lang">Solo requiere limpieza con agua y jabón suave. No necesita tratamientos especiales, selladores o pintura de retoque.</p>
+                                <p class="en-lang">Only requires cleaning with water and mild soap. Does not need special treatments, sealers or touch-up paint.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA PROFESIONAL MEJORADO -->
+            <section class="cta-profesional-industrial">
+                <div class="container">
+                    <div class="cta-profesional-content">
+                        <div class="cta-profesional-text">
+                            <div class="cta-badge">
+                                <i class="fas fa-sun"></i>
+                                <span class="es-lang">RESISTENCIA EXTERIOR</span>
+                                <span class="en-lang">OUTDOOR RESISTANCE</span>
+                            </div>
+                            
+                            <h2 class="cta-titulo">
+                                <span class="es-lang">¿Necesitas mobiliario resistente para áreas exteriores?</span>
+                                <span class="en-lang">Need resistant furniture for outdoor areas?</span>
+                            </h2>
+                            
+                            <p class="cta-descripcion es-lang">
+                                Nuestros <strong>expertos en mobiliario exterior</strong> te ayudarán a seleccionar la solución perfecta para tu espacio. La REEF-OHV-62 está diseñada específicamente para resistir condiciones climáticas adversas sin comprometer comodidad o durabilidad.
+                            </p>
+                            <p class="cta-descripcion en-lang">
+                                Our <strong>outdoor furniture experts</strong> will help you select perfect solution for your space. REEF-OHV-62 is specifically designed to resist adverse weather conditions without compromising comfort or durability.
+                            </p>
+                            
+                            <div class="cta-beneficios">
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Resistente a rayos UV</span>
+                                    <span class="en-lang">UV resistant</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Apto ambiente salino</span>
+                                    <span class="en-lang">Suitable saline environment</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Resistencia 100 kgs</span>
+                                    <span class="en-lang">100 kgs resistance</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Bajo mantenimiento</span>
+                                    <span class="en-lang">Low maintenance</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-profesional-actions">
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-ruler-combined"></i>
+                                </div>
+                                <h3 class="es-lang">Asesoría Exterior</h3>
+                                <h3 class="en-lang">Outdoor Advisory</h3>
+                                <p class="es-lang">Recibe asesoría gratuita para áreas exteriores</p>
+                                <p class="en-lang">Receive free advisory for outdoor areas</p>
+                                <a href="../contactanos.html?tipo=asesoria-exterior" class="btn btn-primary btn-large">
+                                    <i class="fas fa-sun"></i>
+                                    <span class="es-lang">Asesoría Exterior</span>
+                                    <span class="en-lang">Outdoor Advisory</span>
+                                </a>
+                            </div>
+                            
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                                <h3 class="es-lang">Cotización Exterior</h3>
+                                <h3 class="en-lang">Outdoor Quote</h3>
+                                <p class="es-lang">Solicita una cotización para tu espacio exterior</p>
+                                <p class="en-lang">Request a quote for your outdoor space</p>
+                                <a href="../contactanos.html?tipo=cotizacion-exterior" class="btn btn-secondary btn-large">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                    <span class="es-lang">Cotización Exterior</span>
+                                    <span class="en-lang">Outdoor Quote</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
+                        <li><a href="../Blog.html" class="es-lang">Blog</a><a href="Blog.html" class="en-lang">Chair Law Blog</a></li>
+                        <li><a href="../Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="../catalogo.html" class="es-lang">Catálogo</a><a href="../catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="../contactanos.html" class="es-lang">Contáctanos</a><a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </div> <!-- END WRAPPER -->
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <!-- Botón flotante del chatbot -->
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <!-- Ventana del Chatbot -->
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Mensajes aparecerán aquí -->
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                    <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                    <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                    <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/accessibility.js"></script>
+    <script src="../js/chatbot.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/detalle-producto.js"></script>
+</body>
+</html>

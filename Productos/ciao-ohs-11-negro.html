@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CIAO-OHS-11-NEGRO - Ley Silla</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/detalle-producto.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="detalle-producto-page">
+
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920wn.png" alt="Ley Silla Logo" class="logo-light">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920w.png" alt="Ley Silla Logo" class="logo-dark">
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="es-lang">Inicio</a>
+                        <a href="../index.html" class="en-lang">Home</a></li>
+                    <li><a href="../Blog.html" class="es-lang">Blog</a>
+                        <a href="../Blog.html" class="en-lang">Blog</a></li>
+                    <li><a href="../Nosotros.html" class="es-lang">Nosotros</a>
+                        <a href="../Nosotros.html" class="en-lang">us</a></li>
+                    <li><a href="../catalogo.html" class="active es-lang">Catálogo</a>
+                        <a href="../catalogo.html" class="active en-lang">Catalog</a></li>
+                    <li><a href="../contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="../index.html">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../catalogo.html" class="active">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Blog.html">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../Nosotros.html">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#empresas-obligadas">
+                                <i class="fas fa-building"></i>
+                                <span class="es-lang">Empresas Obligadas</span>
+                                <span class="en-lang">Required Companies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#beneficios">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="es-lang">Beneficios</span>
+                                <span class="en-lang">Benefits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#multas">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="es-lang">Multas y Sanciones</span>
+                                <span class="en-lang">Fines and Penalties</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- Breadcrumb Mejorado -->
+            <nav class="breadcrumb-industrial">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <a href="../index.html" class="breadcrumb-link">
+                            <i class="fas fa-home"></i>
+                            <span class="es-lang">Inicio</span>
+                            <span class="en-lang">Home</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html" class="breadcrumb-link">
+                            <span class="es-lang">Catálogo</span>
+                            <span class="en-lang">Catalog</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html?categoria=con-ruedas" class="breadcrumb-link">
+                            <span class="es-lang">SILLAS CON RUEDAS</span>
+                            <span class="en-lang">CHAIRS WITH WHEELS</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <span class="breadcrumb-current">CIAO-OHS-11-NEGRO</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero del Producto Simplificado -->
+            <section class="producto-hero-industrial">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="producto-info">
+                            <div class="producto-header">
+                                <div class="producto-badge industrial-badge">
+                                    <i class="fas fa-cogs"></i>
+                                    <span class="es-lang">OFICINA CON RUEDAS</span>
+                                    <span class="en-lang">OFFICE WITH WHEELS</span>
+                                </div>
+                            </div>
+                            
+                            <h1 class="producto-titulo">CIAO-OHS-11-NEGRO</h1>
+                            
+                            <p class="producto-descripcion es-lang">
+                                Silla giratoria con ruedas de diseño ergonómico para oficina. Cuenta con base estrellada de 4 puntas en poliamida de alta densidad, asiento giratorio 360° y construcción en copolímero de polipropileno virgen de alta densidad para máxima durabilidad.
+                            </p>
+                            <p class="producto-descripcion en-lang">
+                                Swivel chair with wheels of ergonomic design for office. Features a 4-point star base in high-density polyamide, 360° swivel seat and construction in virgin high-density polypropylene copolymer for maximum durability.
+                            </p>
+                            
+                            <div class="producto-actions">
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span class="es-lang">Solicitar Información</span>
+                                    <span class="en-lang">Request Information</span>
+                                </a>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span class="es-lang">Ficha Técnica PDF</span>
+                                    <span class="en-lang">Technical Sheet PDF</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="producto-visual">
+                            <div class="imagen-principal-container">
+                                <img src="../Imagenes/producto35-1.png" 
+                                     alt="CIAO-OHS-11-NEGRO - Silla giratoria con ruedas" 
+                                     class="imagen-principal"
+                                     id="productoImagen">
+                                <div class="imagen-overlay-industrial"></div>
+                            </div>
+                            
+                            <div class="miniaturas-galeria">
+                                <div class="miniatura active" data-image="../Imagenes/producto35-1.png">
+                                    <img src="../Imagenes/producto35-1.png" alt="CIAO-OHS-11-NEGRO Vista frontal">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto35-2.png">
+                                    <img src="../Imagenes/producto35-2.png" alt="CIAO-OHS-11-NEGRO Vista lateral">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto35-3.png">
+                                    <img src="../Imagenes/producto35-3.png" alt="CIAO-OHS-11-NEGRO Vista trasera">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto35-4.png">
+                                    <img src="../Imagenes/producto35-4.png" alt="CIAO-OHS-11-NEGRO Base estrellada">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto35-5.png">
+                                    <img src="../Imagenes/producto35-5.png" alt="CIAO-OHS-11-NEGRO Detalle ruedas">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto35-6.png">
+                                    <img src="../Imagenes/producto35-6.png" alt="CIAO-OHS-11-NEGRO en oficina">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Especificaciones Técnicas Simplificadas -->
+            <section id="especificaciones" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-list-alt"></i>
+                        </div>
+                        <h2 class="es-lang">Especificaciones Técnicas</h2>
+                        <h2 class="en-lang">Technical Specifications</h2>
+                        <p class="es-lang">Detalles completos del modelo CIAO-OHS-11-NEGRO</p>
+                        <p class="en-lang">Complete details of the CIAO-OHS-11-NEGRO model</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cube"></i>
+                                        <span class="es-lang">Descripción General</span>
+                                        <span class="en-lang">General Description</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Silla giratoria con ruedas diseñada específicamente para entornos de oficina. Combina ergonomía, funcionalidad y durabilidad con un diseño moderno en color negro/negro para una integración perfecta en espacios de trabajo.</p>
+                                            <p class="en-lang">Swivel chair with wheels specifically designed for office environments. Combines ergonomics, functionality and durability with a modern design in black/black color for perfect integration in workspaces.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-star"></i>
+                                        <span class="es-lang">Base Estrellada</span>
+                                        <span class="en-lang">Star Base</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-shapes"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Base en forma de estrella de 4 puntas, fabricada en poliamida de alta densidad con diseño piramidal. Ofrece estabilidad excepcional y distribución uniforme del peso, ideal para movimientos giratorios frecuentes.</p>
+                                            <p class="en-lang">4-point star-shaped base, manufactured in high-density polyamide with pyramidal design. Offers exceptional stability and uniform weight distribution, ideal for frequent swivel movements.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-chair"></i>
+                                        <span class="es-lang">Asiento y Respaldo</span>
+                                        <span class="en-lang">Seat and Backrest</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-shapes"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Fabricados en copolímero de polipropileno virgen de alta densidad. Diseño ergonómico que se adapta a la forma natural del cuerpo, proporcionando soporte lumbar adecuado y confort durante jornadas prolongadas.</p>
+                                            <p class="en-lang">Manufactured in virgin high-density polypropylene copolymer. Ergonomic design that adapts to the natural body shape, providing adequate lumbar support and comfort during extended work periods.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-sync-alt"></i>
+                                        <span class="es-lang">Sistema Giratorio</span>
+                                        <span class="en-lang">Swivel System</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-rotate"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Asiento giratorio 360° que permite rotación completa sin esfuerzo. Mecanismo de giro suave y silencioso, ideal para entornos de oficina donde se requiere movilidad y acceso a diferentes áreas de trabajo.</p>
+                                            <p class="en-lang">360° swivel seat allowing complete rotation without effort. Smooth and silent swivel mechanism, ideal for office environments requiring mobility and access to different work areas.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-palette"></i>
+                                        <span class="es-lang">Color y Acabado</span>
+                                        <span class="en-lang">Color and Finish</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-fill-drip"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Color negro/negro en todas sus componentes. Acabado mate profesional que resiste rayones y desgaste, manteniendo su apariencia impecable incluso con uso intensivo en entornos corporativos.</p>
+                                            <p class="en-lang">Black/black color in all components. Professional matte finish that resists scratches and wear, maintaining its impeccable appearance even with intensive use in corporate environments.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-weight-hanging"></i>
+                                        <span class="es-lang">Capacidad de Carga</span>
+                                        <span class="en-lang">Load Capacity</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-dumbbell"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Peso máximo de resistencia: 160 kgs. Diseño estructural reforzado que garantiza seguridad y estabilidad incluso bajo cargas considerables, cumpliendo con los más altos estándares de calidad.</p>
+                                            <p class="en-lang">Maximum weight resistance: 160 kgs. Reinforced structural design guaranteeing safety and stability even under considerable loads, complying with the highest quality standards.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cogs"></i>
+                                        <span class="es-lang">Ruedas y Movilidad</span>
+                                        <span class="en-lang">Wheels and Mobility</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-tachometer-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Ruedas de alta calidad diseñadas para pisos de oficina. Movimiento suave y silencioso sin dañar superficies, permitiendo desplazamientos fluidos entre estaciones de trabajo y áreas comunes.</p>
+                                            <p class="en-lang">High-quality wheels designed for office floors. Smooth and silent movement without damaging surfaces, allowing fluid movement between workstations and common areas.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Galería de Imágenes -->
+            <section id="galeria" class="galeria-industrial">
+                <div class="container">
+                    <div class="galeria-header">
+                        <div class="header-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <h2 class="es-lang">Galería del Producto</h2>
+                        <h2 class="en-lang">Product Gallery</h2>
+                        <p class="es-lang">Explora las características del CIAO-OHS-11-NEGRO</p>
+                        <p class="en-lang">Explore features of CIAO-OHS-11-NEGRO</p>
+                    </div>
+                    
+                    <div class="galeria-grid">
+                        <div class="galeria-item active" data-image="../Imagenes/producto35-1.png">
+                            <img src="../Imagenes/producto35-1.png" alt="CIAO-OHS-11-NEGRO Vista frontal completa">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Vista Frontal</span>
+                                <span class="en-lang">Front View</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto35-2.png">
+                            <img src="../Imagenes/producto35-2.png" alt="CIAO-OHS-11-NEGRO Vista lateral ergonómica">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Vista Lateral</span>
+                                <span class="en-lang">Side View</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto35-3.png">
+                            <img src="../Imagenes/producto35-3.png" alt="CIAO-OHS-11-NEGRO Vista trasera diseño">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Vista Trasera</span>
+                                <span class="en-lang">Back View</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto35-4.png">
+                            <img src="../Imagenes/producto35-4.png" alt="CIAO-OHS-11-NEGRO Base estrellada 4 puntas">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Base Estrellada</span>
+                                <span class="en-lang">Star Base</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto35-5.png">
+                            <img src="../Imagenes/producto35-5.png" alt="CIAO-OHS-11-NEGRO Detalle ruedas movimiento">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Sistema de Ruedas</span>
+                                <span class="en-lang">Wheel System</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto35-6.png">
+                            <img src="../Imagenes/producto35-6.png" alt="CIAO-OHS-11-NEGRO en entorno de oficina">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">En Oficina</span>
+                                <span class="en-lang">In Office</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto35-7.png">
+                            <img src="../Imagenes/producto35-7.png" alt="CIAO-OHS-11-NEGRO giro 360 grados">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Giro 360°</span>
+                                <span class="en-lang">360° Rotation</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto35-8.png">
+                            <img src="../Imagenes/producto35-8.png" alt="CIAO-OHS-11-NEGRO conjunto oficina">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Conjunto Oficina</span>
+                                <span class="en-lang">Office Set</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Características Ergonómicas -->
+            <section id="ergonomia" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h2 class="es-lang">Características Ergonómicas</h2>
+                        <h2 class="en-lang">Ergonomic Features</h2>
+                        <p class="es-lang">Diseño pensado para el confort y salud postural</p>
+                        <p class="en-lang">Design focused on comfort and postural health</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-spine"></i>
+                                        <span class="es-lang">Soporte Lumbar Integrado</span>
+                                        <span class="en-lang">Integrated Lumbar Support</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-bone"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Respaldo con curvatura ergonómica que sigue la forma natural de la columna vertebral. Proporciona soporte adecuado en la zona lumbar, reduciendo la fatiga y previniendo dolores de espalda durante jornadas prolongadas.</p>
+                                            <p class="en-lang">Backrest with ergonomic curvature following the natural shape of the spine. Provides adequate support in the lumbar area, reducing fatigue and preventing back pain during extended work periods.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-arrows-alt-h"></i>
+                                        <span class="es-lang">Distribución de Peso</span>
+                                        <span class="en-lang">Weight Distribution</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-balance-scale"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Asiento con diseño contorneado que distribuye uniformemente el peso corporal. Reduce puntos de presión en muslos y glúteos, mejorando la circulación sanguínea y aumentando el confort durante horas de trabajo.</p>
+                                            <p class="en-lang">Seat with contoured design that evenly distributes body weight. Reduces pressure points on thighs and buttocks, improving blood circulation and increasing comfort during work hours.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-sync"></i>
+                                        <span class="es-lang">Movilidad Dinámica</span>
+                                        <span class="en-lang">Dynamic Mobility</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-route"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Sistema de giro 360° y ruedas que promueven el movimiento natural. Permite cambios de postura frecuentes sin necesidad de levantarse, reduciendo la tensión muscular y mejorando la productividad.</p>
+                                            <p class="en-lang">360° swivel system and wheels that promote natural movement. Allows frequent posture changes without needing to stand up, reducing muscle tension and improving productivity.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-ruler-combined"></i>
+                                        <span class="es-lang">Dimensiones Optimizadas</span>
+                                        <span class="en-lang">Optimized Dimensions</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-expand-arrows-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Proporciones cuidadosamente calculadas para adaptarse a la mayoría de los usuarios. Altura y profundidad del asiento ideales para mantener ángulos articulares saludables y postura correcta durante el trabajo.</p>
+                                            <p class="en-lang">Carefully calculated proportions to fit most users. Ideal seat height and depth to maintain healthy joint angles and correct posture during work.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aplicaciones de Oficina -->
+            <section id="aplicaciones" class="accesorios-section">
+                <div class="container">
+                    <div class="accesorios-header">
+                        <div class="header-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h2 class="es-lang">Aplicaciones de Oficina</h2>
+                        <h2 class="en-lang">Office Applications</h2>
+                        <p class="es-lang">Entornos ideales para el CIAO-OHS-11-NEGRO</p>
+                        <p class="en-lang">Ideal environments for CIAO-OHS-11-NEGRO</p>
+                    </div>
+                    
+                    <div class="accesorios-grid">
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-oficina-corporativa.png" alt="Oficina corporativa con sillas CIAO">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">OFICINAS CORPORATIVAS</h3>
+                                <h3 class="en-lang">CORPORATE OFFICES</h3>
+                                <p class="es-lang">Ideal para áreas de trabajo individuales y compartidas. Su diseño profesional en negro se integra perfectamente en entornos corporativos modernos.</p>
+                                <p class="en-lang">Ideal for individual and shared work areas. Its professional black design integrates perfectly in modern corporate environments.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-call-center.png" alt="Call center con sillas CIAO">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">CENTROS DE LLAMADAS</h3>
+                                <h3 class="en-lang">CALL CENTERS</h3>
+                                <p class="es-lang">Perfecta para jornadas prolongadas en centros de contacto. La ergonomía y movilidad mejoran el confort de los operadores durante turnos extensos.</p>
+                                <p class="en-lang">Perfect for extended shifts in contact centers. The ergonomics and mobility improve operator comfort during extensive shifts.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/aplicacion-recepcion.png" alt="Recepción con sillas CIAO">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">ÁREAS DE RECEPCIÓN</h3>
+                                <h3 class="en-lang">RECEPTION AREAS</h3>
+                                <p class="es-lang">Excelente para recepciones y áreas de espera. La movilidad con ruedas permite ajustes rápidos según las necesidades del espacio.</p>
+                                <p class="en-lang">Excellent for receptions and waiting areas. Wheel mobility allows quick adjustments according to space needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA PROFESIONAL MEJORADO -->
+            <section class="cta-profesional-industrial">
+                <div class="container">
+                    <div class="cta-profesional-content">
+                        <div class="cta-profesional-text">
+                            <div class="cta-badge">
+                                <i class="fas fa-briefcase"></i>
+                                <span class="es-lang">OFICINA PROFESIONAL</span>
+                                <span class="en-lang">PROFESSIONAL OFFICE</span>
+                            </div>
+                            
+                            <h2 class="cta-titulo">
+                                <span class="es-lang">¿Buscas sillas ergonómicas con ruedas para tu oficina?</span>
+                                <span class="en-lang">Looking for ergonomic chairs with wheels for your office?</span>
+                            </h2>
+                            
+                            <p class="cta-descripcion es-lang">
+                                Nuestros <strong>expertos en mobiliario de oficina</strong> te asesorarán en la selección y cantidad de sillas CIAO-OHS-11-NEGRO para tu espacio de trabajo. Garantizamos ergonomía certificada, durabilidad comprobada y soporte para 160 kgs de peso.
+                            </p>
+                            <p class="cta-descripcion en-lang">
+                                Our <strong>office furniture experts</strong> will advise you on selecting and quantity of CIAO-OHS-11-NEGRO chairs for your workspace. We guarantee certified ergonomics, proven durability and support for 160 kgs weight.
+                            </p>
+                            
+                            <div class="cta-beneficios">
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Soporte para 160 kgs</span>
+                                    <span class="en-lang">Support for 160 kgs</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Giro 360° suave</span>
+                                    <span class="en-lang">Smooth 360° rotation</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Diseño ergonómico certificado</span>
+                                    <span class="en-lang">Certified ergonomic design</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-profesional-actions">
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-chair"></i>
+                                </div>
+                                <h3 class="es-lang">Prueba Ergonómica</h3>
+                                <h3 class="en-lang">Ergonomic Test</h3>
+                                <p class="es-lang">Solicita una prueba del confort y movilidad de la silla CIAO en tu oficina</p>
+                                <p class="en-lang">Request a test of the comfort and mobility of CIAO chair in your office</p>
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-couch"></i>
+                                    <span class="es-lang">Solicitar Prueba</span>
+                                    <span class="en-lang">Request Test</span>
+                                </a>
+                            </div>
+                            
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                                <h3 class="es-lang">Cotización Corporativa</h3>
+                                <h3 class="en-lang">Corporate Quote</h3>
+                                <p class="es-lang">Solicita una cotización para equipar tu oficina con sillas CIAO</p>
+                                <p class="en-lang">Request a quote to equip your office with CIAO chairs</p>
+                                <a href="../contactanos.html?tipo=cotizacion-corporativa" class="btn btn-secondary btn-large">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                    <span class="es-lang">Cotización Corporativa</span>
+                                    <span class="en-lang">Corporate Quote</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
+                        <li><a href="../Blog.html" class="es-lang">Blog</a><a href="Blog.html" class="en-lang">Chair Law Blog</a></li>
+                        <li><a href="../Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="../catalogo.html" class="es-lang">Catálogo</a><a href="../catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="../contactanos.html" class="es-lang">Contáctanos</a><a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </div> <!-- END WRAPPER -->
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <!-- Botón flotante del chatbot -->
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <!-- Ventana del Chatbot -->
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Mensajes aparecerán aquí -->
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                    <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                    <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                    <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/accessibility.js"></script>
+    <script src="../js/chatbot.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/detalle-producto.js"></script>
+</body>
+</html>

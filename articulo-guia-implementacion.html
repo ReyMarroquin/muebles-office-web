@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Guía Completa: Implementar la Ley Silla | Blog Ley Silla</title>
+    <meta name="description" content="Guía paso a paso para implementar la Ley Silla en tu empresa. Cumplimiento normativo, beneficios y mejores prácticas.">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/blog-article.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="Guía Completa para Implementar la Ley Silla en tu Empresa">
+    <meta property="og:description" content="Descubre los pasos esenciales para cumplir con la Ley Silla y crear un entorno laboral más saludable.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="Imagenes/leysillablog1.png">
+</head>
+<body class="blog-article-page">
+
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <a href="index.html">
+                        <img src="Imagenes/ley_silla_logo_leysilla-1920wn.png" alt="Ley Silla Logo" class="logo-light">
+                        <img src="Imagenes/ley_silla_logo_leysilla-1920w.png" alt="Ley Silla Logo" class="logo-dark">
+                    </a>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="es-lang">Inicio</a>
+                        <a href="index.html" class="en-lang">Home</a></li>
+                    <li><a href="Blog.html" class="active es-lang">Blog</a>
+                        <a href="Blog.html" class="active en-lang">Blog</a></li>
+                    <li><a href="Nosotros.html" class="es-lang">Nosotros</a>
+                        <a href="Nosotros.html" class="en-lang">Us</a></li>
+                    <li><a href="catalogo.html" class="es-lang">Catálogo</a>
+                        <a href="catalogo.html" class="en-lang">Catalog</a></li>
+                    <li><a href="contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="index.html">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalogo.html">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ley-silla.html">
+                                <i class="fas fa-gavel"></i>
+                                <span class="es-lang">Ley Silla</span>
+                                <span class="en-lang">Chair Law</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Blog.html" class="active">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Nosotros.html">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- CABECERA DEL ARTÍCULO -->
+            <article class="blog-article-container">
+                <div class="container-sm">
+                   
+
+                    <!-- Encabezado del artículo -->
+                    <header class="article-header">
+                        <div class="article-category category-ley-silla">
+                            <span class="es-lang">Ley Silla</span>
+                            <span class="en-lang">Chair Law</span>
+                        </div>
+                        
+                        <h1 class="article-title es-lang">
+                            Guía Completa para Implementar la Ley Silla en tu Empresa
+                        </h1>
+                        <h1 class="article-title en-lang">
+                            Complete Guide to Implement Chair Law in Your Company
+                        </h1>
+                        
+                        <div class="article-meta">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-details">
+                                    <span class="author-name">Lic. Ana Martínez</span>
+                                    <span class="author-role es-lang">Especialista en Derecho Laboral</span>
+                                    <span class="author-role en-lang">Labor Law Specialist</span>
+                                </div>
+                            </div>
+                            
+                            <div class="article-stats">
+                                <div class="stat">
+                                    <i class="far fa-calendar"></i>
+                                    <span class="es-lang">Publicado: 15 Mar, 2025</span>
+                                    <span class="en-lang">Published: Mar 15, 2025</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="far fa-clock"></i>
+                                    <span class="es-lang">5 min lectura</span>
+                                    <span class="en-lang">5 min read</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="far fa-eye"></i>
+                                    <span>1,450 vistas</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Imagen destacada -->
+                        <div class="article-featured-image">
+                            <img src="Imagenes/leysillablog1.png" alt="Implementación Ley Silla en oficina">
+                            <div class="image-caption es-lang">
+                                Implementación correcta de sillas ergonómicas según la Ley Silla
+                            </div>
+                            <div class="image-caption en-lang">
+                                Correct implementation of ergonomic chairs according to Chair Law
+                            </div>
+                        </div>
+                    </header>
+
+                    <!-- CONTENIDO DEL ARTÍCULO -->
+                    <div class="article-content">
+                        
+                        <!-- Introducción -->
+                        <section class="article-section">
+                            <p class="lead es-lang">
+                                La Ley Silla representa un avance significativo en la protección de los derechos laborales en México. 
+                                Implementarla correctamente no solo evita sanciones económicas, sino que mejora la productividad, 
+                                reduce el ausentismo y demuestra el compromiso de tu empresa con el bienestar de sus colaboradores.
+                            </p>
+                            <p class="lead en-lang">
+                                Chair Law represents a significant advancement in the protection of labor rights in Mexico. 
+                                Implementing it correctly not only avoids economic sanctions but improves productivity, 
+                                reduces absenteeism, and demonstrates your company's commitment to employee well-being.
+                            </p>
+                        </section>
+
+                        <!-- Sección 1: ¿Qué es la Ley Silla? -->
+                        <section class="article-section">
+                            <h2 class="section-title es-lang">1. ¿Qué es la Ley Silla y por qué es importante?</h2>
+                            <h2 class="section-title en-lang">1. What is Chair Law and why is it important?</h2>
+                            
+                            <div class="info-box important">
+                                <div class="info-box-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div class="info-box-content">
+                                    <h4 class="es-lang">Definición Legal</h4>
+                                    <h4 class="en-lang">Legal Definition</h4>
+                                    <p class="es-lang">
+                                        La Ley Silla, oficialmente conocida como la reforma al Artículo 132 de la Ley Federal del Trabajo, 
+                                        obliga a los empleadores a proporcionar sillas ergonómicas adecuadas a trabajadores que desempeñan 
+                                        sus labores en estaciones fijas por más de 4 horas continuas.
+                                    </p>
+                                    <p class="en-lang">
+                                        Chair Law, officially known as the reform to Article 132 of the Federal Labor Law, 
+                                        requires employers to provide adequate ergonomic chairs to workers who perform 
+                                        their duties at fixed stations for more than 4 continuous hours.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="columns-2">
+                                <div class="column">
+                                    <h3 class="es-lang">Beneficios Principales</h3>
+                                    <h3 class="en-lang">Main Benefits</h3>
+                                    <ul>
+                                        <li class="es-lang">Reducción de lesiones laborales en un 40-60%</li>
+                                        <li class="en-lang">40-60% reduction in workplace injuries</li>
+                                        <li class="es-lang">Aumento de productividad del 15-25%</li>
+                                        <li class="en-lang">15-25% increase in productivity</li>
+                                        <li class="es-lang">Disminución del ausentismo laboral</li>
+                                        <li class="en-lang">Reduction in workplace absenteeism</li>
+                                        <li class="es-lang">Mejora del clima organizacional</li>
+                                        <li class="en-lang">Improvement in organizational climate</li>
+                                        <li class="es-lang">Cumplimiento normativo y evitación de multas</li>
+                                        <li class="en-lang">Regulatory compliance and avoidance of fines</li>
+                                    </ul>
+                                </div>
+                                <div class="column">
+                                    <h3 class="es-lang">Empresas Obligadas</h3>
+                                    <h3 class="en-lang">Required Companies</h3>
+                                    <ul>
+                                        <li class="es-lang">Centros de llamadas</li>
+                                        <li class="en-lang">Call centers</li>
+                                        <li class="es-lang">Oficinas administrativas</li>
+                                        <li class="en-lang">Administrative offices</li>
+                                        <li class="es-lang">Empresas de tecnología</li>
+                                        <li class="en-lang">Technology companies</li>
+                                        <li class="es-lang">Instituciones financieras</li>
+                                        <li class="en-lang">Financial institutions</li>
+                                        <li class="es-lang">Cualquier empresa con trabajadores en estación fija</li>
+                                        <li class="en-lang">Any company with workers at fixed stations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Sección 2: Pasos para Implementación -->
+                        <section class="article-section">
+                            <h2 class="section-title es-lang">2. Guía Paso a Paso para Implementación</h2>
+                            <h2 class="section-title en-lang">2. Step-by-Step Implementation Guide</h2>
+                            
+                            <!-- Timeline -->
+                            <div class="implementation-timeline">
+                                <div class="timeline-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h3 class="es-lang">Diagnóstico Inicial</h3>
+                                        <h3 class="en-lang">Initial Diagnosis</h3>
+                                        <p class="es-lang">
+                                            Realiza un inventario de puestos de trabajo y evalúa las condiciones actuales. 
+                                            Identifica qué trabajadores pasan más de 4 horas continuas en estación fija.
+                                        </p>
+                                        <p class="en-lang">
+                                            Conduct an inventory of workstations and evaluate current conditions. 
+                                            Identify which workers spend more than 4 continuous hours at fixed stations.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h3 class="es-lang">Selección de Mobiliario</h3>
+                                        <h3 class="en-lang">Furniture Selection</h3>
+                                        <p class="es-lang">
+                                            Elige sillas ergonómicas certificadas que cumplan con la NOM-036-STPS-2018. 
+                                            Considera ajuste lumbar, altura ajustable y materiales transpirables.
+                                        </p>
+                                        <p class="en-lang">
+                                            Choose certified ergonomic chairs that comply with NOM-036-STPS-2018. 
+                                            Consider lumbar support, adjustable height, and breathable materials.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h3 class="es-lang">Capacitación</h3>
+                                        <h3 class="en-lang">Training</h3>
+                                        <p class="es-lang">
+                                            Capacita a los empleados en el uso correcto del mobiliario y en prácticas 
+                                            ergonómicas básicas. Documenta la capacitación realizada.
+                                        </p>
+                                        <p class="en-lang">
+                                            Train employees in the correct use of furniture and basic ergonomic practices. 
+                                            Document the training provided.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h3 class="es-lang">Implementación Física</h3>
+                                        <h3 class="en-lang">Physical Implementation</h3>
+                                        <p class="es-lang">
+                                            Distribuye el mobiliario y asegura que cada trabajador tenga su silla asignada 
+                                            y correctamente configurada según sus necesidades.
+                                        </p>
+                                        <p class="en-lang">
+                                            Distribute the furniture and ensure each worker has their assigned chair 
+                                            properly configured according to their needs.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-step">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">
+                                        <h3 class="es-lang">Documentación</h3>
+                                        <h3 class="en-lang">Documentation</h3>
+                                        <p class="es-lang">
+                                            Crea un expediente por empleado que incluya: ficha de asignación, 
+                                            certificado de capacitación y constancia de entrega del mobiliario.
+                                        </p>
+                                        <p class="en-lang">
+                                            Create a file for each employee including: assignment record, 
+                                            training certificate, and furniture delivery receipt.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-step">
+                                    <div class="step-number">6</div>
+                                    <div class="step-content">
+                                        <h3 class="es-lang">Auditoría y Mantenimiento</h3>
+                                        <h3 class="en-lang">Audit and Maintenance</h3>
+                                        <p class="es-lang">
+                                            Realiza revisiones periódicas cada 6 meses. Mantén un programa de 
+                                            mantenimiento preventivo y actualiza el mobiliario según sea necesario.
+                                        </p>
+                                        <p class="en-lang">
+                                            Conduct periodic reviews every 6 months. Maintain a preventive 
+                                            maintenance program and update furniture as needed.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Sección 3: Características de Sillas Cumplidoras -->
+                        <section class="article-section">
+                            <h2 class="section-title es-lang">3. Características que debe tener una silla cumplidora</h2>
+                            <h2 class="section-title en-lang">3. Features a compliant chair must have</h2>
+                            
+                            <div class="features-grid">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-arrows-alt-v"></i>
+                                    </div>
+                                    <h4 class="es-lang">Altura Ajustable</h4>
+                                    <h4 class="en-lang">Adjustable Height</h4>
+                                    <p class="es-lang">
+                                        Debe permitir que los pies estén planos en el suelo con rodillas en ángulo de 90°.
+                                    </p>
+                                    <p class="en-lang">
+                                        Should allow feet to be flat on the floor with knees at 90° angle.
+                                    </p>
+                                </div>
+                                
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-backward"></i>
+                                    </div>
+                                    <h4 class="es-lang">Respaldo Ajustable</h4>
+                                    <h4 class="en-lang">Adjustable Backrest</h4>
+                                    <p class="es-lang">
+                                        Soporte lumbar ajustable que siga la curvatura natural de la columna.
+                                    </p>
+                                    <p class="en-lang">
+                                        Adjustable lumbar support that follows the natural curvature of the spine.
+                                    </p>
+                                </div>
+                                
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-sync-alt"></i>
+                                    </div>
+                                    <h4 class="es-lang">Giro 360°</h4>
+                                    <h4 class="en-lang">360° Swivel</h4>
+                                    <p class="es-lang">
+                                        Base giratoria para facilitar movimientos sin esfuerzo adicional.
+                                    </p>
+                                    <p class="en-lang">
+                                        Swivel base to facilitate movements without additional effort.
+                                    </p>
+                                </div>
+                                
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <h4 class="es-lang">Inclinación Controlada</h4>
+                                    <h4 class="en-lang">Controlled Tilt</h4>
+                                    <p class="es-lang">
+                                        Mecanismo que permita inclinación hacia atrás con bloqueo de posición.
+                                    </p>
+                                    <p class="en-lang">
+                                        Mechanism allowing backward tilt with position lock.
+                                    </p>
+                                </div>
+                                
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-hand-paper"></i>
+                                    </div>
+                                    <h4 class="es-lang">Reposabrazos</h4>
+                                    <h4 class="en-lang">Armrests</h4>
+                                    <p class="es-lang">
+                                        Opcionales pero recomendados, deben ser ajustables en altura.
+                                    </p>
+                                    <p class="en-lang">
+                                        Optional but recommended, should be height adjustable.
+                                    </p>
+                                </div>
+                                
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-certificate"></i>
+                                    </div>
+                                    <h4 class="es-lang">Certificación NOM</h4>
+                                    <h4 class="en-lang">NOM Certification</h4>
+                                    <p class="es-lang">
+                                        Debe contar con certificado de cumplimiento de la NOM-036-STPS-2018.
+                                    </p>
+                                    <p class="en-lang">
+                                        Must have compliance certificate for NOM-036-STPS-2018.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="warning-box">
+                                <div class="warning-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="warning-content">
+                                    <h4 class="es-lang">⚠️ Atención: Errores Comunes</h4>
+                                    <h4 class="en-lang">⚠️ Attention: Common Mistakes</h4>
+                                    <ul>
+                                        <li class="es-lang">Comprar sillas sin certificación NOM</li>
+                                        <li class="en-lang">Buying chairs without NOM certification</li>
+                                        <li class="es-lang">No capacitar a los empleados en su uso</li>
+                                        <li class="en-lang">Not training employees in their use</li>
+                                        <li class="es-lang">Ignorar el mantenimiento periódico</li>
+                                        <li class="en-lang">Ignoring periodic maintenance</li>
+                                        <li class="es-lang">No documentar el proceso de implementación</li>
+                                        <li class="en-lang">Not documenting the implementation process</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Sección 4: Checklist de Cumplimiento -->
+                        <section class="article-section">
+                            <h2 class="section-title es-lang">4. Checklist de Cumplimiento</h2>
+                            <h2 class="section-title en-lang">4. Compliance Checklist</h2>
+                            
+                            <div class="checklist-container">
+                                <div class="checklist-header">
+                                    <h3 class="es-lang">Verifica que tu empresa cumpla con todos los puntos</h3>
+                                    <h3 class="en-lang">Verify your company complies with all points</h3>
+                                    <span class="checklist-progress es-lang">0/12 completado</span>
+                                    <span class="checklist-progress en-lang">0/12 completed</span>
+                                </div>
+                                
+                                <div class="checklist-items">
+                                    <label class="checklist-item">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="checklist-text es-lang">Identificación de puestos con más de 4 horas continuas</span>
+                                        <span class="checklist-text en-lang">Identification of positions with over 4 continuous hours</span>
+                                    </label>
+                                    
+                                    <label class="checklist-item">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="checklist-text es-lang">Sillas con certificación NOM-036-STPS-2018</span>
+                                        <span class="checklist-text en-lang">Chairs with NOM-036-STPS-2018 certification</span>
+                                    </label>
+                                    
+                                    <label class="checklist-item">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="checklist-text es-lang">Capacitación documentada a empleados</span>
+                                        <span class="checklist-text en-lang">Documented employee training</span>
+                                    </label>
+                                    
+                                    <label class="checklist-item">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="checklist-text es-lang">Asignación individual de mobiliario</span>
+                                        <span class="checklist-text en-lang">Individual furniture assignment</span>
+                                    </label>
+                                    
+                                    <label class="checklist-item">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="checklist-text es-lang">Expediente por empleado con documentación</span>
+                                        <span class="checklist-text en-lang">Employee file with documentation</span>
+                                    </label>
+                                    
+                                    <label class="checklist-item">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="checklist-text es-lang">Programa de mantenimiento preventivo</span>
+                                        <span class="checklist-text en-lang">Preventive maintenance program</span>
+                                    </label>
+                                    
+                                    <label class="checklist-item">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="checklist-text es-lang">Revisiones periódicas cada 6 meses</span>
+                                        <span class="checklist-text en-lang">Periodic reviews every 6 months</span>
+                                    </label>
+                                    
+                                    <label class="checklist-item">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="checklist-text es-lang">Ajustes ergonómicos personalizados</span>
+                                        <span class="checklist-text en-lang">Personalized ergonomic adjustments</span>
+                                    </label>
+                                    
+                                    <label class="checklist-item">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="checklist-text es-lang">Procedimiento para reportar daños</span>
+                                        <span class="checklist-text en-lang">Procedure for reporting damages</span>
+                                    </label>
+                                    
+                                    <label class="checklist-item">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="checklist-text es-lang">Comunicación de derechos a empleados</span>
+                                        <span class="checklist-text en-lang">Communication of rights to employees</span>
+                                    </label>
+                                    
+                                    <label class="checklist-item">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="checklist-text es-lang">Registro de inspecciones internas</span>
+                                        <span class="checklist-text en-lang">Record of internal inspections</span>
+                                    </label>
+                                    
+                                    <label class="checklist-item">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                        <span class="checklist-text es-lang">Plan de actualización de mobiliario</span>
+                                        <span class="checklist-text en-lang">Furniture update plan</span>
+                                    </label>
+                                </div>
+                                
+                                <button class="btn btn-secondary checklist-btn es-lang">
+                                    <i class="fas fa-download"></i> Descargar Checklist
+                                </button>
+                                <button class="btn btn-secondary checklist-btn en-lang">
+                                    <i class="fas fa-download"></i> Download Checklist
+                                </button>
+                            </div>
+                        </section>
+
+                        <!-- Sección 5: Costos y ROI -->
+                        <section class="article-section">
+                            <h2 class="section-title es-lang">5. Inversión y Retorno (ROI)</h2>
+                            <h2 class="section-title en-lang">5. Investment and Return (ROI)</h2>
+                            
+                            <div class="roi-calculator">
+                                <div class="roi-header">
+                                    <h3 class="es-lang">Calculadora de Retorno de Inversión</h3>
+                                    <h3 class="en-lang">Return on Investment Calculator</h3>
+                                    <p class="es-lang">
+                                        Ingresa los datos de tu empresa para estimar el retorno de implementar la Ley Silla
+                                    </p>
+                                    <p class="en-lang">
+                                        Enter your company data to estimate the return on implementing Chair Law
+                                    </p>
+                                </div>
+                                
+                                <div class="roi-inputs">
+                                    <div class="input-group">
+                                        <label class="es-lang">Número de empleados</label>
+                                        <label class="en-lang">Number of employees</label>
+                                        <input type="number" id="employeeCount" value="50" min="1">
+                                    </div>
+                                    
+                                    <div class="input-group">
+                                        <label class="es-lang">Costo por silla ($MXN)</label>
+                                        <label class="en-lang">Cost per chair ($MXN)</label>
+                                        <input type="number" id="chairCost" value="2500" min="1000">
+                                    </div>
+                                    
+                                    <div class="input-group">
+                                        <label class="es-lang">Días de ausentismo anual</label>
+                                        <label class="en-lang">Annual absenteeism days</label>
+                                        <input type="number" id="absentDays" value="5" min="0" step="0.5">
+                                    </div>
+                                </div>
+                                
+                                <div class="roi-results">
+                                    <div class="roi-result">
+                                        <span class="result-label es-lang">Inversión Total</span>
+                                        <span class="result-label en-lang">Total Investment</span>
+                                        <span class="result-value" id="totalInvestment">$125,000 MXN</span>
+                                    </div>
+                                    
+                                    <div class="roi-result">
+                                        <span class="result-label es-lang">Ahorro Anual por Ausentismo</span>
+                                        <span class="result-label en-lang">Annual Absenteeism Savings</span>
+                                        <span class="result-value" id="absentSavings">$187,500 MXN</span>
+                                    </div>
+                                    
+                                    <div class="roi-result highlight">
+                                        <span class="result-label es-lang">ROI Anual</span>
+                                        <span class="result-label en-lang">Annual ROI</span>
+                                        <span class="result-value" id="annualROI">150%</span>
+                                    </div>
+                                    
+                                    <div class="roi-result">
+                                        <span class="result-label es-lang">Recuperación de Inversión</span>
+                                        <span class="result-label en-lang">Investment Recovery</span>
+                                        <span class="result-value" id="recoveryTime">8 meses</span>
+                                        <span class="result-value en-lang" id="recoveryTimeEn">8 months</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="roi-note">
+                                    <p class="es-lang">
+                                        <i class="fas fa-lightbulb"></i> 
+                                        <strong>Nota:</strong> Este cálculo considera solo reducción de ausentismo. 
+                                        Los beneficios en productividad y reducción de rotación pueden duplicar el ROI.
+                                    </p>
+                                    <p class="en-lang">
+                                        <i class="fas fa-lightbulb"></i> 
+                                        <strong>Note:</strong> This calculation considers only absenteeism reduction. 
+                                        Benefits in productivity and turnover reduction may double the ROI.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Conclusión -->
+                        <section class="article-section conclusion">
+                            <h2 class="section-title es-lang">Conclusión</h2>
+                            <h2 class="section-title en-lang">Conclusion</h2>
+                            
+                            <div class="conclusion-content">
+                                <p class="es-lang">
+                                    Implementar la Ley Silla no es solo un requisito legal, es una inversión estratégica 
+                                    en el capital humano de tu empresa. Los beneficios económicos, junto con la mejora 
+                                    en el bienestar de tus colaboradores, generan un impacto positivo medible en corto plazo.
+                                </p>
+                                <p class="en-lang">
+                                    Implementing Chair Law is not just a legal requirement, it's a strategic investment 
+                                    in your company's human capital. The economic benefits, along with the improvement 
+                                    in your collaborators' well-being, generate a measurable positive impact in the short term.
+                                </p>
+                                
+                                <div class="cta-box">
+                                    <h3 class="es-lang">¿Necesitas ayuda con la implementación?</h3>
+                                    <h3 class="en-lang">Do you need help with implementation?</h3>
+                                    <p class="es-lang">
+                                        En Ley Silla ofrecemos asesoría personalizada, diagnóstico gratuito y 
+                                        soluciones llave en mano para que tu empresa cumpla al 100% con la normativa.
+                                    </p>
+                                    <p class="en-lang">
+                                        At Chair Law we offer personalized advice, free diagnosis, and 
+                                        turnkey solutions so your company complies 100% with regulations.
+                                    </p>
+                                    
+                                    <div class="cta-buttons">
+                                        <a href="contactanos.html" class="btn btn-primary">
+                                            <i class="fas fa-calendar-check"></i>
+                                            <span class="es-lang">Solicitar Asesoría Gratuita</span>
+                                            <span class="en-lang">Request Free Consultation</span>
+                                        </a>
+                                        <a href="catalogo.html" class="btn btn-secondary">
+                                            <i class="fas fa-chair"></i>
+                                            <span class="es-lang">Ver Catálogo de Sillas</span>
+                                            <span class="en-lang">View Chair Catalog</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Etiquetas y compartir -->
+                        <footer class="article-footer">
+                            <div class="article-tags">
+                                <span class="tags-label es-lang">Etiquetas:</span>
+                                <span class="tags-label en-lang">Tags:</span>
+                                <a href="#" class="tag">Ley Silla</a>
+                                <a href="#" class="tag">Implementación</a>
+                                <a href="#" class="tag">Ergonomía</a>
+                                <a href="#" class="tag">Normativa Laboral</a>
+                                <a href="#" class="tag">STPS</a>
+                                <a href="#" class="tag">Productividad</a>
+                            </div>
+                            
+                            <div class="share-buttons">
+                                <span class="share-label es-lang">Compartir:</span>
+                                <span class="share-label en-lang">Share:</span>
+                                
+                                <button class="share-btn facebook" aria-label="Compartir en Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+                                
+                                <button class="share-btn twitter" aria-label="Compartir en Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+                                
+                                <button class="share-btn linkedin" aria-label="Compartir en LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </button>
+                                
+                                <button class="share-btn whatsapp" aria-label="Compartir en WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </button>
+                                
+                                <button class="share-btn copy-link" aria-label="Copiar enlace" id="copyLinkBtn">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ARTÍCULOS RELACIONADOS -->
+            <section class="related-posts-section">
+                <div class="container-sm">
+                    <div class="section-header">
+                        <h2 class="es-lang">Artículos Relacionados</h2>
+                        <h2 class="en-lang">Related Articles</h2>
+                        <p class="es-lang">Sigue aprendiendo sobre la Ley Silla y ergonomía laboral</p>
+                        <p class="en-lang">Keep learning about Chair Law and workplace ergonomics</p>
+                    </div>
+                    
+                    <div class="related-posts-grid">
+                        <article class="related-post-card">
+                            <div class="post-image">
+                                <img src="Imagenes/cumpleconlaley.png" alt="Empresas Obligadas">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-category category-ley-silla">
+                                    <span class="es-lang">Ley Silla</span>
+                                    <span class="en-lang">Chair Law</span>
+                                </div>
+                                <h3 class="post-title es-lang">¿Tu Empresa Está Obligada a Cumplir la Ley Silla?</h3>
+                                <h3 class="post-title en-lang">Is Your Company Required to Comply with Chair Law?</h3>
+                                <a href="articulo-empresas-obligadas.html" class="read-more-link">
+                                    <span class="es-lang">Leer artículo</span>
+                                    <span class="en-lang">Read article</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                        
+                        <article class="related-post-card">
+                            <div class="post-image">
+                                <img src="Imagenes/Hoy-entro-en-vigor-la-Ley-Silla-que-cambia-y-de-cuanto-es-la-multa.png" alt="Multas 2025">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-category category-multas">
+                                    <span class="es-lang">Multas</span>
+                                    <span class="en-lang">Fines</span>
+                                </div>
+                                <h3 class="post-title es-lang">Actualización 2025: Multas por Incumplimiento</h3>
+                                <h3 class="post-title en-lang">2025 Update: Fines for Non-Compliance</h3>
+                                <a href="articulo-multas-2025.html" class="read-more-link">
+                                    <span class="es-lang">Leer artículo</span>
+                                    <span class="en-lang">Read article</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                        
+                        <article class="related-post-card">
+                            <div class="post-image">
+                                <img src="Imagenes/silla-ergonomica-soporte-lumbar-ajustes.png" alt="Elegir Sillas">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-category category-implementacion">
+                                    <span class="es-lang">Implementación</span>
+                                    <span class="en-lang">Implementation</span>
+                                </div>
+                                <h3 class="post-title es-lang">Cómo Elegir Sillas Ergonómicas Correctas</h3>
+                                <h3 class="post-title en-lang">How to Choose Right Ergonomic Chairs</h3>
+                                <a href="articulo-elegir-sillas.html" class="read-more-link">
+                                    <span class="es-lang">Leer artículo</span>
+                                    <span class="en-lang">Read article</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
+                        <li><a href="Blog.html" class="es-lang">Blog</a><a href="Blog.html" class="en-lang">Chair Law Blog</a></li>
+                         <li><a href="Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="catalogo.html" class="es-lang">Catálogo</a><a href="catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="contactanos.html" class="es-lang">Contáctanos</a><a href="contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </div> <!-- END WRAPPER -->
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                    <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                    <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                    <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/main.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/sidebar.js"></script>
+    
+    <!-- Script específico del artículo -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sidebar functionality
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            
+            function toggleSidebar() {
+                sidebar.classList.toggle('active');
+                sidebarOverlay.classList.toggle('active');
+                
+                if (sidebar.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            }
+            
+            if (sidebarToggle) {
+                sidebarToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleSidebar();
+                });
+            }
+            
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', function() {
+                    toggleSidebar();
+                });
+            }
+            
+            // Checklist functionality
+            const checklistItems = document.querySelectorAll('.checklist-item input');
+            const checklistProgress = document.querySelector('.checklist-progress');
+            
+            function updateChecklistProgress() {
+                const checked = document.querySelectorAll('.checklist-item input:checked').length;
+                const total = checklistItems.length;
+                
+                if (checklistProgress) {
+                    checklistProgress.textContent = `${checked}/${total} completado`;
+                    if (checklistProgress.classList.contains('en-lang')) {
+                        checklistProgress.textContent = `${checked}/${total} completed`;
+                    }
+                }
+            }
+            
+            checklistItems.forEach(item => {
+                item.addEventListener('change', updateChecklistProgress);
+            });
+            
+            // ROI Calculator
+            function calculateROI() {
+                const employeeCount = parseInt(document.getElementById('employeeCount').value) || 50;
+                const chairCost = parseInt(document.getElementById('chairCost').value) || 2500;
+                const absentDays = parseFloat(document.getElementById('absentDays').value) || 5;
+                
+                // Constants
+                const avgSalaryPerDay = 800; // MXN
+                const absentReduction = 0.3; // 30% reduction with ergonomic chairs
+                const productivityGain = 0.15; // 15% productivity increase
+                
+                // Calculations
+                const totalInvestment = employeeCount * chairCost;
+                const annualAbsentCost = employeeCount * absentDays * avgSalaryPerDay;
+                const absentSavings = annualAbsentCost * absentReduction;
+                const productivitySavings = employeeCount * 240 * avgSalaryPerDay * productivityGain / 240; // Simplified
+                const totalAnnualSavings = absentSavings + productivitySavings;
+                const annualROI = ((totalAnnualSavings / totalInvestment) * 100).toFixed(0);
+                const recoveryMonths = (totalInvestment / (totalAnnualSavings / 12)).toFixed(1);
+                
+                // Update UI
+                document.getElementById('totalInvestment').textContent = `$${totalInvestment.toLocaleString('es-MX')} MXN`;
+                document.getElementById('absentSavings').textContent = `$${Math.round(absentSavings).toLocaleString('es-MX')} MXN`;
+                document.getElementById('annualROI').textContent = `${annualROI}%`;
+                
+                const recoveryTimeElements = document.querySelectorAll('#recoveryTime, #recoveryTimeEn');
+                recoveryTimeElements.forEach(el => {
+                    if (el.id === 'recoveryTime') {
+                        el.textContent = `${recoveryMonths} meses`;
+                    } else {
+                        el.textContent = `${recoveryMonths} months`;
+                    }
+                });
+            }
+            
+            // Initialize ROI calculator
+            const roiInputs = ['employeeCount', 'chairCost', 'absentDays'];
+            roiInputs.forEach(id => {
+                const input = document.getElementById(id);
+                if (input) {
+                    input.addEventListener('input', calculateROI);
+                }
+            });
+            
+            calculateROI(); // Initial calculation
+            
+            // Copy link functionality
+            const copyLinkBtn = document.getElementById('copyLinkBtn');
+            if (copyLinkBtn) {
+                copyLinkBtn.addEventListener('click', function() {
+                    const url = window.location.href;
+                    navigator.clipboard.writeText(url).then(() => {
+                        // Show feedback
+                        const originalHTML = this.innerHTML;
+                        this.innerHTML = '<i class="fas fa-check"></i>';
+                        this.style.backgroundColor = '#4CAF50';
+                        
+                        setTimeout(() => {
+                            this.innerHTML = originalHTML;
+                            this.style.backgroundColor = '';
+                        }, 2000);
+                    });
+                });
+            }
+            
+            // Share buttons
+            const shareButtons = document.querySelectorAll('.share-btn');
+            shareButtons.forEach(btn => {
+                if (!btn.classList.contains('copy-link')) {
+                    btn.addEventListener('click', function() {
+                        const url = encodeURIComponent(window.location.href);
+                        const title = encodeURIComponent(document.title);
+                        let shareUrl = '';
+                        
+                        if (this.classList.contains('facebook')) {
+                            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                        } else if (this.classList.contains('twitter')) {
+                            shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+                        } else if (this.classList.contains('linkedin')) {
+                            shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+                        } else if (this.classList.contains('whatsapp')) {
+                            shareUrl = `https://wa.me/?text=${title}%20${url}`;
+                        }
+                        
+                        if (shareUrl) {
+                            window.open(shareUrl, '_blank', 'width=600,height=400');
+                        }
+                    });
+                }
+            });
+            
+            // Language toggle simulation (simplified)
+            const langButtons = document.querySelectorAll('.language-btn');
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    
+                    // Remove active class from all buttons
+                    langButtons.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Show/hide language elements
+                    document.querySelectorAll('.es-lang, .en-lang').forEach(el => {
+                        if (el.classList.contains(lang + '-lang')) {
+                            el.style.display = '';
+                        } else {
+                            el.style.display = 'none';
+                        }
+                    });
+                    
+                    // Update ROI labels
+                    calculateROI();
+                    updateChecklistProgress();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

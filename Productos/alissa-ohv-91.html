@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ALISSA-OHV-91 - Ley Silla</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="../css/detalle-producto.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="detalle-producto-page">
+
+    <!-- Overlay sidebar móvil -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- PANEL DE ACCESIBILIDAD -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+        <button class="accessibility-toggle" id="accessibilityToggle" aria-label="Panel de accesibilidad">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-content">
+            <div class="accessibility-section">
+                <h3>Tema</h3>
+                <div class="theme-options">
+                    <button class="theme-btn active" data-theme="light">Claro</button>
+                    <button class="theme-btn" data-theme="dark">Oscuro</button>
+                    <button class="theme-btn" data-theme="auto">Auto</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Idioma</h3>
+                <div class="language-options">
+                    <button class="language-btn active" data-lang="es">Español</button>
+                    <button class="language-btn" data-lang="en">English</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Tamaño de Texto</h3>
+                <div class="text-size-options">
+                    <button class="text-size-btn active" data-size="normal">Normal</button>
+                    <button class="text-size-btn" data-size="large">Grande</button>
+                    <button class="text-size-btn" data-size="very-large">Muy Grande</button>
+                </div>
+            </div>
+            
+            <div class="accessibility-section">
+                <h3>Información del Sistema</h3>
+                <div class="system-info">
+                    <p>Versión: 1.0.0</p>
+                    <p>Navegador: <span id="browserInfo"></span></p>
+                    <p>Dispositivo: <span id="deviceInfo"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- WRAPPER GENERAL -->
+    <div class="page-wrapper">
+
+        <!-- HEADER -->
+        <header class="header fixed-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header-logo">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920wn.png" alt="Ley Silla Logo" class="logo-light">
+                    <img src="../Imagenes/ley_silla_logo_leysilla-1920w.png" alt="Ley Silla Logo" class="logo-dark">
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="es-lang">Inicio</a>
+                        <a href="../index.html" class="en-lang">Home</a></li>
+                    <li><a href="../Blog.html" class="es-lang">Blog</a>
+                        <a href="../Blog.html" class="en-lang">Blog</a></li>
+                    <li><a href="../Nosotros.html" class="es-lang">Nosotros</a>
+                        <a href="../Nosotros.html" class="en-lang">us</a></li>
+                    <li><a href="../catalogo.html" class="active es-lang">Catálogo</a>
+                        <a href="../catalogo.html" class="active en-lang">Catalog</a></li>
+                    <li><a href="../contactanos.html" class="es-lang">Contáctanos</a>
+                        <a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-phone"></i> <span class="es-lang">656-687-78-54</span>
+                    <span class="en-lang">656-687-78-54</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3 class="es-lang">Navegación</h3>
+                    <h3 class="en-lang">Navigation</h3>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="../index.html">
+                                <i class="fas fa-home"></i>
+                                <span class="es-lang">Inicio</span>
+                                <span class="en-lang">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../catalogo.html" class="active">
+                                <i class="fas fa-chair"></i>
+                                <span class="es-lang">Catálogo de Sillas</span>
+                                <span class="en-lang">Chair Catalog</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../Blog.html">
+                                <i class="fas fa-blog"></i>
+                                <span class="es-lang">Blog</span>
+                                <span class="en-lang">Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../Nosotros.html">
+                                <i class="fas fa-utensils"></i>
+                                <span class="es-lang">Nosotros</span>
+                                <span class="en-lang">Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contactanos.html">
+                                <i class="fas fa-envelope"></i>
+                                <span class="es-lang">Contacto</span>
+                                <span class="en-lang">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#empresas-obligadas">
+                                <i class="fas fa-building"></i>
+                                <span class="es-lang">Empresas Obligadas</span>
+                                <span class="en-lang">Required Companies</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#beneficios">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="es-lang">Beneficios</span>
+                                <span class="en-lang">Benefits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#multas">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span class="es-lang">Multas y Sanciones</span>
+                                <span class="en-lang">Fines and Penalties</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Sección informativa en sidebar -->
+                <div class="sidebar-info">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Horario de atención:</strong>
+                            <strong class="en-lang">Business hours:</strong>
+                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
+                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Teléfono:</strong>
+                            <strong class="en-lang">Phone:</strong>
+                            <div>656-687-78-54</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-text">
+                            <strong class="es-lang">Email:</strong>
+                            <strong class="en-lang">Email:</strong>
+                            <div>jemmsa@jemmsa.com.mx</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content-with-sidebar">
+
+            <!-- Breadcrumb Mejorado -->
+            <nav class="breadcrumb-industrial">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <a href="../index.html" class="breadcrumb-link">
+                            <i class="fas fa-home"></i>
+                            <span class="es-lang">Inicio</span>
+                            <span class="en-lang">Home</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html" class="breadcrumb-link">
+                            <span class="es-lang">Catálogo</span>
+                            <span class="en-lang">Catalog</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <a href="../catalogo.html?categoria=exterior" class="breadcrumb-link">
+                            <span class="es-lang">VISITANTE EXTERIOR</span>
+                            <span class="en-lang">OUTDOOR VISITOR</span>
+                        </a>
+                        <span class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></span>
+                        <span class="breadcrumb-current">ALISSA-OHV-91</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero del Producto Simplificado -->
+            <section class="producto-hero-industrial">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="producto-info">
+                            <div class="producto-header">
+                                <div class="producto-badge industrial-badge">
+                                    <i class="fas fa-palette"></i>
+                                    <span class="es-lang">12 COLORES DISPONIBLES</span>
+                                    <span class="en-lang">12 COLORS AVAILABLE</span>
+                                </div>
+                                <div class="producto-badge industrial-badge ml-2">
+                                    <i class="fas fa-sun"></i>
+                                    <span class="es-lang">RESISTENTE EXTERIOR</span>
+                                    <span class="en-lang">OUTDOOR RESISTANT</span>
+                                </div>
+                            </div>
+                            
+                            <h1 class="producto-titulo">ALISSA-OHV-91</h1>
+                            
+                            <p class="producto-descripcion es-lang">
+                                Silla para visitante exterior fabricada de una sola pieza en polipropileno de alta resistencia. Diseño integral con brazos incluidos, especialmente formulado para intemperie con resistencia a rayos UV y ambiente salino. Disponible en 12 colores vibrantes.
+                            </p>
+                            <p class="producto-descripcion en-lang">
+                                Outdoor visitor chair manufactured in one piece of high-resistance polypropylene. Integral design with included arms, specially formulated for outdoor use with resistance to UV rays and saline environment. Available in 12 vibrant colors.
+                            </p>
+                            
+                            <div class="producto-actions">
+                                <a href="../contactanos.html" class="btn btn-primary btn-large">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span class="es-lang">Solicitar Información</span>
+                                    <span class="en-lang">Request Information</span>
+                                </a>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span class="es-lang">Ficha Técnica PDF</span>
+                                    <span class="en-lang">Technical Sheet PDF</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="producto-visual">
+                            <div class="imagen-principal-container">
+                                <img src="../Imagenes/producto43-1.png" 
+                                     alt="ALISSA-OHV-91 - Silla exterior con brazos en color beige" 
+                                     class="imagen-principal"
+                                     id="productoImagen">
+                                <div class="imagen-overlay-industrial"></div>
+                            </div>
+                            
+                            <div class="miniaturas-galeria">
+                                <div class="miniatura active" data-image="../Imagenes/producto43-1.png">
+                                    <img src="../Imagenes/producto43-1.png" alt="ALISSA-OHV-91 Color Beige">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto43-2.png">
+                                    <img src="../Imagenes/producto43-2.png" alt="ALISSA-OHV-91 Color Gris">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto43-3.png">
+                                    <img src="../Imagenes/producto43-3.png" alt="ALISSA-OHV-91 Color Beige con brazos">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto43-4.png">
+                                    <img src="../Imagenes/producto43-4.png" alt="ALISSA-OHV-91 Color Beige frontal">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto43-5.png">
+                                    <img src="../Imagenes/producto43-5.png" alt="ALISSA-OHV-91 Vista lateral">
+                                </div>
+                                <div class="miniatura" data-image="../Imagenes/producto43-6.png">
+                                    <img src="../Imagenes/producto43-6.png" alt="ALISSA-OHV-91 Con brazos">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Especificaciones Técnicas Simplificadas -->
+            <section id="especificaciones" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-list-alt"></i>
+                        </div>
+                        <h2 class="es-lang">Especificaciones Técnicas</h2>
+                        <h2 class="en-lang">Technical Specifications</h2>
+                        <p class="es-lang">Detalles completos del modelo ALISSA-OHV-91</p>
+                        <p class="en-lang">Complete details of the ALISSA-OHV-91 model</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-cube"></i>
+                                        <span class="es-lang">Descripción General</span>
+                                        <span class="en-lang">General Description</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-info-circle"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Silla para visitante exterior fabricada integralmente de una sola pieza en polipropileno de alta resistencia. Diseño ergonómico que incluye brazos integrados para mayor comodidad. Especialmente desarrollada para uso en exteriores con máxima durabilidad.</p>
+                                            <p class="en-lang">Outdoor visitor chair integrally manufactured in one piece of high-resistance polypropylene. Ergonomic design including integrated arms for greater comfort. Specially developed for outdoor use with maximum durability.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-shapes"></i>
+                                        <span class="es-lang">Construcción de Una Sola Pieza</span>
+                                        <span class="en-lang">One-Piece Construction</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-cube"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Respaldo, brazos, asiento y patas fabricados de una sola pieza en polipropileno de alta resistencia y duración para intemperie. Elimina puntos débiles, uniones o soldaduras, garantizando mayor resistencia estructural.</p>
+                                            <p class="en-lang">Backrest, arms, seat and legs manufactured in one piece of high-resistance and durable polypropylene for outdoor use. Eliminates weak points, joints or welds, guaranteeing greater structural resistance.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-sun"></i>
+                                        <span class="es-lang">Resistencia a la Intemperie</span>
+                                        <span class="en-lang">Weather Resistance</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Polipropileno especialmente formulado para resistir condiciones exteriores. Alta resistencia a los rayos ultravioleta (UV) y al ambiente salino. No se decolora, agrieta o degrada con la exposición prolongada al sol.</p>
+                                            <p class="en-lang">Polypropylene specially formulated to resist outdoor conditions. High resistance to ultraviolet rays (UV) and saline environment. Does not discolor, crack or degrade with prolonged sun exposure.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-palette"></i>
+                                        <span class="es-lang">Gama de 12 Colores</span>
+                                        <span class="en-lang">12 Color Range</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-fill-drip"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Disponible en 12 colores vibrantes que mantienen su tonalidad incluso bajo exposición solar: Blanco (W9), gris (G6), negro (K5), verde (V5), azul (B7), azul niebla (B9), azul turquesa (BF), rojo (R4), fucsia (R7), amarillo (Y7), ámbar (YF), naranja (YB).</p>
+                                            <p class="en-lang">Available in 12 vibrant colors maintaining their tone even under sun exposure: White (W9), gray (G6), black (K5), green (V5), blue (B7), mist blue (B9), turquoise blue (BF), red (R4), fuchsia (R7), yellow (Y7), amber (YF), orange (YB).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-weight-hanging"></i>
+                                        <span class="es-lang">Alta Capacidad de Carga</span>
+                                        <span class="en-lang">High Load Capacity</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-dumbbell"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Peso máximo de resistencia: 130 kgs. Construcción de una pieza que distribuye uniformemente el peso y proporciona extraordinaria estabilidad y durabilidad para uso comercial ligero en exteriores.</p>
+                                            <p class="en-lang">Maximum weight resistance: 130 kgs. One-piece construction uniformly distributing weight and providing extraordinary stability and durability for light commercial outdoor use.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-hands"></i>
+                                        <span class="es-lang">Diseño con Brazos Integrados</span>
+                                        <span class="en-lang">Integrated Arms Design</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-chair"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Brazos ergonómicos integrados en el diseño de una pieza. Proporcionan mayor comodidad y apoyo para los usuarios, facilitando el sentarse y levantarse, especialmente para personas mayores o con movilidad reducida.</p>
+                                            <p class="en-lang">Ergonomic arms integrated in one-piece design. Provide greater comfort and support for users, facilitating sitting and standing, especially for elderly or reduced mobility persons.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-recycle"></i>
+                                        <span class="es-lang">Durabilidad y Mantenimiento</span>
+                                        <span class="en-lang">Durability and Maintenance</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-broom"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Material no poroso que repele líquidos y es fácil de limpiar. Solo requiere agua y jabón suave para mantenimiento. No necesita pintura, selladores o tratamientos especiales.</p>
+                                            <p class="en-lang">Non-porous material repelling liquids and easy to clean. Only requires water and mild soap for maintenance. Does not need paint, sealers or special treatments.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-anchor"></i>
+                                        <span class="es-lang">Resistente a Ambiente Salino</span>
+                                        <span class="en-lang">Saline Environment Resistant</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-water"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Ideal para zonas costeras, puertos, áreas de playa o cualquier entorno con alta concentración de sal. Material especialmente formulado para resistir la corrosión salina sin degradarse.</p>
+                                            <p class="en-lang">Ideal for coastal areas, ports, beach areas or any environment with high salt concentration. Material specially formulated to resist saline corrosion without degrading.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Galería de Colores -->
+            <section id="colores" class="galeria-industrial">
+                <div class="container">
+                    <div class="galeria-header">
+                        <div class="header-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h2 class="es-lang">Galería de Colores Disponibles</h2>
+                        <h2 class="en-lang">Available Colors Gallery</h2>
+                        <p class="es-lang">Descubre los 12 colores vibrantes del ALISSA-OHV-91</p>
+                        <p class="en-lang">Discover the 12 vibrant colors of ALISSA-OHV-91</p>
+                    </div>
+                    
+                    <div class="galeria-grid">
+                        <div class="galeria-item active" data-image="../Imagenes/producto43-7.png">
+                            <img src="../Imagenes/producto43-7.png" alt="ALISSA-OHV-91 Color Amarillo">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Amarillo (Y7)</span>
+                                <span class="en-lang">Yellow (Y7)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto43-8.png">
+                            <img src="../Imagenes/producto43-8.png" alt="ALISSA-OHV-91 Color Azul">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Azul (B7)</span>
+                                <span class="en-lang">Blue (B7)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto43-9.png">
+                            <img src="../Imagenes/producto43-9.png" alt="ALISSA-OHV-91 Color Naranja">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Naranja (YB)</span>
+                                <span class="en-lang">Orange (YB)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto43-10.png">
+                            <img src="../Imagenes/producto43-10.png" alt="ALISSA-OHV-91 Color Negro">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Negro (K5)</span>
+                                <span class="en-lang">Black (K5)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto43-11.png">
+                            <img src="../Imagenes/producto43-11.png" alt="ALISSA-OHV-91 Color Rojo">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Rojo (R4)</span>
+                                <span class="en-lang">Red (R4)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto43-12.png">
+                            <img src="../Imagenes/producto43-12.png" alt="ALISSA-OHV-91 Color Rosa">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Fucsia (R7)</span>
+                                <span class="en-lang">Fuchsia (R7)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto43-13.png">
+                            <img src="../Imagenes/producto43-13.png" alt="ALISSA-OHV-91 Color Azul Niebla">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Azul Niebla (B9)</span>
+                                <span class="en-lang">Mist Blue (B9)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="galeria-item" data-image="../Imagenes/producto43-14.png">
+                            <img src="../Imagenes/producto43-14.png" alt="ALISSA-OHV-91 Color Verde">
+                            <div class="galeria-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="es-lang">Verde (V5)</span>
+                                <span class="en-lang">Green (V5)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tabla de Colores Detallada -->
+            <section id="tabla-colores" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-swatchbook"></i>
+                        </div>
+                        <h2 class="es-lang">Tabla de Colores Detallada</h2>
+                        <h2 class="en-lang">Detailed Color Chart</h2>
+                        <p class="es-lang">Información específica de cada color disponible</p>
+                        <p class="en-lang">Specific information of each available color</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="tabla-colores-container">
+                                <table class="tabla-colores">
+                                    <thead>
+                                        <tr>
+                                            <th><span class="es-lang">Color</span><span class="en-lang">Color</span></th>
+                                            <th><span class="es-lang">Código</span><span class="en-lang">Code</span></th>
+                                            <th><span class="es-lang">Descripción</span><span class="en-lang">Description</span></th>
+                                            <th><span class="es-lang">Recomendación</span><span class="en-lang">Recommendation</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="color-muestra blanco"></span> Blanco</td>
+                                            <td>W9</td>
+                                            <td class="es-lang">Blanco puro que refleja el calor solar</td>
+                                            <td class="en-lang">Pure white reflecting solar heat</td>
+                                            <td class="es-lang">Áreas con alta exposición solar</td>
+                                            <td class="en-lang">Areas with high sun exposure</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-muestra gris"></span> Gris</td>
+                                            <td>G6</td>
+                                            <td class="es-lang">Gris neutro que disimula suciedad</td>
+                                            <td class="en-lang">Neutral gray concealing dirt</td>
+                                            <td class="es-lang">Uso comercial intensivo</td>
+                                            <td class="en-lang">Intensive commercial use</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-muestra negro"></span> Negro</td>
+                                            <td>K5</td>
+                                            <td class="es-lang">Negro elegante y sofisticado</td>
+                                            <td class="en-lang">Elegant and sophisticated black</td>
+                                            <td class="es-lang">Espacios premium y corporativos</td>
+                                            <td class="en-lang">Premium and corporate spaces</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-muestra verde"></span> Verde</td>
+                                            <td>V5</td>
+                                            <td class="es-lang">Verde natural que armoniza con vegetación</td>
+                                            <td class="en-lang">Natural green harmonizing with vegetation</td>
+                                            <td class="es-lang">Parques y áreas verdes</td>
+                                            <td class="en-lang">Parks and green areas</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-muestra azul"></span> Azul</td>
+                                            <td>B7</td>
+                                            <td class="es-lang">Azul estándar corporativo</td>
+                                            <td class="en-lang">Standard corporate blue</td>
+                                            <td class="es-lang">Empresas e instituciones</td>
+                                            <td class="en-lang">Companies and institutions</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-muestra azul-niebla"></span> Azul Niebla</td>
+                                            <td>B9</td>
+                                            <td class="es-lang">Azul claro sereno</td>
+                                            <td class="en-lang">Serene light blue</td>
+                                            <td class="es-lang">Espacios de relax y wellness</td>
+                                            <td class="en-lang">Relax and wellness spaces</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-muestra azul-turquesa"></span> Azul Turquesa</td>
+                                            <td>BF</td>
+                                            <td class="es-lang">Turquesa vibrante playero</td>
+                                            <td class="en-lang">Vibrant beach turquoise</td>
+                                            <td class="es-lang">Áreas de piscina y playa</td>
+                                            <td class="en-lang">Pool and beach areas</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-muestra rojo"></span> Rojo</td>
+                                            <td>R4</td>
+                                            <td class="es-lang">Rojo intenso llamativo</td>
+                                            <td class="en-lang">Intense striking red</td>
+                                            <td class="es-lang">Zonas de alta visibilidad</td>
+                                            <td class="en-lang">High visibility areas</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-muestra fucsia"></span> Fucsia</td>
+                                            <td>R7</td>
+                                            <td class="es-lang">Rosa vibrante moderno</td>
+                                            <td class="en-lang">Vibrant modern pink</td>
+                                            <td class="es-lang">Espacios juveniles y creativos</td>
+                                            <td class="en-lang">Youth and creative spaces</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-muestra amarillo"></span> Amarillo</td>
+                                            <td>Y7</td>
+                                            <td class="es-lang">Amarillo solar energético</td>
+                                            <td class="en-lang">Energetic solar yellow</td>
+                                            <td class="es-lang">Áreas recreativas y deportivas</td>
+                                            <td class="en-lang">Recreational and sports areas</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-muestra ambar"></span> Ámbar</td>
+                                            <td>YF</td>
+                                            <td class="es-lang">Ámbar cálido y acogedor</td>
+                                            <td class="en-lang">Warm and welcoming amber</td>
+                                            <td class="es-lang">Restaurantes y cafeterías</td>
+                                            <td class="en-lang">Restaurants and cafeterias</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-muestra naranja"></span> Naranja</td>
+                                            <td>YB</td>
+                                            <td class="es-lang">Naranja vibrante y alegre</td>
+                                            <td class="en-lang">Vibrant and cheerful orange</td>
+                                            <td class="es-lang">Espacios festivos y eventos</td>
+                                            <td class="en-lang">Festive spaces and events</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ventajas del Diseño de Una Pieza -->
+            <section id="ventajas" class="accesorios-section">
+                <div class="container">
+                    <div class="accesorios-header">
+                        <div class="header-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h2 class="es-lang">Ventajas del Diseño de Una Pieza</h2>
+                        <h2 class="en-lang">One-Piece Design Advantages</h2>
+                        <p class="es-lang">Beneficios de la construcción integral</p>
+                        <p class="en-lang">Benefits of integral construction</p>
+                    </div>
+                    
+                    <div class="accesorios-grid">
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/ventaja-una-pieza.png" alt="Construcción de una pieza">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">MAYOR RESISTENCIA ESTRUCTURAL</h3>
+                                <h3 class="en-lang">GREATER STRUCTURAL RESISTANCE</h3>
+                                <p class="es-lang">Al eliminar uniones, soldaduras y ensambles, se eliminan puntos débiles. La silla distribuye las cargas de manera uniforme en toda su estructura.</p>
+                                <p class="en-lang">By eliminating joints, welds and assemblies, weak points are eliminated. The chair distributes loads uniformly throughout its structure.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/ventaja-mantenimiento.png" alt="Bajo mantenimiento">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">MÍNIMO MANTENIMIENTO</h3>
+                                <h3 class="en-lang">MINIMUM MAINTENANCE</h3>
+                                <p class="es-lang">Sin piezas que se suelten, tornillos que ajustar o partes que reemplazar. Solo limpieza básica con agua y jabón.</p>
+                                <p class="en-lang">No loose parts, screws to adjust or parts to replace. Only basic cleaning with water and soap.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accesorio-card">
+                            <div class="accesorio-imagen">
+                                <img src="../Imagenes/ventaja-durabilidad.png" alt="Alta durabilidad">
+                            </div>
+                            <div class="accesorio-info">
+                                <h3 class="es-lang">DURABILIDAD EXTENDIDA</h3>
+                                <h3 class="en-lang">EXTENDED DURABILITY</h3>
+                                <p class="es-lang">Resistente a golpes, impactos y uso intensivo. Mantiene su integridad estructural por muchos años incluso en condiciones exteriores adversas.</p>
+                                <p class="en-lang">Resistant to blows, impacts and intensive use. Maintains its structural integrity for many years even in adverse outdoor conditions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aplicaciones Especializadas -->
+            <section id="aplicaciones" class="descripcion-detallada">
+                <div class="container">
+                    <div class="descripcion-header">
+                        <div class="header-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h2 class="es-lang">Aplicaciones Especializadas</h2>
+                        <h2 class="en-lang">Specialized Applications</h2>
+                        <p class="es-lang">Espacios ideales para la ALISSA-OHV-91</p>
+                        <p class="en-lang">Ideal spaces for ALISSA-OHV-91</p>
+                    </div>
+                    
+                    <div class="descripcion-content">
+                        <div class="descripcion-texto">
+                            <div class="especificaciones-grid">
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-umbrella-beach"></i>
+                                        <span class="es-lang">Zonas Costeras y de Playa</span>
+                                        <span class="en-lang">Coastal and Beach Areas</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-water"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Resistencia comprobada al ambiente salino. Ideal para hoteles playeros, restaurantes costeros, malecones y áreas de esparcimiento en la costa.</p>
+                                            <p class="en-lang">Proven resistance to saline environment. Ideal for beach hotels, coastal restaurants, boardwalks and recreation areas on the coast.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-swimming-pool"></i>
+                                        <span class="es-lang">Áreas de Piscina y Spa</span>
+                                        <span class="en-lang">Pool and Spa Areas</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-tint"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Resistente al cloro, humedad constante y exposición solar intensa. Brazos integrados proporcionan comodidad adicional para usuarios en traje de baño.</p>
+                                            <p class="en-lang">Resistant to chlorine, constant humidity and intense sun exposure. Integrated arms provide additional comfort for users in swimwear.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-glass-cheers"></i>
+                                        <span class="es-lang">Terrazas de Restaurantes</span>
+                                        <span class="en-lang">Restaurant Terraces</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-utensils"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Variedad de colores que permite combinar con la identidad visual del establecimiento. Brazos para mayor comodidad durante comidas prolongadas.</p>
+                                            <p class="en-lang">Color variety allowing combination with establishment's visual identity. Arms for greater comfort during prolonged meals.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="espec-categoria">
+                                    <h3 class="categoria-titulo">
+                                        <i class="fas fa-hotel"></i>
+                                        <span class="es-lang">Hoteles y Resorts</span>
+                                        <span class="en-lang">Hotels and Resorts</span>
+                                    </h3>
+                                    <div class="espec-item">
+                                        <div class="espec-icon">
+                                            <i class="fas fa-concierge-bell"></i>
+                                        </div>
+                                        <div class="espec-content">
+                                            <p class="es-lang">Diseño estético en múltiples colores para diferentes áreas del complejo. Alta durabilidad que reduce costos de reemplazo y mantenimiento.</p>
+                                            <p class="en-lang">Aesthetic design in multiple colors for different complex areas. High durability reducing replacement and maintenance costs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA PROFESIONAL MEJORADO -->
+            <section class="cta-profesional-industrial">
+                <div class="container">
+                    <div class="cta-profesional-content">
+                        <div class="cta-profesional-text">
+                            <div class="cta-badge">
+                                <i class="fas fa-palette"></i>
+                                <span class="es-lang">12 COLORES PERSONALIZABLES</span>
+                                <span class="en-lang">12 CUSTOMIZABLE COLORS</span>
+                            </div>
+                            
+                            <h2 class="cta-titulo">
+                                <span class="es-lang">¿Necesitas mobiliario exterior que combine con tu identidad visual?</span>
+                                <span class="en-lang">Need outdoor furniture matching your visual identity?</span>
+                            </h2>
+                            
+                            <p class="cta-descripcion es-lang">
+                                La <strong>ALISSA-OHV-91</strong> ofrece 12 colores vibrantes que mantienen su tonalidad incluso bajo exposición solar intensa. Nuestros expertos te ayudarán a seleccionar los colores perfectos que armonicen con tu espacio exterior y refuercen tu imagen corporativa.
+                            </p>
+                            <p class="cta-descripcion en-lang">
+                                The <strong>ALISSA-OHV-91</strong> offers 12 vibrant colors maintaining their tone even under intense sun exposure. Our experts will help you select perfect colors harmonizing with your outdoor space and reinforcing your corporate image.
+                            </p>
+                            
+                            <div class="cta-beneficios">
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">12 colores UV resistentes</span>
+                                    <span class="en-lang">12 UV resistant colors</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Resistencia 130 kgs</span>
+                                    <span class="en-lang">130 kgs resistance</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Construcción una pieza</span>
+                                    <span class="en-lang">One-piece construction</span>
+                                </div>
+                                <div class="beneficio-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span class="es-lang">Brazos integrados</span>
+                                    <span class="en-lang">Integrated arms</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-profesional-actions">
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <h3 class="es-lang">Selección de Colores</h3>
+                                <h3 class="en-lang">Color Selection</h3>
+                                <p class="es-lang">Asesoría gratuita para elegir colores que combinen con tu espacio</p>
+                                <p class="en-lang">Free advisory to choose colors matching your space</p>
+                                <a href="../contactanos.html?tipo=seleccion-colores" class="btn btn-primary btn-large">
+                                    <i class="fas fa-eye-dropper"></i>
+                                    <span class="es-lang">Seleccionar Colores</span>
+                                    <span class="en-lang">Select Colors</span>
+                                </a>
+                            </div>
+                            
+                            <div class="cta-action-card">
+                                <div class="action-icon">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                                <h3 class="es-lang">Cotización Personalizada</h3>
+                                <h3 class="en-lang">Customized Quote</h3>
+                                <p class="es-lang">Solicita cotización con los colores específicos que necesitas</p>
+                                <p class="en-lang">Request quote with specific colors you need</p>
+                                <a href="../contactanos.html?tipo=cotizacion-colores" class="btn btn-secondary btn-large">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                    <span class="es-lang">Cotizar con Colores</span>
+                                    <span class="en-lang">Quote with Colors</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+
+                <!-- LOGO Y DESCRIPCIÓN -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <p class="footer-description es-lang">
+                        Calidad y confianza en cada asiento. Ayudamos a las empresas a cumplir con la Ley Silla y proteger la salud de sus empleados.
+                    </p>
+                    <p class="footer-description en-lang">
+                        Quality and trust in every seat. We help companies comply with Chair Law and protect their employees' health.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- ENLACES RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Enlaces Rápidos</h3>
+                    <h3 class="en-lang">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
+                        <li><a href="../Blog.html" class="es-lang">Blog</a><a href="Blog.html" class="en-lang">Chair Law Blog</a></li>
+                        <li><a href="../Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="../catalogo.html" class="es-lang">Catálogo</a><a href="../catalogo.html" class="en-lang">Catalog</a></li>
+                        <li><a href="../contactanos.html" class="es-lang">Contáctanos</a><a href="../contactanos.html" class="en-lang">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACTO -->
+                <div class="footer-section">
+                    <h3 class="es-lang">Contacto</h3>
+                    <h3 class="en-lang">Contact</h3>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>656-687-78-54</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>jemmsa@jemmsa.com.mx</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="es-lang">Juárez, Chihuahua</span>
+                            <span class="en-lang">Juarez, Chihuahua</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p class="es-lang">&copy; 2025 Ley Silla. Todos los derechos reservados.</p>
+                <p class="en-lang">&copy; 2025 Chair Law. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="es-lang">Política de Privacidad</a>
+                    <a href="#" class="en-lang">Privacy Policy</a>
+                    <a href="#" class="es-lang">Términos y Condiciones</a>
+                    <a href="#" class="en-lang">Terms and Conditions</a>
+                </div>
+            </div>
+
+        </footer>
+
+    </div> <!-- END WRAPPER -->
+
+    <!-- CHATBOT WIDGET -->
+    <div id="chatbot-container">
+        <!-- Botón flotante del chatbot -->
+        <div id="chatbot-toggle" class="chatbot-minimized">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        
+        <!-- Ventana del Chatbot -->
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span class="es-lang">Asistente Virtual</span>
+                    <span class="en-lang">Virtual Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Mensajes aparecerán aquí -->
+                <div class="chatbot-message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p class="es-lang">¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?</p>
+                        <p class="en-lang">Hello! I'm your virtual assistant from Chair Law. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                    <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                    <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                    <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/accessibility.js"></script>
+    <script src="../js/chatbot.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/detalle-producto.js"></script>
+</body>
+</html>
