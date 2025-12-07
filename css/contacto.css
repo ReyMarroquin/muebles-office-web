@@ -1,12 +1,48 @@
-/* contacto.css - Adaptado para usar variables del sistema */
+/* contacto.css - CORREGIDO con estilo del Catálogo */
 
 .contacto-hero {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
-    color: white;
+    position: relative;
+    color: white; /* Texto blanco sólido */
     padding: 8rem 0 4rem;
     margin-top: 70px;
-    position: relative;
     overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: 
+        linear-gradient(135deg, 
+            rgba(30, 58, 138, 0.15) 0%, 
+            rgba(30, 64, 175, 0.1) 50%, 
+            rgba(59, 130, 246, 0.05) 100%),
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=100');
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Optimización para dispositivos móviles */
+@media (max-width: 768px) {
+    .contacto-hero {
+        background-attachment: scroll;
+        background: 
+            linear-gradient(135deg, 
+                rgba(30, 58, 138, 0.1) 0%, 
+                rgba(30, 64, 175, 0.08) 50%, 
+                rgba(59, 130, 246, 0.05) 100%),
+            url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+        background-size: cover;
+        background-position: center;
+        padding: 8rem 0 4rem;
+        min-height: 60vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacto-hero {
+        padding: 6rem 0 3rem;
+        min-height: 50vh;
+    }
 }
 
 .hero-background {
@@ -34,7 +70,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(30, 58, 138, 0.9) 0%, rgba(30, 64, 175, 0.95) 100%);
+    background: linear-gradient(45deg, rgba(30, 58, 138, 0.1) 0%, rgba(30, 64, 175, 0.05) 100%);
 }
 
 .contacto-hero-content {
@@ -46,21 +82,27 @@
     align-items: center;
 }
 
+/* ESTILOS CORREGIDOS - Mismo estilo que Catálogo */
 .contacto-hero-text .hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
+    font-size: 4rem;
+    font-weight: 800;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: white; /* Blanco sólido */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: -0.5px;
+    line-height: 1.1;
 }
 
+/* Subtítulo con el mismo estilo que Catálogo */
 .contacto-hero-text .hero-subtitle {
-    font-size: 1.3rem;
-    opacity: 0.9;
+    font-size: 1.4rem;
+    font-weight: 400;
     margin-bottom: 2.5rem;
     line-height: 1.6;
+    opacity: 0.95; /* Misma opacidad que en las imágenes */
+    max-width: 600px;
+    color: white; /* Blanco sólido */
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 .hero-stats {
@@ -219,14 +261,59 @@
     color: var(--text-light);
 }
 
-.btn-success {
-    background: #28a745;
+/* BOTONES DE WHATSAPP EN AZUL */
+.whatsapp-btn {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%) !important;
     border: none;
+    color: white !important;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
 }
 
-.btn-success:hover {
-    background: #218838;
-    transform: translateY(-2px);
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%) !important;
+}
+
+.whatsapp-btn i {
+    font-size: 1.2rem;
+}
+
+.contact-card .whatsapp-btn {
+    width: 100%;
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card .whatsapp-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: translateX(-100%);
+}
+
+.contact-card .whatsapp-btn:hover::after {
+    animation: shimmer 1.5s ease;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 /* Formulario de Contacto */
@@ -534,123 +621,10 @@
     flex-wrap: wrap;
 }
 
-/* Hero Contacto con imagen de fondo - Similar al catálogo */
-.contacto-hero {
-    position: relative;
-    color: var(--white);
-    padding: 10rem 0 8rem;
-    margin-top: 70px;
-    overflow: hidden;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') !important;
-    background-position: center !important;
-    background-attachment: fixed !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-}
-
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.hero-pattern {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Overlay más oscuro para mejor contraste */
-    z-index: 2;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, 
-        rgba(30, 58, 138, 0.8) 0%, 
-        rgba(1, 13, 38, 0.7) 50%, 
-        rgba(59, 130, 246, 0.6) 100%);
-    z-index: 3;
-    backdrop-filter: blur(2px); /* Efecto blur sutil */
-}
-
-.contacto-hero-content {
-    position: relative;
-    z-index: 4;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.contacto-hero-text {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    text-align: center;
-}
-
-.contacto-hero-text .hero-title {
-    font-size: 4rem;
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    color: var(--white);
-    line-height: 1.1;
-    text-shadow: 
-        0 4px 15px rgba(0, 0, 0, 0.7),
-        0 8px 30px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 30%, #bae6fd 70%, #7dd3fc 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    position: relative;
-    animation: titleReveal 1.5s ease-out;
-}
-
-.contacto-hero-text .hero-subtitle {
-    font-size: 1.4rem;
-    opacity: 0.95;
-    margin-bottom: 3rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.95);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
-    font-weight: 500;
-    animation: subtitleReveal 1.8s ease-out 0.3s both;
-}
-
-/* Animaciones para el texto */
-@keyframes titleReveal {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes subtitleReveal {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.cta-actions .whatsapp-btn {
+    min-width: 200px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
 }
 
 /* Mantener los elementos flotantes pero ajustar su posición */
@@ -715,11 +689,17 @@
     }
     
     .contacto-hero-text .hero-title {
-        font-size: 2.5rem;
+        font-size: 3rem;
+        font-weight: 800;
+        letter-spacing: -0.3px;
+        color: white; /* Mantener blanco sólido */
     }
     
     .contacto-hero-text .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: white; /* Mantener blanco sólido */
+        opacity: 0.95; /* Misma opacidad */
     }
     
     .contacto-hero-visual {
@@ -740,11 +720,17 @@
     }
     
     .contacto-hero-text .hero-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
+        font-weight: 800;
+        letter-spacing: -0.2px;
+        color: white; /* Mantener blanco sólido */
     }
     
     .contacto-hero-text .hero-subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: white; /* Mantener blanco sólido */
+        opacity: 0.95; /* Misma opacidad */
     }
     
     .floating-element {
@@ -764,6 +750,7 @@
     
     .contacto-hero-text .hero-title {
         font-size: 2.5rem;
+        color: white; /* Mantener blanco sólido */
     }
     
     .hero-stats {
@@ -797,6 +784,7 @@
     
     .contacto-hero-text .hero-title {
         font-size: 2rem;
+        color: white; /* Mantener blanco sólido */
     }
     
     .contact-cards-grid {
@@ -808,19 +796,36 @@
         height: 60px;
         font-size: 1.5rem;
     }
+    
+    .cta-actions .whatsapp-btn {
+        min-width: 100%;
+    }
 }
 
 /* ===== MODO OSCURO PARA CONTACTO ===== */
 body.dark-mode .contacto-hero {
-    background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') !important;
+    background: 
+        linear-gradient(135deg, 
+            rgba(15, 23, 42, 0.1) 0%, 
+            rgba(30, 41, 59, 0.08) 50%, 
+            rgba(51, 65, 85, 0.05) 100%),
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=100');
 }
 
 body.dark-mode .hero-overlay {
     background: linear-gradient(45deg, 
-        rgba(15, 23, 42, 0.9) 0%, 
-        rgba(30, 41, 59, 0.8) 50%, 
-        rgba(51, 65, 85, 0.7) 100%);
-    backdrop-filter: blur(3px);
+        rgba(15, 23, 42, 0.05) 0%, 
+        rgba(30, 41, 59, 0.03) 100%);
+}
+
+/* Modo oscuro para los textos del hero - TEXTO BLANCO SÓLIDO */
+body.dark-mode .contacto-hero-text .hero-title {
+    color: #f8fafc; /* Blanco sólido en modo oscuro */
+}
+
+body.dark-mode .contacto-hero-text .hero-subtitle {
+    color: #e2e8f0; /* Blanco grisáceo sólido en modo oscuro */
+    opacity: 0.95; /* Mantener misma opacidad */
 }
 
 body.dark-mode .contact-cards-section {
@@ -848,6 +853,17 @@ body.dark-mode .contact-email {
 
 body.dark-mode .contact-hours {
     color: #94a3b8;
+}
+
+/* Modo oscuro para botones de WhatsApp */
+body.dark-mode .whatsapp-btn {
+    background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%) !important;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+}
+
+body.dark-mode .whatsapp-btn:hover {
+    background: linear-gradient(135deg, #3730a3 0%, #1e40af 100%) !important;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
 }
 
 body.dark-mode .contact-form-section {
@@ -998,3 +1014,815 @@ body.dark-mode .form-group select option {
     background: #475569;
     color: #e2e8f0;
 }
+
+/* ESTILO PARA CONTÁCTANOS - OPCIÓN 1 */
+.contacto-hero-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contacto-hero-text .hero-title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+     background: linear-gradient(135deg, 
+        #4b5563 0%, 
+        #6b7280 25%, 
+        #9ca3af 50%, 
+        #d1d5db 75%, 
+        #f3f4f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.2);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    position: relative;
+    display: inline-block;
+}
+
+.contacto-hero-text .hero-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.8) 50%,
+        rgba(255,255,255,0) 100%);
+    border-radius: 2px;
+}
+
+.contacto-hero-text .hero-subtitle {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    padding: 0 1rem;
+}
+
+   
+        /* Estilos para el mapa */
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+            background: white;
+        }
+        
+        .map-wrapper {
+            height: 500px;
+            position: relative;
+        }
+        
+        .google-map-iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            border: 0;
+        }
+        
+        .location-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .location-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+        
+        .detail-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 10px;
+            border-left: 4px solid #3b82f6;
+            transition: transform 0.3s ease;
+        }
+        
+        .detail-item:hover {
+            transform: translateX(5px);
+            background: #f1f5f9;
+        }
+        
+        .detail-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        /* Icono de ubicación - ROJO */
+        .detail-icon.location .fas.fa-map-marker-alt {
+            color: #dc2626;
+        }
+        
+        /* Icono de teléfono - BLANCO */
+        .detail-icon.phone .fas.fa-phone {
+            color: white;
+        }
+        
+        /* Icono de horarios - NEGRO */
+        .detail-icon.hours .fas.fa-clock {
+            color: #1f2937;
+        }
+        
+        .detail-content h3 {
+            color: #1e40af;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .detail-content p {
+            margin: 0.25rem 0;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+        
+        .detail-content strong {
+            color: #1f2937;
+            font-weight: 600;
+        }
+        
+        .location-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            padding: 0 2rem 2rem;
+        }
+        
+        .location-actions .btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Estilos específicos para el botón VER EN GOOGLE MAPS */
+        .btn-google-maps {
+            background: #3730a3;
+            color: white;
+            border: none;
+        }
+        
+        .btn-google-maps:hover {
+            background: #3367d6;
+            transform: translateY(-2px);
+        }
+        
+        /* Estilos para el ícono de Google con colores */
+        .google-icon {
+            background: conic-gradient(from -45deg, 
+                #ea4335 0% 25%, 
+                #4285f4 25% 50%, 
+                #fbbc05 50% 75%, 
+                #34a853 75% 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            font-weight: 900;
+            font-size: 1.1em;
+        }
+        
+        /* SVG alternativo para navegadores que no soportan conic-gradient */
+        .google-icon-svg {
+            width: 18px;
+            height: 18px;
+            margin-right: 5px;
+        }
+        
+        /* Estilos para el botón AMPLIAR MAPA */
+        .btn-expand {
+            background: #2110b9;
+            color: white;
+            border: 2px solid #2110b9;
+        }
+        
+        .btn-expand:hover {
+            background: #3730a3;
+            border-color: #3730a3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+        
+        /* Modal para mapa en pantalla completa */
+        .fullscreen-map-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .fullscreen-map-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            gap: 20px;
+        }
+        
+        .fullscreen-map-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .fullscreen-map-header h3 {
+            color: #1e40af;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .close-fullscreen-map {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #666;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .close-fullscreen-map:hover {
+            background: #f1f5f9;
+            color: #dc2626;
+        }
+        
+        .fullscreen-map-wrapper {
+            flex: 1;
+            background: white;
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+        }
+        
+        .fullscreen-map-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        @media (max-width: 1024px) {
+            .location-info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-wrapper {
+                height: 400px;
+            }
+            
+            .google-map-iframe {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .location-actions {
+                flex-direction: column;
+            }
+            
+            .location-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .map-wrapper {
+                height: 350px;
+            }
+            
+            .google-map-iframe {
+                height: 350px;
+            }
+            
+            .location-details {
+                padding: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .map-wrapper {
+                height: 300px;
+            }
+            
+            .google-map-iframe {
+                height: 300px;
+            }
+            
+            .fullscreen-map-header {
+                padding: 15px;
+            }
+            
+            .fullscreen-map-header h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+/* ===== ESTILOS ESPECÍFICOS PARA FAQS DE LEY SILLA ===== */
+
+.ley-silla-faq {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 20px;
+    padding: 4rem 0;
+    margin: 2rem auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.ley-silla-faq::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, 
+        #dc2626 0%, 
+        #ea580c 25%, 
+        #ca8a04 50%, 
+        #16a34a 75%, 
+        #2563eb 100%);
+}
+
+.section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #1e40af, #3730a3);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+}
+
+.section-badge i {
+    font-size: 1.1rem;
+}
+
+.ley-silla-faq .section-header h2 {
+    color: #1e40af;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.ley-silla-faq .section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    border-radius: 2px;
+}
+
+.ley-silla-faq .section-header p {
+    font-size: 1.1rem;
+    color: #4b5563;
+    max-width: 800px;
+    margin: 1.5rem auto 3rem;
+    line-height: 1.6;
+}
+
+/* FAQ Items específicos para Ley Silla */
+.ley-silla-faq .faq-item {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.ley-silla-faq .faq-item:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-color: #3b82f6;
+    transform: translateY(-2px);
+}
+
+.ley-silla-faq .faq-item.active {
+    border-color: #3b82f6;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+}
+
+/* Pregunta - Diseño mejorado */
+.ley-silla-faq .faq-question {
+    padding: 1.8rem 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.ley-silla-faq .faq-item.active .faq-question {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.ley-silla-faq .faq-question:hover {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.faq-question-content {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex: 1;
+}
+
+.faq-question-content i {
+    color: #2563eb;
+    font-size: 1.4rem;
+    width: 30px;
+    text-align: center;
+}
+
+.faq-question-content h4 {
+    color: #1e40af;
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.ley-silla-faq .faq-question i.fa-chevron-down {
+    color: #6b7280;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.ley-silla-faq .faq-item.active .faq-question i.fa-chevron-down {
+    transform: rotate(180deg);
+    color: #2563eb;
+}
+
+/* Respuesta - Diseño mejorado */
+.ley-silla-faq .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.ley-silla-faq .faq-item.active .faq-answer {
+    max-height: 1000px;
+    padding: 0;
+}
+
+.faq-answer-content {
+    display: flex;
+    gap: 1.2rem;
+    padding: 2rem;
+    background: white;
+    align-items: flex-start;
+}
+
+.faq-answer-content i {
+    color: #10b981;
+    font-size: 1.4rem;
+    width: 30px;
+    text-align: center;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.faq-answer-content > div {
+    flex: 1;
+}
+
+.faq-answer-content p,
+.faq-answer-content ul {
+    color: #4b5563;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.faq-answer-content ul {
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.faq-answer-content li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.faq-answer-content li::marker {
+    color: #3b82f6;
+}
+
+/* Números o iconos decorativos para cada pregunta */
+.ley-silla-faq .faq-item:nth-child(1) .faq-question-content i {
+    color: #dc2626; /* Rojo para ¿Qué es? */
+}
+
+.ley-silla-faq .faq-item:nth-child(2) .faq-question-content i {
+    color: #ea580c; /* Naranja para ¿Para quién? */
+}
+
+.ley-silla-faq .faq-item:nth-child(3) .faq-question-content i {
+    color: #ca8a04; /* Amarillo para requisitos */
+}
+
+.ley-silla-faq .faq-item:nth-child(4) .faq-question-content i {
+    color: #16a34a; /* Verde para tiempo */
+}
+
+.ley-silla-faq .faq-item:nth-child(5) .faq-question-content i {
+    color: #2563eb; /* Azul para tipo de silla */
+}
+
+.ley-silla-faq .faq-item:nth-child(6) .faq-question-content i {
+    color: #7c3aed; /* Violeta para medio tiempo */
+}
+
+.ley-silla-faq .faq-item:nth-child(7) .faq-question-content i {
+    color: #db2777; /* Rosa para cantidad */
+}
+
+.ley-silla-faq .faq-item:nth-child(8) .faq-question-content i {
+    color: #0891b2; /* Cian para vigilancia */
+}
+
+.ley-silla-faq .faq-item:nth-child(9) .faq-question-content i {
+    color: #4f46e5; /* Índigo para promoción */
+}
+
+/* ===== MODO OSCURO PARA FAQS DE LEY SILLA ===== */
+body.dark-mode .ley-silla-faq {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.ley-silla-faq::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, 
+        #0F172A 0%,     /* Azul noche profundo */
+        #1E40AF 25%,    /* Azul marino */
+        #2563EB 50%,    /* Azul corporativo */
+        #3B82F6 75%,    /* Azul real */
+        #60A5FA 100%    /* Azul cielo */
+    );
+}
+
+body.dark-mode .ley-silla-faq .section-header h2 {
+    color: #60a5fa;
+}
+
+body.dark-mode .ley-silla-faq .section-header p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .section-badge {
+    background: linear-gradient(135deg, #3730a3, #1e40af);
+}
+
+body.dark-mode .ley-silla-faq .faq-item {
+    background: #334155;
+    border-color: #475569;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+body.dark-mode .ley-silla-faq .faq-item:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    border-color: #60a5fa;
+}
+
+body.dark-mode .ley-silla-faq .faq-item.active {
+    border-color: #60a5fa;
+    box-shadow: 0 10px 25px rgba(96, 165, 250, 0.2);
+}
+
+body.dark-mode .ley-silla-faq .faq-question {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+body.dark-mode .ley-silla-faq .faq-item.active .faq-question {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+}
+
+body.dark-mode .ley-silla-faq .faq-question:hover {
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+}
+
+body.dark-mode .faq-question-content h4 {
+    color: #93c5fd;
+}
+
+body.dark-mode .faq-question-content i {
+    color: inherit;
+}
+
+body.dark-mode .ley-silla-faq .faq-question i.fa-chevron-down {
+    color: #94a3b8;
+}
+
+body.dark-mode .ley-silla-faq .faq-item.active .faq-question i.fa-chevron-down {
+    color: #93c5fd;
+}
+
+body.dark-mode .faq-answer-content {
+    background: #334155;
+}
+
+body.dark-mode .faq-answer-content i {
+    color: #10b981;
+}
+
+body.dark-mode .faq-answer-content p,
+body.dark-mode .faq-answer-content ul {
+    color: #d1d5db;
+}
+
+body.dark-mode .faq-answer-content li::marker {
+    color: #60a5fa;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .ley-silla-faq {
+        padding: 3rem 1rem;
+        border-radius: 15px;
+        margin: 1rem auto;
+    }
+    
+    .ley-silla-faq .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .ley-silla-faq .section-header p {
+        font-size: 1rem;
+        margin: 1rem auto 2rem;
+    }
+    
+    .ley-silla-faq .faq-question {
+        padding: 1.5rem;
+    }
+    
+    .faq-question-content {
+        gap: 1rem;
+    }
+    
+    .faq-question-content h4 {
+        font-size: 1.05rem;
+    }
+    
+    .faq-answer-content {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+    
+    .faq-question-content i,
+    .faq-answer-content i {
+        font-size: 1.2rem;
+        width: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ley-silla-faq {
+        padding: 2rem 1rem;
+    }
+    
+    .ley-silla-faq .section-header h2 {
+        font-size: 1.7rem;
+    }
+    
+    .section-badge {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .ley-silla-faq .faq-question {
+        padding: 1.2rem;
+    }
+    
+    .faq-answer-content {
+        padding: 1.2rem;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .faq-question-content {
+        gap: 0.8rem;
+    }
+    
+    .faq-question-content h4 {
+        font-size: 1rem;
+    }
+}
+
+/* Animaciones suaves */
+.ley-silla-faq .faq-item {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.ley-silla-faq .faq-item:nth-child(1) { animation-delay: 0.1s; }
+.ley-silla-faq .faq-item:nth-child(2) { animation-delay: 0.2s; }
+.ley-silla-faq .faq-item:nth-child(3) { animation-delay: 0.3s; }
+.ley-silla-faq .faq-item:nth-child(4) { animation-delay: 0.4s; }
+.ley-silla-faq .faq-item:nth-child(5) { animation-delay: 0.5s; }
+.ley-silla-faq .faq-item:nth-child(6) { animation-delay: 0.6s; }
+.ley-silla-faq .faq-item:nth-child(7) { animation-delay: 0.7s; }
+.ley-silla-faq .faq-item:nth-child(8) { animation-delay: 0.8s; }
+.ley-silla-faq .faq-item:nth-child(9) { animation-delay: 0.9s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto de brillo en hover */
+.ley-silla-faq .faq-item:hover .faq-question-content i {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Indicador visual de estado activo */
+.ley-silla-faq .faq-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(to bottom, #2563eb, #3b82f6);
+    border-radius: 0 2px 2px 0;
+}
+
+/* Estilo para el último FAQ item */
+.ley-silla-faq .faq-item:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== ESTILOS PARA ICONOS ESPECÍFICOS ===== */
+.fa-requirements:before {
+    content: "\f0ae";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+

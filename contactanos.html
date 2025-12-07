@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Contáctanos - Ley Silla</title>
 
+    <link rel="icon" href="Imagenes/Navegador.png" type="image/x-icon">
+    <link rel="shortcut icon" href="Imagenes/Navegador.png" type="image/x-icon">
+
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/accessibility.css">
@@ -15,8 +18,6 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&libraries=places"></script>
 </head>
 <body class="contacto-page">
 
@@ -158,27 +159,6 @@
                                 <span class="en-lang">Contact</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="#empresas-obligadas">
-                                <i class="fas fa-building"></i>
-                                <span class="es-lang">Empresas Obligadas</span>
-                                <span class="en-lang">Required Companies</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#beneficios">
-                                <i class="fas fa-check-circle"></i>
-                                <span class="es-lang">Beneficios</span>
-                                <span class="en-lang">Benefits</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#multas">
-                                <i class="fas fa-exclamation-triangle"></i>
-                                <span class="es-lang">Multas y Sanciones</span>
-                                <span class="en-lang">Fines and Penalties</span>
-                            </a>
-                        </li>
                     </ul>
                 </nav>
 
@@ -189,8 +169,8 @@
                         <div class="info-text">
                             <strong class="es-lang">Horario de atención:</strong>
                             <strong class="en-lang">Business hours:</strong>
-                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
-                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                            <div class="es-lang">Lun-Vie: 8am - 5pm</div>
+                            <div class="en-lang">Mon-Fri: 8am - 5pm</div>
                         </div>
                     </div>
                     <div class="info-item">
@@ -216,7 +196,7 @@
         <!-- CONTENIDO PRINCIPAL -->
         <main class="main-content-with-sidebar">
 
-            <!-- HERO CONTACTO -->
+            <!-- HERO CONTACTO CON IMAGEN MEJORADA -->
             <section class="contacto-hero">
                 <div class="hero-background">
                     <div class="hero-pattern"></div>
@@ -233,20 +213,6 @@
                             <p class="hero-subtitle en-lang">
                                 We're here to help you comply with Chair Law. Your inquiry is our priority.
                             </p>
-                            
-                        </div>
-                        <div class="contacto-hero-visual">
-                            <div class="floating-elements">
-                                <div class="floating-element element-1">
-                                    <i class="fas fa-headset"></i>
-                                </div>
-                                <div class="floating-element element-2">
-                                    <i class="fas fa-comments"></i>
-                                </div>
-                                <div class="floating-element element-3">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -289,7 +255,7 @@
                                 <span class="contact-hours es-lang">Disponible 24/7</span>
                                 <span class="contact-hours en-lang">Available 24/7</span>
                             </div>
-                            <a href="https://wa.me/526566877854" target="_blank" class="btn btn-primary btn-block">
+                            <a href="https://wa.me/526566877854" target="_blank" class="whatsapp-btn btn-block">
                                 <i class="fab fa-whatsapp"></i>
                                 <span class="es-lang">Escribir por WhatsApp</span>
                                 <span class="en-lang">Write on WhatsApp</span>
@@ -319,201 +285,341 @@
                 </div>
             </section>
 
-            <!-- FORMULARIO DE CONTACTO -->
-            <section class="contact-form-section">
-                <div class="container-sm">
-                    <div class="form-container">
-                        <div class="form-header">
-                            <h2 class="es-lang">Solicita tu Asesoría Personalizada</h2>
-                            <h2 class="en-lang">Request Your Personalized Consultation</h2>
-                            <p class="es-lang">Completa el formulario y un especialista se pondrá en contacto contigo</p>
-                            <p class="en-lang">Complete the form and a specialist will contact you</p>
-                        </div>
-
-                        <form class="contact-form" id="contactForm">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="nombre" class="es-lang">Nombre Completo *</label>
-                                    <label for="nombre" class="en-lang">Full Name *</label>
-                                    <input type="text" id="nombre" name="nombre" required>
-                                    <i class="fas fa-user input-icon"></i>
-                                </div>
-                                <div class="form-group">
-                                    <label for="empresa" class="es-lang">Empresa</label>
-                                    <label for="empresa" class="en-lang">Company</label>
-                                    <input type="text" id="empresa" name="empresa">
-                                    <i class="fas fa-building input-icon"></i>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="email" class="es-lang">Correo Electrónico *</label>
-                                    <label for="email" class="en-lang">Email *</label>
-                                    <input type="email" id="email" name="email" required>
-                                    <i class="fas fa-envelope input-icon"></i>
-                                </div>
-                                <div class="form-group">
-                                    <label for="telefono" class="es-lang">Teléfono *</label>
-                                    <label for="telefono" class="en-lang">Phone *</label>
-                                    <input type="tel" id="telefono" name="telefono" required>
-                                    <i class="fas fa-phone input-icon"></i>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="asunto" class="es-lang">Tipo de Consulta *</label>
-                                <label for="asunto" class="en-lang">Type of Inquiry *</label>
-                                <select id="asunto" name="asunto" required>
-                                    <option value="" class="es-lang">Selecciona una opción</option>
-                                    <option value="" class="en-lang">Select an option</option>
-                                    <option value="cotizacion" class="es-lang">Cotización de sillas</option>
-                                    <option value="cotizacion" class="en-lang">Chair quotation</option>
-                                    <option value="ley-silla" class="es-lang">Consulta sobre Ley Silla</option>
-                                    <option value="ley-silla" class="en-lang">Chair Law inquiry</option>
-                                    <option value="soporte" class="es-lang">Soporte técnico</option>
-                                    <option value="soporte" class="en-lang">Technical support</option>
-                                    <option value="garantia" class="es-lang">Garantía</option>
-                                    <option value="garantia" class="en-lang">Warranty</option>
-                                    <option value="otro" class="es-lang">Otro</option>
-                                    <option value="otro" class="en-lang">Other</option>
-                                </select>
-                                <i class="fas fa-chevron-down input-icono"></i>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="mensaje" class="es-lang">Mensaje *</label>
-                                <label for="mensaje" class="en-lang">Message *</label>
-                                <textarea id="mensaje" name="mensaje" rows="5" placeholder=" " required></textarea>
-                                <i class="fas fa-comment input-iconos"></i>
-                            </div>
-
-                            <div class="form-options">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="newsletter" checked>
-                                    <span class="checkmark"></span>
-                                    <span class="es-lang">Deseo recibir información sobre nuevos productos y promociones</span>
-                                    <span class="en-lang">I wish to receive information about new products and promotions</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="privacy" required>
-                                    <span class="checkmark"></span>
-                                    <span class="es-lang">Acepto la política de privacidad y términos de servicio</span>
-                                    <span class="en-lang">I accept the privacy policy and terms of service</span>
-                                </label>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary btn-large btn-submit">
-                                <span class="btn-text es-lang">Enviar Mensaje</span>
-                                <span class="btn-text en-lang">Send Message</span>
-                                <div class="btn-loading">
-                                    <i class="fas fa-spinner fa-spin"></i>
-                                </div>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-
-            <!-- MAPA Y UBICACIÓN -->
+            <!-- MAPA Y UBICACIÓN MEJORADO -->
             <section class="map-section">
                 <div class="container-sm">
+                    <div class="section-header">
+                        <h2 class="es-lang">Nuestra Ubicación</h2>
+                        <h2 class="en-lang">Our Location</h2>
+                    </div>
                     
-
                     <div class="map-container">
-                        <div class="map-wrapper">
-                            <div id="map" class="google-map"></div>
-                            <div class="map-overlay">
-                                <div class="location-info">
-                                    <div class="location-details">
-                                        <div class="detail-item">
-                                            <i class="fas fa-map-marker-alt"></i>
-                                            <span>C. Jupiter 1550, Satelite, 32540, Juárez, Chihuahua</span>
-                                        </div>
-                                        <div class="detail-item">
-                                            <i class="fas fa-clock"></i>
-                                            <span class="es-lang">Lun-Vie: 8:00 AM - 5:00 PM</span>
-                                            <span class="en-lang">Mon-Fri: 8:00 AM - 5:00 PM</span>
-                                        </div>
-                                        <div class="detail-item">
-                                            <i class="fas fa-phone"></i>
-                                            <span>(656)687-7854</span>
-                                        </div>
-                                        <div class="detail-item">
-                                            <i class="fas fa-parking"></i>
-                                            <span class="es-lang">Estacionamiento gratuito</span>
-                                            <span class="en-lang">Free parking</span>
-                                        </div>
+                        <div class="location-info-grid">
+                            <!-- Información de contacto -->
+                            <div class="location-details">
+                                <!-- Dirección - Icono ROJO -->
+                                <div class="detail-item">
+                                    <div class="detail-icon location">
+                                        <i class="fas fa-map-marker-alt"></i>
                                     </div>
-                                    <a href="https://www.google.com/maps/place/JEMMSA/@31.6771011,-106.3734515,20z/data=!4m6!3m5!1s0x86e75d94b851cdb7:0x201492b5c0030859!8m2!3d31.6771103!4d-106.3733022!16s%2Fg%2F11fjtzw3zq?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" 
-                                       target="_blank" class="btn btn-outline">
-                                        <i class="fas fa-directions"></i>
-                                        <span class="es-lang">Cómo Llegar</span>
-                                        <span class="en-lang">Get Directions</span>
-                                    </a>
+                                    <div class="detail-content">
+                                        <h3 class="es-lang">Dirección</h3>
+                                        <h3 class="en-lang">Address</h3>
+                                        <p><strong>C. Júpiter 1550</strong></p>
+                                        <p>C. Júpiter 1550, Satélite, 32540</p>
+                                        <p>Juárez Chih.</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Teléfono - Icono BLANCO -->
+                                <div class="detail-item">
+                                    <div class="detail-icon phone">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="detail-content">
+                                        <h3 class="es-lang">Teléfono de atención</h3>
+                                        <h3 class="en-lang">Contact Phone</h3>
+                                        <p>+52 (656) 437-2481</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Horarios - Icono NEGRO -->
+                                <div class="detail-item">
+                                    <div class="detail-icon hours">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="detail-content">
+                                        <h3 class="es-lang">Horarios de atención</h3>
+                                        <h3 class="en-lang">Business Hours</h3>
+                                        <p>Lunes a Viernes: 08:00 am - 05:00 pm</p>
+                                        <p>Sábados y Domingo: Cerrado</p>
+                                    </div>
                                 </div>
                             </div>
+                            
+                            <!-- Mapa interactivo CON IFRAME - SIN API KEY -->
+                            <div class="map-wrapper">
+                                <iframe 
+                                    class="google-map-iframe"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3397.042282259697!2d-106.37587692446474!3d31.677110274205856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e75d94b851cdb7%3A0x201492b5c0030859!2sC.%20J%C3%BApiter%201550%2C%20Sat%C3%A9lite%2C%2032540%20Ju%C3%A1rez%2C%20Chih.!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx"
+                                    allowfullscreen=""
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    title="Ubicación de JEMMSA - Ley Silla">
+                                </iframe>
+                            </div>
                         </div>
+                        
+                            <!-- Botones de acción -->
+                            <div class="location-actions">
+                                <a href="https://www.google.com/maps/dir//C.+J%C3%BApiter+1550,+Sat%C3%A9lite,+32540+Ju%C3%A1rez,+Chih./@31.6771011,-106.3734515,20z/data=!4m6!3m5!1s0x86e75d94b851cdb7:0x201492b5c0030859!8m2!3d31.6771103!4d-106.3733022!16s%2Fg%2F11fjtzw3zq" 
+                                target="_blank" class="btn btn-primary">
+                                    <i class="fas fa-directions"></i>
+                                    <span class="es-lang">CÓMO LLEGAR</span>
+                                    <span class="en-lang">GET DIRECTIONS</span>
+                                </a>
+                                
+                                <button onclick="openFullscreenMap()" class="btn btn-expand">
+                                    <i class="fas fa-expand"></i>
+                                    <span class="es-lang">AMPLIAR MAPA</span>
+                                    <span class="en-lang">ENLARGE MAP</span>
+                                </button>
+                                
+                                <a href="https://www.google.com/maps/place/JEMMSA/@31.6771103,-106.3733022,17z/data=!3m1!4b1!4m6!3m5!1s0x86e75d94b851cdb7:0x201492b5c0030859!8m2!3d31.6771103!4d-106.3733022!16s%2Fg%2F11fjtzw3zq" 
+                                target="_blank" class="btn btn-google-maps">
+                                    <!-- Ícono de Google con colores oficiales (MANTENIDO) -->
+                                    <svg class="google-icon-svg" viewBox="0 0 24 24">
+                                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                                    </svg>
+                                    <span class="es-lang">VER EN GOOGLE MAPS</span>
+                                    <span class="en-lang">VIEW ON GOOGLE MAPS</span>
+                                </a>
+                            </div>
                     </div>
                 </div>
             </section>
 
-            <!-- PREGUNTAS FRECUENTES -->
-            <section class="faq-section">
+            <!-- PREGUNTAS FRECUENTES ESPECÍFICAS SOBRE LEY SILLA -->
+            <section class="faq-section ley-silla-faq">
                 <div class="container-sm">
                     <div class="section-header">
-                        <h2 class="es-lang">Preguntas Frecuentes</h2>
-                        <h2 class="en-lang">Frequently Asked Questions</h2>
-                        <p class="es-lang">Encuentra respuestas a las consultas más comunes sobre nuestros productos y servicios</p>
-                        <p class="en-lang">Find answers to the most common questions about our products and services</p>
+                        <div class="section-badge">
+                            <i class="fas fa-gavel"></i>
+                            <span class="es-lang">LEY SILLA</span>
+                            <span class="en-lang">CHAIR LAW</span>
+                        </div>
+                        <h2 class="es-lang">Preguntas Frecuentes sobre la Ley Silla</h2>
+                        <h2 class="en-lang">Frequently Asked Questions about Chair Law</h2>
+                        <p class="es-lang">Todo lo que necesitas saber sobre el cumplimiento de la Ley Silla en México</p>
+                        <p class="en-lang">Everything you need to know about compliance with Chair Law in Mexico</p>
                     </div>
 
                     <div class="faq-grid">
+                        <!-- Pregunta 1 -->
                         <div class="faq-item">
                             <div class="faq-question">
-                                <h4 class="es-lang">¿Cuál es el tiempo de respuesta para consultas?</h4>
-                                <h4 class="en-lang">What is the response time for inquiries?</h4>
+                                <div class="faq-question-content">
+                                    <i class="fas fa-question-circle"></i>
+                                    <div>
+                                        <h4 class="es-lang">¿Qué es la Ley Silla?</h4>
+                                        <h4 class="en-lang">What is Chair Law?</h4>
+                                    </div>
+                                </div>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p class="es-lang">Respondemos todas las consultas en un máximo de 2 horas hábiles. Para emergencias, contamos con soporte telefónico inmediato.</p>
-                                <p class="en-lang">We respond to all inquiries within a maximum of 2 business hours. For emergencies, we have immediate phone support.</p>
+                                <div class="faq-answer-content">
+                                    <i class="fas fa-info-circle"></i>
+                                    <div>
+                                        <p class="es-lang">La Ley Silla es una disposición legal que obliga a los empleadores a proporcionar sillas adecuadas a sus trabajadores, especialmente a quienes realizan actividades prolongadas de pie o en una misma posición, para proteger su salud postural y prevenir lesiones musculoesqueléticas.</p>
+                                        <p class="en-lang">Chair Law is a legal provision that requires employers to provide suitable chairs to their workers, especially those who perform prolonged standing activities or in the same position, to protect their postural health and prevent musculoskeletal injuries.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
+                        <!-- Pregunta 2 -->
                         <div class="faq-item">
                             <div class="faq-question">
-                                <h4 class="es-lang">¿Ofrecen cotizaciones personalizadas?</h4>
-                                <h4 class="en-lang">Do you offer personalized quotes?</h4>
+                                <div class="faq-question-content">
+                                    <i class="fas fa-users"></i>
+                                    <div>
+                                        <h4 class="es-lang">¿Qué dice exactamente la Ley Silla?</h4>
+                                        <h4 class="en-lang">What exactly does Chair Law say?</h4>
+                                    </div>
+                                </div>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p class="es-lang">Sí, realizamos cotizaciones personalizadas según tus necesidades específicas. Incluye cantidad de sillas, características especiales y ubicación de entrega.</p>
-                                <p class="en-lang">Yes, we provide personalized quotes according to your specific needs. Includes quantity of chairs, special features and delivery location.</p>
+                                <div class="faq-answer-content">
+                                    <i class="fas fa-file-contract"></i>
+                                    <div>
+                                        <p class="es-lang">La Ley Silla forma parte de diversas normas laborales y sanitarias en México. Está respaldada por la Ley Federal del Trabajo (LFT) y Normas Oficiales Mexicanas como la NOM-017-STPS-2008 (uso de equipo de protección personal) y NOM-030-STPS-2009 (servicios preventivos de seguridad y salud en el trabajo). Aunque no hay un artículo específico que se titule "Ley Silla", el nombre se ha popularizado para referirse a la obligación del empleador de proteger la salud física del trabajador, proporcionando mobiliario ergonómico adecuado.</p>
+                                        <p class="en-lang">Chair Law is part of various labor and health regulations in Mexico. It is supported by the Federal Labor Law (LFT) and Mexican Official Standards such as NOM-017-STPS-2008 (use of personal protective equipment) and NOM-030-STPS-2009 (preventive safety and health services at work). Although there is no specific article titled "Chair Law", the name has become popular to refer to the employer's obligation to protect the physical health of the worker by providing adequate ergonomic furniture.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
+                        <!-- Pregunta 3 -->
                         <div class="faq-item">
                             <div class="faq-question">
-                                <h4 class="es-lang">¿Hacen envíos a toda la República Mexicana?</h4>
-                                <h4 class="en-lang">Do you ship throughout Mexico?</h4>
+                                <div class="faq-question-content">
+                                    <i class="fas fa-clipboard-check"></i>
+                                    <div>
+                                        <h4 class="es-lang">¿Para quién aplica la Ley Silla?</h4>
+                                        <h4 class="en-lang">Who does Chair Law apply to?</h4>
+                                    </div>
+                                </div>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p class="es-lang">Sí, realizamos envíos a todo México. Los costos y tiempos varían según la ubicación y serán especificados en tu cotización.</p>
-                                <p class="en-lang">Yes, we ship throughout Mexico. Costs and times vary by location and will be specified in your quote.</p>
+                                <div class="faq-answer-content">
+                                    <i class="fas fa-user-tie"></i>
+                                    <div>
+                                        <p class="es-lang">Aplica a trabajadores que deben permanecer muchas horas de pie o sentados sin apoyo adecuado, como:</p>
+                                        <ul class="es-lang">
+                                            <li>Cajeros/as</li>
+                                            <li>Recepcionistas</li>
+                                            <li>Personal de mostrador</li>
+                                            <li>Guardias y personal en ventanilla</li>
+                                            <li>Personal de ventas en piso</li>
+                                            <li>Personal de atención en aeropuertos</li>
+                                            <li>Personal de atención a clientes</li>
+                                        </ul>
+                                        <p class="en-lang">Applies to workers who must stand or sit for many hours without adequate support, such as:</p>
+                                        <ul class="en-lang">
+                                            <li>Cashiers</li>
+                                            <li>Receptionists</li>
+                                            <li>Counter staff</li>
+                                            <li>Guards and window staff</li>
+                                            <li>Floor sales staff</li>
+                                            <li>Airport service staff</li>
+                                            <li>Customer service staff</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
+                        <!-- Pregunta 4 -->
                         <div class="faq-item">
                             <div class="faq-question">
-                                <h4 class="es-lang">¿Puedo agendar una cita en el showroom?</h4>
-                                <h4 class="en-lang">Can I schedule an appointment at the showroom?</h4>
+                                <div class="faq-question-content">
+                                    <i class="fas fa-clock"></i>
+                                    <div>
+                                        <h4 class="es-lang">¿Cuánto tiempo se recomienda sentarse durante la jornada laboral?</h4>
+                                        <h4 class="en-lang">How long is it recommended to sit during the workday?</h4>
+                                    </div>
+                                </div>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="faq-answer">
-                                <p class="es-lang">Sí, puedes agendar una cita para recibir atención personalizada y probar nuestras sillas. Contamos con horarios flexibles.</p>
-                                <p class="en-lang">Yes, you can schedule an appointment for personalized attention and to try our chairs. We have flexible schedules.</p>
+                                <div class="faq-answer-content">
+                                    <i class="fas fa-hourglass-half"></i>
+                                    <div>
+                                        <p class="es-lang">La ley no especifica un tiempo exacto, sin embargo, los expertos recomiendan que las personas se sienten 5 minutos cada hora. Esto ayuda a prevenir la fatiga y lesiones musculoesqueléticas. Se deben proveer sillas ergonómicas con soporte lumbar, ajuste de altura y asegurar que el trabajador pueda alternar posturas para evitar fatiga.</p>
+                                        <p class="en-lang">The law does not specify an exact time, however, experts recommend that people sit for 5 minutes every hour. This helps prevent fatigue and musculoskeletal injuries. Ergonomic chairs with lumbar support, height adjustment must be provided, and it must be ensured that the worker can alternate postures to avoid fatigue.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 5 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <div class="faq-question-content">
+                                    <i class="fas fa-chair"></i>
+                                    <div>
+                                        <h4 class="es-lang">¿Puedo usar cualquier tipo de silla para cumplir con la ley?</h4>
+                                        <h4 class="en-lang">Can I use any type of chair to comply with the law?</h4>
+                                    </div>
+                                </div>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <i class="fas fa-times-circle"></i>
+                                    <div>
+                                        <p class="es-lang">No. Las sillas deben cumplir con criterios específicos como ergonomía, respaldo y estabilidad. No cualquier silla es válida. Deben ser sillas ergonómicas que cumplan con las especificaciones técnicas establecidas en las normas oficiales mexicanas.</p>
+                                        <p class="en-lang">No. Chairs must meet specific criteria such as ergonomics, backrest and stability. Not just any chair is valid. They must be ergonomic chairs that meet the technical specifications established in the Mexican official standards.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 6 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <div class="faq-question-content">
+                                    <i class="fas fa-user-clock"></i>
+                                    <div>
+                                        <h4 class="es-lang">¿La Ley Silla aplica a empleados de medio tiempo o por turnos?</h4>
+                                        <h4 class="en-lang">Does Chair Law apply to part-time or shift employees?</h4>
+                                    </div>
+                                </div>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div>
+                                        <p class="es-lang">Sí. Si la naturaleza del puesto implica estar de pie largos periodos, el cumplimiento aplica sin importar la duración del turno. Todos los trabajadores que realicen actividades que requieran estar de pie por tiempos prolongados deben tener acceso a sillas adecuadas.</p>
+                                        <p class="en-lang">Yes. If the nature of the position involves standing for long periods, compliance applies regardless of shift duration. All workers who perform activities that require standing for prolonged periods must have access to suitable chairs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 7 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <div class="faq-question-content">
+                                    <i class="fas fa-calculator"></i>
+                                    <div>
+                                        <h4 class="es-lang">¿Cuántas sillas necesito por área o turno?</h4>
+                                        <h4 class="en-lang">How many chairs do I need per area or shift?</h4>
+                                    </div>
+                                </div>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <i class="fas fa-user-friends"></i>
+                                    <div>
+                                        <p class="es-lang">Se debe contar con un número suficiente de sillas para que todos los trabajadores que realizan actividades de pie puedan sentarse cuando la tarea lo permita. La cantidad debe ser proporcional al número de trabajadores que requieran descanso simultáneamente.</p>
+                                        <p class="en-lang">There must be a sufficient number of chairs so that all workers who perform standing activities can sit when the task allows it. The quantity should be proportional to the number of workers who need to rest simultaneously.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 8 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <div class="faq-question-content">
+                                    <i class="fas fa-eye"></i>
+                                    <div>
+                                        <h4 class="es-lang">¿Quién vigilará que se cumpla la Ley Silla?</h4>
+                                        <h4 class="en-lang">Who will monitor compliance with Chair Law?</h4>
+                                    </div>
+                                </div>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <div>
+                                        <p class="es-lang">La Secretaría del Trabajo y Previsión Social (STPS) será la autoridad encargada de inspeccionar y sancionar el incumplimiento. Realizan visitas de verificación para comprobar que los centros de trabajo cumplan con esta disposición.</p>
+                                        <p class="en-lang">The Ministry of Labor and Social Welfare (STPS) will be the authority responsible for inspecting and sanctioning non-compliance. They carry out verification visits to verify that workplaces comply with this provision.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 9 -->
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <div class="faq-question-content">
+                                    <i class="fas fa-building"></i>
+                                    <div>
+                                        <h4 class="es-lang">¿Quién promueve LeySilla.com?</h4>
+                                        <h4 class="en-lang">Who promotes LeySilla.com?</h4>
+                                    </div>
+                                </div>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <i class="fas fa-handshake"></i>
+                                    <div>
+                                        <p class="es-lang">LeySilla.com es un servicio promovido por OFFIHO, fabricante y comercializador de sillas en todo México. Trabajamos para ayudar a las empresas a cumplir con sus obligaciones legales y proteger la salud de sus trabajadores.</p>
+                                        <p class="en-lang">LeySilla.com is a service promoted by OFFIHO, a manufacturer and marketer of chairs throughout Mexico. We work to help companies comply with their legal obligations and protect the health of their workers.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -536,7 +642,7 @@
                                 <span class="es-lang">Llamar Ahora</span>
                                 <span class="en-lang">Call Now</span>
                             </a>
-                            <a href="https://wa.me/526566877854" target="_blank" class="btn btn-success btn-large">
+                            <a href="https://wa.me/526566877854" target="_blank" class="whatsapp-btn btn-large">
                                 <i class="fab fa-whatsapp"></i>
                                 <span class="es-lang">WhatsApp</span>
                                 <span class="en-lang">WhatsApp</span>
@@ -578,7 +684,7 @@
                     <ul class="footer-links">
                         <li><a href="index.html" class="es-lang">Inicio</a><a href="index.html" class="en-lang">Home</a></li>
                         <li><a href="Blog.html" class="es-lang">Blog</a><a href="Blog.html" class="en-lang">Chair Law Blog</a></li>
-                         <li><a href="Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
+                        <li><a href="Nosotros.html" class="es-lang">Nosotros</a><a href="Nosotros.html" class="en-lang">Us</a></li>
                         <li><a href="catalogo.html" class="es-lang">Catálogo</a><a href="catalogo.html" class="en-lang">Catalog</a></li>
                         <li><a href="contactanos.html" class="es-lang">Contáctanos</a><a href="contactanos.html" class="en-lang">Contact Us</a></li>
                     </ul>
@@ -665,7 +771,7 @@
             
             <div class="chatbot-quick-questions">
                 <span class="es-lang">Preguntas frecuentes:</span>
-                <span class="en-lang">Frequent questions:</span>
+                                <span class="en-lang">Frequent questions:</span>
                 <div class="quick-questions-grid">
                     <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
                     <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
@@ -680,14 +786,13 @@
         </div>
     </div>
 
-    <!-- Antes de cerrar </body> -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>
-
     <script src="js/main.js"></script>
     <script src="js/accessibility.js"></script>
     <script src="js/chatbot.js"></script>
     <script src="js/sidebar.js"></script>
+    <script src="js/catalogo.js"></script>
     <script src="js/contacto.js"></script>
+    
 
     <script>
         // JavaScript para la barra lateral
@@ -735,6 +840,85 @@
                 }
             });
         });
+
+        // Función para abrir mapa en pantalla completa
+        function openFullscreenMap() {
+            // Crear el modal
+            const modal = document.createElement('div');
+            modal.className = 'fullscreen-map-modal';
+            modal.innerHTML = `
+                <div class="fullscreen-map-container">
+                    <div class="fullscreen-map-header">
+                        <h3 class="es-lang">Mapa - Nuestra Ubicación</h3>
+                        <h3 class="en-lang">Map - Our Location</h3>
+                        <button class="close-fullscreen-map" aria-label="Cerrar mapa">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="fullscreen-map-wrapper">
+                        <iframe 
+                            class="fullscreen-map-iframe"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3397.042282259697!2d-106.37587692446474!3d31.677110274205856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e75d94b851cdb7%3A0x201492b5c0030859!2sC.%20J%C3%BApiter%201550%2C%20Sat%C3%A9lite%2C%2032540%20Ju%C3%A1rez%2C%20Chih.!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Ubicación de JEMMSA - Ley Silla">
+                        </iframe>
+                    </div>
+                </div>
+            `;
+            
+            // Agregar al body
+            document.body.appendChild(modal);
+            
+            // Bloquear scroll del body
+            document.body.style.overflow = 'hidden';
+            
+            // Agregar evento para cerrar con Escape
+            document.addEventListener('keydown', closeModalOnEscape);
+            
+            // Agregar evento de cierre al botón
+            const closeBtn = modal.querySelector('.close-fullscreen-map');
+            closeBtn.addEventListener('click', closeFullscreenMap);
+            
+            // Agregar evento de cierre al hacer clic fuera del mapa
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeFullscreenMap();
+                }
+            });
+            
+            function closeFullscreenMap() {
+                document.body.removeChild(modal);
+                document.body.style.overflow = '';
+                document.removeEventListener('keydown', closeModalOnEscape);
+            }
+            
+            function closeModalOnEscape(e) {
+                if (e.key === 'Escape') {
+                    closeFullscreenMap();
+                }
+            }
+        }
+
+        // Agregar funcionalidad de hover al botón de Google Maps
+        document.addEventListener('DOMContentLoaded', function() {
+            const googleMapsBtn = document.querySelector('.btn-google-maps');
+            if (googleMapsBtn) {
+                // Agregar efectos de hover
+                googleMapsBtn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    this.style.boxShadow = '0 4px 12px rgba(66, 133, 244, 0.3)';
+                });
+                
+                googleMapsBtn.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                    this.style.boxShadow = '';
+                });
+            }
+        });
+        
     </script>
+    
 </body>
 </html>

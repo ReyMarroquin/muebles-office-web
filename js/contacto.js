@@ -1,220 +1,12 @@
 // contacto.js - Funcionalidades para página de contacto
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar mapa
-    inicializarMapa();
-    
-    // Configurar formulario
-    configurarFormulario();
-    
-    // Configurar FAQ
+    // Configurar FAQ específicos de Ley Silla
     configurarFAQ();
     
-    // Configurar animaciones
+    // Configurar animaciones para los nuevos elementos
     configurarAnimaciones();
 });
-
-function initMap() {
-    const location = { lat: 31.6771103, lng: -106.3733022 }; // Coordenadas de JEMMSA
-    
-    const map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 16,
-        center: location,
-        styles: [
-            {
-                "featureType": "all",
-                "elementType": "geometry.fill",
-                "stylers": [{ "weight": "2.00" }]
-            },
-            {
-                "featureType": "all",
-                "elementType": "geometry.stroke",
-                "stylers": [{ "color": "#9c9c9c" }]
-            },
-            {
-                "featureType": "all",
-                "elementType": "labels.text",
-                "stylers": [{ "visibility": "on" }]
-            },
-            {
-                "featureType": "landscape",
-                "elementType": "all",
-                "stylers": [{ "color": "#f2f2f2" }]
-            },
-            {
-                "featureType": "landscape",
-                "elementType": "geometry.fill",
-                "stylers": [{ "color": "#ffffff" }]
-            },
-            {
-                "featureType": "poi",
-                "elementType": "all",
-                "stylers": [{ "visibility": "off" }]
-            }
-        ]
-    });
-
-    // Marcador de ubicación
-    new google.maps.Marker({
-        position: location,
-        map: map,
-        title: 'Showroom Ley Silla'
-    });
-}
-
-// Manejo de errores
-function gm_authFailure() {
-    console.error('Error de autenticación con Google Maps');
-    document.getElementById('map').innerHTML = `
-        <div style="height:100%; display:flex; align-items:center; justify-content:center; background:#f5f5f5;">
-            <div style="text-align:center;">
-                <i class="fas fa-map-marker-alt" style="font-size:48px; color:#ccc; margin-bottom:10px;"></i>
-                <p>Mapa no disponible temporalmente</p>
-                <a href="https://www.google.com/maps/place/JEMMSA/@31.6771011,-106.3734515,20z/data=!4m6!3m5!1s0x86e75d94b851cdb7:0x201492b5c0030859!8m2!3d31.6771103!4d-106.3733022!16s%2Fg%2F11fjtzw3zq?entry=ttu" 
-                   target="_blank" class="btn btn-outline">
-                    <i class="fas fa-external-link-alt"></i>
-                    Ver en Google Maps
-                </a>
-            </div>
-        </div>
-    `;
-}
-
-
-function configurarFormulario() {
-    const formulario = document.getElementById('contactForm');
-    const btnSubmit = formulario.querySelector('.btn-submit');
-    
-    formulario.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Validar formulario
-        if (!validarFormulario()) {
-            return;
-        }
-        
-        // Simular envío
-        btnSubmit.classList.add('loading');
-        
-        setTimeout(() => {
-            btnSubmit.classList.remove('loading');
-            mostrarMensajeExito();
-            formulario.reset();
-        }, 2000);
-    });
-    
-    // Validación en tiempo real
-    const inputs = formulario.querySelectorAll('input, textarea, select');
-    inputs.forEach(input => {
-        input.addEventListener('blur', function() {
-            validarCampo(this);
-        });
-        
-        input.addEventListener('input', function() {
-            if (this.classList.contains('error')) {
-                this.classList.remove('error');
-            }
-        });
-    });
-}
-
-function validarFormulario() {
-    let valido = true;
-    const formulario = document.getElementById('contactForm');
-    const camposRequeridos = formulario.querySelectorAll('[required]');
-    
-    camposRequeridos.forEach(campo => {
-        if (!validarCampo(campo)) {
-            valido = false;
-        }
-    });
-    
-    return valido;
-}
-
-function validarCampo(campo) {
-    const valor = campo.value.trim();
-    let valido = true;
-    
-    if (campo.type === 'email') {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(valor)) {
-            valido = false;
-            mostrarError(campo, 'Por favor ingresa un email válido');
-        }
-    } else if (campo.type === 'tel') {
-        const telefonoRegex = /^[\d\s\-\+\(\)]{10,}$/;
-        if (!telefonoRegex.test(valor)) {
-            valido = false;
-            mostrarError(campo, 'Por favor ingresa un teléfono válido');
-        }
-    } else if (campo.hasAttribute('required') && valor === '') {
-        valido = false;
-        mostrarError(campo, 'Este campo es requerido');
-    }
-    
-    if (valido) {
-        campo.classList.remove('error');
-        campo.classList.add('success');
-    } else {
-        campo.classList.add('error');
-        campo.classList.remove('success');
-    }
-    
-    return valido;
-}
-
-function mostrarError(campo, mensaje) {
-    // Remover mensaje anterior
-    const errorAnterior = campo.parentNode.querySelector('.error-message');
-    if (errorAnterior) {
-        errorAnterior.remove();
-    }
-    
-    const errorElement = document.createElement('div');
-    errorElement.className = 'error-message';
-    errorElement.textContent = mensaje;
-    errorElement.style.cssText = `
-        color: #dc3545;
-        font-size: 0.8rem;
-        margin-top: 0.5rem;
-    `;
-    
-    campo.parentNode.appendChild(errorElement);
-}
-
-function mostrarMensajeExito() {
-    const notificacion = document.createElement('div');
-    notificacion.className = 'success-notification';
-    notificacion.innerHTML = `
-        <div style="
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            background: #28a745;
-            color: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            z-index: 1000;
-            animation: slideInRight 0.3s ease;
-            max-width: 300px;
-        ">
-            <i class="fas fa-check-circle" style="font-size: 1.5rem; margin-bottom: 0.5rem; display: block;"></i>
-            <h4 style="margin: 0 0 0.5rem 0;">¡Mensaje Enviado!</h4>
-            <p style="margin: 0; opacity: 0.9;">Te contactaremos en menos de 2 horas</p>
-        </div>
-    `;
-    
-    document.body.appendChild(notificacion);
-    
-    setTimeout(() => {
-        notificacion.style.animation = 'slideOutRight 0.3s ease';
-        setTimeout(() => {
-            notificacion.remove();
-        }, 300);
-    }, 5000);
-}
 
 function configurarFAQ() {
     const faqItems = document.querySelectorAll('.faq-item');
@@ -232,12 +24,20 @@ function configurarFAQ() {
             
             // Toggle item actual
             item.classList.toggle('active');
+            
+            // Animación suave para el contenido
+            const respuesta = item.querySelector('.faq-answer');
+            if (item.classList.contains('active')) {
+                respuesta.style.maxHeight = respuesta.scrollHeight + 'px';
+            } else {
+                respuesta.style.maxHeight = '0';
+            }
         });
     });
 }
 
 function configurarAnimaciones() {
-    // Animación de aparición para elementos
+    // Animación de aparición para elementos de Ley Silla FAQ
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -248,18 +48,59 @@ function configurarAnimaciones() {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
+                
+                // Iniciar animación de entrada para los items FAQ
+                if (entry.target.classList.contains('faq-item')) {
+                    entry.target.style.animationPlayState = 'running';
+                }
             }
         });
     }, observerOptions);
     
     // Observar elementos para animar
-    const elementosAnimar = document.querySelectorAll('.contact-card, .form-container, .faq-item');
+    const elementosAnimar = document.querySelectorAll('.contact-card, .form-container, .ley-silla-faq .faq-item');
     elementosAnimar.forEach(elemento => {
-        elemento.style.opacity = '0';
-        elemento.style.transform = 'translateY(30px)';
-        elemento.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        if (elemento.classList.contains('faq-item')) {
+            // Para FAQ items, usar animación CSS en lugar de transform/opacity
+            elemento.style.opacity = '1';
+            elemento.style.transform = 'none';
+        } else {
+            elemento.style.opacity = '0';
+            elemento.style.transform = 'translateY(30px)';
+            elemento.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        }
         observer.observe(elemento);
     });
+}
+
+// Función para inicializar mapa (si existe)
+function inicializarMapa() {
+    const mapElement = document.getElementById('map');
+    if (mapElement) {
+        // Código para inicializar mapa de Google
+        console.log('Mapa listo para inicializar');
+    }
+}
+
+// Manejo de errores de Google Maps
+function gm_authFailure() {
+    console.error('Error de autenticación con Google Maps');
+    const mapElement = document.getElementById('map');
+    if (mapElement) {
+        mapElement.innerHTML = `
+            <div style="height:100%; display:flex; align-items:center; justify-content:center; background:#f5f5f5;">
+                <div style="text-align:center;">
+                    <i class="fas fa-map-marker-alt" style="font-size:48px; color:#ccc; margin-bottom:10px;"></i>
+                    <p>Mapa no disponible temporalmente</p>
+                    <a href="https://www.google.com/maps/place/JEMMSA/@31.6771011,-106.3734515,20z/data=!4m6!3m5!1s0x86e75d94b851cdb7:0x201492b5c0030859!8m2!3d31.6771103!4d-106.3733022!16s%2Fg%2F11fjtzw3zq?entry=ttu" 
+                       target="_blank" class="btn btn-outline">
+                        <i class="fas fa-external-link-alt"></i>
+                        Ver en Google Maps
+                    </a>
+                </div>
+            </div>
+        `;
+    }
 }
 
 // Añadir estilos para animaciones
@@ -287,6 +128,17 @@ estilosAnimacion.textContent = `
         }
     }
     
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
     .form-group.success input,
     .form-group.success select,
     .form-group.success textarea {
@@ -300,5 +152,55 @@ estilosAnimacion.textContent = `
         border-color: #dc3545;
         box-shadow: 0 0 0 3px rgba(220,53,69,0.1);
     }
+    
+    .ley-silla-faq .faq-item {
+        animation: fadeInUp 0.5s ease forwards;
+        animation-play-state: paused;
+        opacity: 0;
+    }
+    
+    .ley-silla-faq .faq-item:nth-child(1) { animation-delay: 0.1s; }
+    .ley-silla-faq .faq-item:nth-child(2) { animation-delay: 0.2s; }
+    .ley-silla-faq .faq-item:nth-child(3) { animation-delay: 0.3s; }
+    .ley-silla-faq .faq-item:nth-child(4) { animation-delay: 0.4s; }
+    .ley-silla-faq .faq-item:nth-child(5) { animation-delay: 0.5s; }
+    .ley-silla-faq .faq-item:nth-child(6) { animation-delay: 0.6s; }
+    .ley-silla-faq .faq-item:nth-child(7) { animation-delay: 0.7s; }
+    .ley-silla-faq .faq-item:nth-child(8) { animation-delay: 0.8s; }
+    .ley-silla-faq .faq-item:nth-child(9) { animation-delay: 0.9s; }
 `;
 document.head.appendChild(estilosAnimacion);
+
+// Función para expandir/colapsar todas las FAQs
+function expandirTodasFAQs() {
+    const faqItems = document.querySelectorAll('.ley-silla-faq .faq-item');
+    const expandir = !faqItems[0].classList.contains('active');
+    
+    faqItems.forEach(item => {
+        if (expandir) {
+            item.classList.add('active');
+            const respuesta = item.querySelector('.faq-answer');
+            respuesta.style.maxHeight = respuesta.scrollHeight + 'px';
+        } else {
+            item.classList.remove('active');
+            const respuesta = item.querySelector('.faq-answer');
+            respuesta.style.maxHeight = '0';
+        }
+    });
+}
+
+// Agregar funcionalidad para el botón "Expandir/Cerrar todas"
+document.addEventListener('DOMContentLoaded', function() {
+    const faqSection = document.querySelector('.ley-silla-faq');
+    if (faqSection) {
+        const header = faqSection.querySelector('.section-header');
+        const toggleButton = document.createElement('button');
+        toggleButton.className = 'btn btn-outline btn-small';
+        toggleButton.innerHTML = '<i class="fas fa-expand-alt"></i> <span class="es-lang">Expandir/Cerrar todas</span><span class="en-lang">Expand/Collapse all</span>';
+        toggleButton.style.marginLeft = '1rem';
+        toggleButton.style.marginTop = '0.5rem';
+        
+        toggleButton.addEventListener('click', expandirTodasFAQs);
+        header.appendChild(toggleButton);
+    }
+});
