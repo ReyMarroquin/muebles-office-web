@@ -1,558 +1,721 @@
-// FUNCIONALIDADES ESPECÍFICAS DEL CATÁLOGO
-
-// Variables globales para paginación
-let productosPorPagina = 9;
-let paginaActual = 1;
-let todosLosProductos = [];
-let productosFiltrados = [];
-
+// CATALOGO.JS - Funcionalidades del catálogo
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar paginación
-    inicializarPaginacion();
+    console.log('Catálogo cargado - Implementando filtrado por categorías');
     
-    // Filtros de vista
-    const viewButtons = document.querySelectorAll('.view-btn');
+    // Variables globales
+    let productos = [];
+    let productosFiltrados = [];
+    let categoriaSeleccionada = 'all';
+    let terminoBusqueda = '';
+    let paginaActual = 1;
+    const productosPorPagina = 9;
+    
+    // Elementos del DOM
     const productosGrid = document.getElementById('productosGrid');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const searchInputEs = document.getElementById('searchInputEs');
+    const searchInputEn = document.getElementById('searchInputEn');
+    const searchBtn = document.getElementById('searchBtn');
+    const gridViewBtn = document.getElementById('gridViewBtn');
+    const listViewBtn = document.getElementById('listViewBtn');
+    const noResultsMessage = document.getElementById('noResultsMessage');
+    const resetFiltersBtn = document.getElementById('resetFiltersBtn');
+    const paginationContainer = document.getElementById('paginationContainer');
     
-    viewButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            viewButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            const view = this.getAttribute('data-view');
-            if (view === 'list') {
-                productosGrid.classList.add('list-view');
-            } else {
+    // Inicializar catálogo
+    inicializarCatalogo();
+    
+    // ======================
+    // FUNCIONES PRINCIPALES
+    // ======================
+    
+    function inicializarCatalogo() {
+        // Obtener todos los productos
+        productos = Array.from(document.querySelectorAll('.producto-card'));
+        productosFiltrados = [...productos];
+        
+        console.log(`Total de productos cargados: ${productos.length}`);
+        
+        // Configurar eventos
+        configurarEventos();
+        
+        // Mostrar primera página
+        mostrarProductos();
+        actualizarPaginacion();
+        
+        // Manejar parámetros de URL
+        manejarParametrosURLCargar();
+    }
+    
+    function configurarEventos() {
+        // Filtro por categoría
+        if (categoryFilter) {
+            categoryFilter.addEventListener('change', function() {
+                categoriaSeleccionada = this.value;
+                console.log(`Categoría seleccionada: ${categoriaSeleccionada}`);
+                paginaActual = 1; // Resetear a página 1
+                filtrarProductos();
+                // Actualizar URL con categoría
+                actualizarURL();
+            });
+        }
+        
+        // Búsqueda
+        if (searchInputEs) {
+            searchInputEs.addEventListener('input', function() {
+                terminoBusqueda = this.value.toLowerCase();
+                paginaActual = 1; // Resetear a página 1
+                filtrarProductos();
+            });
+        }
+        
+        if (searchInputEn) {
+            searchInputEn.addEventListener('input', function() {
+                terminoBusqueda = this.value.toLowerCase();
+                paginaActual = 1; // Resetear a página 1
+                filtrarProductos();
+            });
+        }
+        
+        if (searchBtn) {
+            searchBtn.addEventListener('click', function() {
+                // Obtener el valor del input activo según el idioma
+                const lang = document.body.classList.contains('lang-en') ? 'en' : 'es';
+                if (lang === 'es' && searchInputEs) {
+                    terminoBusqueda = searchInputEs.value.toLowerCase();
+                } else if (lang === 'en' && searchInputEn) {
+                    terminoBusqueda = searchInputEn.value.toLowerCase();
+                }
+                paginaActual = 1; // Resetear a página 1
+                filtrarProductos();
+            });
+        }
+        
+        // Enter en búsqueda
+        [searchInputEs, searchInputEn].forEach(input => {
+            if (input) {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        terminoBusqueda = this.value.toLowerCase();
+                        paginaActual = 1; // Resetear a página 1
+                        filtrarProductos();
+                    }
+                });
+            }
+        });
+        
+        // Vista grid/list
+        if (gridViewBtn) {
+            gridViewBtn.addEventListener('click', function() {
                 productosGrid.classList.remove('list-view');
-            }
-        });
-    });
-    
-    // Búsqueda en tiempo real
-    const searchInputs = document.querySelectorAll('.search-input');
-    
-    searchInputs.forEach(searchInput => {
-        searchInput.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
-            filtrarProductos(searchTerm);
-        });
-    });
-    
-    // Botón de búsqueda
-    const searchBtn = document.querySelector('.search-btn');
-    searchBtn.addEventListener('click', function() {
-        const searchTerm = searchInputs[0].value.toLowerCase() || searchInputs[1].value.toLowerCase();
-        filtrarProductos(searchTerm);
-    });
-    
-    // Filtro por orden
-    const filterSelect = document.querySelector('.filter-select');
-    filterSelect.addEventListener('change', function() {
-        aplicarOrdenamiento(this.value);
-    });
-    
-    // Wishlist functionality
-    const wishlistButtons = document.querySelectorAll('.wishlist-btn');
-    
-    wishlistButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const icon = this.querySelector('i');
-            if (icon.classList.contains('far')) {
-                icon.classList.remove('far');
-                icon.classList.add('fas');
-                icon.style.color = '#ef4444';
-                showNotification('Producto agregado a favoritos');
-            } else {
-                icon.classList.remove('fas');
-                icon.classList.add('far');
-                icon.style.color = '';
-                showNotification('Producto removido de favoritos');
-            }
-        });
-    });
-    
-    // Zoom functionality
-    const zoomButtons = document.querySelectorAll('.zoom-btn');
-    
-    zoomButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const card = this.closest('.producto-card');
-            const image = card.querySelector('img');
-            const productName = card.querySelector('.producto-nombre').textContent;
-            
-            showZoomModal(image.src, productName);
-        });
-    });
-});
-
-// INICIALIZACIÓN DE PAGINACIÓN
-function inicializarPaginacion() {
-    // Obtener todos los productos
-    todosLosProductos = Array.from(document.querySelectorAll('.producto-card'));
-    productosFiltrados = [...todosLosProductos];
-    
-    // Configurar eventos de paginación
-    configurarEventosPaginacion();
-    
-    // Mostrar primera página
-    mostrarPagina(1);
-}
-
-// CONFIGURAR EVENTOS DE PAGINACIÓN
-function configurarEventosPaginacion() {
-    const pageButtons = document.querySelectorAll('.page-btn');
-    
-    pageButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            if (this.classList.contains('active')) return;
-            
-            const pageNumber = this.getAttribute('data-page');
-            const action = this.getAttribute('data-action');
-            
-            if (pageNumber) {
-                // Click en número de página específico
-                paginaActual = parseInt(pageNumber);
-                mostrarPagina(paginaActual);
-            } else if (action === 'next') {
-                // Click en botón siguiente
-                if (paginaActual < obtenerTotalPaginas()) {
-                    paginaActual++;
-                    mostrarPagina(paginaActual);
-                }
-            } else if (action === 'prev') {
-                // Click en botón anterior
-                if (paginaActual > 1) {
-                    paginaActual--;
-                    mostrarPagina(paginaActual);
-                }
-            }
-        });
-    });
-}
-
-// MOSTRAR PÁGINA ESPECÍFICA
-function mostrarPagina(numeroPagina) {
-    const inicio = (numeroPagina - 1) * productosPorPagina;
-    const fin = inicio + productosPorPagina;
-    const productosPagina = productosFiltrados.slice(inicio, fin);
-    
-    // Ocultar todos los productos primero
-    todosLosProductos.forEach(producto => {
-        producto.style.display = 'none';
-    });
-    
-    // Mostrar solo los productos de la página actual
-    productosPagina.forEach(producto => {
-        producto.style.display = 'block';
-    });
-    
-    // Actualizar estado de la paginación
-    actualizarEstadoPaginacion(numeroPagina);
-    
-    // Scroll suave al inicio del catálogo
-    setTimeout(() => {
-        document.querySelector('.catalogo-section').scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    }, 100);
-}
-
-// ACTUALIZAR ESTADO DE PAGINACIÓN
-function actualizarEstadoPaginacion(paginaActual) {
-    const totalPaginas = obtenerTotalPaginas();
-    const pageButtons = document.querySelectorAll('.page-btn[data-page]');
-    const nextButton = document.querySelector('.page-btn[data-action="next"]');
-    
-    // Actualizar botones numéricos
-    pageButtons.forEach(button => {
-        button.classList.remove('active');
-        if (parseInt(button.getAttribute('data-page')) === paginaActual) {
-            button.classList.add('active');
-        }
-    });
-    
-    // Actualizar botones de navegación
-    if (nextButton) {
-        if (paginaActual >= totalPaginas) {
-            nextButton.style.opacity = '0.5';
-            nextButton.disabled = true;
-        } else {
-            nextButton.style.opacity = '1';
-            nextButton.disabled = false;
-        }
-    }
-    
-    // Actualizar números de página si es necesario
-    actualizarNumerosPaginacion(paginaActual, totalPaginas);
-}
-
-// ACTUALIZAR NÚMEROS DE PAGINACIÓN DINÁMICAMENTE
-function actualizarNumerosPaginacion(paginaActual, totalPaginas) {
-    const paginationContainer = document.querySelector('.pagination');
-    const pageButtons = paginationContainer.querySelectorAll('.page-btn[data-page]');
-    
-    // Si hay más de 3 páginas, mostrar paginación dinámica
-    if (totalPaginas > 3) {
-        let paginasAMostrar = [];
-        
-        if (paginaActual <= 2) {
-            // Mostrar primeras 3 páginas
-            paginasAMostrar = [1, 2, 3];
-        } else if (paginaActual >= totalPaginas - 1) {
-            // Mostrar últimas 3 páginas
-            paginasAMostrar = [totalPaginas - 2, totalPaginas - 1, totalPaginas];
-        } else {
-            // Mostrar página actual y adyacentes
-            paginasAMostrar = [paginaActual - 1, paginaActual, paginaActual + 1];
+                gridViewBtn.classList.add('active');
+                listViewBtn.classList.remove('active');
+            });
         }
         
-        // Actualizar botones existentes o crear nuevos
-        pageButtons.forEach((button, index) => {
-            if (paginasAMostrar[index]) {
-                button.textContent = paginasAMostrar[index];
-                button.setAttribute('data-page', paginasAMostrar[index]);
-                button.style.display = 'inline-block';
-                
-                if (paginasAMostrar[index] === paginaActual) {
-                    button.classList.add('active');
+        if (listViewBtn) {
+            listViewBtn.addEventListener('click', function() {
+                productosGrid.classList.add('list-view');
+                listViewBtn.classList.add('active');
+                gridViewBtn.classList.remove('active');
+            });
+        }
+        
+        // Resetear filtros
+        if (resetFiltersBtn) {
+            resetFiltersBtn.addEventListener('click', resetFiltros);
+        }
+        
+        // Wishlist buttons
+        document.querySelectorAll('.wishlist-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('far')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    icon.style.color = '#ef4444';
+                    mostrarNotificacion('Producto agregado a favoritos');
                 } else {
-                    button.classList.remove('active');
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    icon.style.color = '';
+                    mostrarNotificacion('Producto removido de favoritos');
                 }
-            } else {
-                button.style.display = 'none';
+            });
+        });
+        
+        // Zoom buttons
+        document.querySelectorAll('.zoom-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const card = this.closest('.producto-card');
+                const image = card.querySelector('img');
+                const productName = card.querySelector('.producto-nombre').textContent;
+                mostrarZoomModal(image.src, productName);
+            });
+        });
+    }
+    
+    function filtrarProductos() {
+        if (categoriaSeleccionada === 'all' && terminoBusqueda === '') {
+            // Mostrar todos los productos
+            productosFiltrados = [...productos];
+        } else {
+            // Filtrar por categoría y/o búsqueda
+            productosFiltrados = productos.filter(producto => {
+                const categoriaProducto = producto.getAttribute('data-category');
+                const nombreProducto = producto.getAttribute('data-name') || '';
+                const descripcion = producto.querySelector('.producto-descripcion')?.textContent || '';
+                
+                // Verificar categoría
+                const coincideCategoria = categoriaSeleccionada === 'all' || categoriaProducto === categoriaSeleccionada;
+                
+                // Verificar búsqueda
+                let coincideBusqueda = true;
+                if (terminoBusqueda !== '') {
+                    const textoBusqueda = (nombreProducto + ' ' + descripcion).toLowerCase();
+                    coincideBusqueda = textoBusqueda.includes(terminoBusqueda);
+                }
+                
+                return coincideCategoria && coincideBusqueda;
+            });
+        }
+        
+        console.log(`Productos filtrados: ${productosFiltrados.length}`);
+        
+        // Mostrar resultados
+        mostrarProductos();
+        actualizarPaginacion();
+        actualizarMensajeSinResultados();
+    }
+    
+    function mostrarProductos() {
+        // Ocultar todos los productos primero
+        productos.forEach(producto => {
+            producto.style.display = 'none';
+        });
+        
+        // Calcular índices de paginación
+        const inicio = (paginaActual - 1) * productosPorPagina;
+        const fin = inicio + productosPorPagina;
+        const productosPagina = productosFiltrados.slice(inicio, fin);
+        
+        // Mostrar productos de la página actual
+        productosPagina.forEach(producto => {
+            producto.style.display = 'block';
+        });
+    }
+    
+    function actualizarPaginacion() {
+        const totalPaginas = Math.ceil(productosFiltrados.length / productosPorPagina);
+        
+        // Limpiar paginación existente
+        paginationContainer.innerHTML = '';
+        
+        // No mostrar paginación si hay pocos productos
+        if (totalPaginas <= 1) {
+            return;
+        }
+        
+        // Botón anterior
+        const prevButton = document.createElement('button');
+        prevButton.className = `page-nav ${paginaActual === 1 ? 'disabled' : ''}`;
+        prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+        prevButton.setAttribute('data-action', 'prev');
+        prevButton.disabled = paginaActual === 1;
+        
+        prevButton.addEventListener('click', function() {
+            if (paginaActual > 1) {
+                cambiarPagina(paginaActual - 1);
             }
         });
-    }
-}
-
-// OBTENER TOTAL DE PÁGINAS
-function obtenerTotalPaginas() {
-    return Math.ceil(productosFiltrados.length / productosPorPagina);
-}
-
-// FILTRAR PRODUCTOS POR BÚSQUEDA
-function filtrarProductos(termino) {
-    if (termino.trim() === '') {
-        // Si no hay término, mostrar todos los productos
-        productosFiltrados = [...todosLosProductos];
-    } else {
-        // Filtrar productos según el término de búsqueda
-        productosFiltrados = todosLosProductos.filter(producto => {
-            const nombre = producto.querySelector('.producto-nombre').textContent.toLowerCase();
-            const descripcion = producto.querySelector('.producto-descripcion').textContent.toLowerCase();
-            const categoria = producto.querySelector('.producto-categoria').textContent.toLowerCase();
-            const caracteristicas = Array.from(producto.querySelectorAll('.feature-tag'))
-                .map(tag => tag.textContent.toLowerCase())
-                .join(' ');
+        
+        paginationContainer.appendChild(prevButton);
+        
+        // Calcular qué números mostrar
+        let inicioPagina = Math.max(1, paginaActual - 2);
+        let finPagina = Math.min(totalPaginas, paginaActual + 2);
+        
+        // Ajustar si estamos cerca del inicio
+        if (inicioPagina === 1) {
+            finPagina = Math.min(5, totalPaginas);
+        }
+        
+        // Ajustar si estamos cerca del final
+        if (finPagina === totalPaginas) {
+            inicioPagina = Math.max(1, totalPaginas - 4);
+        }
+        
+        // Puntos suspensivos al inicio si es necesario
+        if (inicioPagina > 1) {
+            const dots = document.createElement('span');
+            dots.className = 'page-separator';
+            dots.textContent = '...';
+            paginationContainer.appendChild(dots);
+        }
+        
+        // Botones de números
+        for (let i = inicioPagina; i <= finPagina; i++) {
+            const button = document.createElement('button');
+            button.className = `page-btn ${i === paginaActual ? 'active' : ''}`;
+            button.textContent = i;
+            button.setAttribute('data-page', i);
             
-            return nombre.includes(termino) || 
-                   descripcion.includes(termino) || 
-                   categoria.includes(termino) ||
-                   caracteristicas.includes(termino);
+            button.addEventListener('click', function() {
+                const nuevaPagina = parseInt(this.getAttribute('data-page'));
+                cambiarPagina(nuevaPagina);
+            });
+            
+            paginationContainer.appendChild(button);
+        }
+        
+        // Puntos suspensivos al final si es necesario
+        if (finPagina < totalPaginas) {
+            const dots = document.createElement('span');
+            dots.className = 'page-separator';
+            dots.textContent = '...';
+            paginationContainer.appendChild(dots);
+        }
+        
+        // Botón siguiente
+        const nextButton = document.createElement('button');
+        nextButton.className = `page-nav ${paginaActual === totalPaginas ? 'disabled' : ''}`;
+        nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+        nextButton.setAttribute('data-action', 'next');
+        nextButton.disabled = paginaActual === totalPaginas;
+        
+        nextButton.addEventListener('click', function() {
+            if (paginaActual < totalPaginas) {
+                cambiarPagina(paginaActual + 1);
+            }
         });
+        
+        paginationContainer.appendChild(nextButton);
     }
     
-    // Volver a la primera página y mostrar resultados
-    paginaActual = 1;
-    mostrarPagina(1);
-    
-    // Mostrar mensaje si no hay resultados
-    mostrarMensajeSinResultados(termino);
-}
-
-// APLICAR ORDENAMIENTO
-function aplicarOrdenamiento(criterio) {
-    switch(criterio) {
-        case 'Más Populares':
-        case 'Most Popular':
-            productosFiltrados.sort((a, b) => {
-                const ratingA = parseInt(a.querySelector('.rating-count').textContent.replace(/[()]/g, '') || '0');
-                const ratingB = parseInt(b.querySelector('.rating-count').textContent.replace(/[()]/g, '') || '0');
-                return ratingB - ratingA;
-            });
-            break;
-            
-        case 'Precio: Menor a Mayor':
-        case 'Price: Low to High':
-            productosFiltrados.sort((a, b) => {
-                const precioA = parseInt(a.getAttribute('data-price')) || 0;
-                const precioB = parseInt(b.getAttribute('data-price')) || 0;
-                return precioA - precioB;
-            });
-            break;
-            
-        case 'Precio: Mayor a Menor':
-        case 'Price: High to Low':
-            productosFiltrados.sort((a, b) => {
-                const precioA = parseInt(a.getAttribute('data-price')) || 0;
-                const precioB = parseInt(b.getAttribute('data-price')) || 0;
-                return precioB - precioA;
-            });
-            break;
-            
-        case 'Nombre: A-Z':
-        case 'Name: A-Z':
-            productosFiltrados.sort((a, b) => {
-                const nombreA = a.querySelector('.producto-nombre').textContent.toLowerCase();
-                const nombreB = b.querySelector('.producto-nombre').textContent.toLowerCase();
-                return nombreA.localeCompare(nombreB);
-            });
-            break;
-            
-        case 'Nombre: Z-A':
-        case 'Name: Z-A':
-            productosFiltrados.sort((a, b) => {
-                const nombreA = a.querySelector('.producto-nombre').textContent.toLowerCase();
-                const nombreB = b.querySelector('.producto-nombre').textContent.toLowerCase();
-                return nombreB.localeCompare(nombreA);
-            });
-            break;
+    function cambiarPagina(nuevaPagina) {
+        paginaActual = nuevaPagina;
+        mostrarProductos();
+        actualizarPaginacion();
+        
+        // Actualizar URL con página
+        actualizarURL();
+        
+        // Hacer scroll al inicio de los productos
+        scrollToTopOfProducts();
     }
     
-    // Volver a la primera página y mostrar resultados ordenados
-    paginaActual = 1;
-    mostrarPagina(1);
-}
-
-// MOSTRAR MENSAJE SIN RESULTADOS
-function mostrarMensajeSinResultados(termino) {
-    // Remover mensaje anterior si existe
-    const mensajeAnterior = document.querySelector('.no-results-message');
-    if (mensajeAnterior) {
-        mensajeAnterior.remove();
+    function actualizarURL() {
+        const params = new URLSearchParams();
+        
+        // Agregar categoría si no es 'all'
+        if (categoriaSeleccionada !== 'all') {
+            params.set('categoria', categoriaSeleccionada);
+        }
+        
+        // Agregar página si no es 1
+        if (paginaActual > 1) {
+            params.set('pagina', paginaActual);
+        }
+        
+        // Construir nueva URL
+        const nuevaURL = params.toString() ? `catalogo.html?${params.toString()}` : 'catalogo.html';
+        
+        // Actualizar URL sin recargar la página
+        window.history.replaceState({}, '', nuevaURL);
     }
     
-    // Si no hay resultados, mostrar mensaje
-    if (productosFiltrados.length === 0 && termino.trim() !== '') {
-        const productosGrid = document.getElementById('productosGrid');
-        const mensaje = document.createElement('div');
-        mensaje.className = 'no-results-message';
-        mensaje.innerHTML = `
-            <div class="no-results-content">
-                <i class="fas fa-search"></i>
-                <h3 class="es-lang">No se encontraron resultados para "${termino}"</h3>
-                <h3 class="en-lang">No results found for "${termino}"</h3>
-                <p class="es-lang">Intenta con otros términos de búsqueda o revisa nuestro catálogo completo.</p>
-                <p class="en-lang">Try other search terms or check our complete catalog.</p>
-                <button class="btn btn-primary" onclick="limpiarBusqueda()">
-                    <span class="es-lang">Ver Todo el Catálogo</span>
-                    <span class="en-lang">View Full Catalog</span>
-                </button>
+    function scrollToTopOfProducts() {
+        // Esperar un momento para que el DOM se actualice
+        setTimeout(() => {
+            // Buscar el título de los filtros o la sección de productos
+            const filterGroup = document.querySelector('.filter-group');
+            const catalogoSection = document.querySelector('.catalogo-section');
+            
+            let targetElement = filterGroup || catalogoSection;
+            
+            if (targetElement) {
+                // Calcular posición exacta
+                const elementTop = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementTop + window.pageYOffset - 120; // 120px de margen para el header
+                
+                // Hacer scroll inmediato
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            } else {
+                // Fallback: ir al inicio del catálogo
+                const catalogContainer = document.querySelector('.container-sm');
+                if (catalogContainer) {
+                    const containerTop = catalogContainer.getBoundingClientRect().top + window.pageYOffset - 100;
+                    window.scrollTo({
+                        top: containerTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }, 100);
+    }
+    
+    function actualizarMensajeSinResultados() {
+        if (productosFiltrados.length === 0) {
+            noResultsMessage.style.display = 'block';
+            productosGrid.style.display = 'none';
+            paginationContainer.style.display = 'none';
+        } else {
+            noResultsMessage.style.display = 'none';
+            productosGrid.style.display = 'grid';
+            paginationContainer.style.display = 'flex';
+        }
+    }
+    
+    function resetFiltros() {
+        // Resetear categoría
+        categoriaSeleccionada = 'all';
+        if (categoryFilter) {
+            categoryFilter.value = 'all';
+        }
+        
+        // Resetear búsqueda
+        terminoBusqueda = '';
+        if (searchInputEs) searchInputEs.value = '';
+        if (searchInputEn) searchInputEn.value = '';
+        
+        // Resetear paginación
+        paginaActual = 1;
+        
+        // Restablecer productos
+        productosFiltrados = [...productos];
+        
+        // Actualizar vista
+        mostrarProductos();
+        actualizarPaginacion();
+        actualizarMensajeSinResultados();
+        
+        // Limpiar URL
+        window.history.replaceState({}, '', 'catalogo.html');
+        
+        // Hacer scroll al inicio
+        scrollToTopOfProducts();
+        
+        mostrarNotificacion('Filtros restablecidos');
+    }
+    
+    // ======================
+    // MANEJO DE URL AL CARGAR
+    // ======================
+    
+    function manejarParametrosURLCargar() {
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Obtener categoría de la URL
+        const categoriaParam = urlParams.get('categoria');
+        if (categoriaParam) {
+            // Mapear parámetro URL a valor del select
+            const categoriaMapeada = mapearParametroURLaValorSelect(categoriaParam);
+            
+            if (categoriaMapeada && categoryFilter) {
+                categoriaSeleccionada = categoriaMapeada;
+                categoryFilter.value = categoriaMapeada;
+                console.log(`Categoría cargada desde URL: ${categoriaParam} -> ${categoriaMapeada}`);
+                
+                // Actualizar título de la página
+                actualizarTituloSegunCategoria(categoriaMapeada);
+            }
+        }
+        
+        // Obtener página de la URL
+        const paginaParam = urlParams.get('pagina');
+        if (paginaParam) {
+            const pagina = parseInt(paginaParam);
+            if (!isNaN(pagina) && pagina > 0) {
+                paginaActual = pagina;
+            }
+        }
+        
+        // Aplicar filtros si hay parámetros
+        if (categoriaParam || paginaParam) {
+            setTimeout(() => {
+                filtrarProductos();
+                // Hacer scroll después de que los productos se muestren
+                setTimeout(scrollToTopOfProducts, 150);
+            }, 50);
+        }
+    }
+    
+    function mapearParametroURLaValorSelect(parametroURL) {
+        // Convierte parámetros URL a valores del select
+        // Ejemplos:
+        // 'industrial' o 'industriales' -> 'industriales'
+        // 'visitante-exterior' -> 'visitante-exterior'
+        // etc.
+        
+        const mapaURL = {
+            // INDUSTRIALES
+            'industrial': 'industriales',
+            'industriales': 'industriales',
+            
+            // VISITANTE EXTERIOR
+            'visitante-exterior': 'visitante-exterior',
+            'visitanteexterior': 'visitante-exterior',
+            'exterior': 'visitante-exterior',
+            'visitante-exterior': 'visitante-exterior',
+            
+            // VISITANTE INTERIOR
+            'visitante-interior': 'visitante-interior',
+            'visitanteinterior': 'visitante-interior',
+            'interior': 'visitante-interior',
+            'visitante-interior': 'visitante-interior',
+            
+            // BANCOS
+            'bancos': 'bancos',
+            'banco': 'bancos',
+            'stools': 'bancos',
+            
+            // BANCAS
+            'bancas': 'bancas',
+            'banca': 'bancas',
+            'benches': 'bancas',
+            'banco-largo': 'bancas',
+            
+            // SILLAS CON RUEDAS
+            'sillas-ruedas': 'sillas-ruedas',
+            'sillas-con-ruedas': 'sillas-ruedas',
+            'silla-con-ruedas': 'sillas-ruedas',
+            'ruedas': 'sillas-ruedas',
+            'con-ruedas': 'sillas-ruedas',
+            'office-chairs': 'sillas-ruedas'
+        };
+        
+        // Limpiar y normalizar el parámetro
+        const parametroLimpio = parametroURL.toLowerCase().trim();
+        
+        // Buscar coincidencia
+        if (mapaURL[parametroLimpio]) {
+            return mapaURL[parametroLimpio];
+        }
+        
+        // Si no encuentra coincidencia exacta, intentar coincidencia parcial
+        for (const [key, value] of Object.entries(mapaURL)) {
+            if (parametroLimpio.includes(key) || key.includes(parametroLimpio)) {
+                return value;
+            }
+        }
+        
+        // Si no hay coincidencia, retornar null
+        console.warn(`Parámetro de categoría no reconocido: ${parametroURL}`);
+        return null;
+    }
+    
+    function actualizarTituloSegunCategoria(categoria) {
+        const titulo = document.querySelector('.catalogo-title');
+        const subtitulo = document.querySelector('.catalogo-subtitle');
+        
+        if (!titulo || !subtitulo) return;
+        
+        const titulos = {
+            'industriales': {
+                es: 'Catálogo de Sillas Industriales',
+                en: 'Industrial Chairs Catalog'
+            },
+            'visitante-exterior': {
+                es: 'Sillas para Visitantes Exterior',
+                en: 'Outdoor Visitor Chairs'
+            },
+            'visitante-interior': {
+                es: 'Sillas para Visitantes Interior',
+                en: 'Indoor Visitor Chairs'
+            },
+            'bancos': {
+                es: 'Catálogo de Bancos Industriales',
+                en: 'Industrial Stools Catalog'
+            },
+            'bancas': {
+                es: 'Catálogo de Bancas Industriales',
+                en: 'Industrial Benches Catalog'
+            },
+            'sillas-ruedas': {
+                es: 'Sillas con Ruedas',
+                en: 'Chairs with Wheels'
+            }
+        };
+        
+        const tituloInfo = titulos[categoria];
+        
+        if (tituloInfo) {
+            // Actualizar título en español
+            const tituloEs = titulo.querySelector('.es-lang') || titulo;
+            if (tituloEs.classList.contains('es-lang')) {
+                tituloEs.textContent = tituloInfo.es;
+            } else {
+                tituloEs.textContent = tituloInfo.es;
+            }
+            
+            // Actualizar título en inglés
+            const tituloEn = titulo.querySelector('.en-lang');
+            if (tituloEn) {
+                tituloEn.textContent = tituloInfo.en;
+            }
+            
+            // Actualizar subtítulo
+            const subtitulos = {
+                'industriales': {
+                    es: 'Descubre nuestra exclusiva colección de sillas industriales diseñadas para cumplir con la Ley Silla y garantizar la máxima durabilidad en entornos exigentes.',
+                    en: 'Discover our exclusive collection of industrial chairs designed to comply with Chair Law and ensure maximum durability in demanding environments.'
+                },
+                'visitante-exterior': {
+                    es: 'Explora nuestra gama de sillas para exterior resistentes a condiciones climáticas adversas. Perfectas para terrazas, jardines y áreas públicas.',
+                    en: 'Explore our range of outdoor chairs resistant to adverse weather conditions. Perfect for terraces, gardens and public areas.'
+                },
+                'visitante-interior': {
+                    es: 'Conoce nuestras sillas para visitantes de interior, ideales para recepciones, salas de espera y áreas corporativas.',
+                    en: 'Discover our indoor visitor chairs, ideal for receptions, waiting rooms and corporate areas.'
+                },
+                'bancos': {
+                    es: 'Descubre nuestra línea de bancos industriales, diseñados para áreas de trabajo, talleres y espacios de producción.',
+                    en: 'Discover our line of industrial stools, designed for work areas, workshops and production spaces.'
+                },
+                'bancas': {
+                    es: 'Explora nuestras bancas industriales, perfectas para áreas de descanso, comedores y espacios compartidos.',
+                    en: 'Explore our industrial benches, perfect for rest areas, dining rooms and shared spaces.'
+                },
+                'sillas-ruedas': {
+                    es: 'Conoce nuestras sillas con ruedas, ideales para oficinas, áreas administrativas y puestos de trabajo móviles.',
+                    en: 'Discover our chairs with wheels, ideal for offices, administrative areas and mobile workstations.'
+                }
+            };
+            
+            const subtituloInfo = subtitulos[categoria];
+            if (subtituloInfo) {
+                const subtituloEs = subtitulo.querySelector('.es-lang');
+                const subtituloEn = subtitulo.querySelector('.en-lang');
+                
+                if (subtituloEs) subtituloEs.textContent = subtituloInfo.es;
+                if (subtituloEn) subtituloEn.textContent = subtituloInfo.en;
+            }
+        }
+    }
+    
+    // ======================
+    // FUNCIONES DE UTILIDAD
+    // ======================
+    
+    function mostrarNotificacion(mensaje) {
+        // Crear elemento de notificación
+        const notificacion = document.createElement('div');
+        notificacion.className = 'notification';
+        notificacion.textContent = mensaje;
+        notificacion.style.cssText = `
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+            font-weight: 500;
+        `;
+        
+        document.body.appendChild(notificacion);
+        
+        // Remover después de 3 segundos
+        setTimeout(() => {
+            notificacion.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => {
+                if (document.body.contains(notificacion)) {
+                    document.body.removeChild(notificacion);
+                }
+            }, 300);
+        }, 3000);
+    }
+    
+    function mostrarZoomModal(imageSrc, productName) {
+        // Crear modal
+        const modal = document.createElement('div');
+        modal.className = 'zoom-modal';
+        modal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        `;
+        
+        modal.innerHTML = `
+            <div class="zoom-content" style="position: relative; max-width: 90%; max-height: 90%;">
+                <button class="zoom-close" style="position: absolute; top: -40px; right: 0; background: none; border: none; color: white; font-size: 2rem; cursor: pointer;">×</button>
+                <img src="${imageSrc}" alt="${productName}" style="max-width: 100%; max-height: 80vh; border-radius: 8px;">
+                <p style="color: white; text-align: center; margin-top: 1rem; font-size: 1.2rem;">${productName}</p>
             </div>
         `;
         
-        productosGrid.appendChild(mensaje);
-    }
-}
-
-// LIMPIAR BÚSQUEDA
-function limpiarBusqueda() {
-    const searchInputs = document.querySelectorAll('.search-input');
-    searchInputs.forEach(input => input.value = '');
-    
-    const mensaje = document.querySelector('.no-results-message');
-    if (mensaje) {
-        mensaje.remove();
-    }
-    
-    // Restablecer filtros
-    productosFiltrados = [...todosLosProductos];
-    paginaActual = 1;
-    mostrarPagina(1);
-}
-
-// FUNCIONES DE UTILIDAD
-function showNotification(message) {
-    const notification = document.createElement('div');
-    notification.className = 'notification';
-    notification.textContent = message;
-    notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 20px;
-        background: var(--primary-color);
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        z-index: 1000;
-        animation: slideIn 0.3s ease;
-        font-weight: 500;
-    `;
-    
-    document.body.appendChild(notification);
-    
-    setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease';
-        setTimeout(() => {
-            if (document.body.contains(notification)) {
-                document.body.removeChild(notification);
+        document.body.appendChild(modal);
+        
+        // Eventos para cerrar
+        const closeBtn = modal.querySelector('.zoom-close');
+        closeBtn.addEventListener('click', () => cerrarZoomModal(modal));
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                cerrarZoomModal(modal);
             }
-        }, 300);
-    }, 3000);
-}
-
-function showZoomModal(imageSrc, productName) {
-    // Crear modal de zoom
-    const modal = document.createElement('div');
-    modal.className = 'zoom-modal';
-    modal.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.9);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2000;
-        animation: fadeIn 0.3s ease;
-    `;
+        });
+        
+        // Cerrar con Escape
+        document.addEventListener('keydown', function cerrarConEscape(e) {
+            if (e.key === 'Escape') {
+                cerrarZoomModal(modal);
+                document.removeEventListener('keydown', cerrarConEscape);
+            }
+        });
+    }
     
-    modal.innerHTML = `
-        <div class="zoom-content" style="position: relative; max-width: 90%; max-height: 90%;">
-            <button class="zoom-close" style="position: absolute; top: -40px; right: 0; background: none; border: none; color: white; font-size: 2rem; cursor: pointer;">×</button>
-            <img src="${imageSrc}" alt="${productName}" style="max-width: 100%; max-height: 80vh; border-radius: 8px;">
-            <p style="color: white; text-align: center; margin-top: 1rem; font-size: 1.2rem;">${productName}</p>
-        </div>
-    `;
-    
-    document.body.appendChild(modal);
-    
-    // Cerrar modal al hacer click
-    const closeBtn = modal.querySelector('.zoom-close');
-    closeBtn.addEventListener('click', () => {
+    function cerrarZoomModal(modal) {
         modal.style.animation = 'fadeOut 0.3s ease';
         setTimeout(() => {
             if (document.body.contains(modal)) {
                 document.body.removeChild(modal);
             }
         }, 300);
-    });
+    }
     
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.style.animation = 'fadeOut 0.3s ease';
-            setTimeout(() => {
-                if (document.body.contains(modal)) {
-                    document.body.removeChild(modal);
-                }
-            }, 300);
+    // ======================
+    // INYECTAR ESTILOS CSS
+    // ======================
+    
+    
+    
+    document.head.appendChild(styles);
+    
+    // ======================
+    // EXPORTAR FUNCIONES GLOBALES
+    // ======================
+    
+    window.filtrarPorCategoria = function(categoria) {
+        if (categoryFilter) {
+            categoryFilter.value = categoria;
+            categoriaSeleccionada = categoria;
+            paginaActual = 1;
+            filtrarProductos();
         }
-    });
-}
-
-// Añadir estilos CSS para las animaciones
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideIn {
-        from {
-            transform: translateX(100%);
-            opacity: 0;
+    };
+    
+    window.resetearFiltros = resetFiltros;
+    
+    window.irAPagina = function(pagina) {
+        if (pagina >= 1 && pagina <= Math.ceil(productosFiltrados.length / productosPorPagina)) {
+            cambiarPagina(pagina);
         }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
+    };
     
-    @keyframes slideOut {
-        from {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        to {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-    }
-    
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-    
-    @keyframes fadeOut {
-        from {
-            opacity: 1;
-        }
-        to {
-            opacity: 0;
-        }
-    }
-    
-    /* Vista de lista para productos */
-    .productos-grid.list-view {
-        grid-template-columns: 1fr !important;
-    }
-    
-    .productos-grid.list-view .producto-card {
-        display: flex;
-        height: 200px;
-        gap: 2rem;
-    }
-    
-    .productos-grid.list-view .producto-image {
-        width: 200px;
-        height: 100%;
-        flex-shrink: 0;
-    }
-    
-    .productos-grid.list-view .producto-info {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    
-    /* Mensaje sin resultados */
-    .no-results-message {
-        grid-column: 1 / -1;
-        text-align: center;
-        padding: 4rem 2rem;
-        background: var(--light-gray);
-        border-radius: 12px;
-        margin: 2rem 0;
-    }
-    
-    .no-results-content i {
-        font-size: 4rem;
-        color: var(--primary-color);
-        margin-bottom: 1.5rem;
-    }
-    
-    .no-results-content h3 {
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-    }
-    
-    .no-results-content p {
-        color: var(--dark-gray);
-        margin-bottom: 2rem;
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    /* Estados de paginación */
-    .page-btn:disabled {
-        cursor: not-allowed;
-        opacity: 0.5;
-    }
-    
-    .page-btn.active {
-        background: var(--primary-color);
-        color: white;
-    }
-`;
-document.head.appendChild(style);
-
-// Hacer funciones disponibles globalmente
-window.limpiarBusqueda = limpiarBusqueda;
-
+    console.log('Catálogo inicializado correctamente - Todas las categorías disponibles');
+});

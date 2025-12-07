@@ -186,8 +186,8 @@
                         <div class="info-text">
                             <strong class="es-lang">Horario de atención:</strong>
                             <strong class="en-lang">Business hours:</strong>
-                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
-                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                            <div class="es-lang">Lun-Vie: 8am - 5pm</div>
+                            <div class="en-lang">Mon-Fri: 8am - 5pm</div>
                         </div>
                     </div>
                     <div class="info-item">
@@ -232,9 +232,9 @@
                             </p>
                             
                             <div class="search-box">
-                                <input type="text" placeholder="Buscar sillas por modelo, características..." class="search-input es-lang">
-                                <input type="text" placeholder="Search chairs by model, features..." class="search-input en-lang">
-                                <button class="search-btn">
+                                <input type="text" placeholder="Buscar sillas por modelo, características..." class="search-input es-lang" id="searchInputEs">
+                                <input type="text" placeholder="Search chairs by model, features..." class="search-input en-lang" id="searchInputEn">
+                                <button class="search-btn" id="searchBtn">
                                     <i class="fas fa-search"></i>
                                 </button>
                             </div>
@@ -269,20 +269,15 @@
                             </select>
                         </div>
                         <div class="view-toggle">
-                            <button class="view-btn active" data-view="grid">
-                                <i class="fas fa-th"></i>
-                            </button>
-                            <button class="view-btn" data-view="list">
-                                <i class="fas fa-list"></i>
-                            </button>
+            
                         </div>
                     </div>
 
                     <!-- Productos Grid -->
                     <div class="productos-grid" id="productosGrid">
-                        
+                        <!-- Los productos se mantienen exactamente iguales, solo agregaré los data-category -->
                         <!-- Producto 1 - OHI-46 -->
-                        <div class="producto-card" data-category="industriales">
+                        <div class="producto-card" data-category="industriales" data-name="OHI-46 INDUSTRIAL">
                             
                             <div class="producto-image">
                                 <img src="Imagenes/Silla_Heavy (2).png" alt="Silla Industrial OHI-46">
@@ -320,7 +315,7 @@
                         </div>
 
                         <!-- Producto 2 - OHI-46-ARO-CROMADO -->
-                        <div class="producto-card" data-category="industriales">
+                        <div class="producto-card" data-category="industriales" data-name="OHI-46-ARO-CROMADO">
                             <div class="producto-image">
                                 <img src="Imagenes/cromado1.png" alt="Silla Industrial OHI-46 Aro Cromado">
                                 <div class="producto-actions">
@@ -357,7 +352,7 @@
                         </div>
 
                         <!-- Producto 3 - OHI-48 -->
-                        <div class="producto-card" data-category="industriales">
+                        <div class="producto-card" data-category="industriales" data-name="OHI-48 INDUSTRIAL">
                             
                             <div class="producto-image">
                                 <img src="Imagenes/OHI-48 IN.png" alt="Silla Industrial OHI-48">
@@ -394,7 +389,7 @@
                         </div>
 
                         <!-- Producto 4 - OHI-48-ARO-CROMADO -->
-                        <div class="producto-card" data-category="industriales">
+                        <div class="producto-card" data-category="industriales" data-name="OHI-48-ARO-CROMADO INDUSTRIAL">
                             <div class="producto-image">
                                 <img src="Imagenes/OHI-48-ARO.png" alt="Silla Industrial OHI-48 Aro Cromado">
                                 <div class="producto-actions">
@@ -430,7 +425,7 @@
                         </div>
 
                         <!-- Producto 5 - OHR-2800-2Pcr -->
-                        <div class="producto-card" data-category="bancas">
+                        <div class="producto-card" data-category="bancas" data-name="OHR-2800-2Pcr BANCA">
                             
                             <div class="producto-image">
                                 <img src="Imagenes/IVY-OHR-2800.png" alt="Banca OHR-2800-2Pcr">
@@ -467,7 +462,7 @@
                         </div>
 
                         <!-- Producto 6 - OHR-2800-3Pcr -->
-                        <div class="producto-card" data-category="bancas">
+                        <div class="producto-card" data-category="bancas" data-name="OHR-2800-3Pcr BANCA">
                             
                             <div class="producto-image">
                                 <img src="Imagenes/OHR-2800-3Pcr.png" alt="Banca OHR-2800-3Pcr">
@@ -504,7 +499,7 @@
                         </div>
 
                         <!-- Producto 7 - OHR-2800-4Pcr -->
-                        <div class="producto-card" data-category="bancas">
+                        <div class="producto-card" data-category="bancas" data-name="OHR-2800-4Pcr BANCA">
                             <div class="producto-image">
                                 <img src="Imagenes/IVY-OHR.png" alt="Banca OHR-2800-4Pcr">
                                 <div class="producto-actions">
@@ -540,7 +535,7 @@
                         </div>
 
                         <!-- Producto 8 - OHR-2600-2P -->
-                        <div class="producto-card" data-category="bancas">
+                        <div class="producto-card" data-category="bancas" data-name="OHR-2600-2P BANCA">
                             <div class="producto-image">
                                 <img src="Imagenes/eli.png" alt="Banca OHR-2600-2P">
                                 <div class="producto-actions">
@@ -576,7 +571,7 @@
                         </div>
 
                         <!-- Producto 9 - OHR-2600-3P -->
-                        <div class="producto-card" data-category="bancas">
+                        <div class="producto-card" data-category="bancas" data-name="OHR-2600-3P BANCA">
                             <div class="producto-image">
                                 <img src="Imagenes/OHR-2600-3P.png" alt="Banca OHR-2600-3P">
                                 <div class="producto-actions">
@@ -612,7 +607,7 @@
                         </div>
 
                         <!-- Producto 10 - OHR-2600-4P -->
-                        <div class="producto-card" data-category="bancas">
+                        <div class="producto-card" data-category="bancas" data-name="OHR-2600-4P BANCA">
                             <div class="producto-image">
                                 <img src="Imagenes/OHR-2600-4P.png" alt="Banca OHR-2600-4P">
                                 <div class="producto-actions">
@@ -648,7 +643,7 @@
                         </div>
 
                         <!-- Producto 11 - OHR-2600-5P -->
-                        <div class="producto-card" data-category="bancas">
+                        <div class="producto-card" data-category="bancas" data-name="OHR-2600-5P BANCA">
                             <div class="producto-image">
                                 <img src="Imagenes/OHR-2600-5P.png" alt="Banca OHR-2600-5P">
                                 <div class="producto-actions">
@@ -684,7 +679,7 @@
                         </div>
 
                         <!-- Producto 12 - OHV-73 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="visitante-exterior">
+                        <div class="producto-card" data-category="visitante-exterior" data-name="OHV-73 VISITANTE EXTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/PLUS.png" alt="OHV-73 VISITANTE EXTERIOR">
                                 <div class="producto-actions">
@@ -720,7 +715,7 @@
                         </div>
 
                         <!-- Producto 13 - OHV-97 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="visitante-exterior">
+                        <div class="producto-card" data-category="visitante-exterior" data-name="OHV-97 VISITANTE EXTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/OHV-97.png" alt="OHV-97 VISITANTE EXTERIOR">
                                 <div class="producto-actions">
@@ -756,7 +751,7 @@
                         </div>
 
                         <!-- Producto 14 - OHV-7211B BANCO -->
-                        <div class="producto-card" data-category="bancos">
+                        <div class="producto-card" data-category="bancos" data-name="OHV-7211B BANCO">
                             <div class="producto-image">
                                 <img src="Imagenes/OHV-7211B.png" alt="OHV-7211B BANCO">
                                 <div class="producto-actions">
@@ -792,7 +787,7 @@
                         </div>
 
                         <!-- Producto 15 - OHV-7211C BANCO -->
-                        <div class="producto-card" data-category="bancos">
+                        <div class="producto-card" data-category="bancos" data-name="OHV-7211C BANCO">
                             <div class="producto-image">
                                 <img src="Imagenes/OHV-7211C.png" alt="OHV-7211C BANCO">
                                 <div class="producto-actions">
@@ -828,7 +823,7 @@
                         </div>
 
                         <!-- Producto 16 - OHV-66 VISITANTE INTERIOR -->
-                        <div class="producto-card" data-category="visitante-interior">
+                        <div class="producto-card" data-category="visitante-interior" data-name="OHV-66 VISITANTE INTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/MILK-OHV.png" alt="OHV-66 VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -864,7 +859,7 @@
                         </div>
 
                         <!-- Producto 17 - OHV-11 VISITANTE INTERIOR -->
-                        <div class="producto-card" data-category="visitante-interior">
+                        <div class="producto-card" data-category="visitante-interior" data-name="OHV-11 VISITANTE INTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/CIAO-OHV.png" alt="OHV-11 VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -900,7 +895,7 @@
                         </div>
 
                         <!-- Producto 18 - OHV-11B VISITANTE INTERIOR -->
-                        <div class="producto-card" data-category="visitante-interior">
+                        <div class="producto-card" data-category="visitante-interior" data-name="OHV-11B VISITANTE INTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/OHV-11B.png" alt="OHV-11B VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -936,7 +931,7 @@
                         </div>
 
                         <!-- Producto 19 - OHV-20 VISITANTE INTERIOR -->
-                        <div class="producto-card" data-category="visitante-interior">
+                        <div class="producto-card" data-category="visitante-interior" data-name="OHV-20 VISITANTE INTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/CORE-OHV.png" alt="OHV-20 VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -972,7 +967,7 @@
                         </div>
 
                         <!-- Producto 20 - OHV-102 VISITANTE INTERIOR -->
-                        <div class="producto-card" data-category="visitante-interior">
+                        <div class="producto-card" data-category="visitante-interior" data-name="OHV-102 VISITANTE INTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/ALPHA.png" alt="OHV-102 VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1008,7 +1003,7 @@
                         </div>
 
                         <!-- Producto 21 - OHV-102-ALTA BANCO -->
-                        <div class="producto-card" data-category="bancos">
+                        <div class="producto-card" data-category="bancos" data-name="OHV-102-ALTA BANCO">
                             <div class="producto-image">
                                 <img src="Imagenes/ALPHA-OHV.png" alt="OHV-102-ALTA BANCO">
                                 <div class="producto-actions">
@@ -1044,7 +1039,7 @@
                         </div>
 
                         <!-- Producto 22 - OHV-47 VISITANTE INTERIOR -->
-                        <div class="producto-card" data-category="visitante-interior">
+                        <div class="producto-card" data-category="visitante-interior" data-name="OHV-47 VISITANTE INTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/QUICK.png" alt="OHV-47 VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1080,7 +1075,7 @@
                         </div>
 
                         <!-- Producto 23 - OHV-47-ALTA BANCO -->
-                        <div class="producto-card" data-category="bancos">
+                        <div class="producto-card" data-category="bancos" data-name="OHV-47-ALTA BANCO">
                             <div class="producto-image">
                                 <img src="Imagenes/OHV-47-ALTA.png" alt="OHV-47-ALTA BANCO">
                                 <div class="producto-actions">
@@ -1116,7 +1111,7 @@
                         </div>
 
                         <!-- Producto 24 - OHV-13 VISITANTE INTERIOR -->
-                        <div class="producto-card" data-category="visitante-interior">
+                        <div class="producto-card" data-category="visitante-interior" data-name="OHV-13 VISITANTE INTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/STRIKE-OHV-13.png" alt="OHV-13 VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1152,7 +1147,7 @@
                         </div>
 
                         <!-- Producto 25 - OHV-13-ALTA BANCO -->
-                        <div class="producto-card" data-category="bancos">
+                        <div class="producto-card" data-category="bancos" data-name="OHV-13-ALTA BANCO">
                             <div class="producto-image">
                                 <img src="Imagenes/OHV-13-ALTA.png" alt="OHV-13-ALTA BANCO">
                                 <div class="producto-actions">
@@ -1188,7 +1183,7 @@
                         </div>
 
                         <!-- Producto 26 - OHV-37 VISITANTE INTERIOR -->
-                        <div class="producto-card" data-category="visitante-interior">
+                        <div class="producto-card" data-category="visitante-interior" data-name="OHV-37 VISITANTE INTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/SHELL.png" alt="OHV-37 VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1224,7 +1219,7 @@
                         </div>
 
                         <!-- Producto 27 - OHV-37-ALTA BANCO -->
-                        <div class="producto-card" data-category="bancos">
+                        <div class="producto-card" data-category="bancos" data-name="OHV-37-ALTA BANCO">
                             <div class="producto-image">
                                 <img src="Imagenes/OHV-37-ALTA.png" alt="OHV-37-ALTA BANCO">
                                 <div class="producto-actions">
@@ -1260,7 +1255,7 @@
                         </div>
 
                         <!-- Producto 28 - OHV-57-ALTA BANCO -->
-                        <div class="producto-card" data-category="bancos">
+                        <div class="producto-card" data-category="bancos" data-name="OHV-57-ALTA BANCO">
                             <div class="producto-image">
                                 <img src="Imagenes/BISTRO.png" alt="OHV-57-ALTA BANCO">
                                 <div class="producto-actions">
@@ -1296,7 +1291,7 @@
                         </div>
 
                         <!-- Producto 29 - OHV-56-ALTO BANCO -->
-                        <div class="producto-card" data-category="bancos">
+                        <div class="producto-card" data-category="bancos" data-name="OHV-56-ALTO BANCO">
                             <div class="producto-image">
                                 <img src="Imagenes/STANZA.png" alt="OHV-56-ALTO BANCO">
                                 <div class="producto-actions">
@@ -1332,7 +1327,7 @@
                         </div>
 
                         <!-- Producto 30 - OHV-141 BANCO -->
-                        <div class="producto-card" data-category="bancos">
+                        <div class="producto-card" data-category="bancos" data-name="OHV-141 BANCO">
                             <div class="producto-image">
                                 <img src="Imagenes/OLIVER.png" alt="OHV-141 BANCO">
                                 <div class="producto-actions">
@@ -1368,7 +1363,7 @@
                         </div>
 
                         <!-- Producto 31 - OHV-86CR VISITANTE INTERIOR -->
-                        <div class="producto-card" data-category="visitante-interior">
+                        <div class="producto-card" data-category="visitante-interior" data-name="OHV-86CR VISITANTE INTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/REVOLUTION.png" alt="OHV-86CR VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1404,7 +1399,7 @@
                         </div>
 
                         <!-- Producto 32 - OHV-2700 VISITANTE INTERIOR -->
-                        <div class="producto-card" data-category="visitante-interior">
+                        <div class="producto-card" data-category="visitante-interior" data-name="OHV-2700 VISITANTE INTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/INNOVA.png" alt="OHV-2700 VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1440,7 +1435,7 @@
                         </div>
 
                         <!-- Producto 33 - OHV-59 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="visitante-exterior">
+                        <div class="producto-card" data-category="visitante-exterior" data-name="OHV-59 VISITANTE EXTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/SOLEI.png" alt="OHV-59 VISITANTE EXTERIOR">
                                 <div class="producto-actions">
@@ -1476,7 +1471,7 @@
                         </div>
 
                         <!-- Producto 34 - OHV-7201 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="visitante-exterior">
+                        <div class="producto-card" data-category="visitante-exterior" data-name="OHV-7201 VISITANTE EXTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/LA-VIE.png" alt="OHV-7201 VISITANTE EXTERIOR">
                                 <div class="producto-actions">
@@ -1512,7 +1507,7 @@
                         </div>
 
                         <!-- Producto 35 - OHS-11-NEGRO SILLAS CON RUEDAS -->
-                        <div class="producto-card" data-category="sillas-ruedas">
+                        <div class="producto-card" data-category="sillas-ruedas" data-name="OHS-11-NEGRO SILLAS CON RUEDAS">
                             <div class="producto-image">
                                 <img src="Imagenes/CIAO.png" alt="OHS-11-NEGRO SILLAS CON RUEDAS">
                                 <div class="producto-actions">
@@ -1548,7 +1543,7 @@
                         </div>
 
                         <!-- Producto 36 - RIMINI SILLAS CON RUEDAS -->
-                        <div class="producto-card" data-category="sillas-ruedas">
+                        <div class="producto-card" data-category="sillas-ruedas" data-name="RIMINI SILLAS CON RUEDAS">
                             <div class="producto-image">
                                 <img src="Imagenes/RIMINI.png" alt="RIMINI SILLAS CON RUEDAS">
                                 <div class="producto-actions">
@@ -1584,7 +1579,7 @@
                         </div>
 
                         <!-- Producto 37 - OHS-10 SILLAS CON RUEDAS -->
-                        <div class="producto-card" data-category="sillas-ruedas">
+                        <div class="producto-card" data-category="sillas-ruedas" data-name="OHS-10 SILLAS CON RUEDAS">
                             <div class="producto-image">
                                 <img src="Imagenes/CONTEMPO.png" alt="OHS-10 SILLAS CON RUEDAS">
                                 <div class="producto-actions">
@@ -1620,7 +1615,7 @@
                         </div>
 
                         <!-- Producto 38 - ECOVISTA VISITANTE INTERIOR -->
-                        <div class="producto-card" data-category="visitante-interior">
+                        <div class="producto-card" data-category="visitante-interior" data-name="ECOVISTA VISITANTE INTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/ECOVISTA.png" alt="ECOVISTA VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1656,7 +1651,7 @@
                         </div>
 
                         <!-- Producto 39 - ISO-SIN-BRAZOS VISITANTE INTERIOR -->
-                        <div class="producto-card" data-category="visitante-interior">
+                        <div class="producto-card" data-category="visitante-interior" data-name="ISO-SIN-BRAZOS VISITANTE INTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/ISO-SIN-BRAZOS.png" alt="ISO-SIN-BRAZOS VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1692,7 +1687,7 @@
                         </div>
 
                         <!-- Producto 40 - NOVAISO-SIN-BRAZOS VISITANTE INTERIOR -->
-                        <div class="producto-card" data-category="visitante-interior">
+                        <div class="producto-card" data-category="visitante-interior" data-name="NOVAISO-SIN-BRAZOS VISITANTE INTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/NOVAISO.png" alt="NOVAISO-SIN-BRAZOS VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1728,7 +1723,7 @@
                         </div>
 
                         <!-- Producto 41 - OHV-14 VISITANTE INTERIOR -->
-                        <div class="producto-card" data-category="visitante-interior">
+                        <div class="producto-card" data-category="visitante-interior" data-name="OHV-14 VISITANTE INTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/DELTA.png" alt="OHV-14 VISITANTE INTERIOR">
                                 <div class="producto-actions">
@@ -1764,7 +1759,7 @@
                         </div>
 
                         <!-- Producto 42 - OHV-62 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="visitante-exterior">
+                        <div class="producto-card" data-category="visitante-exterior" data-name="OHV-62 VISITANTE EXTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/REEF.png" alt="OHV-62 VISITANTE EXTERIOR">
                                 <div class="producto-actions">
@@ -1800,7 +1795,7 @@
                         </div>
 
                         <!-- Producto 43 - OHV-91 VISITANTE EXTERIOR -->
-                        <div class="producto-card" data-category="visitante-exterior">
+                        <div class="producto-card" data-category="visitante-exterior" data-name="OHV-91 VISITANTE EXTERIOR">
                             <div class="producto-image">
                                 <img src="Imagenes/ALISSA.png" alt="OHV-91 VISITANTE EXTERIOR">
                                 <div class="producto-actions">
@@ -1837,15 +1832,24 @@
 
                     </div>
 
+                    <!-- Mensaje sin resultados -->
+                    <div id="noResultsMessage" class="no-results-message" style="display: none;">
+                        <div class="no-results-content">
+                            <i class="fas fa-search"></i>
+                            <h3 class="es-lang">No se encontraron productos</h3>
+                            <h3 class="en-lang">No products found</h3>
+                            <p class="es-lang">Intenta con otra categoría o busca en nuestro catálogo completo.</p>
+                            <p class="en-lang">Try another category or search in our complete catalog.</p>
+                            <button class="btn btn-primary" id="resetFiltersBtn">
+                                <span class="es-lang">Ver Todo el Catálogo</span>
+                                <span class="en-lang">View Full Catalog</span>
+                            </button>
+                        </div>
+                    </div>
+
                     <!-- Paginación -->
-                    <div class="pagination">
-                        <button class="page-btn active" data-page="1">1</button>
-                        <button class="page-btn" data-page="2">2</button>
-                        <button class="page-btn" data-page="3">3</button>
-                        <button class="page-btn" data-page="4">4</button>
-                        <button class="page-btn next" data-action="next">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
+                    <div class="pagination" id="paginationContainer">
+                        <!-- La paginación se generará dinámicamente con JavaScript -->
                     </div>
                 </div>
             </section>
@@ -2019,54 +2023,6 @@
     <script src="js/chatbot.js"></script>
     <script src="js/sidebar.js"></script>
     <script src="js/catalogo.js"></script>
-
-    <script>
-        // JavaScript para la barra lateral
-        document.addEventListener('DOMContentLoaded', function() {
-            const sidebar = document.getElementById('sidebar');
-            const sidebarOverlay = document.getElementById('sidebarOverlay');
-            const sidebarToggle = document.getElementById('sidebarToggle');
-            
-            function toggleSidebar() {
-                sidebar.classList.toggle('active');
-                sidebarOverlay.classList.toggle('active');
-                
-                if (sidebar.classList.contains('active')) {
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    document.body.style.overflow = '';
-                }
-            }
-            
-            if (sidebarToggle) {
-                sidebarToggle.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    toggleSidebar();
-                });
-            }
-            
-            if (sidebarOverlay) {
-                sidebarOverlay.addEventListener('click', function() {
-                    toggleSidebar();
-                });
-            }
-            
-            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
-            sidebarLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth <= 1024) {
-                        toggleSidebar();
-                    }
-                });
-            });
-            
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && sidebar.classList.contains('active')) {
-                    toggleSidebar();
-                }
-            });
-        });
-    </script>
 
 </body>
 </html>
