@@ -199,13 +199,13 @@ body.dark-mode .logo-dark {
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
+    border: 1px solid #114baf;
     border-radius: 20px;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     min-width: 70px;
@@ -215,8 +215,9 @@ body.dark-mode .logo-dark {
 }
 
 .single-language-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    margin-top: -3px;
     border-color: rgba(255, 255, 255, 0.25);
     transform: translateY(-1px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 15px rgba(10, 43, 153, 0.281);
 }
