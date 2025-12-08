@@ -217,10 +217,31 @@ body.dark-mode .info-text{
 }
 
 /* En desktop ocultar sidebar y overlay completamente */
+/* CORREGIR ESTA PARTE */
+/* En desktop ocultar sidebar y overlay completamente */
 @media (min-width: 1025px) {
-    .sidebar,
-    .sidebar-overlay,
+    .sidebar {
+        /* En desktop NO mostrar con display: none */
+        /* Solo mantener oculto con transform */
+        transform: translateX(-100%);
+    }
+    
+    .sidebar-overlay {
+        display: none !important;
+    }
+    
     .sidebar-toggle {
         display: none !important;
+    }
+}
+
+/* MOSTRAR solo en móvil */
+@media (max-width: 1024px) {
+    .sidebar-toggle {
+        display: inline-flex;
+    }
+    
+    .sidebar-overlay {
+        display: block;
     }
 }

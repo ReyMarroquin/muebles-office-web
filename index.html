@@ -617,52 +617,6 @@
     <script src="js/chatbot.js"></script>
     <script src="js/sidebar.js"></script>
 
-    <script>
-        // JavaScript mejorado para la barra lateral
-        document.addEventListener('DOMContentLoaded', function() {
-            const sidebar = document.getElementById('sidebar');
-            const sidebarOverlay = document.getElementById('sidebarOverlay');
-            const sidebarToggle = document.getElementById('sidebarToggle');
-            
-            function toggleSidebar() {
-                sidebar.classList.toggle('active');
-                sidebarOverlay.classList.toggle('active');
-                
-                if (sidebar.classList.contains('active')) {
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    document.body.style.overflow = '';
-                }
-            }
-            
-            if (sidebarToggle) {
-                sidebarToggle.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    toggleSidebar();
-                });
-            }
-            
-            if (sidebarOverlay) {
-                sidebarOverlay.addEventListener('click', function() {
-                    toggleSidebar();
-                });
-            }
-            
-            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
-            sidebarLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth <= 1024) {
-                        toggleSidebar();
-                    }
-                });
-            });
-            
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && sidebar.classList.contains('active')) {
-                    toggleSidebar();
-                }
-            });
-        });
-    </script>
+    
 </body>
 </html>
