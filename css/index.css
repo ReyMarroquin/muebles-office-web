@@ -1,26 +1,231 @@
-/* ===== MODO OSCURO PARA INDEX - COMPLETO ===== */
+/* ===== FONDO PARA HERO SECTION ===== */
+.hero-ley-silla {
+    background-image: url('../Imagenes/fondo_index.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
 
-/* Hero Section - Modo Oscuro */
+.hero-ley-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ===== TIPOGRAFÍA PROFESIONAL Y CREATIVA ===== */
+.hero-title {
+    color: #ffffff;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    text-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.6),
+        0 8px 24px rgba(0, 0, 0, 0.4);
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Línea decorativa moderna bajo el título */
+.hero-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.5);
+}
+
+/* Subtítulo - Elegante y legible */
+.hero-subtitle {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    max-width: 650px;
+    line-height: 1.7;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    position: relative;
+    padding: 1.5rem 0 1.5rem 2rem;
+}
+
+/* Línea decorativa vertical moderna */
+.hero-subtitle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, 
+        transparent 0%, 
+        #3b82f6 20%, 
+        #60a5fa 50%, 
+        #3b82f6 80%, 
+        transparent 100%);
+    border-radius: 3px;
+}
+
+/* Ocultamos el badge de "Comodidad Garantizada" */
+.hero-image,
+.law-badge {
+    display: none;
+}
+
+/* ===== BOTONES CON DISEÑO PROFESIONAL ===== */
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.btn-large {
+    padding: 1.2rem 2.8rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* Efecto hover con movimiento */
+.btn-large::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    transition: left 0.6s;
+    z-index: -1;
+}
+
+.btn-large:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: white;
+    border: none;
+    box-shadow: 
+        0 6px 20px rgba(37, 99, 235, 0.4),
+        0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 12px 30px rgba(37, 99, 235, 0.5),
+        0 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.25),
+        0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 12px 30px rgba(0, 0, 0, 0.35),
+        0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* ===== MODO OSCURO CON ESTILOS MEJORADOS ===== */
 body.dark-mode .hero-ley-silla {
-    background: #0f172a;
+    background-image: url('../Imagenes/fondo_index.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
     color: #e2e8f0;
 }
 
+/* Overlay más oscuro para mejor contraste en modo oscuro */
+body.dark-mode .hero-ley-silla::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+/* Título en modo oscuro con gradiente mejorado */
 body.dark-mode .hero-title {
-    color: #f8fafc;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(135deg, #ffffff 0%, #dbeafe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.8),
+        0 8px 30px rgba(0, 0, 0, 0.6);
 }
 
+/* Subtítulo en modo oscuro - más brillante */
 body.dark-mode .hero-subtitle {
-    color: #cbd5e1;
+    color: rgba(255, 255, 255, 0.98);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-body.dark-mode .law-badge {
-    background: rgba(96, 165, 250, 0.1);
-    border: 1px solid rgba(96, 165, 250, 0.3);
-    color: #60a5fa;
-    backdrop-filter: blur(10px);
+/* Botón secundario en modo oscuro - más visible */
+body.dark-mode .btn-secondary {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
 }
+
+body.dark-mode .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* ===== IMPORTAR FUENTES MODERNAS ===== */
+/* Solo necesitas agregar esto al <head> de tu HTML:
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+*/
+
+/* ===== MODO OSCURO PARA INDEX (SIN CAMBIOS ESTRUCTURALES) ===== */
 
 /* Sección Empresas Obligadas - Modo Oscuro */
 body.dark-mode .section-padding {
@@ -66,7 +271,8 @@ body.dark-mode .highlight-text.en-lang {
     font-weight: 600;
 }
 
-body.dark-mode .separador .en-lang,body.dark-mode .separador .es-lang{
+body.dark-mode .separador .en-lang,
+body.dark-mode .separador .es-lang{
     background: #334155;
     color: #94a3b8;
 }
@@ -217,13 +423,12 @@ body.dark-mode .es-lang,
 body.dark-mode .en-lang {
     color: inherit;
 }
+
 /* ===== CONTROL DE IDIOMAS ===== */
-/* Por defecto ocultar inglés y mostrar español */
 .en-lang {
     display: none !important;
 }
 
-/* Cuando el body tiene la clase lang-en, ocultar español y mostrar inglés */
 body.lang-en .es-lang {
     display: none !important;
 }
@@ -232,14 +437,12 @@ body.lang-en .en-lang {
     display: inline !important;
 }
 
-/* Para elementos que deben ser block en lugar de inline */
 body.lang-en .en-lang.hero-title,
 body.lang-en .en-lang.hero-subtitle,
 body.lang-en .en-lang.titulo-cumplimiento {
     display: block !important;
 }
 
-/* Para los botones y elementos específicos */
 body.lang-en .en-lang.btn-large,
 body.lang-en .en-lang.empresa-card h3,
 body.lang-en .en-lang.empresa-card p {
@@ -263,15 +466,83 @@ body.dark-mode .texto-secundario .highlight-text.en-lang {
     text-align: center;
 }
 
-/* Para ocultar un idioma y mostrar solo el activo */
-.en-lang {
-    display: none !important;
-}
-
-body.lang-en .es-lang {
-    display: none !important;
-}
-
 body.lang-en .en-lang {
     display: block !important;
+}
+
+/* ===== AJUSTE PARA TEXTO COMPLETO EN BOTONES ===== */
+.btn-large .es-lang,
+.btn-large .en-lang {
+    display: inline-block !important;
+    white-space: nowrap;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 3.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+        padding-left: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-ley-silla {
+        min-height: 500px;
+        background-position: 60% center;
+        padding: 1.5rem;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-title::after {
+        width: 80px;
+        bottom: -8px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.15rem;
+        padding-left: 1.25rem;
+    }
+    
+    .hero-subtitle::before {
+        width: 2px;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .btn-large {
+        width: 100%;
+        max-width: 320px;
+        padding: 1.1rem 2rem;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.05rem;
+        padding-left: 1rem;
+    }
+    
+    .hero-actions {
+        gap: 0.75rem;
+    }
+    
+    .btn-large {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+    }
 }
