@@ -78,7 +78,7 @@ function applyTheme(theme) {
 
 // GESTIÓN DE IDIOMAS
 function initLanguageManager() {
-    const languageButtons = document.querySelectorAll('.language-btn');
+    const languageButtons = document.querySelectorAll('.language-btn','.lenguaje-btn');
     
     languageButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -95,6 +95,47 @@ function initLanguageManager() {
         });
     });
 }
+
+// Añade esto a tu función initLanguageManager() o crea una nueva
+function initSingleLanguageSwitcher() {
+    const singleLangToggle = document.getElementById('singleLangToggle');
+    
+    if (singleLangToggle) {
+        singleLangToggle.addEventListener('click', function() {
+            const currentLang = localStorage.getItem('language') || 'es';
+            const newLang = currentLang === 'es' ? 'en' : 'es';
+            
+            // Animación visual
+            this.classList.add('changing');
+            setTimeout(() => {
+                this.classList.remove('changing');
+            }, 300);
+            
+            // Actualizar botón
+            const langText = this.querySelector('.lang-text');
+            langText.textContent = newLang.toUpperCase();
+            this.setAttribute('data-lang', newLang);
+            
+            // Disparar cambio de idioma (usa tu función existente)
+            const targetButton = document.querySelector(`.language-btn[data-lang="${newLang}"]`);
+            if (targetButton) {
+                targetButton.click(); // Esto activa todo tu sistema existente
+            }
+        });
+        
+        // Sincronizar con el sistema al cargar
+        const savedLang = localStorage.getItem('language') || 'es';
+        const langText = singleLangToggle.querySelector('.lang-text');
+        langText.textContent = savedLang.toUpperCase();
+        singleLangToggle.setAttribute('data-lang', savedLang);
+    }
+}
+
+// Llamar en tu DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+    // ... tus otras inicializaciones
+    initSingleLanguageSwitcher();
+});
 
 function applyLanguage(lang) {
     // Cambiar idioma - usando CSS para mostrar/ocultar

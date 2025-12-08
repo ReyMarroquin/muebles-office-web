@@ -138,3 +138,85 @@ body.dark-mode .logo-light {
 body.dark-mode .logo-dark {
     display: block;
 }
+
+
+
+
+
+
+
+/* SELECTOR DE IDIOMA FIJO A LA DERECHA */
+.language-switcher {
+    position: fixed;
+    right: 20px; /* Margen normal */
+    z-index: 1000;
+}
+
+/* DESPUÉS DE 900px - MARGEN ESPECIAL DE 180px */
+@media (min-width: 900px) {
+    .language-switcher {
+        right: 190px; /* Margen aumentado solo después de 900px */
+    }
+}
+
+/* MEDIA QUERIES PARA RESPONSIVE (mayores a 900px ya tienen el margen especial) */
+
+/* Tablet (menos de 900px pero más de 768px) */
+@media (max-width: 899px) {
+    .language-switcher {
+        right: 15px; /* Margen normal para tablet */
+        top: 15px;
+    }
+}
+
+/* Mobile grande (menos de 768px) */
+@media (max-width: 768px) {
+    .language-switcher {
+        right: 12px;
+        top: 12px;
+    }
+}
+
+/* Mobile pequeño (menos de 480px) */
+@media (max-width: 480px) {
+    .language-switcher {
+        right: 8px;
+        top: 8px;
+    }
+}
+
+/* Mobile muy pequeño (menos de 360px) */
+@media (max-width: 360px) {
+    .language-switcher {
+        right: 5px;
+        top: 5px;
+    }
+}
+
+/* Estilos del botón (sin cambios) */
+.single-language-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 70px;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.single-language-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
