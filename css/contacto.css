@@ -14,7 +14,7 @@
             rgba(30, 58, 138, 0.15) 0%, 
             rgba(30, 64, 175, 0.1) 50%, 
             rgba(59, 130, 246, 0.05) 100%),
-        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=100');
+        url('../Imagenes/fondo_contactanos.png');
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -30,7 +30,7 @@
                 rgba(30, 58, 138, 0.1) 0%, 
                 rgba(30, 64, 175, 0.08) 50%, 
                 rgba(59, 130, 246, 0.05) 100%),
-            url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            url('../Imagenes/fondo_contactanos.png');
         background-size: cover;
         background-position: center;
         padding: 8rem 0 4rem;
@@ -809,7 +809,7 @@ body.dark-mode .contacto-hero {
             rgba(15, 23, 42, 0.1) 0%, 
             rgba(30, 41, 59, 0.08) 50%, 
             rgba(51, 65, 85, 0.05) 100%),
-        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=100');
+        url('../Imagenes/fondo_contactanos.png');
 }
 
 body.dark-mode .hero-overlay {
@@ -1004,11 +1004,6 @@ body.dark-mode .form-group textarea::placeholder {
     color: #94a3b8;
 }
 
-/* Select en modo oscuro */
-body.dark-mode .form-group select {
-    color: #e2e8f0;
-    background: #475569 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2360a5fa' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e") no-repeat right 0.75rem center/16px 12px;
-}
 
 body.dark-mode .form-group select option {
     background: #475569;
