@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/accessibility.css">
     <link rel="stylesheet" href="css/chatbot.css">
     <link rel="stylesheet" href="css/sidebar.css">
+    
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -318,7 +319,7 @@
                                             </label>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="question-group">
                                         <h4 class="es-lang">2. Sector y Actividad</h4>
                                         <h4 class="en-lang">2. Sector and Activity</h4>
@@ -377,7 +378,7 @@
                                             </label>
                                         </div>
                                         <div class="question-item">
-                                            <input type="checkbox" id="q3c" data-weight="4">
+                                            <input type="checkbox" id="q3c" data-weight="4" style="border: 1px solid red;">
                                             <label for="q3c">
                                                 <span class="es-lang">Tiene local comercial o oficinas propias</span>
                                                 <span class="en-lang">Has commercial premises or own offices</span>
@@ -385,6 +386,8 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                
                                 
                                 <div class="checker-results">
                                     <div class="result-card">
@@ -419,7 +422,7 @@
                                 </div>
                                 
                                 <div class="checker-actions">
-                                    <button class="btn btn-secondary" id="resetChecker">
+                                    <button class="btn btn-secondari" id="resetChecker">
                                         <i class="fas fa-redo"></i>
                                         <span class="es-lang">Reiniciar Verificador</span>
                                         <span class="en-lang">Reset Checker</span>
@@ -588,75 +591,7 @@
                                 </div>
                             </div>
                             
-                            <!-- Mapa de inspecciones -->
-                            <div class="inspection-map">
-                                <h3 class="es-lang">Mapa de Inspecciones por Sector</h3>
-                                <h3 class="en-lang">Inspection Map by Sector</h3>
-                                <div class="map-visual">
-                                    <div class="map-sector" style="left: 10%; top: 20%; background: #e74c3c;">
-                                        <div class="sector-dot"></div>
-                                        <div class="sector-label es-lang">Call Centers</div>
-                                        <div class="sector-label en-lang">Call Centers</div>
-                                        <div class="sector-frequency es-lang">85% inspeccionados</div>
-                                        <div class="sector-frequency en-lang">85% inspected</div>
-                                    </div>
-                                    <div class="map-sector" style="left: 30%; top: 40%; background: #e67e22;">
-                                        <div class="sector-dot"></div>
-                                        <div class="sector-label es-lang">Tecnología</div>
-                                        <div class="sector-label en-lang">Technology</div>
-                                        <div class="sector-frequency es-lang">70% inspeccionados</div>
-                                        <div class="sector-frequency en-lang">70% inspected</div>
-                                    </div>
-                                    <div class="map-sector" style="left: 50%; top: 30%; background: #f39c12;">
-                                        <div class="sector-dot"></div>
-                                        <div class="sector-label es-lang">Financiero</div>
-                                        <div class="sector-label en-lang">Financial</div>
-                                        <div class="sector-frequency es-lang">65% inspeccionados</div>
-                                        <div class="sector-frequency en-lang">65% inspected</div>
-                                    </div>
-                                    <div class="map-sector" style="left: 70%; top: 50%; background: #3498db;">
-                                        <div class="sector-dot"></div>
-                                        <div class="sector-label es-lang">Servicios</div>
-                                        <div class="sector-label en-lang">Services</div>
-                                        <div class="sector-frequency es-lang">45% inspeccionados</div>
-                                        <div class="sector-frequency en-lang">45% inspected</div>
-                                    </div>
-                                    <div class="map-sector" style="left: 40%; top: 70%; background: #2ecc71;">
-                                        <div class="sector-dot"></div>
-                                        <div class="sector-label es-lang">Comercio</div>
-                                        <div class="sector-label en-lang">Commerce</div>
-                                        <div class="sector-frequency es-lang">30% inspeccionados</div>
-                                        <div class="sector-frequency en-lang">30% inspected</div>
-                                    </div>
-                                </div>
-                                <div class="map-legend">
-                                    <div class="legend-item">
-                                        <div class="legend-color" style="background: #e74c3c;"></div>
-                                        <span class="es-lang">Alta prioridad (80-100%)</span>
-                                        <span class="en-lang">High priority (80-100%)</span>
-                                    </div>
-                                    <div class="legend-item">
-                                        <div class="legend-color" style="background: #e67e22;"></div>
-                                        <span class="es-lang">Media-alta (60-79%)</span>
-                                        <span class="en-lang">Medium-high (60-79%)</span>
-                                    </div>
-                                    <div class="legend-item">
-                                        <div class="legend-color" style="background: #f39c12;"></div>
-                                        <span class="es-lang">Media (40-59%)</span>
-                                        <span class="en-lang">Medium (40-59%)</span>
-                                    </div>
-                                    <div class="legend-item">
-                                        <div class="legend-color" style="background: #3498db;"></div>
-                                        <span class="es-lang">Media-baja (20-39%)</span>
-                                        <span class="en-lang">Medium-low (20-39%)</span>
-                                    </div>
-                                    <div class="legend-item">
-                                        <div class="legend-color" style="background: #2ecc71;"></div>
-                                        <span class="es-lang">Baja (0-19%)</span>
-                                        <span class="en-lang">Low (0-19%)</span>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </section>
 
                         <!-- Sección 3: Excepciones y Casos Especiales -->
