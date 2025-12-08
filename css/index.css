@@ -547,3 +547,29 @@ body.lang-en .en-lang {
     }
 }
 
+/* ===== CORRECCIÓN ESPECÍFICA PARA TEXTO EN BOTONES ===== */
+.btn-large .en-lang {
+    display: none !important;
+}
+
+body.lang-en .btn-large .es-lang {
+    display: none !important;
+}
+
+body.lang-en .btn-large .en-lang {
+    display: inline-block !important;
+}
+
+/* Esto asegura que solo un idioma se muestre en los botones */
+.btn-large > .es-lang,
+.btn-large > .en-lang {
+    display: inline-block;
+}
+
+body:not(.lang-en) .btn-large > .en-lang {
+    display: none;
+}
+
+body.lang-en .btn-large > .es-lang {
+    display: none;
+}
