@@ -1081,6 +1081,9 @@ body.dark-mode .form-group select option {
             margin-top: 2rem;
             background: white;
         }
+        body.dark-mode .map-container{
+            background-color: #1e293b;
+        }
         
         .map-wrapper {
             height: 500px;
@@ -1118,9 +1121,17 @@ body.dark-mode .form-group select option {
             transition: transform 0.3s ease;
         }
         
+        body.dark-mode .detail-item{
+            background-color: #1f2937;
+        }
+
         .detail-item:hover {
             transform: translateX(5px);
             background: #f1f5f9;
+        }
+
+        body.dark-mode .detail-item:hover{
+            background-color: #0F172A;
         }
         
         .detail-icon {
@@ -1161,10 +1172,22 @@ body.dark-mode .form-group select option {
             color: #4b5563;
             line-height: 1.5;
         }
+
+        body.dark-mode .detail-content p{
+            color: rgb(197, 197, 197);
+        }
         
         .detail-content strong {
             color: #1f2937;
             font-weight: 600;
+        }
+
+        body.dark-mode .detail-content strong{
+            color: white;
+        }
+
+        body.dark-mode .btn .btn-outline .btn-small{
+            background-color: #1e293b
         }
         
         .location-actions {
