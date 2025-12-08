@@ -571,6 +571,7 @@ body.dark-mode .cta-text p {
 
 body.dark-mode .cta-catalogo {
     border-top: 1px solid #334155;
+    background-color: #1e293b;
 }
 
 /* Botones CTA */
