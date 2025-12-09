@@ -5,7 +5,7 @@ const chatbotKnowledge = {
         'qué es la ley silla': 'La Ley Silla es una normativa que obliga a los establecimientos comerciales y de servicios a proporcionar sillas o asientos a sus trabajadores que permanezcan de pie por largos periodos. Su objetivo es proteger la salud laboral y prevenir enfermedades relacionadas con estar de pie prolongadamente.',
         'qué empresas deben cumplir': 'Deben cumplir todas las empresas del sector servicios, comercio y centros de trabajo donde los empleados pasen largos periodos de pie. Ejemplos: tiendas departamentales, supermercados, bancos, restaurantes, farmacias, estaciones de transporte, y recepciones en oficinas u hospitales.',
         'cuáles son las multas': 'Las multas por incumplimiento van desde 250 hasta 2,500 UMAs, lo que equivale aproximadamente de $27,000 hasta $275,000 MXN. Además, puede haber suspensión temporal de actividades.',
-        'cómo contactarlos': 'Puedes contactarnos al teléfono 656-687-78-54, por email a jemmsa@jemmsa.com.mx, o visitando nuestra sección de Contacto en la página web.',
+        'cómo contactarlos': 'Puedes contactarnos al teléfono 656-687-78-54, por email a jemmsa@jemmsa.com.mx, o visitando nuestra sección de Contacto en la página web. También puedes escribirnos por WhatsApp al 656-437-24-81.',
         'qué servicios ofrecen': 'Ofrecemos asesoría legal sobre cumplimiento de la Ley Silla, venta de sillas ergonómicas adecuadas, diagnóstico de obligaciones, y acompañamiento en procesos de implementación.',
         'qué sillas recomiendan': 'Recomendamos sillas ergonómicas con ajuste de altura, respaldo lumbar, base estable y materiales duraderos. Tenemos un catálogo con diferentes modelos según las necesidades específicas de cada establecimiento.',
         'es obligatorio para todas las empresas': 'No, solo para establecimientos comerciales, de servicios y centros de trabajo donde los empleados permanezcan de pie por largos periodos en atención al público o realizando sus funciones.',
@@ -25,7 +25,7 @@ const chatbotKnowledge = {
         'what is chair law': 'Chair Law is a regulation that requires commercial and service establishments to provide chairs or seats to their workers who remain standing for long periods. Its purpose is to protect occupational health and prevent diseases related to prolonged standing.',
         'which companies must comply': 'All companies in the service sector, commerce, and workplaces where employees spend long periods standing must comply. Examples: department stores, supermarkets, banks, restaurants, pharmacies, transport stations, and reception areas in offices or hospitals.',
         'what are the fines': 'Fines for non-compliance range from 250 to 2,500 UMAs, which is approximately $27,000 to $275,000 MXN. Additionally, there may be temporary suspension of activities.',
-        'how to contact you': 'You can contact us at phone 656-687-78-54, by email at jemmsa@jemmsa.com.mx, or by visiting our Contact section on the website.',
+        'how to contact you': 'You can contact us at phone 656-687-78-54, by email at jemmsa@jemmsa.com.mx, or by visiting our Contact section on the website. You can also message us on WhatsApp at 656-437-24-81.',
         'what services do you offer': 'We offer legal advice on Chair Law compliance, sale of appropriate ergonomic chairs, obligation diagnosis, and implementation process support.',
         'what chairs do you recommend': 'We recommend ergonomic chairs with height adjustment, lumbar support, stable base, and durable materials. We have a catalog with different models according to the specific needs of each establishment.',
         'is it mandatory for all companies': 'No, only for commercial establishments, services, and workplaces where employees remain standing for long periods while serving customers or performing their duties.',
@@ -72,6 +72,78 @@ const keywordSynonyms = {
     }
 };
 
+// Función para abrir WhatsApp
+function openWhatsAppChat() {
+    const phoneNumber = '526564372481';
+    
+    // Detectar idioma actual
+    const currentLang = getCurrentLanguage();
+    
+    let message = '';
+    if (currentLang === 'en') {
+        message = encodeURIComponent('Hello, I would like information about Chair Law');
+    } else {
+        message = encodeURIComponent('Hola, me gustaría recibir información sobre la Ley Silla');
+    }
+    
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    
+    // Abrir en nueva pestaña
+    window.open(whatsappUrl, '_blank');
+    
+    // Agregar mensaje en el chatbot
+    const chatbotMessages = document.getElementById('chatbot-messages');
+    if (chatbotMessages) {
+        const userMessageDiv = document.createElement('div');
+        userMessageDiv.className = 'chatbot-message user-message';
+        userMessageDiv.innerHTML = `
+            <div class="message-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="message-content">
+                <p>${currentLang === 'en' ? 'Open WhatsApp' : 'Abrir WhatsApp'}</p>
+            </div>
+        `;
+        
+        const botMessageDiv = document.createElement('div');
+        botMessageDiv.className = 'chatbot-message bot-message';
+        botMessageDiv.innerHTML = `
+            <div class="message-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="message-content">
+                <p>${currentLang === 'en' ? 'Opening WhatsApp... You can contact us at 656-437-24-81' : 'Abriendo WhatsApp... Puedes contactarnos al 656-437-24-81'}</p>
+            </div>
+        `;
+        
+        chatbotMessages.appendChild(userMessageDiv);
+        setTimeout(() => {
+            chatbotMessages.appendChild(botMessageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }, 500);
+        
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+    
+    return false;
+}
+
+// Función para detectar idioma actual
+function getCurrentLanguage() {
+    // Verificar qué idioma está visible
+    const esElements = document.querySelectorAll('.es-lang');
+    const enElements = document.querySelectorAll('.en-lang');
+    
+    if (esElements.length > 0 && enElements.length > 0) {
+        // Si ambos existen, verificar cuál está visible
+        const esStyle = window.getComputedStyle(esElements[0]);
+        if (esStyle.display === 'none') {
+            return 'en';
+        }
+    }
+    
+    return 'es'; // Por defecto español
+}
 
 // Funcionalidad del Chatbot
 document.addEventListener('DOMContentLoaded', function() {
@@ -83,7 +155,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const chatbotMessages = document.getElementById('chatbot-messages');
     const quickQuestions = document.querySelectorAll('.quick-question');
     
-    let currentLanguage = 'es';
+    let currentLanguage = getCurrentLanguage();
+    
+    // Agregar evento a los botones de WhatsApp
+    const whatsappBtnEs = document.getElementById('whatsapp-btn-es');
+    const whatsappBtnEn = document.getElementById('whatsapp-btn-en');
+    
+    if (whatsappBtnEs) {
+        whatsappBtnEs.addEventListener('click', openWhatsAppChat);
+    }
+    
+    if (whatsappBtnEn) {
+        whatsappBtnEn.addEventListener('click', openWhatsAppChat);
+    }
     
     // Toggle ventana del chatbot
     if (chatbotToggle) {
@@ -127,16 +211,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Preguntas rápidas
+    // Preguntas rápidas (excepto WhatsApp que ya tiene su propio handler)
     quickQuestions.forEach(button => {
-        button.addEventListener('click', function() {
-            const question = this.getAttribute('data-question');
-            addMessage(question, 'user');
-            setTimeout(() => {
-                const response = getBotResponse(question);
-                addMessage(response, 'bot');
-            }, 1000);
-        });
+        // Solo asignar evento si no es botón de WhatsApp
+        if (!button.id.includes('whatsapp-btn')) {
+            button.addEventListener('click', function() {
+                const question = this.getAttribute('data-question');
+                addMessage(question, 'user');
+                setTimeout(() => {
+                    const response = getBotResponse(question);
+                    addMessage(response, 'bot');
+                }, 1000);
+            });
+        }
     });
     
     // Añadir mensaje al chat
@@ -197,4 +284,18 @@ document.addEventListener('DOMContentLoaded', function() {
             currentLanguage = 'es';
         }
     }
+    
+    // Inicializar chatbot con mensaje según idioma
+    setTimeout(() => {
+        if (chatbotMessages.children.length === 1) {
+            const welcomeMsg = currentLanguage === 'en' 
+                ? "Hello! I'm your virtual assistant from Chair Law. How can I help you today?" 
+                : "¡Hola! Soy tu asistente virtual de Ley Silla. ¿En qué puedo ayudarte hoy?";
+            
+            const firstMessage = chatbotMessages.querySelector('.bot-message .message-content p');
+            if (firstMessage) {
+                firstMessage.textContent = welcomeMsg;
+            }
+        }
+    }, 100);
 });
