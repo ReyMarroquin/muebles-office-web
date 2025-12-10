@@ -1184,3 +1184,132 @@ body.dark-mode .espec-item, body.dark-mode .accesorio-imagen{
     background-color: #2d3748;
     border: 0px;
 }
+
+/* ===== MODO OSCURO PARA EL CONTENIDO DEL CHATBOT ===== */
+body.dark-mode .chatbot-header {
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .chatbot-initial-content {
+    color: #e5e7eb;
+}
+
+body.dark-mode .chatbot-greeting {
+    color: #e5e7eb !important;
+}
+
+body.dark-mode .chatbot-greeting strong {
+    color: #93c5fd !important;
+}
+
+body.dark-mode .chatbot-subtitle {
+    color: #9ca3af !important;
+}
+
+/* Modo oscuro para las preguntas frecuentes */
+body.dark-mode .quick-question {
+    background: #374151;
+    color: #e5e7eb;
+    border: 1px solid #4b5563;
+}
+
+body.dark-mode .quick-question:hover {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+/* Modo oscuro para el área de mensajes */
+body.dark-mode .chatbot-messages {
+    background: #111827;
+}
+
+/* Modo oscuro para los mensajes del bot */
+body.dark-mode .bot-message .message-content {
+    background: #374151;
+    color: #e5e7eb;
+    border: 1px solid #4b5563;
+}
+
+/* Modo oscuro para los mensajes del usuario */
+body.dark-mode .user-message .message-content {
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    color: white;
+}
+
+/* Modo oscuro para el input */
+body.dark-mode #chatbot-input {
+    background: #374151;
+    color: #e5e7eb;
+    border: 1px solid #4b5563;
+}
+
+body.dark-mode #chatbot-input::placeholder {
+    color: #9ca3af;
+}
+
+body.dark-mode #chatbot-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Modo oscuro para la sección de preguntas rápidas */
+body.dark-mode .chatbot-quick-questions {
+    background: #1f2937;
+    border-top: 1px solid #374151;
+}
+
+body.dark-mode .chatbot-quick-questions span {
+    color: #9ca3af;
+}
+
+/* Asegurar que el texto de las preguntas sea visible */
+body.dark-mode .quick-question {
+    color: #e5e7eb !important;
+}
+
+/* Modo oscuro específico para el botón de WhatsApp */
+body.dark-mode .whatsapp-chat-special {
+    background: linear-gradient(135deg, #128C7E, #25D366) !important;
+    color: white !important;
+}
+
+body.dark-mode .whatsapp-chat-special:hover {
+    background: linear-gradient(135deg, #25D366, #128C7E) !important;
+}
+
+/* Asegurar que todos los textos dentro del chatbot sean visibles */
+body.dark-mode #chatbot-window,
+body.dark-mode .chatbot-initial-content,
+body.dark-mode .chatbot-greeting,
+body.dark-mode .chatbot-subtitle,
+body.dark-mode .quick-question {
+    color: #e5e7eb !important;
+}
+
+/* Corrección específica para el contenido inicial */
+body.dark-mode #chatbot-window .chatbot-initial-content {
+    color: #e5e7eb;
+}
+
+body.dark-mode #chatbot-window .chatbot-greeting {
+    color: #e5e7eb;
+}
+
+body.dark-mode #chatbot-window .chatbot-subtitle {
+    color: #9ca3af;
+}
+
+/* Modo oscuro para el separador */
+body.dark-mode .chatbot-messages hr {
+    border-color: #374151;
+}
+
+/* Asegurar que el texto de "Escribe tu pregunta..." sea visible */
+body.dark-mode #chatbot-input::placeholder {
+    color: #9ca3af;
+}
+
+
+
