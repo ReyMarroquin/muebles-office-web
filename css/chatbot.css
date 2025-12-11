@@ -339,7 +339,6 @@
 .chatbot-quick-questions span {
     font-size: 12px;
     color: var(--chatbot-subtitle-color, #666);
-    margin-bottom: 10px;
     display: block;
     font-weight: 500;
 }
