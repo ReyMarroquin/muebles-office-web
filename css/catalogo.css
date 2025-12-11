@@ -374,7 +374,7 @@ body.dark-mode .page-btn.page-5 {
     margin-right: auto;
 }
 
-/* Vista de lista para productos */
+/* Vista de lista para producto */
 .productos-grid.list-view {
     grid-template-columns: 1fr !important;
 }
@@ -471,6 +471,7 @@ body.dark-mode .producto-card:hover {
 body.dark-mode .producto-card:hover .producto-image {
     transform: scale(1.02);
     transition: transform 0.3s ease;
+    background: #475569;
 }
 
 /* Imagen de Producto */
@@ -481,7 +482,7 @@ body.dark-mode .producto-image {
 
 /* Acciones de Producto */
 body.dark-mode .producto-actions {
-    background: rgba(51, 65, 85, 0.95);
+    background: 475569;
     backdrop-filter: blur(10px);
 }
 
@@ -503,6 +504,16 @@ body.dark-mode .producto-categoria {
     color: #60a5fa;
     border: none;
 }
+
+body.dark-mode .producto-card .producto-categoria {
+    transition: all 0.3s ease; /* Transición aplica siempre */
+}
+
+body.dark-mode .producto-card:hover .producto-categoria {
+    background: #475569;
+    transition: all 0.3s ease;
+}
+
 
 body.dark-mode .producto-nombre {
     color: #f8fafc;
