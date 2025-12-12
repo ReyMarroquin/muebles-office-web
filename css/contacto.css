@@ -1844,3 +1844,41 @@ body.dark-mode .faq-answer-content li::marker {
     font-weight: 900;
 }
 
+
+    /* Fondo específico para preguntas.html */
+    .preguntas-hero {
+        background: 
+            linear-gradient(135deg, 
+                rgba(30, 58, 138, 0.15) 0%, 
+                rgba(30, 64, 175, 0.1) 50%, 
+                rgba(59, 130, 246, 0.05) 100%),
+            url('../Imagenes/fondo_preg.png'); /* Cambia a tu imagen */
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    /* Para modo oscuro */
+    body.dark-mode .preguntas-hero {
+        background: 
+            linear-gradient(135deg, 
+                rgba(15, 23, 42, 0.1) 0%, 
+                rgba(30, 41, 59, 0.08) 50%, 
+                rgba(51, 65, 85, 0.05) 100%),
+            url('../Imagenes/fondo_preg.png');
+    }
+
+    @media (max-width: 768px) {
+        .preguntas-hero {
+            background-attachment: scroll;
+            background: 
+                linear-gradient(135deg, 
+                    rgba(30, 58, 138, 0.1) 0%, 
+                    rgba(30, 64, 175, 0.08) 50%, 
+                    rgba(59, 130, 246, 0.05) 100%),
+                url('../Imagenes/fondo_preg.png');
+            background-size: cover;
+            background-position: center;
+        }
+    }
