@@ -1311,5 +1311,66 @@ body.dark-mode #chatbot-input::placeholder {
     color: #9ca3af;
 }
 
+/* Selector de idioma compacto */
+.language-switcher {
+    margin-right: 10px;
+    display: inline-block;
+}
 
+.single-language-btn {
+    background: linear-gradient(135deg, #114baf, #114baf);
+    border: 2px solid #114baf;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.single-language-btn:hover {
+    background: linear-gradient(135deg, #114baf, #114baf);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.single-language-btn:active {
+    transform: translateY(0);
+}
+
+.single-language-btn .lang-text {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.single-language-btn .lang-icon {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* Estilos cuando está en inglés */
+.single-language-btn[data-lang="en"] {
+    background: linear-gradient(135deg, #114baf, #114baf);
+    border-color: #114baf;
+}
+
+.single-language-btn[data-lang="en"]:hover {
+    background: linear-gradient(135deg, #114baf, #114baf);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .single-language-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .single-language-btn .lang-text {
+        font-size: 12px;
+    }
+}
 

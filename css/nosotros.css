@@ -1016,3 +1016,19 @@ body.dark-mode .valor-item i {
     color: #60a5fa;
 }
 
+/* En tu CSS existente, modifica estas clases: */
+.nosotros-hero-text .hero-title {
+    /* Elimina o comenta las líneas de animación */
+    /* animation: titleReveal 1.5s ease-out; */
+    animation: none;
+    opacity: 1;
+    transform: none;
+}
+
+.nosotros-hero-text .hero-subtitle {
+    /* Elimina o comenta las líneas de animación */
+    /* animation: subtitleReveal 1.8s ease-out 0.3s both; */
+    animation: none;
+    opacity: 1;
+    transform: none;
+}
