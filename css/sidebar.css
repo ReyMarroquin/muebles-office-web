@@ -163,8 +163,17 @@ body.dark-mode .sidebar-nav a:hover{
     transition: background 0.3s ease;
 }
 
+body.dark-mode .sidebar-toggle {
+    background-color: var(--text-dark);
+    color: white;
+}
+
 .sidebar-toggle:hover {
     background: var(--gray-light);
+}
+
+body.dark-mode .sidebar-toggle:hover {
+    background: var(--text-dark);
 }
 
 /* Mostrar botón solo en móvil */
