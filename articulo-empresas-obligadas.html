@@ -6,6 +6,9 @@
     <title>¿Tu Empresa Está Obligada a Cumplir la Ley Silla? | Blog Ley Silla</title>
     <meta name="description" content="Descubre si tu empresa está obligada a cumplir con la Ley Silla según la normativa vigente. Guía completa por sectores y tipos de empresas.">
     
+    <link rel="icon" href="Imagenes/Navegador.png" type="image/x-icon">
+    <link rel="shortcut icon" href="Imagenes/Navegador.png" type="image/x-icon">
+
     <link rel="stylesheet" href="css/blog-article.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/header.css">
@@ -136,13 +139,7 @@
                                 <span class="en-lang">Chair Catalog</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="ley-silla.html">
-                                <i class="fas fa-gavel"></i>
-                                <span class="es-lang">Ley Silla</span>
-                                <span class="en-lang">Chair Law</span>
-                            </a>
-                        </li>
+                       
                         <li>
                             <a href="Blog.html" class="active">
                                 <i class="fas fa-blog"></i>
@@ -150,9 +147,9 @@
                                 <span class="en-lang">Blog</span>
                             </a>
                         </li>
-                        <li>
+                       <li>
                             <a href="Nosotros.html">
-                                <i class="fas fa-utensils"></i>
+                               <i class="fas fa-users"></i>
                                 <span class="es-lang">Nosotros</span>
                                 <span class="en-lang">Us</span>
                             </a>
@@ -174,8 +171,8 @@
                         <div class="info-text">
                             <strong class="es-lang">Horario de atención:</strong>
                             <strong class="en-lang">Business hours:</strong>
-                            <div class="es-lang">Lun-Vie: 9am - 6pm</div>
-                            <div class="en-lang">Mon-Fri: 9am - 6pm</div>
+                            <div class="es-lang">Lun-Vie: 8am - 5pm</div>
+                            <div class="en-lang">Mon-Fri: 8am - 5pm</div>
                         </div>
                     </div>
                     <div class="info-item">
@@ -1128,12 +1125,14 @@
         </footer>
     </div>
 
-    <!-- CHATBOT WIDGET -->
+     <!-- CHATBOT WIDGET -->
     <div id="chatbot-container">
+        <!-- Botón flotante del chatbot -->
         <div id="chatbot-toggle" class="chatbot-minimized">
             <i class="fas fa-comment-dots"></i>
         </div>
         
+        <!-- Ventana del Chatbot -->
         <div id="chatbot-window" class="chatbot-hidden">
             <div class="chatbot-header">
                 <div class="chatbot-title">
@@ -1147,6 +1146,7 @@
             </div>
             
             <div class="chatbot-messages" id="chatbot-messages">
+               
                 <div class="chatbot-message bot-message">
                     <div class="message-avatar">
                         <i class="fas fa-robot"></i>
@@ -1165,18 +1165,26 @@
                 </button>
             </div>
             
-            <div class="chatbot-quick-questions">
-                <span class="es-lang">Preguntas frecuentes:</span>
-                <span class="en-lang">Frequent questions:</span>
-                <div class="quick-questions-grid">
-                    <button class="quick-question es-lang" data-question="¿Mi empresa debe cumplir la Ley Silla?">¿Mi empresa debe cumplir?</button>
-                    <button class="quick-question en-lang" data-question="Must my company comply with Chair Law?">Must my company comply?</button>
-                    <button class="quick-question es-lang" data-question="¿Qué empresas están obligadas?">¿Qué empresas están obligadas?</button>
-                    <button class="quick-question en-lang" data-question="Which companies are required?">Which companies are required?</button>
-                    <button class="quick-question es-lang" data-question="¿Hay excepciones a la Ley Silla?">¿Hay excepciones?</button>
-                    <button class="quick-question en-lang" data-question="Are there exceptions to Chair Law?">Are there exceptions?</button>
+                <div class="chatbot-quick-questions">
+                    <span class="es-lang">Preguntas frecuentes:</span>
+                    <span class="en-lang">Frequent questions:</span>
+                    <div class="quick-questions-grid">
+                        <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                        <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                        <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                        <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                        <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                        <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
+                        <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                        <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                        
+                        <button class="whatsapp-chat-special" onclick="openWhatsAppChat()">
+                            <i class="fab fa-whatsapp"></i>
+                            <span class="es-lang">Conversar por WhatsApp</span>
+                            <span class="en-lang">Chat on WhatsApp</span>
+                        </button>
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
 
@@ -1188,35 +1196,7 @@
     
     <!-- Script específico del artículo -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Sidebar functionality
-            const sidebar = document.getElementById('sidebar');
-            const sidebarOverlay = document.getElementById('sidebarOverlay');
-            const sidebarToggle = document.getElementById('sidebarToggle');
-            
-            function toggleSidebar() {
-                sidebar.classList.toggle('active');
-                sidebarOverlay.classList.toggle('active');
-                
-                if (sidebar.classList.contains('active')) {
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    document.body.style.overflow = '';
-                }
-            }
-            
-            if (sidebarToggle) {
-                sidebarToggle.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    toggleSidebar();
-                });
-            }
-            
-            if (sidebarOverlay) {
-                sidebarOverlay.addEventListener('click', function() {
-                    toggleSidebar();
-                });
-            }
+        
             
             // Verificador de cumplimiento interactivo
             const checkboxes = document.querySelectorAll('.question-item input');
@@ -1420,7 +1400,7 @@
             
             // Inicializar verificador
             updateComplianceScore();
-        });
+       
     </script>
 </body>
 </html>

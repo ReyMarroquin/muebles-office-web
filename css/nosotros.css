@@ -1,40 +1,11 @@
 /* nosotros.css - Adaptado para usar variables del sistema */
 
 .nosotros-hero {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
     color: white;
     padding: 8rem 0 4rem;
     margin-top: 70px;
     position: relative;
     overflow: hidden;
-}
-
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.hero-pattern {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%);
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(30, 58, 138, 0.9) 0%, rgba(30, 64, 175, 0.95) 100%);
 }
 
 .nosotros-hero-content {
@@ -604,8 +575,7 @@
     color: var(--primary-blue);
 }
 
-/* Hero Nosotros con imagen de fondo */
-/* Hero Nosotros con imagen de fondo */
+/* Hero Nosotros con SOLO imagen de fondo (sin capas azules) */
 .nosotros-hero {
     position: relative;
     color: var(--white);
@@ -615,44 +585,24 @@
     min-height: 80vh;
     display: flex;
     align-items: center;
-    background-image: url('https://img.freepik.com/foto-gratis/grupo-personas-felices-oficina_53876-31368.jpg?t=st=1736250477~exp=1736254077~hmac=8a0d4f9b4d4c4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a&w=1380') !important;
+    background-image: url('../Imagenes/fondo_nostros.png') !important;
     background-position: center !important;
     background-attachment: fixed !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
 }
 
+/* Todas las capas de superposición ELIMINADAS */
 .hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+    display: none !important;
 }
 
 .hero-pattern {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 2;
+    display: none !important;
 }
 
 .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, 
-        rgba(30, 58, 138, 0.8) 0%, 
-        rgba(1, 13, 38, 0.7) 50%, 
-        rgba(59, 130, 246, 0.6) 100%);
-    z-index: 3;
-    backdrop-filter: blur(2px);
+    display: none !important;
 }
 
 .nosotros-hero-content {
@@ -907,15 +857,11 @@
 
 /* ===== MODO OSCURO PARA NOSOTROS ===== */
 body.dark-mode .nosotros-hero {
-    background-image: url('https://img.freepik.com/foto-gratis/grupo-personas-felizes-trabajando-oficina_23-2149018478.jpg?t=st=1736250477~exp=1736254077~hmac=8a0d4f9b4d4c4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a&w=1380') !important;
+    background-image: url('../Imagenes/fondo_nostros.png') !important;
 }
 
 body.dark-mode .hero-overlay {
-    background: linear-gradient(45deg, 
-        rgba(15, 23, 42, 0.9) 0%, 
-        rgba(30, 41, 59, 0.8) 50%, 
-        rgba(51, 65, 85, 0.7) 100%);
-    backdrop-filter: blur(3px);
+    display: none !important;
 }
 
 body.dark-mode .historia-section {
@@ -1069,3 +1015,4 @@ body.dark-mode .compromiso-icon {
 body.dark-mode .valor-item i {
     color: #60a5fa;
 }
+
