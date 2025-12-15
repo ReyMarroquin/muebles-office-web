@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="css/contacto.css">
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/chatbot.css">
+    
+
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -462,7 +464,7 @@
                                 <div class="faq-answer-content">
                                     <i class="fas fa-handshake"></i>
                                     <div>
-                                        <p class="es-lang">LeySilla.com es un servicio promovido por OFFIHO, fabricante y comercializador de sillas en todo México. Trabajamos para ayudar a las empresas a cumplir con sus obligaciones legales y proteger la salud de sus trabajadores.</p>
+                                        <p class="es-lang">LeySilla.com es un servicio promovido por OFFIHO, fabricante y comercializador de sillas en todo México. Trabajamos para ayudar a las empresas a cumplir con sus obligaciones legaless y proteger la salud de sus trabajadores.</p>
                                         <p class="en-lang">LeySilla.com is a service promoted by OFFIHO, a manufacturer and marketer of chairs throughout Mexico. We work to help companies comply with their legal obligations and protect the health of their workers.</p>
                                     </div>
                                 </div>
@@ -570,7 +572,8 @@
         </footer>
 
     </div> <!-- END WRAPPER -->
-      <!-- CHATBOT WIDGET -->
+    
+    <!-- CHATBOT WIDGET -->
     <div id="chatbot-container">
         <!-- Botón flotante del chatbot -->
         <div id="chatbot-toggle" class="chatbot-minimized">
@@ -591,7 +594,6 @@
             </div>
             
             <div class="chatbot-messages" id="chatbot-messages">
-               
                 <div class="chatbot-message bot-message">
                     <div class="message-avatar">
                         <i class="fas fa-robot"></i>
@@ -610,26 +612,26 @@
                 </button>
             </div>
             
-                <div class="chatbot-quick-questions">
-                    <span class="es-lang">Preguntas frecuentes:</span>
-                    <span class="en-lang">Frequent questions:</span>
-                    <div class="quick-questions-grid">
-                        <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
-                        <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
-                        <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
-                        <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
-                        <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
-                        <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
-                        <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
-                        <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
-                        
-                        <button class="whatsapp-chat-special" onclick="openWhatsAppChat()">
-                            <i class="fab fa-whatsapp"></i>
-                            <span class="es-lang">Conversar por WhatsApp</span>
-                            <span class="en-lang">Chat on WhatsApp</span>
-                        </button>
-                    </div>
+            <div class="chatbot-quick-questions">
+                <span class="es-lang">Preguntas frecuentes:</span>
+                <span class="en-lang">Frequent questions:</span>
+                <div class="quick-questions-grid">
+                    <button class="quick-question es-lang" data-question="¿Qué es la Ley Silla?">¿Qué es la Ley Silla?</button>
+                    <button class="quick-question en-lang" data-question="What is Chair Law?">What is Chair Law?</button>
+                    <button class="quick-question es-lang" data-question="¿Qué empresas deben cumplir?">¿Qué empresas deben cumplir?</button>
+                    <button class="quick-question en-lang" data-question="Which companies must comply?">Which companies must comply?</button>
+                    <button class="quick-question es-lang" data-question="¿Cómo contactarlos?">¿Cómo contactarlos?</button>
+                    <button class="quick-question en-lang" data-question="How to contact you?">How to contact you?</button>
+                    <button class="quick-question es-lang" data-question="¿Cuáles son las multas?">¿Cuáles son las multas?</button>
+                    <button class="quick-question en-lang" data-question="What are the fines?">What are the fines?</button>
+                    
+                    <button class="whatsapp-chat-special" onclick="openWhatsAppChat()">
+                        <i class="fab fa-whatsapp"></i>
+                        <span class="es-lang">Conversar por WhatsApp</span>
+                        <span class="en-lang">Chat on WhatsApp</span>
+                    </button>
                 </div>
+            </div>
         </div>
     </div>
 
@@ -638,40 +640,108 @@
     <script src="js/sidebar.js"></script>
     <script src="js/chatbot.js"></script>
     
+    <!-- SCRIPT PARA EL FUNCIONAMIENTO DE LAS FAQs -->
     <script>
-        // Función para expandir/colapsar todas las FAQs
-        function expandirTodasFAQs() {
-            const faqItems = document.querySelectorAll('.ley-silla-faq .faq-item');
-            const expandir = !faqItems[0].classList.contains('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Manejo de FAQs individuales
+            const faqItems = document.querySelectorAll('.faq-item');
             
             faqItems.forEach(item => {
-                if (expandir) {
-                    item.classList.add('active');
-                    const respuesta = item.querySelector('.faq-answer');
-                    respuesta.style.maxHeight = respuesta.scrollHeight + 'px';
-                } else {
-                    item.classList.remove('active');
-                    const respuesta = item.querySelector('.faq-answer');
-                    respuesta.style.maxHeight = '0';
-                }
-            });
-        }
-
-        // Agregar funcionalidad para el botón "Expandir/Cerrar todas"
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqSection = document.querySelector('.ley-silla-faq');
-            if (faqSection) {
-                const header = faqSection.querySelector('.section-header');
-                const toggleButton = document.createElement('button');
-                toggleButton.className = 'btn btn-outline btn-small';
-                toggleButton.innerHTML = '<i class="fas fa-expand-alt"></i> <span class="es-lang">Expandir/Cerrar todas</span><span class="en-lang">Expand/Collapse all</span>';
-                toggleButton.style.marginLeft = '1rem';
-                toggleButton.style.marginTop = '0.5rem';
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
                 
-                toggleButton.addEventListener('click', expandirTodasFAQs);
-                header.appendChild(toggleButton);
+                question.addEventListener('click', function() {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Alternar FAQ actual
+                    item.classList.toggle('active');
+                    
+                    if (item.classList.contains('active')) {
+                        // Expandir
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        // Colapsar
+                        answer.style.maxHeight = '0';
+                    }
+                });
+                
+                // Ajustar altura al cambiar tamaño de ventana
+                window.addEventListener('resize', function() {
+                    if (item.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    }
+                });
+            });
+            
+            // Función para expandir/colapsar todas las FAQs
+            function expandirTodasFAQs() {
+                const faqItems = document.querySelectorAll('.faq-item');
+                const expandir = !faqItems[0].classList.contains('active');
+                
+                faqItems.forEach(item => {
+                    const answer = item.querySelector('.faq-answer');
+                    
+                    if (expandir) {
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        item.classList.remove('active');
+                        answer.style.maxHeight = '0';
+                    }
+                });
+            }
+            
+            // Crear botón "Expandir/Cerrar todas" si no existe
+            if (!document.querySelector('.expand-all-btn')) {
+                const faqSection = document.querySelector('.ley-silla-faq');
+                if (faqSection) {
+                    const header = faqSection.querySelector('.section-header');
+                    const toggleButton = document.createElement('button');
+                    toggleButton.className = 'btn btn-outline btn-small expand-all-btn';
+                    toggleButton.innerHTML = `
+                        <i class="fas fa-expand-alt"></i> 
+                        <span class="es-lang">Expandir/Cerrar todas</span>
+                        <span class="en-lang">Expand/Collapse all</span>
+                    `;
+                    
+                    toggleButton.addEventListener('click', expandirTodasFAQs);
+                    header.appendChild(toggleButton);
+                }
+            }
+            
+            // Inicialización de botón de idioma único
+            const singleLangToggle = document.getElementById('singleLangToggle');
+            if (singleLangToggle) {
+                singleLangToggle.addEventListener('click', function() {
+                    const currentLang = this.getAttribute('data-lang');
+                    const newLang = currentLang === 'es' ? 'en' : 'es';
+                    
+                    // Cambiar todos los elementos según el idioma
+                    document.querySelectorAll('.es-lang, .en-lang').forEach(el => {
+                        if (el.classList.contains('es-lang') && newLang === 'es') {
+                            el.style.display = 'inline';
+                        } else if (el.classList.contains('es-lang') && newLang === 'en') {
+                            el.style.display = 'none';
+                        } else if (el.classList.contains('en-lang') && newLang === 'en') {
+                            el.style.display = 'inline';
+                        } else if (el.classList.contains('en-lang') && newLang === 'es') {
+                            el.style.display = 'none';
+                        }
+                    });
+                    
+                    // Actualizar botón
+                    this.setAttribute('data-lang', newLang);
+                    this.querySelector('.lang-text').textContent = newLang.toUpperCase();
+                });
             }
         });
+        
+        // Función para WhatsApp
+        function openWhatsAppChat() {
+            const phoneNumber = '6566877854';
+            const message = encodeURIComponent('Hola, tengo una pregunta sobre la Ley Silla');
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        }
     </script>
     
 </body>
